@@ -24,3 +24,12 @@ Changes: the hook makes a concrete promise (Columbus's lost map) instead of "the
 174 words, ~74 s at George's measured 141 wpm.
 
 This Ottoman map is famous for showing Antarctica. It doesn't. But it may hold a copy of Columbus's lost map. In 1929, it turned up in Topkapı Palace: a scrap of gazelle skin. Admiral Piri Reis drew it in Gallipoli in 1513, twenty-one years after Columbus sailed. Its margins are full of wonders: monks who camped on a giant fish, one-horned oxen, and monsters seven spans long, "but they are harmless souls." In the 1960s, writers claimed its southern coast was Antarctica, mapped before the ice by a lost civilization. Some said aliens. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Most historians read that coast as South America, bent east to fit the skin. His own notes name the sources: about twenty maps, one of them drawn by Columbus. His uncle held a captive who had sailed with Columbus three times. Columbus's own map is lost. This may be the closest we'll ever get. So, does it show Antarctica? Real or myth? Tell me below.
+
+## v3 (curiosity ending, awaiting approval)
+
+Ends on an open question about Antarctica's green past instead of a claim. Fossil forests (Glossopteris, Permian;
+Cretaceous forests) and dinosaurs (e.g. Cryolophosaurus, Early Jurassic) are documented; the body has already said
+the ice is millions of years old, so the question stays honest. Poll card: "Someone lived in Antarctica before the
+ice" REAL / MYTH. 167 words, ~71 s at 141 wpm, ~75 s with the outro.
+
+This Ottoman map is famous for showing Antarctica. It doesn't. But it may hold a copy of Columbus's lost map. In 1929, it turned up in Topkapı Palace: a scrap of gazelle skin. Admiral Piri Reis drew it in Gallipoli in 1513. Its margins are full of wonders: monks who camped on a giant fish, one-horned oxen, and monsters seven spans long, "but they are harmless souls." In the 1960s, writers claimed its southern coast was Antarctica, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Most historians read that coast as South America, bent east to fit the skin. His notes name the sources: about twenty maps, one drawn by Columbus. His uncle held a captive who had sailed with Columbus three times. Columbus's own map is lost. Yet under that ice lie fossil forests, even dinosaurs. So who knows... did anyone ever live there? Real or myth? Tell me below.
