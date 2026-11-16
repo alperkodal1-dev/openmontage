@@ -3,8 +3,8 @@ hf/assets/ at render size. Keyword colours in the captions: green for the alien 
 import json, os, re
 from PIL import Image
 END = 68.2
-A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'roberts_1839.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'desc_pyr.jpg',
-     'giza.jpg': 'all_giza.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
+A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'dauzats.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'greene_1853.jpg',
+     'giza.jpg': 'frith_1858.jpg', 'menkaure.jpg': 'menkaure.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
      'saqqara.jpg': 'saqqara_bird.jpg'}
 for dst, src in A.items():
     p = 'img/' + src
