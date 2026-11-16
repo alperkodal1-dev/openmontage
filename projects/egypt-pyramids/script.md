@@ -1,6 +1,6 @@
 # Who Built the Great Pyramid? (Unsealed History Short)
 
-Vertical 1080x1920, ~66 s. Narration: vidIQ voiceover, George (~141 wpm). 155 words.
+Vertical 1080x1920, ~68 s (v3 voiced). Narration: vidIQ voiceover, George (~141 wpm). 155 words.
 The Short loops: the last line ("...help from another world?") leads back into the opening question.
 Poll card on the last line: "The Egyptians had help from another world" REAL / MYTH. No separate outro.
 
@@ -16,7 +16,7 @@ Poll card on the last line: "The Egyptians had help from another world" REAL / M
 
 ## Spoken text (for the voiceover)
 
-Who really built the Great Pyramid? Two point three million stone blocks, raised four and a half thousand years ago. In 1968, a Swiss writer gave an answer: visitors from the stars. And the clues seemed to be everywhere. At Abydos, a carving that looks like a helicopter. At Dendera, a snake inside what looks like a glowing bulb. At Saqqara, a wooden bird shaped like a glider. Some say the pyramids even mirror Orion's belt. Then, in 1990, a horse stumbled on a buried wall beside the pyramids. Beneath it lay the builders themselves, buried in their own tombs, in the shadow of their king. Not slaves. Their gangs left names on the stones: Friends of Khufu. Drunkards of Menkaure. In 2013, a desert cave gave up the oldest papyri ever found: the logbook of Merer, shipping limestone to Giza. So were they simply human... or did the Egyptians have help from another world?
+Who really built the Great Pyramid... and what was it for? Two point three million blocks, some heavier than a truck, lined up with true north almost perfectly. Four and a half thousand years ago. In 1968, a Swiss writer gave his answer: astronauts from the stars. And the clues seemed carved everywhere. At Abydos, a helicopter. At Dendera, a snake glowing inside a giant bulb. At Saqqara, a wooden bird with the wings of a glider. Some claim the pyramid was a power plant. Others, a stargate: one shaft inside points straight at Orion's belt. Then, in 1990, a horse tripped on a buried wall. Beneath it lay the builders, buried beside their king. Their gangs signed the stones: Friends of Khufu. Drunkards of Menkaure. A papyrus logbook even tracks the stone boats to Giza. And yet, the king's coffin was empty. Khufu has never been found. So who knows... were the Egyptians getting help from an alien race?
 
 ## v2 (vidIQ script guidance; alien analogies up front, "what was it for?" curiosity, empty-coffin twist)
 
