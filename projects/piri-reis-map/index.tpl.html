@@ -45,7 +45,9 @@
   #bgm img{position:absolute;left:0;top:0;width:{{MW}}px;height:{{MH}}px;max-width:none;transform-origin:0 0;filter:sepia(.1) contrast(1.08) brightness(.95)}
   
   /* S1 */
-  #no{top:620px} #no .stamp{font-size:76px}
+  #no{top:640px} #no .stamp{font-size:76px}
+  #y1513{top:520px} #y1513 .big{font-size:190px} #y1513 .ital,#y1820 .ital{font-size:56px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
+  #y1820{top:540px} #y1820 .big{font-size:190px;color:#f4f7f8}
   #lost{top:560px} #lost .ital{font-size:54px;color:var(--gold2)} #lost .big{font-size:96px;margin-top:10px}
   /* S2 */
   #y29{top:520px} #y29 .big{font-size:180px}
@@ -105,7 +107,7 @@
 <div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{{END}}">
 
   <section id="bgm" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="0"><img id="mapi" src="assets/piri_map.jpg" alt=""><div id="mdim" style="position:absolute;inset:0;background:rgba(5,9,10,.66);opacity:0"></div></section>
-  <section id="bgc" class="clip bg dim" style="opacity:0" data-start="36.2" data-duration="26.3" data-track-index="1"><img id="bgci" src="assets/columbus.jpg" alt="" style="object-position:50% 30%"></section>
+  <section id="bgc" class="clip bg dim" style="opacity:0" data-start="33.2" data-duration="26.7" data-track-index="1"><img id="bgci" src="assets/columbus.jpg" alt="" style="object-position:50% 30%"></section>
 
   <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
   <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
@@ -121,16 +123,17 @@
   <section id="s0" class="clip" data-start="0" data-duration="1.3" data-track-index="11">
     <img id="cold" src="assets/piri_map.jpg" alt=""><span class="flash" id="flash"></span>
   </section>
-  <section id="hk" class="clip" data-start="0" data-duration="3.8" data-track-index="20">
-    <div class="l l1" id="hk1">THE MAP THAT SHOWS</div><div class="l l2" id="hk2">ANTARCTICA?</div>
+  <section id="hk" class="clip" data-start="0" data-duration="3.9" data-track-index="20">
+    <div class="l l1" id="hk1">WHAT'S REALLY IN</div><div class="l l2" id="hk2">ANTARCTICA?</div>
   </section>
 
-  <section id="s1" class="clip scene" data-start="0.9" data-duration="7.4" data-track-index="12">
-    <div class="row" id="no"><div class="stamp" id="nos">IT DOESN'T</div></div>
-    <div class="center" id="lost"><div class="ital">but it may hide a copy of</div><div class="big">COLUMBUS'S<br>LOST MAP</div></div>
+  <section id="s1" class="clip scene" data-start="3.8" data-duration="7.3" data-track-index="12">
+    <div class="center" id="y1513"><div class="big">1513</div><div class="ital">a map shows a continent…</div></div>
+    <div class="center" id="y1820"><div class="ital">…no one saw until</div><div class="big">1820</div></div>
+    <div class="row" id="no"><div class="stamp" id="nos">OR DOES IT?</div></div>
   </section>
 
-  <section id="s2" class="clip scene" data-start="8.3" data-duration="10.0" data-track-index="13">
+  <section id="s2" class="clip scene" data-start="11.1" data-duration="8.4" data-track-index="13">
     <div class="center" id="y29"><div class="big">1929</div></div>
     <div class="row" id="tp"><div class="tag" id="tpt">TOPKAPI PALACE · ISTANBUL</div></div>
     <div class="center" id="gz"><div class="ital">a scrap of gazelle skin</div></div>
@@ -144,26 +147,26 @@
     <div class="row" id="y13"><div class="tag" id="y13t">PIRI REIS · 1513</div></div>
   </section>
 
-  <section id="s3" class="clip scene" data-start="46.4" data-duration="13.2" data-track-index="14">
+  <section id="s3" class="clip scene" data-start="44.8" data-duration="12.2" data-track-index="14">
     <div class="wt" id="w1"><div class="tag">MONKS ON A GIANT FISH</div></div>
     <div class="wt" id="w2"><div class="tag">ONE-HORNED OXEN</div></div>
     <div class="wt" id="w3"><div class="tag">MONSTERS · SEVEN SPANS LONG</div></div>
     <div id="hq" class="card"><div class="q ital">“…but they are harmless souls.”</div><div class="src">PIRI REIS · 1513 · TR. AKÇURA 1935</div></div>
   </section>
 
-  <section id="s4" class="clip scene" data-start="18.3" data-duration="7.3" data-track-index="15">
+  <section id="s4" class="clip scene" data-start="19.5" data-duration="6.1" data-track-index="15">
         <div id="books"><div class="tag" id="b1">HAPGOOD · 1966</div><div class="tag" id="b2">VON DÄNIKEN · 1968</div></div>
     <div class="row" id="lc"><div class="stamp" id="lcs">A LOST CIVILIZATION?</div></div>
   </section>
 
-  <section id="s5" class="clip scene" data-start="25.6" data-duration="10.8" data-track-index="16">
+  <section id="s5" class="clip scene" data-start="25.6" data-duration="7.8" data-track-index="16">
     <div id="globe">{{GLOBE}}</div>
     <div id="iceT"><div class="tag" id="it1">ICE · ~34 MILLION YEARS</div><div class="tag" id="it2">FIRST SEEN · 1820</div></div>
     <div class="row" id="bend"><div class="tag" id="bendt">SOUTH AMERICA, BENT EAST</div></div>
     <svg id="arrow" viewBox="0 0 1080 1920"><path id="arp" d="M 300,880 C 300,1010 420,1060 700,1040" fill="none" stroke="#e0623f" stroke-width="12" stroke-linecap="round" stroke-dasharray="900" stroke-dashoffset="900"/><path id="arh" d="M 670,1005 L 712,1040 L 668,1075" fill="none" stroke="#e0623f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0"/></svg>
   </section>
 
-  <section id="s6" class="clip scene" data-start="36.4" data-duration="26.0" data-track-index="17">
+  <section id="s6" class="clip scene" data-start="33.3" data-duration="26.5" data-track-index="17">
     <div class="center" id="wh"><div class="big">WHERE DID<br>HE GET IT?</div></div>
     <div class="center" id="n20"><div class="big" id="n20n">~20</div><div class="l">SOURCE MAPS</div></div>
     <div id="col" class="card">
@@ -172,21 +175,20 @@
     </div>
     <div id="kr" class="card">
       <div class="nm">KEMAL REIS</div>
-      <div class="d ital">his captive sailed with Columbus</div>
+      <div class="d ital">the corsair uncle, whose captive<br>sailed with Columbus</div>
       <div class="v"><span>I</span><span>II</span><span>III</span></div>
     </div>
     <div class="row" id="ml"><div class="stamp" id="mls">COLUMBUS'S MAP: NEVER FOUND</div></div>
   </section>
 
-  <section id="s7" class="clip scene" data-start="62.2" data-duration="{{S7D}}" data-track-index="19">
+  <section id="s7" class="clip scene" data-start="59.7" data-duration="{{S7D}}" data-track-index="19">
     <div id="globe2" style="position:absolute;left:190px;top:400px;width:700px;height:700px;border-radius:50%;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 0 3px var(--gold)"><div style="transform:scale(.7778);transform-origin:0 0">{{GLOBE2}}</div></div>
     <div id="green"><div class="tag" id="g1">FOSSIL FORESTS</div><div class="tag" id="g2">DINOSAURS</div></div>
     <div class="center" id="kl"><div class="ital">we still know so little<br>about Antarctica…</div></div>
-    <div class="center" id="wk"><div class="big">HOW CAN WE<br>BE SO SURE?</div></div>
     <div id="poll">
       <div class="qq">Someone lived in Antarctica before the ice.</div>
       <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
-      <div class="hint" id="hint">TELL ME BELOW</div>
+      <div class="hint" id="hint">REAL OR MYTH? TELL ME BELOW</div>
     </div>
   </section>
 </div>
@@ -209,120 +211,120 @@
     tl.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
     c.w.forEach((w, j) => tl.to(`#cap${i}w${j}`, { color: "#f1d49a", duration: 0.08 }, w.s));
   });
-  [["#ch1",8.45,18.2],["#ch2",18.45,25.5],["#ch3",25.75,36.3],["#ch4",36.55,46.3],["#ch5",46.55,59.4]].forEach(([id,a,b]) => {
+  [["#ch1",11.3,19.4],["#ch2",19.7,25.5],["#ch3",25.8,33.2],["#ch4",33.5,44.8],["#ch5",45.0,56.8]].forEach(([id,a,b]) => {
     tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
     tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
     tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
   });
-  // the map: one camera through the whole video; #mdim darkens it under text-heavy moments
   const M = "#mapi";
   const dim = (on, t) => tl.to("#mdim", { opacity: on ? 1 : 0, duration: 0.4 }, t);
-  tl.fromTo(M, at(0.42, 0.86, 0.6, 540, 820), { ...at(0.42, 0.84, 0.68, 540, 820), duration: 4.4, ease: "none" }, 0);   // the "Antarctica" coast
-  tl.to(M, { ...at(0.5, 0.5, 0.4, 540, 820), duration: 3.0, ease: "power2.inOut" }, 4.7);                               // the whole map
-  dim(1, 4.7);
-  tl.to(M, { ...at(0.5, 0.5, 0.45, 540, 820), duration: 10.0, ease: "none" }, 8.3);
-  dim(0, 18.3);
-  tl.to(M, { ...at(0.42, 0.86, 0.85, 540, 860), duration: 2.0, ease: "power2.inOut" }, 18.3);                          // the legend: back to the coast
-  tl.to(M, { ...at(0.42, 0.86, 0.95, 540, 860), duration: 5.2, ease: "none" }, 20.3);
+  tl.fromTo(M, at(0.42, 0.86, 0.6, 540, 820), { ...at(0.42, 0.84, 0.68, 540, 820), duration: 3.9, ease: "none" }, 0);   // the coast
+  tl.to(M, { ...at(0.5, 0.5, 0.4, 540, 820), duration: 3.0, ease: "power2.inOut" }, 3.9);                               // the whole map
+  dim(1, 4.4);
+  tl.to(M, { ...at(0.5, 0.5, 0.46, 540, 820), duration: 12.5, ease: "none" }, 6.9);
+  dim(0, 19.5);
+  tl.to(M, { ...at(0.42, 0.86, 0.85, 540, 860), duration: 1.8, ease: "power2.inOut" }, 19.5);                          // the legend
+  tl.to(M, { ...at(0.42, 0.86, 0.95, 540, 860), duration: 4.2, ease: "none" }, 21.3);
   dim(1, 25.5);
-  dim(0, 31.8);
-  tl.fromTo(M, at(0.35, 0.72, 0.75, 540, 760), { ...at(0.4, 0.8, 0.8, 540, 760), duration: 4.5, ease: "none" }, 31.8);   // the bend
-  dim(1, 36.3);
-  tl.to(M, { ...at(0.18, 0.5, 1.1), duration: 10.0, ease: "none" }, 36.3);
-  dim(0, 46.4);
-  tl.to(M, { ...at({{W1X}}, {{W1Y}}, 1.6, 540, 640), duration: 1.8, ease: "power2.inOut" }, 46.5);                     // the fish
-  tl.to(M, { ...at({{W2X}}, {{W2Y}}, 1.6), duration: 1.4, ease: "power2.inOut" }, 50.0);                                // the ox
-  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.7), duration: 1.3, ease: "power2.inOut" }, 51.9);                                // the monsters
-  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.9), duration: 4.0, ease: "none" }, 53.2);
-  dim(1, 56.5);
-  tl.to(M, { ...at(0.5, 0.5, 0.45, 540, 820), duration: 1.2, ease: "power2.inOut" }, 59.4);
-  tl.fromTo("#bgc", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 36.2);
-  tl.to("#bgc", { opacity: 0, duration: 0.4 }, 46.2);
-  tl.to("#bgc", { opacity: 1, duration: 0.4 }, 59.4);
-  tl.to("#bgc", { opacity: 0, duration: 0.4 }, 62.1);
-  tl.fromTo("#bgci", { scale: 1.12 }, { scale: 1.0, duration: 26.3, ease: "none" }, 36.2);
+  dim(0, 28.4);
+  tl.fromTo(M, at(0.35, 0.72, 0.75, 540, 760), { ...at(0.4, 0.8, 0.8, 540, 760), duration: 4.9, ease: "none" }, 28.4);   // the bend
+  dim(1, 33.2);
+  tl.to(M, { ...at(0.18, 0.5, 1.1), duration: 11.6, ease: "none" }, 33.2);
+  dim(0, 44.8);
+  tl.to(M, { ...at({{W1X}}, {{W1Y}}, 1.6, 540, 640), duration: 1.8, ease: "power2.inOut" }, 44.9);                     // the fish
+  tl.to(M, { ...at({{W2X}}, {{W2Y}}, 1.6), duration: 1.3, ease: "power2.inOut" }, 48.9);                                // the ox
+  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.7), duration: 1.2, ease: "power2.inOut" }, 50.6);                                // the monsters
+  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.9), duration: 4.4, ease: "none" }, 51.8);
+  dim(1, 54.5);
+  tl.to(M, { ...at(0.5, 0.5, 0.45, 540, 820), duration: 1.2, ease: "power2.inOut" }, 56.8);
+  tl.to(M, { ...at(0.42, 0.86, 0.6, 540, 820), duration: 4.0, ease: "power2.inOut" }, 65.8);                           // back to the coast for the loop
+  dim(0, 69.0);
+  tl.fromTo("#bgc", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 33.2);
+  tl.to("#bgc", { opacity: 0, duration: 0.4 }, 44.7);
+  tl.to("#bgc", { opacity: 1, duration: 0.4 }, 56.8);
+  tl.to("#bgc", { opacity: 0, duration: 0.4 }, 59.5);
+  tl.fromTo("#bgci", { scale: 1.12 }, { scale: 1.0, duration: 26.7, ease: "none" }, 33.2);
   // cold open
   tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
   [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => tl.to("#cold", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 0.02 + i * 0.055));
   tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none" }, 0.98);
   tl.to("#s0", { opacity: 0, duration: 0.25 }, 1.04);
   tl.from("#hk2", { scale: 1.3, duration: 0.5, ease: E }, 0.25);
-  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, 3.45);
-  // hook
-  tl.from("#nos", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 3.85);
-  tl.to("#no", { opacity: 0, duration: 0.3 }, 4.75);
-  tl.from("#lost .ital", { opacity: 0, y: 16, duration: 0.4, ease: E }, 4.95);
-  tl.from("#lost .big", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 6.3);
-  tl.to("#lost", { opacity: 0, duration: 0.3 }, 8.05);
+  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, 3.55);
+  // 1513 vs 1820
+  tl.from("#y1513", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 4.6);
+  tl.fromTo("#y1513 .big", { scale: 1.0 }, { scale: 1.06, duration: 3.0, ease: "none" }, 4.6);
+  tl.to("#y1513", { opacity: 0, y: -30, duration: 0.3 }, 7.5);
+  tl.from("#y1820", { opacity: 0, y: 30, duration: 0.4, ease: E }, 7.7);
+  tl.from("#y1820 .big", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 8.25);
+  tl.to("#y1820", { opacity: 0, duration: 0.3 }, 9.75);
+  tl.from("#nos", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 9.95);
+  tl.to("#no", { opacity: 0, duration: 0.3 }, 10.85);
   // I. the find
-  tl.from("#y29", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 8.55);
-  tl.from("#tpt", { opacity: 0, y: 14, duration: 0.4, ease: E }, 10.7);
-  tl.from("#gz", { opacity: 0, y: 14, duration: 0.4, ease: E }, 12.3);
-  tl.to(["#y29","#tp","#gz"], { opacity: 0, y: -30, duration: 0.3 }, 14.0);
-  tl.from("#med", { opacity: 0, y: 70, duration: 0.55, ease: E }, 14.25);
-  tl.from("#pg", { opacity: 0, scale: 0, duration: 0.35, ease: "back.out(3)" }, 15.7);
-  tl.from("#pgt", { opacity: 0, x: -20, duration: 0.3, ease: E }, 15.85);
-  tl.from(["#pi","#pit"], { opacity: 0, duration: 0.3 }, 16.0);
-  tl.from("#y13t", { opacity: 0, scale: 1.4, duration: 0.35, ease: "back.out(2)" }, 16.6);
-  tl.to(["#med","#y13"], { opacity: 0, duration: 0.3 }, 18.0);
+  tl.from("#med", { opacity: 0, y: 70, duration: 0.55, ease: E }, 11.3);
+  tl.from("#pg", { opacity: 0, scale: 0, duration: 0.35, ease: "back.out(3)" }, 12.2);
+  tl.from("#pgt", { opacity: 0, x: -20, duration: 0.3, ease: E }, 12.35);
+  tl.from(["#pi","#pit"], { opacity: 0, duration: 0.3 }, 12.6);
+  tl.from("#y13t", { opacity: 0, scale: 1.4, duration: 0.35, ease: "back.out(2)" }, 12.65);
+  tl.to(["#med","#y13"], { opacity: 0, duration: 0.3 }, 14.9);
+  tl.from("#gz", { opacity: 0, y: 14, duration: 0.4, ease: E }, 13.9);
+  tl.to("#gz", { opacity: 0, duration: 0.3 }, 14.9);
+  tl.from("#y29", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 15.4);
+  tl.from("#tpt", { opacity: 0, y: 14, duration: 0.4, ease: E }, 17.6);
+  tl.to(["#y29","#tp"], { opacity: 0, y: -30, duration: 0.3 }, 19.2);
   // II. the legend
-  tl.from("#b1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 19.3);
-  tl.from("#b2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 20.4);
-  tl.to("#books", { opacity: 0, y: -30, duration: 0.3 }, 23.6);
-  tl.from("#lcs", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 23.95);
-  tl.to("#lc", { opacity: 0, duration: 0.3 }, 25.35);
+  tl.from("#b1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 19.8);
+  tl.from("#b2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 20.9);
+  tl.to("#books", { opacity: 0, y: -30, duration: 0.3 }, 23.7);
+  tl.from("#lcs", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 24.2);
+  tl.to("#lc", { opacity: 0, duration: 0.3 }, 25.4);
   // III. the ice
   tl.from("#globe", { opacity: 0, scale: 0.85, duration: 0.6, ease: E }, 25.7);
-  tl.fromTo("#globe svg", { rotation: -8 }, { rotation: 0, duration: 6.0, ease: "none", transformOrigin: "50% 50%" }, 25.7);
-  tl.from("#it1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 27.5);
-  tl.from("#it2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 30.2);
-  tl.to(["#globe","#iceT"], { opacity: 0, duration: 0.3 }, 31.6);
-  tl.from("#bendt", { opacity: 0, scale: 1.4, duration: 0.3, ease: "back.out(2)" }, 32.0);
-  tl.to("#arp", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 34.2);
-  tl.to("#arh", { opacity: 1, duration: 0.2 }, 35.05);
-  tl.to(["#arrow","#bend"], { opacity: 0, duration: 0.3 }, 36.1);
+  tl.fromTo("#globe svg", { rotation: -8 }, { rotation: 0, duration: 3.0, ease: "none", transformOrigin: "50% 50%" }, 25.7);
+  tl.from("#it1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 26.6);
+  tl.from("#it2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 27.0);
+  tl.to(["#globe","#iceT"], { opacity: 0, duration: 0.3 }, 28.3);
+  tl.from("#bendt", { opacity: 0, scale: 1.4, duration: 0.3, ease: "back.out(2)" }, 29.6);
+  tl.to("#arp", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 31.1);
+  tl.to("#arh", { opacity: 1, duration: 0.2 }, 31.95);
+  tl.to(["#arrow","#bend"], { opacity: 0, duration: 0.3 }, 33.0);
   // IV. the notes
-  tl.from("#wh", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 36.55);
-  tl.to("#wh", { opacity: 0, y: -30, duration: 0.3 }, 38.1);
-  tl.from("#n20", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 39.4);
-  tl.to("#n20", { opacity: 0, y: -30, duration: 0.3 }, 40.4);
-  tl.from("#col", { opacity: 0, y: 50, duration: 0.5, ease: E }, 40.6);
-  tl.fromTo("#col .med img", { scale: 1.0 }, { scale: 1.15, duration: 2.0, ease: "none" }, 40.6);
-  tl.to("#col", { opacity: 0, duration: 0.3 }, 42.45);
-  tl.from("#kr", { opacity: 0, y: 50, duration: 0.5, ease: E }, 42.65);
-  tl.fromTo("#kr", { scale: 1.0 }, { scale: 1.04, duration: 3.6, ease: "none" }, 42.65);
-  tl.from("#kr .v span", { opacity: 0, scale: 1.6, duration: 0.25, stagger: 0.25, ease: "back.out(2)" }, 44.5);
-  tl.to("#kr", { opacity: 0, duration: 0.3 }, 46.2);
+  tl.from("#wh", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 33.45);
+  tl.to("#wh", { opacity: 0, y: -30, duration: 0.3 }, 34.55);
+  tl.from("#n20", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 34.8);
+  tl.to("#n20", { opacity: 0, y: -30, duration: 0.3 }, 36.75);
+  tl.from("#col", { opacity: 0, y: 50, duration: 0.5, ease: E }, 36.95);
+  tl.fromTo("#col .med img", { scale: 1.0 }, { scale: 1.15, duration: 1.9, ease: "none" }, 36.95);
+  tl.to("#col", { opacity: 0, duration: 0.3 }, 38.8);
+  tl.from("#kr", { opacity: 0, y: 50, duration: 0.5, ease: E }, 38.95);
+  tl.fromTo("#kr", { scale: 1.0 }, { scale: 1.04, duration: 5.6, ease: "none" }, 38.95);
+  tl.from("#kr .v span", { opacity: 0, scale: 1.6, duration: 0.25, stagger: 0.3, ease: "back.out(2)" }, 43.0);
+  tl.to("#kr", { opacity: 0, duration: 0.3 }, 44.6);
   // V. the wonders
-  tl.fromTo("#w1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 48.8);
-  tl.to("#w1", { opacity: 0, duration: 0.25 }, 50.4);
-  tl.fromTo("#w2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 50.66);
-  tl.to("#w2", { opacity: 0, duration: 0.25 }, 52.4);
-  tl.fromTo("#w3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 52.64);
-  tl.to("#w3", { opacity: 0, duration: 0.25 }, 54.5);
-  tl.from("#hq", { opacity: 0, y: 50, scale: 0.94, duration: 0.6, ease: E }, 56.7);
-  tl.fromTo("#hq .q", { scale: 1.0 }, { scale: 1.05, duration: 2.6, ease: "none" }, 56.7);
-  tl.to("#hq", { opacity: 0, duration: 0.3 }, 59.3);
-  // the ending
-  tl.from("#mls", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 60.95);
-  tl.to("#ml", { opacity: 0, duration: 0.3 }, 62.05);
-  tl.from("#globe2", { opacity: 0, scale: 0.85, duration: 0.6, ease: E }, 62.3);
-  tl.fromTo("#globe2 svg", { rotation: -6 }, { rotation: 0, duration: 4.4, ease: "none", transformOrigin: "50% 50%" }, 62.3);
-  tl.fromTo("#gant2", { attr: { fill: "#f4f7f8" } }, { attr: { fill: "#5f8a4a" }, duration: 1.4, ease: "power1.inOut" }, 63.0);
-  tl.from("#g1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 64.2);
-  tl.from("#g2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 65.5);
-  tl.to(["#globe2","#green"], { opacity: 0, duration: 0.3 }, 66.7);
-  tl.from("#kl", { opacity: 0, y: 20, duration: 0.6, ease: E }, 66.95);
-  tl.fromTo("#kl .ital", { scale: 1.0 }, { scale: 1.06, duration: 2.9, ease: "none" }, 66.95);
-  tl.to("#kl", { opacity: 0, duration: 0.3 }, 69.75);
-  tl.from("#wk", { opacity: 0, scale: 1.3, duration: 0.5, ease: E }, 69.95);
-  tl.fromTo("#wk .big", { scale: 1.0 }, { scale: 1.06, duration: 2.4, ease: "none" }, 69.95);
-  tl.to("#wk", { opacity: 0, y: -30, duration: 0.3 }, 72.4);
-  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.6, ease: "back.out(1.7)" }, 72.6);
-  tl.to("#o1", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 73.3);
-  tl.to("#o2", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 73.85);
-  tl.from("#hint", { opacity: 0, y: 12, duration: 0.4, ease: E }, 74.6);
-  tl.to("#hint", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 75.4);
+  tl.fromTo("#w1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 47.78);
+  tl.to("#w1", { opacity: 0, duration: 0.25 }, 49.35);
+  tl.fromTo("#w2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 49.62);
+  tl.to("#w2", { opacity: 0, duration: 0.25 }, 51.25);
+  tl.fromTo("#w3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 51.52);
+  tl.to("#w3", { opacity: 0, duration: 0.25 }, 53.4);
+  tl.from("#hq", { opacity: 0, y: 50, scale: 0.94, duration: 0.6, ease: E }, 54.7);
+  tl.fromTo("#hq .q", { scale: 1.0 }, { scale: 1.05, duration: 2.0, ease: "none" }, 54.7);
+  tl.to("#hq", { opacity: 0, duration: 0.3 }, 56.7);
+  // the ending, looping back to the opening question
+  tl.from("#mls", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 58.5);
+  tl.to("#ml", { opacity: 0, duration: 0.3 }, 59.55);
+  tl.from("#globe2", { opacity: 0, scale: 0.85, duration: 0.6, ease: E }, 59.8);
+  tl.fromTo("#globe2 svg", { rotation: -6 }, { rotation: 0, duration: 4.2, ease: "none", transformOrigin: "50% 50%" }, 59.8);
+  tl.fromTo("#gant2", { attr: { fill: "#f4f7f8" } }, { attr: { fill: "#5f8a4a" }, duration: 1.4, ease: "power1.inOut" }, 60.4);
+  tl.from("#g1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 61.1);
+  tl.from("#g2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 62.6);
+  tl.to(["#globe2","#green"], { opacity: 0, duration: 0.3 }, 63.9);
+  tl.from("#kl", { opacity: 0, y: 20, duration: 0.6, ease: E }, 64.15);
+  tl.fromTo("#kl .ital", { scale: 1.0 }, { scale: 1.06, duration: 2.9, ease: "none" }, 64.15);
+  tl.to("#kl", { opacity: 0, duration: 0.3 }, 67.05);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 67.2);
+  tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.9);
+  tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 68.4);
   window.__timelines = window.__timelines || {};
   window.__timelines["main"] = tl;
 })();

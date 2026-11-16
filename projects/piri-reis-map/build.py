@@ -1,14 +1,14 @@
 """index.tpl.html + maps + word timings -> hf/index.html and hf/captions.js (times in the narration's timeline)."""
 import json, re
 from PIL import Image
-END = 78.0
+END = 69.8
 P = json.load(open('maps/mappts.json'))
 w, h = Image.open('hf/assets/piri_map.jpg').size
 MW = 2000; MH = round(MW * h / w)
 gx, gy = P['gelibolu']; ix, iy = P['istanbul']
 globe = open('maps/globe.svg.html').read()
 R = {
-    'END': END, 'S7D': round(END - 62.2, 2), 'MW': MW, 'MH': MH,
+    'END': END, 'S7D': round(END - 59.7, 2), 'MW': MW, 'MH': MH,
     'MED': open('maps/med.svg.html').read(), 'GLOBE': globe,
     'GLOBE2': globe.replace('id="globesvg"', 'id="globesvg2"').replace('id="gant"', 'id="gant2"').replace('id="gsam"', 'id="gsam2"'),
     'GX': gx, 'GY': gy, 'IX': ix, 'IY': iy, 'GTX': round(gx - 250), 'GTY': round(gy + 26), 'ITX': round(ix + 26), 'ITY': round(iy - 60),

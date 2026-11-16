@@ -1,95 +1,87 @@
 1
-00:00:00,000 --> 00:00:03,010
-Bu Osmanlı haritası Antarktika'yı
-gösterdiği için ünlü.
+00:00:00,000 --> 00:00:03,290
+Kaçımız Antarktika'da ne olduğundan
+gerçekten emin?
 
 2
-00:00:03,560 --> 00:00:04,570
-Göstermiyor.
+00:00:03,900 --> 00:00:09,510
+1513 tarihli bu harita, 1820'ye kadar
+kimsenin görmediği bir kıtayı
+gösteriyor...
 
 3
-00:00:04,900 --> 00:00:07,930
-Ama Columbus'un kayıp haritasının bir
-kopyasını saklıyor olabilir.
+00:00:09,920 --> 00:00:11,010
+öyle mi?
 
 4
-00:00:08,400 --> 00:00:13,930
-1929'da Topkapı Sarayı'nda ortaya çıktı:
-bir parça ceylan derisi.
+00:00:11,380 --> 00:00:14,830
+Osmanlı amirali Piri Reis onu ceylan
+derisine çizdi.
 
 5
-00:00:14,600 --> 00:00:17,870
-Piri Reis onu 1513'te, Gelibolu'da çizdi.
+00:00:15,200 --> 00:00:18,830
+1929'da Topkapı Sarayı'nda ortaya çıktı.
 
 6
-00:00:18,420 --> 00:00:25,110
-Sonra bazı yazarlar güney kıyısında
-Antarktika'yı gördü: buzlardan önce, kayıp
-bir uygarlığın çizdiği.
+00:00:19,720 --> 00:00:25,210
+Yazarlar güney kıyısında, buzlardan önce
+kayıp bir uygarlığın çizdiği Antarktika'yı
+gördü.
 
 7
-00:00:25,640 --> 00:00:31,450
-Ama Antarktika milyonlarca yıldır buz
-altında ve 1820'ye kadar kimse onu
-görmedi.
+00:00:25,720 --> 00:00:28,270
+Ama o buz milyonlarca yıllık.
 
 8
-00:00:32,000 --> 00:00:36,050
+00:00:28,660 --> 00:00:32,970
 Tarihçiler orada, deriye sığsın diye
 doğuya bükülmüş Güney Amerika'yı görüyor.
 
 9
-00:00:36,520 --> 00:00:38,070
-Peki bu haritayı nereden buldu?
+00:00:33,520 --> 00:00:34,250
+Kaynakları mı?
 
 10
-00:00:38,320 --> 00:00:42,110
-Notlarında yaklaşık yirmi harita sayıyor;
+00:00:34,780 --> 00:00:38,450
+Notları yaklaşık yirmi harita sayıyor;
 biri Columbus'un çizdiği.
 
 11
-00:00:42,680 --> 00:00:46,110
-Amcasının esiri, Columbus'la üç kez sefere
-çıkmıştı.
+00:00:39,000 --> 00:00:44,570
+Amcası, korsan Kemal Reis'in elinde
+Columbus'la üç kez sefere çıkmış bir esir
+vardı.
 
 12
-00:00:46,500 --> 00:00:54,250
-Onların harikalarını da kopyaladı: dev bir
-balığın üstündeki keşişler, tek boynuzlu
-öküzler, yedi karış boyunda canavarlar.
+00:00:45,000 --> 00:00:53,070
+Eski haritaların harikalarını da
+kopyaladı: dev bir balığın üstündeki
+keşişler, tek boynuzlu öküzler, yedi karış
+boyunda canavarlar.
 
 13
-00:00:54,660 --> 00:00:56,710
-Ve yanlarına bir not bile düştü...
+00:00:53,500 --> 00:00:54,590
+Bir not bile düştü...
 
 14
-00:00:56,760 --> 00:00:59,050
+00:00:54,760 --> 00:00:56,430
 "Ama zararsız canlardır."
 
 15
-00:00:59,720 --> 00:01:02,010
+00:00:57,060 --> 00:00:59,490
 Columbus'un kendi haritası hiçbir zaman
 bulunamadı.
 
 16
-00:01:02,320 --> 00:01:06,310
-Ama o buzun altında fosil ormanlar, hatta
+00:00:59,860 --> 00:01:03,550
+Ve o buzun altında fosil ormanlar, hatta
 dinozorlar yatıyor.
 
 17
-00:01:06,900 --> 00:01:09,430
+00:01:04,160 --> 00:01:06,730
 Antarktika hakkında hâlâ çok az şey
 biliyoruz...
 
 18
-00:01:09,980 --> 00:01:12,250
-o halde her şeyden nasıl bu kadar emin
-olabiliyoruz?
-
-19
-00:01:12,720 --> 00:01:14,390
-Orada hiç yaşayan oldu mu?
-
-20
-00:01:14,640 --> 00:01:16,970
-Aşağıya yaz.
+00:01:07,300 --> 00:01:09,830
+o halde nasıl bu kadar emin olabiliriz?
