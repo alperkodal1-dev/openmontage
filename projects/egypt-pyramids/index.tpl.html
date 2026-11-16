@@ -55,6 +55,7 @@
   .art .tint{position:absolute;inset:0;background:rgba(40,255,140,.16);mix-blend-mode:screen;opacity:0}
   .art .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(125,255,176,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(125,255,176,.18) 1px,transparent 1px);background-size:60px 60px;opacity:0}
   .art .ring{position:absolute;width:300px;height:300px;margin:-150px 0 0 -150px;border:4px solid var(--alien);border-radius:50%;box-shadow:0 0 30px rgba(125,255,176,.6);opacity:0}
+  .clue{position:absolute;left:0;right:0;top:340px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:46px;letter-spacing:8px;color:var(--alien);text-shadow:0 0 24px rgba(125,255,176,.6)}
   .arttag{position:absolute;left:0;right:0;top:1100px;display:flex;justify-content:center;z-index:3}
   .arttag .tag{font-size:40px}
 
@@ -62,7 +63,7 @@
   #n23{top:560px} #n23 .big{font-size:150px} #n23 .l{white-space:nowrap} #n23 .l{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:10px;color:var(--gold)}
   #tons{top:1060px} #tons .tag{font-size:40px}
   #north{position:absolute;left:290px;top:440px;width:500px;height:500px}
-  #northT{top:1000px} #northT .tag{font-size:40px}
+  #northT{top:1000px} #northT .tag{font-size:44px}
   #bc{top:560px} #bc .big{font-size:170px} #bc .ital{font-size:58px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
   /* the visitors */
   #y68{top:520px} #y68 .big{font-size:200px}
@@ -90,7 +91,7 @@
   .gang .mk img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
   #g2{top:430px}
   .gang .nm{font-family:'Cinzel';font-weight:900;font-size:76px;letter-spacing:3px;line-height:1.05}
-  .gang .d{margin-top:14px;font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:6px;color:var(--gold)}
+  .gang .d{margin-top:14px;font-family:'Cinzel';font-weight:700;font-size:34px;letter-spacing:6px;color:var(--gold)}
   .cart{display:inline-block;margin:0 auto 22px;padding:10px 34px;border:4px solid var(--gold);border-radius:60px;font-size:64px;color:var(--gold2);font-family:'Noto Serif Hebrew'}
   /* the logbook */
   #pap{position:absolute;left:110px;width:860px;top:470px;height:560px;background:linear-gradient(90deg,#cdb27a,#e3cf9d 20%,#d8c08a 50%,#e6d3a2 80%,#c9ac72);border:2px solid #8a6a36;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:rotate(-2deg);overflow:hidden}
@@ -99,7 +100,7 @@
   #pap .s{position:absolute;left:0;right:0;top:160px;text-align:center;font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-size:52px;color:#4a3416}
   #pap .lines{position:absolute;left:80px;right:80px;top:270px;display:flex;flex-direction:column;gap:26px}
   #pap .lines span{display:block;height:12px;background:rgba(40,25,8,.55);border-radius:6px}
-  #papT{top:1090px;gap:16px} #papT .tag{font-size:36px}
+  #papT{top:1090px;gap:16px} #papT .tag{font-size:40px}
   /* the empty tomb */
   #empty{top:1060px} #empty .stamp{font-size:76px}
   #kh{position:absolute;left:0;right:0;top:520px;display:flex;flex-direction:column;align-items:center}
@@ -125,11 +126,13 @@
   <section id="b5" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="5"><img id="b5i" src="assets/giza.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b5d"></div></section>
   <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b6d"></div></section>
 
+  <section id="b7" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="21"><img id="b7i" src="assets/legray.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b7d"></div></section>
+  <section id="b8" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="22"><img id="b8i" src="assets/bonfils.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b8d"></div></section>
   <div id="glow" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
   <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
   <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="9"></div>
   <div id="caps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="10"></div>
-  <div id="chaps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="11">
+  <div id="chaps" style="display:none" class="clip" data-start="0" data-duration="{{END}}" data-track-index="11">
     <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE VISITORS</div></div>
     <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">THE CLUES</div></div>
     <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THE BUILDERS</div></div>
@@ -180,19 +183,19 @@
   <!-- II. the clues: one artifact at a time -->
   <section id="s3" class="clip scene" data-start="22.6" data-duration="9.9" data-track-index="15">
     <div class="art" id="a1"><img src="assets/abydos.jpg" alt="" id="a1i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RAX}}%;top:{{RAY}}%"></div><div class="scan"></div></div>
-    <div class="arttag" id="a1t"><div class="tag al">ABYDOS · “A HELICOPTER”</div></div>
+    <div class="clue" id="c1">CLUE 1/3</div><div class="arttag" id="a1t"><div class="tag al">ABYDOS · “A HELICOPTER”</div></div>
     <div class="art" id="a2"><img src="assets/dendera.jpg" alt="" id="a2i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RDX}}%;top:{{RDY}}%"></div><div class="scan"></div></div>
-    <div class="arttag" id="a2t"><div class="tag al">DENDERA · “A GIANT BULB”</div></div>
+    <div class="clue" id="c2">CLUE 2/3</div><div class="arttag" id="a2t"><div class="tag al">DENDERA · “A GIANT BULB”</div></div>
     <div class="art" id="a3"><img src="assets/saqqara.jpg" alt="" id="a3i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:50%;width:520px;height:520px;margin:-260px 0 0 -260px"></div><div class="scan"></div></div>
-    <div class="arttag" id="a3t"><div class="tag al">SAQQARA · “A GLIDER”</div></div>
+    <div class="clue" id="c3">CLUE 3/3</div><div class="arttag" id="a3t"><div class="tag al">SAQQARA · “A GLIDER”</div></div>
   </section>
 
   <section id="s4" class="clip scene" data-start="32.3" data-duration="8.1" data-track-index="16">
     <div class="row" id="pp"><div class="stamp al" id="pps">A POWER PLANT?</div></div>
     <svg id="sg" viewBox="0 0 960 820">
-      <polygon id="pyr" points="120,760 480,400 840,760" fill="rgba(217,178,106,.18)" stroke="#d9b26a" stroke-width="5"/>
+      <polygon id="pyr" points="120,760 480,400 840,760" fill="rgba(217,178,106,.32)" stroke="#f1d49a" stroke-width="7"/>
       <rect x="455" y="590" width="50" height="34" fill="#0a1417" stroke="#d9b26a" stroke-width="3"/>
-      <line id="shaft" x1="505" y1="600" x2="900" y2="190" stroke="#7dffb0" stroke-width="7" stroke-linecap="round" stroke-dasharray="580" stroke-dashoffset="580"/>
+      <line id="shaft" x1="505" y1="600" x2="900" y2="190" stroke="#7dffb0" stroke-width="10" stroke-linecap="round" style="filter:drop-shadow(0 0 12px #7dffb0)" stroke-dasharray="580" stroke-dashoffset="580"/>
       <g id="belt"><circle cx="830" cy="230" r="11" fill="#fff"/><circle cx="880" cy="190" r="13" fill="#fff"/><circle cx="930" cy="150" r="11" fill="#fff"/></g>
     </svg>
     <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION, 2500 BC</div></div>
@@ -201,7 +204,7 @@
   <!-- III. the builders -->
   <section id="s5" class="clip scene" data-start="40.3" data-duration="13.3" data-track-index="17">
     <div class="center" id="y90"><div class="big">1990</div></div>
-    <div class="row" id="ph53" style="top:1180px"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
+    <div class="row" id="ph53" style="top:1180px;opacity:0"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
     <div class="row" id="horse"><div class="tag" id="horset">A HORSE TRIPS ON A BURIED WALL</div></div>
     <div class="row" id="bk"><div class="stamp" id="bks">BY THEIR KING'S PYRAMID</div></div>
     <div class="center" id="gangs"><div class="ital">their work gangs<br>signed the stones</div></div>
@@ -226,7 +229,7 @@
     <div class="row" id="empty"><div class="stamp" id="emptys">EMPTY</div></div>
     <div id="kh"><div class="cart">KHUFU</div></div>
     <div class="row" id="nf"><div class="stamp" id="nfs">NEVER FOUND</div></div>
-    <div class="center" id="wk"><div class="ital">who knows…</div></div>
+    
     <div id="poll">
       <div class="qq">Did the Egyptians get help from an alien race?</div>
       <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
@@ -268,7 +271,10 @@
   // b1 pyramid: hook, power plant, loop
   kb("#b1i", 0, 4.3, 1.15, 1.05);
   dim("#b1", 1, 4.2);
-  tl.to("#b1", { opacity: 0, duration: 0.4 }, 11.2);
+  tl.to("#b1", { opacity: 0, duration: 0.3 }, 6.3);
+  show("#b7", 4.2, 6.6); kb("#b7i", 4.2, 2.4, 1.05, 1.2); dim("#b7", 1, 4.2);
+  show("#b6", 6.3, 8.6); kb("#b6i", 6.3, 2.3, 1.0, 1.15); dim("#b6", 1, 6.3);
+  show("#b8", 8.3, 11.6); kb("#b8i", 8.3, 3.3, 1.05, 1.2, 0, -40); dim("#b8", 1, 8.3);
   tl.to("#b1", { opacity: 1, duration: 0.4 }, 32.2); dim("#b1", 0, 32.2);
   kb("#b1i", 32.2, 3.0, 1.0, 1.12);
   tl.to("#b1", { opacity: 0, duration: 0.4 }, 35.0);
@@ -288,10 +294,10 @@
   // b5 Giza: the gangs, the logbook
   show("#b5", 48.2, 58.2); kb("#b5i", 48.2, 10.0, 1.05, 1.18); dim("#b5", 1, 48.2);
   // b6 King's Chamber: empty coffin, Khufu
-  show("#b6", 58.1, 63.4); kb("#b6i", 58.1, 5.3, 1.0, 1.14);
+  dim("#b6", 0, 58.1); show("#b6", 58.1, 63.4); kb("#b6i", 58.1, 5.3, 1.0, 1.14);
   dim("#b6", 1, 60.9);
   // alien glow in the fantastical passages
-  [[14.2, 22.6], [22.8, 40.2], [64.6, 68.2]].forEach(([a, b]) => { tl.to("#glow", { opacity: 1, duration: 0.6 }, a); tl.to("#glow", { opacity: 0, duration: 0.5 }, b - 0.5); });
+  [[14.2, 22.6], [22.8, 40.2], [63.3, 67.7]].forEach(([a, b]) => { tl.to("#glow", { opacity: 1, duration: 0.6 }, a); tl.to("#glow", { opacity: 0, duration: 0.5 }, b - 0.5); });
 
   // cold open
   tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
@@ -336,7 +342,8 @@
     tl.fromTo(id + " .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, a + 0.6);
     tl.fromTo(id + " .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, a + 0.9);
     tl.from(id + "t", { opacity: 0, y: 16, duration: 0.3, ease: E }, a + 0.95);
-    tl.to([id, id + "t"], { opacity: 0, duration: 0.25 }, b - 0.25);
+    tl.from("#c" + n, { opacity: 0, y: -14, duration: 0.3, ease: E }, a + 0.1);
+    tl.to([id, id + "t", "#c" + n], { opacity: 0, duration: 0.25 }, b - 0.25);
   };
   art(1, 22.75, 24.75); art(2, 24.8, 28.05); art(3, 28.1, 32.35);
   // power plant and stargate
@@ -351,6 +358,7 @@
   tl.to("#belt circle", { attr: { r: 16 }, duration: 0.3, yoyo: true, repeat: 3 }, 39.1);
   tl.to(["#sg","#sgT"], { opacity: 0, duration: 0.3 }, 40.0);
   // III. the builders
+  tl.to("#ph53", { opacity: 1, duration: 0.3 }, 40.6); tl.to("#ph53", { opacity: 0, duration: 0.3 }, 47.9);
   tl.from("#y90", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 40.9);
   tl.from("#horset", { opacity: 0, y: 14, duration: 0.35, ease: E }, 42.3);
   tl.fromTo("#horse", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 42.7);
@@ -379,9 +387,7 @@
   tl.from("#kh", { opacity: 0, scale: 1.2, duration: 0.45, ease: E }, 61.15);
   tl.from("#nfs", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 61.85);
   tl.to(["#kh","#nf"], { opacity: 0, duration: 0.3 }, 63.0);
-  tl.from("#wk", { opacity: 0, y: 20, duration: 0.5, ease: E }, 63.3);
-  tl.to("#wk", { opacity: 0, duration: 0.3 }, 64.4);
-  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 64.6);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 63.3);
   tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 66.4);
   tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 66.9);
   window.__timelines = window.__timelines || {};

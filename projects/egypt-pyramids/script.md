@@ -35,3 +35,14 @@ Who really built the Great Pyramid... and what was it for? Two point three milli
 Chamber southern shaft aimed at Orion's belt c. 2500 BC (Badawy & Trimble 1964) read as a "stargate".
 
 Who really built the Great Pyramid... and what was it for? Two point three million blocks, some heavier than a truck, lined up with true north almost perfectly. Four and a half thousand years ago. In 1968, a Swiss writer gave his answer: astronauts from the stars. And the clues seemed carved everywhere. At Abydos, a helicopter. At Dendera, a snake glowing inside a giant bulb. At Saqqara, a wooden bird with the wings of a glider. Some claim the pyramid was a power plant. Others, a stargate: one shaft inside points straight at Orion's belt. Then, in 1990, a horse tripped on a buried wall. Beneath it lay the builders, buried beside their king. Their gangs signed the stones: Friends of Khufu. Drunkards of Menkaure. A papyrus logbook even tracks the stone boats to Giza. And yet, the king's coffin was empty. Khufu has never been found. So who knows... were the Egyptians getting help from an alien race?
+
+## v4 (jury + vidIQ, NOT voiced yet; needs ~25 credits for a new George read)
+
+155 words (vidIQ count), ~66 s at 141 wpm. Opens on a concrete object (the Abydos "helicopter") so the first second
+has stop-power; the alien legend fills the first 25 s; every claim attributed; the last line ("...alien race?") loops
+into "This carving...". Fact fixes from the Egyptologist juror: "his followers" (the Abydos, Dendera and Saqqara readings
+came after 1968), "what looks like a bulb", "about 2.3 million", "once aimed at" Orion (c. 2500 BC), "the story goes"
+(Hawass's horse anecdote), "in the shadow of their king's pyramid", "Next door" (Menkaure's gang worked on the third
+pyramid), "boats of limestone", "sarcophagus was found empty", "Khufu's body".
+
+This carving in an Egyptian temple seems to show a helicopter. In 1968, a Swiss writer said astronauts from the stars had visited Egypt. His followers saw more clues. At Dendera, a snake in what looks like a giant bulb. At Saqqara, a wooden bird with the wings of a glider. And the Great Pyramid: about two point three million blocks, aligned to true north. Some claim it was a power plant. Others, a stargate: one shaft once aimed at Orion's belt. Then, in 1990, the story goes, a horse tripped on a buried wall. Beneath it lay the builders, in the shadow of their king's pyramid. Their gangs signed the stones: Friends of Khufu. Next door, Drunkards of Menkaure. A papyrus logbook even tracks boats of limestone to Giza. Yet the king's sarcophagus was found empty. Khufu's body has never been found. So who knows... were the Egyptians getting help from an alien race?
