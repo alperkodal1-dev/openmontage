@@ -14,3 +14,21 @@
   the oldest inscribed papyri known.
 - (Possible extra) Tomb of Djehutihotep, Deir el-Bersha, c. 1850 BC: colossus on a sledge, water poured on the sand;
   Fall et al., Physical Review Letters 2014 (wet sand halves the pulling force).
+
+## v3 additions
+- Granite beams over the King's Chamber, about 25-80 t: Lehner, *The Complete Pyramids*.
+- Alignment to true north within about 3-4 arcminutes (~0.05°): Spence, Nature 408 (2000).
+- "Power plant": Christopher Dunn, *The Giza Power Plant* (1998). Not accepted by Egyptologists.
+- King's Chamber southern shaft aimed at Orion's belt c. 2500 BC: Trimble & Badawy (1964); the Pyramid Texts
+  link the dead king with Orion/Osiris (Sah).
+- Sarcophagus found empty (Arabic accounts of al-Ma'mun's entry, 9th c.); Khufu's mummy has never been found.
+
+## Image credits (Wikimedia Commons)
+- "Hieroglif z Abydos.jpg" (Abydos, Temple of Seti I): public domain (Olek95).
+- "Relief von Dendera li.jpg": CC BY-SA 2.5.
+- "Photo 2-plane side view1.jpg" (Saqqara bird): CC BY-SA 3.0, Dawoudk.
+- "Great Pyramid of Giza - Pyramid of Khufu.jpg": CC BY-SA 4.0, Dvdzee.
+- "Johannes Hevelius - Uranographia (1687) - Orion.jpg": public domain.
+- "Chambre-roi-grande-pyramide.jpg" (King's Chamber): free use, Jon Bodsworth.
+- Egypt map: Natural Earth (land 50m, rivers 10m), public domain.
+- Music: generated with vidIQ (royalty-free). Narration: vidIQ voiceover, George.

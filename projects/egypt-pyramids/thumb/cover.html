@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/fonts.css"><style>
+html,body{margin:0;background:#05090a}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(ellipse at 50% 30%,#0d1b2e 0%,#04070d 70%)}
+#stars i{position:absolute;border-radius:50%;background:#fff}
+#pw{position:absolute;inset:0;clip-path:polygon(492px 722px,1080px 1192px,1080px 1920px,0 1920px,0 1168px)}
+#pyr{position:absolute;left:-760px;top:640px;width:2600px;filter:sepia(.25) contrast(1.15) brightness(.8) saturate(.95)}
+#beam{position:absolute;left:342px;top:-60px;width:300px;height:800px;background:linear-gradient(0deg,rgba(125,255,176,.85),rgba(125,255,176,.15) 70%,rgba(125,255,176,0));clip-path:polygon(44% 100%,56% 100%,100% 0,0 0);filter:blur(6px);mix-blend-mode:screen}
+#halo{position:absolute;left:292px;top:600px;width:400px;height:260px;border-radius:50%;background:radial-gradient(ellipse,rgba(125,255,176,.7),rgba(125,255,176,0) 70%);mix-blend-mode:screen}
+#shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,14,.9) 0,rgba(6,12,14,.6) 420px,rgba(6,12,14,0) 560px),linear-gradient(0deg,rgba(6,12,14,.95) 0,rgba(6,12,14,0) 460px)}
+.h{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;letter-spacing:4px;line-height:1.02;text-shadow:0 6px 30px rgba(0,0,0,.9)}
+#h1{top:150px;font-size:130px;color:#efe6d2}
+#h2{top:300px;font-size:150px;color:#7dffb0;text-shadow:0 0 40px rgba(125,255,176,.6),0 6px 30px rgba(0,0,0,.9)}
+#tag{position:absolute;left:0;right:0;top:1650px;display:flex;justify-content:center}
+#tag div{font-family:'Cinzel';font-weight:900;font-size:60px;letter-spacing:5px;color:#ffe9c4;background:#9c2f1f;padding:14px 34px;transform:rotate(-3deg);box-shadow:0 10px 30px rgba(0,0,0,.6)}
+</style></head><body><div id="c">
+<div id="stars"></div><div id="beam"></div><div id="pw"><img id="pyr" src="pyr.jpg"></div><div id="halo"></div><div id="shade"></div>
+<div class="h" id="h1">BUILT BY</div><div class="h" id="h2">ALIENS?</div>
+<div id="tag"><div>THE GREAT PYRAMID</div></div>
+</div><script>
+let s=11;const r=()=>(s=(s*16807)%2147483647)/2147483647;const st=document.getElementById('stars');
+for(let i=0;i<220;i++){const e=document.createElement('i');const z=r()<.1?4:2;e.style.cssText=`left:${r()*1080}px;top:${r()*900}px;width:${z}px;height:${z}px;opacity:${.3+r()*.7}`;st.appendChild(e)}
+</script></body></html>
