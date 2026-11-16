@@ -2,3 +2,5 @@ out/work-*/
 out/render.log
 hf/.hyperframes/
 .hyperframes/
+out/.*hf-transaction*/
+out/visual.mp4
