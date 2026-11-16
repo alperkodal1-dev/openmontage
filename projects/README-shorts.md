@@ -6,6 +6,8 @@ Two vertical (1080x1920) history Shorts for the Unsealed History channel, built 
 |---|---|---|---|
 | `atlantis-story/` | https://www.youtube.com/watch?v=_PpRv_GMMlk | `atlantis-story/out/atlantis_story_v2_strings.mp4` | `atlantis-story/out/atlantis_tr.srt` |
 | `noah-ark/` | https://www.youtube.com/watch?v=68mjjXGN5EI | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
+| `piri-reis-map/` | https://www.youtube.com/watch?v=5SXAmr8qgFM | `piri-reis-map/out/piri_reis_v9_loop.mp4` | `piri-reis-map/out/piri_reis_tr.srt` |
+| `columbus-flat-earth/` | not published yet | `columbus-flat-earth/out/columbus_final.mp4` | `columbus-flat-earth/out/columbus_tr.srt` |
 
 ## Shared look
 
@@ -58,3 +60,19 @@ The map (`hf/map.svg.html`) is drawn from Natural Earth lakes and rivers (public
 - Plato and Solon busts, Josephus portrait (Rijksmuseum, CC0): Wikimedia Commons.
 - Mount Ararat photo by Dosseman; Mount Cudi photos by KediÇobanı and M. Abokaram (Wikimedia Commons, CC BY-SA 4.0).
 - Music: "Cinematic Strings" by AtlasAudio (Pixabay Content License), not stored here; it is mixed into the final audio.
+
+## Piri Reis map
+
+"Did Someone Map Antarctica Before the Ice?" Narration: vidIQ voiceover, George (`audio/vo_v3.mp3`, script v9 in
+`script.md`). The Short loops: the last line ("so how can we be so sure?") leads back into the opening question, and
+the camera returns to the map's southern coast. Music: a generated mysterious orchestral score (`audio/music_v1.wav`,
+mixed by `audio/mix.py`), lifting in the fantastical passages. `audio/signature_piano.wav` is the channel's signature
+piano piece, tried as an alternative.
+
+```bash
+python3 tools/prep_map.py <scan.jpg> hf/assets/piri_map.jpg   # white surround -> dark ground
+python3 build.py && python3 make_srt.py
+cd hf && npx hyperframes render --quality high --output ../out/visual.mp4
+```
+
+Map scan: Piri Reis map, 1513 (Wikimedia Commons, public domain). Globe and Mediterranean maps from Natural Earth.
