@@ -17,3 +17,12 @@ Poll card on the last line: "The Egyptians had help from another world" REAL / M
 ## Spoken text (for the voiceover)
 
 Who really built the Great Pyramid? Two point three million stone blocks, raised four and a half thousand years ago. In 1968, a Swiss writer gave an answer: visitors from the stars. And the clues seemed to be everywhere. At Abydos, a carving that looks like a helicopter. At Dendera, a snake inside what looks like a glowing bulb. At Saqqara, a wooden bird shaped like a glider. Some say the pyramids even mirror Orion's belt. Then, in 1990, a horse stumbled on a buried wall beside the pyramids. Beneath it lay the builders themselves, buried in their own tombs, in the shadow of their king. Not slaves. Their gangs left names on the stones: Friends of Khufu. Drunkards of Menkaure. In 2013, a desert cave gave up the oldest papyri ever found: the logbook of Merer, shipping limestone to Giza. So were they simply human... or did the Egyptians have help from another world?
+
+## v2 (vidIQ script guidance; alien analogies up front, "what was it for?" curiosity, empty-coffin twist)
+
+156 words (vidIQ count), ~66 s at 141 wpm. Loops: "...help from an alien race?" -> "Who really built the Great Pyramid...".
+Poll card: "The Egyptians had help from an alien race" REAL / MYTH.
+New facts: Great Pyramid aligned to true north within a few arcminutes; the King's Chamber sarcophagus was found
+empty (Arab accounts of al-Ma'mun's entry, 9th c.); Khufu's mummy has never been found.
+
+Who really built the Great Pyramid... and what was it for? Two point three million blocks, lined up with true north almost perfectly, four and a half thousand years ago. In 1968, a Swiss writer offered an answer: ancient astronauts. And Egypt seemed full of clues. At Abydos, a carving shaped like a helicopter. At Dendera, a snake glowing inside what looks like a giant bulb. At Saqqara, a wooden bird with the wings of a glider. Some say the three pyramids copy Orion's belt. Then, in 1990, a horse tripped on a buried wall. Beneath it lay the builders, buried beside their king. Their gangs signed the stones: Friends of Khufu. Drunkards of Menkaure. In a desert cave, the oldest papyri ever found: a logbook of shipping stone to Giza. And yet, the king's stone coffin was empty. Khufu has never been found. So who knows... were the Egyptians getting help from an alien race?
