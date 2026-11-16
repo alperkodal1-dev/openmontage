@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Atlantis Story</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  :root{
+    --ink:#0a1417; --ink2:rgba(8,16,19,.78); --bone:#efe6d2; --gold:#d9b26a; --gold2:#f1d49a; --sea:#7fb7b9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#000;}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;
+        font-family:'Manrope',sans-serif;color:var(--bone)}
+  .clip{position:absolute;inset:0}
+  .layer{position:absolute;inset:0;width:1080px;height:1920px}
+  #bg{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+
+  /* caption plate */
+  #plate{background:linear-gradient(180deg,rgba(6,12,14,0) 0px,rgba(6,12,14,.93) 95px,rgba(6,12,14,.93) 290px,rgba(6,12,14,0) 380px);
+         top:1235px;height:380px;bottom:auto}
+  .cap{position:absolute;left:80px;right:80px;top:1395px;height:150px;display:flex;align-items:center;justify-content:center;
+       flex-wrap:wrap;text-align:center;font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.5px;opacity:0;
+       text-shadow:0 3px 18px rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em;color:var(--bone)}
+
+  /* chapter label */
+  .chap{position:absolute;top:268px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0}
+  .chap .num{font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:10px;color:var(--gold)}
+  .chap .name{font-family:'Cinzel';font-weight:500;font-size:28px;letter-spacing:8px;color:var(--bone);opacity:.85}
+  .chap .rule{display:block;width:120px;height:2px;background:var(--gold);transform-origin:50% 50%}
+
+  .serif{font-family:'Cinzel'}
+  .ital{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+  .center{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+
+  /* S1 title */
+  #s1 .ttl{top:610px}
+  #s1 .word{display:flex;gap:4px}
+  #s1 .word span{display:block;font-family:'Cinzel';font-weight:900;font-size:150px;letter-spacing:6px;color:var(--bone);
+                 text-shadow:0 6px 40px rgba(0,0,0,.55)}
+  #s1 .rule{display:block;width:620px;height:3px;margin-top:18px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  #s1 .sub{margin-top:30px;font-size:58px;color:var(--gold2)}
+
+  /* S2 no map */
+  #s2 .list{top:520px;gap:46px}
+  #s2 .row{position:relative;display:flex;flex-direction:column;align-items:center}
+  #s2 .no{font-family:'Cinzel';font-size:30px;letter-spacing:10px;color:var(--gold)}
+  #s2 .big{font-family:'Cinzel';font-weight:700;font-size:104px;letter-spacing:6px;line-height:1.05}
+  #s2 .strike{position:absolute;left:-30px;right:-30px;top:96px;height:7px;background:var(--gold);transform-origin:0 50%;
+              box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+
+  /* S3 plato nameplate */
+  #s3 .plate{top:1000px}
+  #s3 .frame{position:relative;padding:26px 70px 22px;border:2px solid var(--gold);background:rgba(8,14,16,.72);
+             display:flex;flex-direction:column;align-items:center}
+  #s3 .frame:before,#s3 .frame:after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--gold);transform:rotate(45deg);top:50%;margin-top:-10px;background:var(--ink)}
+  #s3 .frame:before{left:-11px} #s3 .frame:after{right:-11px}
+  #s3 .nm{font-family:'Cinzel';font-weight:900;font-size:120px;letter-spacing:16px;line-height:1}
+  #s3 .meta{margin-top:10px;font-size:44px;color:var(--gold2)}
+  #s3 .one{top:440px;font-size:64px;color:var(--bone)}
+  #s3 .one b{font-family:'Cinzel';font-style:normal;font-weight:900;color:var(--gold);font-size:88px;margin:0 10px}
+
+  /* S4 360 BC */
+  #s4 .yr{top:470px}
+  #s4 .c{font-size:54px;color:var(--gold2)}
+  #s4 .n{font-family:'Cinzel';font-weight:900;font-size:230px;line-height:1;letter-spacing:4px;text-shadow:0 8px 50px rgba(0,0,0,.6)}
+  #s4 .bc{font-family:'Cinzel';font-weight:700;font-size:64px;letter-spacing:22px;color:var(--gold);margin-top:6px}
+  #s4 .books{position:absolute;top:900px;left:0;right:0;display:flex;justify-content:center;gap:34px}
+  #s4 .book{width:390px;padding:30px 10px 26px;border:2px solid var(--gold);background:rgba(8,14,16,.74);text-align:center}
+  #s4 .book .k{font-family:'Cinzel';font-size:24px;letter-spacing:8px;color:var(--gold)}
+  #s4 .book .t{font-family:'Cinzel';font-weight:900;font-size:62px;letter-spacing:5px;margin-top:6px}
+
+  /* S5 chain */
+  #s5 .card{position:absolute;left:110px;width:860px;top:420px;height:850px;background:rgba(7,13,15,.8);
+            border:1px solid rgba(217,178,106,.55);padding:44px 56px}
+  #s5 .head{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:6px;text-align:center;color:var(--bone)}
+  #s5 .head i{display:block;font-family:'Cormorant Garamond';font-weight:500;font-size:40px;letter-spacing:0;color:var(--gold2);margin-top:4px}
+  #s5 .nodes{position:absolute;left:56px;right:56px;top:180px}
+  #s5 .node{position:absolute;left:0;right:0;height:130px;display:flex;align-items:center;gap:36px}
+  #s5 .med{position:relative;flex:0 0 124px;width:124px;height:124px;border-radius:50%;border:3px solid var(--gold);
+           background:#14201f;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  #s5 .med img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.45) contrast(1.1)}
+  #s5 .med svg{width:66px;height:66px}
+  #s5 .med .dots{display:flex;gap:12px}
+  #s5 .med .dots i{display:block;width:16px;height:16px;border-radius:50%;background:var(--gold)}
+  #s5 .txt .a{font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px;line-height:1.05}
+  #s5 .txt .b{font-family:'Cormorant Garamond';font-style:italic;font-size:38px;color:var(--gold2)}
+  #s5 .link{position:absolute;left:60px;width:4px;background:var(--gold);transform-origin:50% 0}
+
+  /* S6 map */
+  #s6 .mapwrap{position:absolute;left:60px;top:430px;width:960px;height:639px}
+  #s6 .map{position:absolute;inset:0;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.65);overflow:hidden;background:#d7c7a3}
+  #s6 .map img{width:100%;height:100%;object-fit:cover;filter:sepia(.35) contrast(1.05)}
+  #s6 .ring{position:absolute;width:150px;height:150px;border-radius:50%;border:5px solid #9c2f1f;left:375px;top:185px}
+  #s6 .pin{position:absolute;display:flex;align-items:center;gap:12px}
+  #s6 .pin .dot{display:block;width:26px;height:26px;border-radius:50%;background:#9c2f1f;border:3px solid #fff4dc}
+  #s6 .tag{background:var(--ink);color:var(--bone);font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:3px;padding:10px 16px;white-space:nowrap}
+  #s6 .route{position:absolute;left:520px;top:262px;width:330px;height:6px;background:repeating-linear-gradient(90deg,#9c2f1f 0 18px,transparent 18px 30px);transform-origin:0 50%;transform:rotate(-4deg)}
+  #s6 .ttl{top:1110px}
+  #s6 .ttl .a{font-family:'Cinzel';font-weight:900;font-size:66px;letter-spacing:6px;text-align:center}
+  #s6 .ttl .b{font-size:46px;color:var(--gold2)}
+  #s6 .flood{position:absolute;left:90px;top:400px;width:900px;height:860px;overflow:hidden;border:3px solid var(--gold);opacity:0}
+  #s6 .flood img{position:absolute;left:0;top:-120px;width:900px;height:1173px;object-fit:cover;filter:grayscale(1) sepia(.35) contrast(1.15) brightness(.92)}
+  #s6 .daynight{position:absolute;left:0;right:0;top:470px;display:flex;flex-direction:column;align-items:center}
+  #s6 .daynight .l{font-family:'Cinzel';font-weight:900;font-size:120px;letter-spacing:8px;line-height:1.05;text-shadow:0 8px 40px rgba(0,0,0,.8)}
+  #s6 .daynight .amp{font-size:76px;color:var(--gold2)}
+  #s6 .water{position:absolute;left:0;right:0;top:1300px;height:620px;background:linear-gradient(180deg,rgba(40,90,96,.0),rgba(18,48,54,.85) 30%,#081417);transform-origin:50% 100%}
+
+  /* S7 gap */
+  #s7 .cnt{top:430px}
+  #s7 .num{font-family:'Cinzel';font-weight:900;font-size:220px;line-height:1;letter-spacing:2px;text-shadow:0 8px 50px rgba(0,0,0,.7)}
+  #s7 .lbl{font-family:'Cinzel';font-weight:700;font-size:46px;letter-spacing:8px;color:var(--gold2);margin-top:10px;text-shadow:0 2px 6px rgba(0,0,0,.9),0 0 30px rgba(0,0,0,.7)}
+  #s7 .tl{position:absolute;left:110px;width:860px;top:880px;height:300px}
+  #s7 .line{position:absolute;left:20px;right:20px;top:60px;height:4px;background:var(--gold);transform-origin:0 50%}
+  #s7 .gap{position:absolute;left:250px;width:360px;top:52px;height:20px;background:repeating-linear-gradient(90deg,var(--ink) 0 14px,transparent 14px 26px)}
+  #s7 .end{position:absolute;top:44px;width:36px;height:36px;border-radius:50%;background:var(--gold);border:5px solid var(--ink)}
+  #s7 .lab{text-shadow:0 2px 8px rgba(0,0,0,.9);position:absolute;top:110px;width:300px;font-family:'Cinzel';font-weight:700;font-size:34px;letter-spacing:2px;line-height:1.25}
+  #s7 .lab i{display:block;font-family:'Cormorant Garamond';font-weight:500;font-size:34px;letter-spacing:0;color:var(--gold2)}
+  #s7 .stamp{position:absolute;left:200px;width:460px;top:-58px;white-space:nowrap;text-align:center;font-family:'Cinzel';font-weight:900;font-size:30px;letter-spacing:4px;
+             color:#ffe9c4;background:#9c2f1f;padding:10px 0;transform:rotate(-3deg)}
+
+  /* S8 verdict */
+  #s8 .q{top:540px}
+  #s8 .stampbig{font-family:'Cinzel';font-weight:900;font-size:128px;letter-spacing:8px;color:var(--gold);border:7px solid var(--gold);padding:14px 40px 4px;
+                background:rgba(8,14,16,.6);transform:rotate(-5deg)}
+  #s8 .line{margin-top:70px;font-size:72px;line-height:1.1;text-align:center;max-width:860px}
+  #s8 .line b{font-family:'Cinzel';font-style:normal;font-weight:900;font-size:76px;color:var(--bone);letter-spacing:3px}
+
+  /* S9 poll */
+  #s9 .poll{position:absolute;left:150px;width:780px;top:560px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;
+            box-shadow:0 30px 90px rgba(0,0,0,.6);color:#132024;text-align:center}
+  #s9 .poll .qq{font-family:'Cinzel';font-weight:900;font-size:56px;letter-spacing:2px;line-height:1.12}
+  #s9 .opts{display:flex;gap:22px;margin-top:34px}
+  #s9 .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:4px}
+  #s9 .o1{background:#132024;color:var(--gold2)}
+  #s9 .o2{background:#e9dcc0;color:#132024}
+  #s9 .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:1px;color:#6c5a37}
+  #s9 .brand{top:300px}
+  #s9 .brand .w{font-family:'Cinzel';font-weight:900;font-size:96px;letter-spacing:14px}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="72.6">
+
+  <video id="bg" class="clip" src="assets/bg.mp4" data-start="0" data-duration="72.6" data-track-index="0" muted playsinline></video>
+
+  <div id="plate" class="clip" data-start="0" data-duration="72.6" data-track-index="1"></div>
+  <div id="caps" class="clip" data-start="0" data-duration="72.6" data-track-index="2"></div>
+
+  <div id="chaps" class="clip" data-start="0" data-duration="72.6" data-track-index="3">
+    <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE LEGEND</div></div>
+    <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">ONE SOURCE</div></div>
+    <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THE CHAIN</div></div>
+    <div class="chap" id="ch4"><div class="num">IV</div><span class="rule"></span><div class="name">THE EMPIRE</div></div>
+    <div class="chap" id="ch5"><div class="num">V</div><span class="rule"></span><div class="name">THE GAP</div></div>
+    <div class="chap" id="ch6"><div class="num">VI</div><span class="rule"></span><div class="name">THE VERDICT</div></div>
+  </div>
+
+  <!-- S1 title -->
+  <section id="s1" class="clip" data-start="0" data-duration="6.1" data-track-index="4">
+    <div class="center ttl">
+      <div class="word" id="s1w"><span>A</span><span>T</span><span>L</span><span>A</span><span>N</span><span>T</span><span>I</span><span>S</span></div>
+      <span class="rule" id="s1r"></span>
+      <div class="sub ital" id="s1s">but where did it begin?</div>
+    </div>
+  </section>
+
+  <!-- S2 no map / ruins / inscription -->
+  <section id="s2" class="clip" data-start="6.0" data-duration="4.9" data-track-index="5">
+    <div class="center list">
+      <div class="row" id="r1"><div class="no">NO ANCIENT</div><div class="big">MAP</div><span class="strike" id="k1"></span></div>
+      <div class="row" id="r2"><div class="no">NO</div><div class="big">RUINS</div><span class="strike" id="k2"></span></div>
+      <div class="row" id="r3"><div class="no">NO</div><div class="big">INSCRIPTION</div><span class="strike" id="k3"></span></div>
+    </div>
+  </section>
+
+  <!-- S3 Plato -->
+  <section id="s3" class="clip" data-start="10.8" data-duration="4.3" data-track-index="6">
+    <div class="center one ital" id="s3one">from <b>ONE</b> man</div>
+    <div class="center plate" id="s3p">
+      <div class="frame"><div class="nm">PLATO</div><div class="meta ital">Athens · c. 428 – 348 BC</div></div>
+    </div>
+  </section>
+
+  <!-- S4 360 BC -->
+  <section id="s4" class="clip" data-start="15.0" data-duration="6.4" data-track-index="7">
+    <div class="center yr" id="s4y"><div class="c ital">around</div><div class="n">360</div><div class="bc">BC</div></div>
+    <div class="books">
+      <div class="book" id="b1"><div class="k">DIALOGUE I</div><div class="t">TIMAEUS</div></div>
+      <div class="book" id="b2"><div class="k">DIALOGUE II</div><div class="t">CRITIAS</div></div>
+    </div>
+  </section>
+
+  <!-- S5 chain of whispers -->
+  <section id="s5" class="clip" data-start="21.3" data-duration="16.7" data-track-index="8">
+    <div class="card" id="s5c">
+      <div class="head" id="s5h">A CHAIN OF<i>whispers</i></div>
+      <div class="nodes">
+        <span class="link" id="l1" style="top:128px;height:42px"></span>
+        <span class="link" id="l2" style="top:298px;height:42px"></span>
+        <span class="link" id="l3" style="top:468px;height:42px"></span>
+        <div class="node" id="n1" style="top:0">
+          <div class="med"><svg viewBox="0 0 40 60"><g fill="none" stroke="#d9b26a" stroke-width="5" stroke-linecap="round"><ellipse cx="20" cy="14" rx="10" ry="12"/><path d="M20 26 V58 M6 32 H34"/></g></svg></div>
+          <div class="txt"><div class="a">EGYPTIAN PRIEST</div><div class="b">temple of Saïs</div></div>
+        </div>
+        <div class="node" id="n2" style="top:170px">
+          <div class="med"><img src="assets/solon.jpg" alt=""></div>
+          <div class="txt"><div class="a">SOLON</div><div class="b">Athenian statesman</div></div>
+        </div>
+        <div class="node" id="n3" style="top:340px">
+          <div class="med"><div class="dots"><i></i><i></i><i></i></div></div>
+          <div class="txt"><div class="a">GENERATIONS</div><div class="b">handed down, again and again</div></div>
+        </div>
+        <div class="node" id="n4" style="top:510px">
+          <div class="med"><span style="font-family:Cinzel;font-weight:900;font-size:64px;color:#d9b26a;line-height:1">K</span></div>
+          <div class="txt"><div class="a">CRITIAS</div><div class="b">a character in Plato's dialogue</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 empire + flood -->
+  <section id="s6" class="clip" data-start="37.9" data-duration="15.1" data-track-index="9">
+    <div class="mapwrap" id="mw">
+      <div class="map"><img src="assets/kircher_map.jpg" alt=""></div>
+      <span class="route" id="route"></span>
+      <div class="ring" id="ring"></div>
+      <div class="pin" id="pin" style="left:820px;top:270px"><span class="dot"></span></div>
+      <div class="pin" id="pintag" style="left:470px;top:350px"><div class="tag">PILLARS OF HERCULES ➝</div></div>
+      <div class="pin" id="atag" style="left:330px;top:120px"><div class="tag">ATLANTIS</div></div>
+    </div>
+    <div class="center ttl" id="s6t"><div class="a">A NAVAL EMPIRE</div><div class="b ital">Athanasius Kircher's map, 1678</div></div>
+    <div class="flood" id="flood"><img src="assets/dore_deluge.jpg" alt="" id="floodimg"></div>
+    <span class="water" id="water"></span>
+    <div class="daynight" id="dn"><div class="l" id="d1">ONE DAY</div><div class="amp ital" id="d2">&amp; one</div><div class="l" id="d3">NIGHT</div></div>
+  </section>
+
+  <!-- S7 the gap -->
+  <section id="s7" class="clip" data-start="52.9" data-duration="7.5" data-track-index="10">
+    <div class="center cnt" id="s7c"><div class="num" id="num">0</div><div class="lbl">YEARS BEFORE PLATO</div></div>
+    <div class="tl" id="tl">
+      <span class="line" id="tline"></span>
+      <span class="gap" id="tgap"></span>
+      <span class="end" style="left:4px" id="e1"></span>
+      <span class="end" style="right:4px" id="e2"></span>
+      <div class="lab" style="left:0" id="la1">c. 9600 BC<i>Atlantis sinks</i></div>
+      <div class="lab" style="right:0;text-align:right" id="la2">c. 360 BC<i>Plato writes</i></div>
+      <div class="stamp" id="stamp">NO EARLIER WRITER</div>
+    </div>
+  </section>
+
+  <!-- S8 verdict -->
+  <section id="s8" class="clip" data-start="60.3" data-duration="6.0" data-track-index="11">
+    <div class="center q">
+      <div class="stampbig" id="inv">INVENTED?</div>
+      <div class="line ital" id="warn">a warning about <b>arrogant empires</b></div>
+    </div>
+  </section>
+
+  <!-- S9 poll / end -->
+  <section id="s9" class="clip" data-start="66.2" data-duration="6.4" data-track-index="12">
+    <div class="center brand" id="brand"><div class="w">ATLANTIS</div></div>
+    <div class="poll" id="poll">
+      <div class="qq">Was Atlantis real?</div>
+      <div class="opts"><div class="opt o1" id="o1">REAL</div><div class="opt o2" id="o2">MYTH</div></div>
+      <div class="hint">or the greatest story ever told</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const E = "power3.out";
+
+  // ---------- captions ----------
+  const capRoot = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div");
+    d.className = "cap"; d.id = "cap" + i;
+    c.w.forEach((w, j) => { const s = document.createElement("span"); s.id = `cap${i}w${j}`; s.textContent = w.t; d.appendChild(s); });
+    capRoot.appendChild(d);
+  });
+  CAPS.forEach((c, i) => {
+    const id = "#cap" + i;
+    tl.fromTo(id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, c.s);
+    tl.to(id, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
+    c.w.forEach((w, j) => {
+      tl.to(`#cap${i}w${j}`, { color: "#f1d49a", duration: 0.08 }, w.s);
+    });
+  });
+
+  // ---------- chapters ----------
+  const chaps = [["#ch1",0.4,10.6],["#ch2",10.9,21.1],["#ch3",21.4,37.8],["#ch4",38.0,52.8],["#ch5",53.0,60.2],["#ch6",60.5,66.7]];
+  chaps.forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
+    tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
+    tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
+  });
+
+  // ---------- S1 title ----------
+  tl.from("#s1w span", { opacity: 0, y: 60, scale: 1.25, duration: 0.7, ease: E, stagger: 0.07 }, 0.25);
+  tl.fromTo("#s1r", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: E }, 0.9);
+  tl.from("#s1s", { opacity: 0, y: 20, duration: 0.6, ease: E }, 1.95);
+  tl.to("#s1w", { scale: 1.06, duration: 5, ease: "none" }, 0.3);
+  tl.to("#s1 .ttl", { opacity: 0, y: -30, duration: 0.4, ease: "power2.in" }, 5.6);
+
+  // ---------- S2 ----------
+  [["#r1","#k1",7.1],["#r2","#k2",8.3],["#r3","#k3",9.6]].forEach(([r,k,t]) => {
+    tl.from(r, { opacity: 0, y: 30, duration: 0.35, ease: E }, t);
+    tl.fromTo(k, { scaleX: 0 }, { scaleX: 1, duration: 0.28, ease: "power2.out" }, t + 0.4);
+    tl.to(r, { opacity: 0.55, duration: 0.3 }, t + 0.75);
+  });
+  tl.to("#s2 .list", { opacity: 0, duration: 0.3 }, 10.55);
+
+  // ---------- S3 Plato ----------
+  tl.from("#s3one", { opacity: 0, y: 24, duration: 0.5, ease: E }, 12.4);
+  tl.from("#s3p", { opacity: 0, y: 40, scale: 0.92, duration: 0.6, ease: "back.out(1.6)" }, 13.95);
+  tl.to(["#s3one","#s3p"], { opacity: 0, duration: 0.3 }, 14.75);
+
+  // ---------- S4 360 BC ----------
+  tl.from("#s4y", { opacity: 0, scale: 1.3, duration: 0.6, ease: E }, 15.15);
+  tl.from("#b1", { opacity: 0, y: 60, duration: 0.5, ease: E }, 19.3);
+  tl.from("#b2", { opacity: 0, y: 60, duration: 0.5, ease: E }, 20.4);
+  tl.to("#s4 .center, #s4 .books", { opacity: 0, duration: 0.3 }, 21.05);
+
+  // ---------- S5 chain ----------
+  tl.from("#s5c", { opacity: 0, y: 50, duration: 0.6, ease: E }, 21.4);
+  tl.from("#s5h", { opacity: 0, duration: 0.5 }, 22.0);
+  ["#n1","#n2","#n3","#n4"].forEach(n => tl.set(n, { opacity: 0 }, 21.3));
+  const nodes = [["#n1",25.45,null],["#n2",28.2,"#l1"],["#n3",32.2,"#l2"],["#n4",36.65,"#l3"]];
+  nodes.forEach(([n,t,l], i) => {
+    if (l) tl.fromTo(l, { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: "power2.inOut" }, t - 0.45);
+    tl.fromTo(n, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: E }, t);
+    tl.from(n + " .med", { scale: 0.6, duration: 0.5, ease: "back.out(2)" }, t);
+    if (i > 0) tl.to(nodes[i-1][0], { opacity: 0.45, duration: 0.4 }, t);
+  });
+  tl.to("#s5c", { opacity: 0, y: -30, duration: 0.4, ease: "power2.in" }, 37.6);
+
+  // ---------- S6 empire ----------
+  tl.from("#mw", { opacity: 0, y: 80, rotation: -4, scale: 1.08, duration: 0.8, ease: E }, 38.0);
+  tl.from("#s6t", { opacity: 0, y: 20, duration: 0.5, ease: E }, 39.5);
+  tl.fromTo("#ring", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.5, ease: E }, 39.5);
+  tl.from("#atag", { opacity: 0, y: 14, duration: 0.4, ease: E }, 39.8);
+  tl.from("#pin", { opacity: 0, scale: 0, duration: 0.4, ease: "back.out(3)" }, 41.65);
+  tl.from("#pintag", { opacity: 0, x: -20, duration: 0.4, ease: E }, 41.75);
+  tl.fromTo("#route", { scaleX: 0 }, { scaleX: 1, duration: 1.2, ease: "power1.inOut" }, 44.6);
+  tl.to("#mw", { scale: 1.04, duration: 8, ease: "none" }, 38.8);
+  tl.to("#s6t", { opacity: 0, duration: 0.3 }, 46.4);
+  // flood: day & night, quake, sink
+  tl.from("#d1", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 47.9);
+  tl.from("#d2", { opacity: 0, duration: 0.3 }, 48.55);
+  tl.from("#d3", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 48.75);
+  tl.to("#mw", { opacity: 0.12, duration: 0.4 }, 47.6);
+  const shakeX = [14,-18,12,-10,16,-12,8,-6,4,0];
+  shakeX.forEach((x, i) => tl.to("#mw", { x, y: (i % 2 ? -1 : 1) * x * 0.5, duration: 0.06, ease: "none" }, 49.6 + i * 0.065));
+  tl.to("#mw", { y: 700, rotation: 8, opacity: 0, duration: 1.3, ease: "power2.in" }, 50.3);
+  tl.to("#dn", { opacity: 0, duration: 0.35 }, 50.35);
+  tl.to("#flood", { opacity: 1, duration: 0.5 }, 50.45);
+  tl.fromTo("#floodimg", { scale: 1.12 }, { scale: 1.0, duration: 2.5, ease: "none" }, 50.45);
+  tl.fromTo("#water", { scaleY: 0 }, { scaleY: 1, duration: 1.8, ease: "power1.in" }, 51.0);
+  tl.to(["#flood","#water"], { opacity: 0, duration: 0.4 }, 52.55);
+
+  // ---------- S7 gap ----------
+  const counter = { v: 0 };
+  const numEl = document.getElementById("num");
+  tl.from("#s7c", { opacity: 0, y: 30, duration: 0.4, ease: E }, 53.0);
+  tl.to(counter, { v: 9000, duration: 1.0, ease: "power2.out",
+    onUpdate: () => { numEl.textContent = Math.round(counter.v).toLocaleString("en-US"); } }, 54.6);
+  tl.from("#tl", { opacity: 0, duration: 0.3 }, 55.6);
+  tl.fromTo("#tline", { scaleX: 0 }, { scaleX: 1, duration: 1.0, ease: "power2.inOut" }, 55.6);
+  tl.from("#e1, #la1", { opacity: 0, duration: 0.3 }, 55.6);
+  tl.from("#e2, #la2", { opacity: 0, duration: 0.3 }, 56.3);
+  tl.from("#tgap", { opacity: 0, duration: 0.3 }, 57.3);
+  tl.from("#stamp", { opacity: 0, scale: 1.6, duration: 0.35, ease: "back.out(2)" }, 57.55);
+  tl.to("#s7c, #tl", { opacity: 0, duration: 0.3 }, 60.05);
+
+  // ---------- S8 verdict ----------
+  tl.from("#inv", { opacity: 0, scale: 1.8, duration: 0.35, ease: "power4.out" }, 62.1);
+  tl.from("#warn", { opacity: 0, y: 24, duration: 0.5, ease: E }, 63.7);
+  tl.to("#s8 .q", { opacity: 0, duration: 0.3 }, 65.95);
+
+  // ---------- S9 poll ----------
+  tl.from("#brand", { opacity: 0, y: -20, duration: 0.6, ease: E }, 66.8);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.6, ease: "back.out(1.7)" }, 67.3);
+  tl.to("#o1", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }, 67.85);
+  tl.to("#o2", { scale: 1.06, duration: 0.25, yoyo: true, repeat: 1 }, 70.2);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>

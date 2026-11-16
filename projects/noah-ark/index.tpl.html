@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Noah's Ark Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  :root{ --ink:#0a1417; --bone:#efe6d2; --gold:#d9b26a; --gold2:#f1d49a; --red:#9c2f1f; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'Manrope',sans-serif;color:var(--bone)}
+  .clip{position:absolute;inset:0}
+  .bg{overflow:hidden;background:#05090a}
+  .bg img{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;filter:sepia(.25) contrast(1.08) brightness(.82) saturate(.85)}
+  .bg.dim img{filter:sepia(.3) contrast(1.05) brightness(.42) saturate(.7) blur(2px)}
+  #vig{background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%);z-index:30}
+  #plate{background:linear-gradient(180deg,rgba(6,12,14,0) 0px,rgba(6,12,14,.9) 95px,rgba(6,12,14,.9) 290px,rgba(6,12,14,0) 380px);top:1235px;height:380px;bottom:auto;z-index:40}
+  #caps{z-index:41} #chaps{z-index:42} #s0{z-index:35}
+  .scene{z-index:32}
+  .cap{position:absolute;left:80px;right:80px;top:1395px;height:150px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.5px;opacity:0;text-shadow:0 3px 18px rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em;color:var(--bone)}
+  .chap{position:absolute;top:268px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0}
+  .chap .num{font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:10px;color:var(--gold)}
+  .chap .name{font-family:'Cinzel';font-weight:500;font-size:28px;letter-spacing:8px;opacity:.85}
+  .chap .rule{display:block;width:120px;height:2px;background:var(--gold)}
+  .center{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+  .ital{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+  .cz{font-family:'Cinzel'}
+  .card{background:rgba(7,13,15,.82);border:1px solid rgba(217,178,106,.6)}
+  .stamp{font-family:'Cinzel';font-weight:900;color:#ffe9c4;background:var(--red);padding:12px 26px;transform:rotate(-4deg);white-space:nowrap}
+  .tag{font-family:'Cinzel';font-weight:700;letter-spacing:3px;background:var(--ink);border:2px solid var(--gold);padding:10px 18px;white-space:nowrap}
+
+  #s0 img{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;filter:grayscale(1) sepia(.4) contrast(1.25) brightness(.8)}
+  #s0 .flash{position:absolute;inset:0;background:#f4ead2;opacity:0}
+
+  #hk{z-index:45}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:78px;letter-spacing:3px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95),0 0 60px rgba(0,0,0,.8)}
+  #hk .l1{top:200px;color:var(--bone)} #hk .l2{top:290px;color:var(--gold2)}
+  /* S1 */
+  #t1{top:600px}
+  #t1w{display:flex;gap:2px}
+  #t1w span{display:block;font-family:'Cinzel';font-weight:900;font-size:142px;letter-spacing:4px;text-shadow:0 6px 40px rgba(0,0,0,.65)}
+  #t1w span.sp{width:44px}
+  #t1r{display:block;width:620px;height:3px;margin-top:18px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  #t1s{margin-top:28px;font-size:58px;color:var(--gold2)}
+  #q1{top:640px}
+  #q1 .big{white-space:nowrap;font-family:'Cinzel';font-weight:900;font-size:98px;letter-spacing:4px;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+  #st1{position:absolute;left:0;right:0;top:800px;display:flex;justify-content:center}
+  #st1 .stamp{font-size:46px}
+
+  /* S2 verse + map */
+  #verse{position:absolute;left:90px;width:900px;top:470px;padding:56px 60px 50px;text-align:center}
+  #verse .ref{font-family:'Cinzel';font-weight:700;font-size:32px;letter-spacing:8px;color:var(--gold)}
+  #verse .q{margin-top:26px;font-size:70px;line-height:1.15}
+  #verse .q b{font-style:normal;font-family:'Cinzel';font-weight:900;font-size:66px;color:var(--bone)}
+  #verse .q b i{font-style:normal;display:inline-block}
+  #plural{position:absolute;left:0;right:0;top:1000px;display:flex;justify-content:center}
+  #plural .tag{font-size:40px}
+  .mapcard{position:absolute;left:60px;top:420px;width:960px;height:700px;background:#d9c9a3;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden}
+  .mapcard:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,250,235,.25),rgba(90,60,20,.35));z-index:1;pointer-events:none}
+  .mapcard svg{position:absolute;left:0;top:0}
+  .mlab{position:absolute;z-index:3;font-family:'Cinzel';font-weight:700;color:#2b2214;letter-spacing:4px;white-space:nowrap}
+  .ring{position:absolute;z-index:2;border:4px dashed var(--red);border-radius:50%}
+  .pin{position:absolute;z-index:3;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--red);border:4px solid #fff4dc}
+  .peak{position:absolute;z-index:3;width:0;height:0;margin-left:-22px;margin-top:-34px;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:34px solid #3a2e1e}
+  .ptag{position:absolute;z-index:4;font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:3px;background:var(--ink);color:var(--bone);padding:8px 14px;white-space:nowrap}
+
+  /* S3 targum */
+  #where{top:620px}
+  #where .big{font-family:'Cinzel';font-weight:900;font-size:118px;letter-spacing:3px;text-align:center;line-height:1.05;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+  #targ{position:absolute;left:90px;width:900px;top:440px;height:780px;padding:48px 50px;text-align:center}
+  #targ .h{font-family:'Cinzel';font-weight:900;font-size:62px;letter-spacing:4px}
+  #targ .sub{font-size:44px;color:var(--gold2);margin-top:6px}
+  #targ .arm{position:absolute;left:0;right:0;top:215px;font-family:'Noto Serif Hebrew';font-weight:600;font-size:84px;direction:rtl;color:var(--bone)}
+  #targ .tr{position:absolute;left:30px;right:30px;top:345px;font-size:40px;color:var(--gold2)}
+  #targ .tr b{font-style:normal;font-family:'Cinzel';font-weight:900;font-size:40px}
+  #targ .ar{position:absolute;left:0;right:0;top:420px;font-family:'Cinzel';font-weight:900;font-size:110px;letter-spacing:6px}
+  #targ .strike{position:absolute;left:220px;right:220px;top:480px;height:8px;background:var(--red);transform-origin:0 50%}
+  #targ .qd{position:absolute;left:0;right:0;top:575px;font-family:'Cinzel';font-weight:900;font-size:120px;letter-spacing:6px;color:var(--gold)}
+  #targ .he{position:absolute;left:0;right:0;top:612px;font-family:'Noto Serif Hebrew';font-weight:600;font-size:64px;direction:rtl;color:var(--bone)}
+
+  /* S4 berossus */
+  #cent{top:440px}
+  #cent .n{white-space:nowrap;font-family:'Cinzel';font-weight:900;font-size:112px;line-height:1;text-shadow:0 6px 40px rgba(0,0,0,.7)}
+  #cent .l{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:10px;color:var(--gold)}
+  #ber{position:absolute;left:90px;width:900px;top:760px;padding:36px 44px;display:flex;gap:36px;align-items:center}
+  #ber .med{flex:0 0 190px;width:190px;height:236px;border:3px solid var(--gold);overflow:hidden}
+  #ber .med img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;filter:grayscale(1) sepia(.4)}
+  #ber .nm{font-family:'Cinzel';font-weight:900;font-size:66px;letter-spacing:4px}
+  #ber .d{font-size:40px;color:var(--gold2);line-height:1.15}
+  #bq{position:absolute;left:90px;width:900px;top:400px;padding:40px 50px;text-align:center}
+  #bq .q{font-size:60px;line-height:1.15}
+  #bq .q b{font-family:'Cinzel';font-style:normal;font-weight:900;color:var(--gold);font-size:62px}
+  #bq .src{margin-top:18px;font-family:'Cinzel';font-size:26px;letter-spacing:5px;color:var(--gold)}
+
+  /* S5 quran */
+  #qf{position:absolute;left:90px;width:900px;top:470px;padding:56px 60px 50px;text-align:center}
+  #qf .ref{font-family:'Cinzel';font-weight:700;font-size:32px;letter-spacing:8px;color:var(--gold)}
+  #qf .arq{margin-top:20px;font-family:'Amiri';font-weight:700;font-size:86px;line-height:1.5;direction:rtl}
+  #qf .q{margin-top:8px;font-size:56px;line-height:1.15}
+  #qf .q b{white-space:nowrap;font-style:normal;font-family:'Cinzel';font-weight:900;font-size:60px;color:var(--gold2)}
+  #jd{position:absolute;left:0;right:0;top:600px;display:flex;flex-direction:column;align-items:center}
+  #jd .arab{font-family:'Amiri';font-weight:700;font-size:170px;line-height:1.1;color:var(--bone);text-shadow:0 6px 40px rgba(0,0,0,.9)}
+  #jd .lat{font-family:'Cinzel';font-weight:900;font-size:74px;letter-spacing:8px;color:var(--gold)}
+  #three{position:absolute;left:0;right:0;top:440px;display:flex;flex-direction:column;align-items:center;gap:26px}
+  #three .tag{font-size:58px;padding:14px 34px}
+  #three .tag small{display:block;font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-size:34px;letter-spacing:0;color:var(--gold2);text-align:center}
+
+  /* S6 heights */
+  #hb{position:absolute;z-index:5;right:24px;top:24px;width:330px;height:290px;background:rgba(7,13,15,.88);border:1px solid var(--gold);padding:18px 22px}
+  #hb .row{position:absolute;bottom:22px;width:110px;display:flex;flex-direction:column;align-items:center}
+  #hb .bar{display:block;width:84px;background:var(--gold);transform-origin:50% 100%}
+  #hb .v{font-family:'Cinzel';font-weight:900;font-size:26px;margin-bottom:6px;white-space:nowrap}
+  #hb .n{font-family:'Cinzel';font-weight:700;font-size:22px;letter-spacing:3px;color:var(--gold2);margin-top:8px}
+
+  /* S7 ararat */
+  #al{top:470px}
+  #al .a{font-family:'Cinzel';font-weight:900;font-size:96px;letter-spacing:5px;text-shadow:0 6px 40px rgba(0,0,0,.8)}
+  #al .b{font-size:50px;color:var(--gold2);text-shadow:0 2px 12px rgba(0,0,0,.9)}
+  #st7{position:absolute;left:0;right:0;top:860px;display:flex;justify-content:center}
+  #st7 .stamp{font-size:54px}
+
+  /* S8 poll */
+  #brand{top:300px}
+  #brand .w{font-family:'Cinzel';font-weight:900;font-size:92px;letter-spacing:10px;text-shadow:0 6px 30px rgba(0,0,0,.7)}
+  #aoc{top:600px}
+  #aoc .big{font-family:'Cinzel';font-weight:900;font-size:120px;letter-spacing:6px;line-height:1.05;text-shadow:0 6px 40px rgba(0,0,0,.8)}
+  #aoc .or{font-size:64px;color:var(--gold2)}
+  #poll{position:absolute;left:150px;width:780px;top:560px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6);color:#132024;text-align:center}
+  #poll .qq{font-family:'Cinzel';font-weight:900;font-size:56px;line-height:1.12}
+  #poll .opts{display:flex;gap:22px;margin-top:34px}
+  #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
+  #poll .opt small{font-family:'Manrope';font-weight:800;font-size:22px;letter-spacing:1px;opacity:.75}
+  #poll .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:2px;color:#6c5a37}
+  #o1{background:#132024;color:var(--gold2)} #o2{background:#e9dcc0;color:#132024}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="61.5">
+
+  <!-- backgrounds -->
+  <section id="bg1" class="clip bg" data-start="0.9" data-duration="6.5" data-track-index="0"><img id="bg1i" src="assets/myle.jpg" alt="" style="object-position:62% 50%"></section>
+  <section id="bg2" class="clip bg dim" data-start="7.0" data-duration="11.0" data-track-index="1"><img id="bg2i" src="assets/ararat.jpg" alt=""></section>
+  <section id="bg3" class="clip bg dim" data-start="17.6" data-duration="19.1" data-track-index="2"><img id="bg3i" src="assets/dore_deluge.jpg" alt=""></section>
+  <section id="bg4" class="clip bg dim" data-start="36.3" data-duration="7.4" data-track-index="3"><img id="bg4i" src="assets/cudi2.jpg" alt=""></section>
+  <section id="bg5" class="clip bg" data-start="43.3" data-duration="8.5" data-track-index="4"><img id="bg5i" src="assets/cudi.jpg" alt="" style="object-position:40% 50%;filter:sepia(.25) brightness(.55)"></section>
+  <section id="bg6" class="clip bg" data-start="51.4" data-end="@64.9" data-track-index="5"><img id="bg6i" src="assets/ararat.jpg" alt="" style="object-position:55% 50%"></section>
+  <section id="bg7" class="clip bg" data-start="@64.5" data-duration="@11.53" data-track-index="6"><img id="bg7i" src="assets/myle.jpg" alt="" style="object-position:62% 50%;filter:sepia(.3) brightness(.55)"></section>
+
+  <div id="vig" class="clip" data-start="0" data-duration="61.5" data-track-index="7"></div>
+  <div id="plate" class="clip" data-start="0" data-duration="61.5" data-track-index="8"></div>
+  <div id="caps" class="clip" data-start="0" data-duration="61.5" data-track-index="9"></div>
+  <div id="chaps" class="clip" data-start="0" data-duration="61.5" data-track-index="10">
+    <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE BELIEF</div></div>
+    <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">THE TEXT</div></div>
+    <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THREE SOURCES</div></div>
+    <div class="chap" id="ch4"><div class="num">IV</div><span class="rule"></span><div class="name">THE MOUNTAIN</div></div>
+    <div class="chap" id="ch5"><div class="num">V</div><span class="rule"></span><div class="name">THE QUESTION</div></div>
+  </div>
+
+  <section id="s0" class="clip" data-start="0" data-duration="1.3" data-track-index="11">
+    <img id="cold" src="assets/dore_deluge.jpg" alt=""><span class="flash" id="flash"></span>
+  </section>
+
+  <section id="hk" class="clip" data-start="0" data-duration="@4.0" data-track-index="20">
+    <div class="l l1" id="hk1">THE BIBLE NEVER SAYS</div><div class="l l2" id="hk2">MOUNT ARARAT</div>
+  </section>
+
+  <section id="s1" class="clip scene" data-start="0.9" data-duration="6.4" data-track-index="12">
+    <div class="center" id="t1">
+      <div id="t1w"><span>N</span><span>O</span><span>A</span><span>H</span><span>'</span><span>S</span><span class="sp"></span><span>A</span><span>R</span><span>K</span></div>
+      <span id="t1r"></span>
+      <div id="t1s" class="ital">where did it really land?</div>
+    </div>
+    <div class="center" id="q1"><div class="big">MOUNT ARARAT?</div></div>
+    <div id="st1"><div class="stamp" id="st1s">NEVER NAMED</div></div>
+  </section>
+
+  <section id="s2" class="clip scene" data-start="7.1" data-duration="10.8" data-track-index="13">
+    <div id="verse" class="card">
+      <div class="ref">GENESIS 8:4</div>
+      <div class="q ital">“…the ark came to rest upon the <b id="mtn">mountain<i id="mtnS">s</i></b> of Ararat.”</div>
+    </div>
+    <div id="plural"><div class="tag" id="plt">MOUNTAINS · PLURAL</div></div>
+    <div class="mapcard" id="map1">
+      {{MAP1}}
+      <div class="ring" id="ring1" style="left:{{VANX_R}}px;top:{{VANY_R}}px;width:440px;height:330px"></div>
+      <div class="mlab" id="ur" style="left:{{URX}}px;top:{{URY}}px;font-size:40px">KINGDOM OF URARTU</div>
+      <div class="ptag" id="vanl" style="left:{{VANLX}}px;top:{{VANLY}}px">LAKE VAN</div>
+    </div>
+  </section>
+
+  <section id="s3" class="clip scene" data-start="17.7" data-duration="10.9" data-track-index="14">
+    <div class="center" id="where"><div class="big">SO WHERE<br>EXACTLY?</div></div>
+    <div id="targ" class="card">
+      <div class="h">TARGUM ONKELOS</div>
+      <div class="sub ital">the oldest Jewish translation of Genesis</div>
+      <div class="arm" id="tarm">עַל טוּרֵי קַרְדוּ</div>
+      <div class="tr ital" id="ttr">“…on the mountains of <b>Qardu</b>” · Genesis 8:4</div>
+      <div class="ar" id="tar">ARARAT</div>
+      <span class="strike" id="tstr"></span>
+      <div class="qd" id="tqd">QARDU</div>
+    </div>
+  </section>
+
+  <section id="s4" class="clip scene" data-start="28.5" data-duration="8.1" data-track-index="15">
+    <div class="center" id="cent"><div class="n">~300 YEARS</div><div class="l">BEFORE CHRIST</div></div>
+    <div id="ber" class="card">
+      <div class="med"><img src="assets/josephus.jpg" alt=""></div>
+      <div><div class="nm">BEROSSUS</div><div class="d ital">Babylonian priest. His words survive through the historian Josephus.</div></div>
+    </div>
+    <div id="bq" class="card">
+      <div class="q ital">“…pieces of the ship are still found in the <b>GORDYAEAN</b> mountains.”</div>
+      <div class="src">BEROSSUS · VIA JOSEPHUS, ANTIQUITIES I.93</div>
+    </div>
+  </section>
+
+  <section id="s5" class="clip scene" data-start="36.4" data-duration="7.2" data-track-index="16">
+    <div id="qf" class="card"><div class="ref">SURAH HUD · 11:44</div><div class="arq">وَاسْتَوَتْ عَلَى الْجُودِيِّ</div><div class="q ital">“…and it came to rest on <b>al-Judi</b>.”</div></div>
+    <div id="jd"><div class="arab">الجودي</div><div class="lat">AL-JUDI</div></div>
+    <div id="three">
+      <div class="tag" id="th1">QARDU<small>Aramaic · Targum</small></div>
+      <div class="tag" id="th2">GORDYAEAN<small>Greek · Berossus</small></div>
+      <div class="tag" id="th3">JUDI<small>Arabic · Quran</small></div>
+    </div>
+  </section>
+
+  <section id="s6" class="clip scene" data-start="43.4" data-duration="8.3" data-track-index="17">
+    <div class="mapcard" id="map2">
+      <div id="m2in" style="position:absolute;inset:0;transform-origin:{{CUX}}px {{CUY}}px">
+      {{MAP2}}
+      <div class="peak" style="left:{{ARX}}px;top:{{ARY}}px"></div>
+      <div class="ptag" id="arl2" style="left:{{ARLX}}px;top:{{ARLY}}px">ARARAT</div>
+      <div class="pin" id="cpin" style="left:{{CUX}}px;top:{{CUY}}px"></div>
+      <div class="ring" id="ring2" style="left:{{CUX_R}}px;top:{{CUY_R}}px;width:150px;height:150px;border-style:solid"></div>
+      <div class="ptag" id="cl" style="left:{{CULX}}px;top:{{CULY}}px">MOUNT CUDI</div>
+      <div class="ptag" id="f1" style="left:30px;top:250px">QARDU</div>
+      <div class="ptag" id="f2" style="left:30px;top:330px">GORDYAEAN</div>
+      <div class="ptag" id="f3" style="left:30px;top:410px">JUDI</div>
+      </div>
+      <div id="hb">
+        <div class="row" style="left:30px"><div class="v">5,137 m</div><span class="bar" id="hb1" style="height:170px"></span><div class="n">ARARAT</div></div>
+        <div class="row" style="left:180px"><div class="v">~2,100 m</div><span class="bar" id="hb2" style="height:70px;background:var(--red)"></span><div class="n">CUDI</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s7" class="clip scene" data-start="51.5" data-end="@64.9" data-track-index="18">
+    <div class="center" id="al"><div class="a">MOUNT ARARAT</div><div class="b ital">Ağrı Dağı · 5,137 m · Turkey's highest peak</div></div>
+    <div id="st7"><div class="stamp" id="st7s">NAMED CENTURIES LATER</div></div>
+  </section>
+
+  <section id="s8" class="clip scene" data-start="@64.6" data-duration="@11.43" data-track-index="19">
+    <div class="center" id="brand"><div class="w">NOAH'S ARK</div></div>
+    <div class="center" id="aoc"><div class="big">ARARAT</div><div class="or ital">or</div><div class="big">CUDI?</div></div>
+    <div id="poll">
+      <div class="qq">Did Noah's Ark really exist?</div>
+      <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
+      <div class="hint" id="hint">TELL ME IN THE COMMENTS</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const E = "power3.out";
+  // captions
+  const capRoot = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "cap" + i;
+    c.w.forEach((w, j) => { const s = document.createElement("span"); s.id = `cap${i}w${j}`; s.textContent = w.t; d.appendChild(s); });
+    capRoot.appendChild(d);
+  });
+  CAPS.forEach((c, i) => {
+    tl.fromTo("#cap" + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, c.s);
+    tl.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
+    c.w.forEach((w, j) => tl.to(`#cap${i}w${j}`, { color: "#f1d49a", duration: 0.08 }, w.s));
+  });
+  // chapters
+  [["#ch1",@4.3,7.0],["#ch2",7.3,17.6],["#ch3",17.9,43.3],["#ch4",43.6,@64.6]].forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
+    tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
+    tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
+  });
+  // backgrounds: slow push + crossfades
+  const bgs = [["#bg1",0.9,7.4],["#bg2",7.0,18.0],["#bg3",17.6,36.7],["#bg4",36.3,43.7],["#bg5",43.3,51.8],["#bg6",51.4,@64.8],["#bg7",@64.5,@76.03]];
+  bgs.forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "none" }, a);
+    tl.fromTo(id + "i", { scale: 1.12 }, { scale: 1.0, duration: b - a, ease: "none" }, a);
+  });
+  // cold open
+  tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
+  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => tl.to("#cold", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 0.02 + i * 0.055));
+  tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none" }, 0.98);
+  tl.to("#s0", { opacity: 0, duration: 0.25 }, 1.04);
+  // S1
+  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, @3.7);
+  tl.from("#hk2", { scale: 1.3, duration: 0.5, ease: E }, @0.25);
+  tl.from("#t1w span", { opacity: 0, scale: 2.2, duration: 0.3, ease: "power4.out", stagger: 0.02 }, 1.0);
+  tl.fromTo("#t1r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, 1.35);
+  tl.from("#t1s", { opacity: 0, y: 20, duration: 0.5, ease: E }, 1.9);
+  tl.to("#t1", { opacity: 0, y: -40, duration: 0.35, ease: "power2.in" }, 3.25);
+  tl.from("#q1", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 3.55);
+  tl.from("#st1s", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 5.3);
+  tl.to(["#q1","#st1"], { opacity: 0, duration: 0.3 }, 6.95);
+  // S2 verse
+  tl.from("#verse", { opacity: 0, y: 50, duration: 0.5, ease: E }, 7.3);
+  tl.to("#mtn", { color: "#f1d49a", duration: 0.2 }, 9.4);
+  tl.fromTo("#mtnS", { scale: 1 }, { scale: 1.6, color: "#e0623f", duration: 0.25, ease: "back.out(3)" }, 11.4);
+  tl.from("#plt", { opacity: 0, scale: 1.5, duration: 0.3, ease: "back.out(2)" }, 11.8);
+  tl.to(["#verse","#plural"], { opacity: 0, y: -30, duration: 0.3 }, 13.2);
+  tl.from("#map1", { opacity: 0, y: 80, rotation: -3, duration: 0.6, ease: E }, 13.45);
+  tl.fromTo("#ring1", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.5, ease: E }, 14.4);
+  tl.from("#ur", { opacity: 0, y: 14, duration: 0.4, ease: E }, 15.1);
+  tl.from("#vanl", { opacity: 0, scale: 1.5, duration: 0.3, ease: "back.out(2)" }, 17.05);
+  // S3 targum
+  tl.from("#where", { opacity: 0, scale: 1.3, duration: 0.35, ease: E }, 17.9);
+  tl.to("#where", { opacity: 0, duration: 0.25 }, 19.55);
+  tl.from("#targ", { opacity: 0, y: 50, duration: 0.5, ease: E }, @24.4);
+  tl.from("#tarm", { opacity: 0, scale: 1.25, duration: 0.6, ease: E }, @24.95);
+  tl.from("#ttr", { opacity: 0, y: 14, duration: 0.5, ease: E }, @25.9);
+  tl.from("#tar", { opacity: 0, duration: 0.3 }, 24.7);
+  tl.fromTo("#tstr", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, 25.4);
+  tl.to("#tar", { opacity: 0.35, duration: 0.3 }, 25.7);
+  tl.from("#tqd", { opacity: 0, scale: 1.5, duration: 0.35, ease: "back.out(2)" }, 27.7);
+  tl.to("#targ", { opacity: 0, duration: 0.3 }, @32.45);
+  // S4 berossus
+  tl.from("#cent", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 28.75);
+  tl.from("#ber", { opacity: 0, y: 50, duration: 0.5, ease: E }, 30.5);
+  tl.to(["#cent","#ber"], { opacity: 0, duration: 0.3 }, 32.05);
+  tl.from("#bq", { opacity: 0, y: 40, duration: 0.5, ease: E }, 32.3);
+  tl.from("#bq b", { color: "#efe6d2", duration: 0.3 }, 35.1);
+  tl.to("#bq", { opacity: 0, duration: 0.3 }, 36.2);
+  // S5 quran
+  tl.from("#qf", { opacity: 0, y: 50, duration: 0.5, ease: E }, 36.6);
+  tl.to("#qf", { opacity: 0, y: -30, duration: 0.3 }, 38.6);
+  tl.from("#jd", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 38.9);
+  tl.to(["#qf","#jd"], { opacity: 0, duration: 0.3 }, 39.65);
+  tl.from("#th1", { opacity: 0, x: -80, duration: 0.35, ease: E }, 39.9);
+  tl.from("#th2", { opacity: 0, x: 80, duration: 0.35, ease: E }, 40.8);
+  tl.from("#th3", { opacity: 0, x: -80, duration: 0.35, ease: E }, 42.0);
+  tl.to("#three", { opacity: 0, scale: 0.9, duration: 0.25 }, @51.25);
+  // S6 map converge
+  tl.from("#map2", { opacity: 0, y: 80, duration: 0.6, ease: E }, 43.5);
+  tl.from(["#f1","#f2","#f3"], { opacity: 0, x: -40, duration: 0.35, stagger: 0.12, ease: E }, @51.6);
+  tl.to("#f1", { left: {{F1X}}, top: {{F1Y}}, duration: 0.9, ease: "power3.inOut" }, @52.1);
+  tl.to("#f2", { left: {{F2X}}, top: {{F2Y}}, duration: 0.9, ease: "power3.inOut" }, @52.75);
+  tl.to("#f3", { left: {{F3X}}, top: {{F3Y}}, duration: 0.9, ease: "power3.inOut" }, @53.4);
+  tl.to("#m2in", { scale: 1.5, duration: 1.4, ease: "power2.inOut" }, @55.0);
+  tl.from("#cpin", { opacity: 0, scale: 0, duration: 0.35, ease: "back.out(3)" }, @56.25);
+  tl.fromTo("#ring2", { opacity: 0, scale: 2.4 }, { opacity: 1, scale: 1, duration: 0.6, ease: E }, @56.3);
+  tl.from("#cl", { opacity: 0, y: 16, duration: 0.35, ease: E }, @56.5);
+  tl.from("#hb", { opacity: 0, y: 30, duration: 0.4, ease: E }, 49.8);
+  tl.fromTo("#hb1", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: E }, 50.0);
+  tl.fromTo("#hb2", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: E }, 50.2);
+  tl.to("#map2", { opacity: 0, duration: 0.3 }, 51.35);
+  // S7 ararat
+  tl.from("#al", { opacity: 0, y: 30, duration: 0.5, ease: E }, 53.3);
+  tl.from("#st7s", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 55.0);
+  tl.to(["#al","#st7"], { opacity: 0, duration: 0.3 }, @64.55);
+  // S8 poll
+  tl.from("#brand", { opacity: 0, y: -20, duration: 0.6, ease: E }, @64.93);
+  tl.from("#aoc", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, @65.78);
+  tl.to("#aoc", { opacity: 0, y: -30, duration: 0.3 }, @67.83);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.6, ease: "back.out(1.7)" }, @68.08);
+  tl.to("#o1", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, @70.03);
+  tl.to("#o2", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, @70.58);
+  tl.from("#hint", { opacity: 0, y: 12, duration: 0.4, ease: E }, @71.58);
+  tl.to("#hint", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, @72.18);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>
