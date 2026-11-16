@@ -5,3 +5,5 @@ out/.*hf-transaction*/
 hf/.hyperframes/
 .hyperframes/
 ref/
+hf/assets/cand_*.jpg
+hf/assets/piri_hi_*.jpg

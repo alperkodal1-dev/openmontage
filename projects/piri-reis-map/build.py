@@ -13,7 +13,7 @@ R = {
     'GLOBE2': globe.replace('id="globesvg"', 'id="globesvg2"').replace('id="gant"', 'id="gant2"').replace('id="gsam"', 'id="gsam2"'),
     'GX': gx, 'GY': gy, 'IX': ix, 'IY': iy, 'GTX': round(gx - 250), 'GTY': round(gy + 26), 'ITX': round(ix + 26), 'ITY': round(iy - 60),
     # where the map's own drawings sit, as fractions of the image (checked on snapshots)
-    'W1X': 0.40, 'W1Y': 0.09, 'W2X': 0.43, 'W2Y': 0.61, 'W3X': 0.20, 'W3Y': 0.44,
+    'W1X': 0.34, 'W1Y': 0.09, 'W2X': 0.43, 'W2Y': 0.62, 'W3X': 0.17, 'W3Y': 0.45,
 }
 s = open('index.tpl.html').read()
 for k, v in R.items(): s = s.replace('{{' + k + '}}', str(v))
