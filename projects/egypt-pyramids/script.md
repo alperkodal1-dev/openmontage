@@ -26,3 +26,12 @@ New facts: Great Pyramid aligned to true north within a few arcminutes; the King
 empty (Arab accounts of al-Ma'mun's entry, 9th c.); Khufu's mummy has never been found.
 
 Who really built the Great Pyramid... and what was it for? Two point three million blocks, lined up with true north almost perfectly, four and a half thousand years ago. In 1968, a Swiss writer offered an answer: ancient astronauts. And Egypt seemed full of clues. At Abydos, a carving shaped like a helicopter. At Dendera, a snake glowing inside what looks like a giant bulb. At Saqqara, a wooden bird with the wings of a glider. Some say the three pyramids copy Orion's belt. Then, in 1990, a horse tripped on a buried wall. Beneath it lay the builders, buried beside their king. Their gangs signed the stones: Friends of Khufu. Drunkards of Menkaure. In a desert cave, the oldest papyri ever found: a logbook of shipping stone to Giza. And yet, the king's stone coffin was empty. Khufu has never been found. So who knows... were the Egyptians getting help from an alien race?
+
+## v3 (legend pushed harder; awaiting approval)
+
+160 words (vidIQ count), ~68 s at 141 wpm. The legend section is told in the believers' voice, framed by
+"the clues seemed carved everywhere", "some claim", "others". Added: granite beams of 25-80 t over the King's Chamber
+("heavier than a truck"); the "power plant" theory (Christopher Dunn, *The Giza Power Plant*, 1998); the King's
+Chamber southern shaft aimed at Orion's belt c. 2500 BC (Badawy & Trimble 1964) read as a "stargate".
+
+Who really built the Great Pyramid... and what was it for? Two point three million blocks, some heavier than a truck, lined up with true north almost perfectly. Four and a half thousand years ago. In 1968, a Swiss writer gave his answer: astronauts from the stars. And the clues seemed carved everywhere. At Abydos, a helicopter. At Dendera, a snake glowing inside a giant bulb. At Saqqara, a wooden bird with the wings of a glider. Some claim the pyramid was a power plant. Others, a stargate: one shaft inside points straight at Orion's belt. Then, in 1990, a horse tripped on a buried wall. Beneath it lay the builders, buried beside their king. Their gangs signed the stones: Friends of Khufu. Drunkards of Menkaure. A papyrus logbook even tracks the stone boats to Giza. And yet, the king's coffin was empty. Khufu has never been found. So who knows... were the Egyptians getting help from an alien race?
