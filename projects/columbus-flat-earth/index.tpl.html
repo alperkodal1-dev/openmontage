@@ -329,6 +329,8 @@
   tl.to("#who", { opacity: 0, y: -30, duration: 0.3 }, 47.1);
   tl.from("#y5", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 47.45);
   tl.from("#irv", { opacity: 0, y: 50, duration: 0.5, ease: E }, 48.9);
+  tl.fromTo("#irv .med img", { scale: 1.0 }, { scale: 1.18, duration: 5.6, ease: "none" }, 48.9);
+  tl.fromTo("#y5", { scale: 1.0 }, { scale: 0.9, duration: 7.0, ease: "none" }, 47.85);
   tl.from("#fics", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 52.3);
   tl.to(["#y5","#irv","#fic"], { opacity: 0, y: -30, duration: 0.3 }, 54.5);
   tl.from("#sb", { opacity: 0, y: 30, duration: 0.45, ease: E }, 54.8);

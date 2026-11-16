@@ -14,9 +14,9 @@ for i, (n, t, v) in enumerate(ev):
     fl.append(f"[{i+2}]aformat=channel_layouts=stereo,aresample=48000,adelay={ms}|{ms},volume={v}[e{i}]"); lab.append(f"[e{i}]")
 fl.append("[0]aformat=channel_layouts=stereo,aresample=48000,apad=whole_dur=76[v]")
 fl.append("[v]asplit=2[v1][vk]")
-# music: starts 0.2 s in, base level, louder for the outro once the voice ends (71.6 s), fades at the very end
-fl.append("[1]aformat=channel_layouts=stereo,aresample=48000,adelay=200|200,"
-          "volume='if(lt(t,71.4),0.30,0.30+0.45*min(1,(t-71.4)/1.2))':eval=frame,afade=t=out:st=74.6:d=1.4,apad=whole_dur=76[m0]")
+# music: starts 3.8 s in (after the cold open) so its calm string ending lands on the poll card, base level, louder for the outro once the voice ends (71.6 s), fades at the very end
+fl.append("[1]aformat=channel_layouts=stereo,aresample=48000,adelay=3800|3800,"
+          "volume='if(lt(t,71.4),0.24,0.24+0.5*min(1,(t-71.4)/1.2))':eval=frame,afade=t=out:st=74.6:d=1.4,apad=whole_dur=76[m0]")
 fl.append("[m0][vk]sidechaincompress=threshold=0.03:ratio=6:attack=20:release=350[m]")
 fl.append(f"[v1][m]{''.join(lab)}amix=inputs={len(ev)+2}:normalize=0:duration=first,atrim=0:{END},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", ";".join(fl), "-map", "[out]", "-ar", "48000", "-c:a", "aac", "-b:a", "192k", "mix.m4a"], check=True)
