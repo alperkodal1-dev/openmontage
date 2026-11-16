@@ -58,3 +58,10 @@ This Ottoman map is famous for showing Antarctica. It doesn't. But it may hide a
 ## v7 (final, voiced)
 
 v6 without "Real or myth?": the poll card asks it on screen. 176 words.
+
+## v8 (vidIQ competitor notes 1, 2, 5: ~64 s, looping ending, paradox hook, corsair uncle; "the old maps' wonders")
+
+150 words, ~64 s at 141 wpm. Ends mid-sentence ("Look again at...") so the Short loops into "This map from 1513...".
+The poll card stays on screen during the last lines instead of a separate outro.
+
+This map from 1513 shows a continent no one saw until 1820... or does it? Ottoman admiral Piri Reis drew it on gazelle skin. It surfaced in 1929, in Topkapı Palace. Writers saw Antarctica in its southern coast, mapped before the ice by a lost civilization. But that ice is millions of years old. Historians see South America there, bent east to fit the skin. His sources? His notes list about twenty maps, one drawn by Columbus. His uncle, the corsair Kemal Reis, held a captive who sailed with Columbus three times. He copied the old maps' wonders too: monks on a giant fish, one-horned oxen, monsters seven spans long. He even noted... "But they are harmless souls." Columbus's own map was never found. And under that ice lie fossil forests, even dinosaurs. We still know so little about Antarctica... so how can we be so sure? Look again at...
