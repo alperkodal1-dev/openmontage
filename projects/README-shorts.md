@@ -7,6 +7,7 @@ Two vertical (1080x1920) history Shorts for the Unsealed History channel, built 
 | `atlantis-story/` | https://www.youtube.com/watch?v=_PpRv_GMMlk | `atlantis-story/out/atlantis_story_v2_strings.mp4` | `atlantis-story/out/atlantis_tr.srt` |
 | `noah-ark/` | https://www.youtube.com/watch?v=68mjjXGN5EI | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
 | `piri-reis-map/` | https://www.youtube.com/watch?v=5SXAmr8qgFM | `piri-reis-map/out/piri_reis_v9_loop.mp4` | `piri-reis-map/out/piri_reis_tr.srt` |
+| `egypt-pyramids/` | not published yet (draft v2) | `egypt-pyramids/out/pyramid_v2_draft.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
 | `columbus-flat-earth/` | not published yet | `columbus-flat-earth/out/columbus_final.mp4` | `columbus-flat-earth/out/columbus_tr.srt` |
 
 ## Shared look
@@ -76,3 +77,15 @@ cd hf && npx hyperframes render --quality high --output ../out/visual.mp4
 ```
 
 Map scan: Piri Reis map, 1513 (Wikimedia Commons, public domain). Globe and Mediterranean maps from Natural Earth.
+
+## Great Pyramid (draft)
+
+"Who Really Built the Great Pyramid? The Alien Clues". Narration: vidIQ voiceover, George (`audio/vo_v1.mp3`, script v3);
+v4 in `script.md` is the jury's revision, not voiced yet. Music: generated mysterious orchestral score
+(`audio/music_v1.wav`), lifting under the alien legend and the closing question. Images: Wikimedia Commons and
+The Met Open Access (CC0); map from Natural Earth. Jury notes: `review/jury_report.md`.
+
+```bash
+python3 build.py && python3 make_srt.py && (cd audio && python3 mix.py)
+cd hf && npx hyperframes render --quality high --output ../out/visual.mp4
+```
