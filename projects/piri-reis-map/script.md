@@ -33,3 +33,11 @@ the ice is millions of years old, so the question stays honest. Poll card: "Some
 ice" REAL / MYTH. 167 words, ~71 s at 141 wpm, ~75 s with the outro.
 
 This Ottoman map is famous for showing Antarctica. It doesn't. But it may hold a copy of Columbus's lost map. In 1929, it turned up in Topkapı Palace: a scrap of gazelle skin. Admiral Piri Reis drew it in Gallipoli in 1513. Its margins are full of wonders: monks who camped on a giant fish, one-horned oxen, and monsters seven spans long, "but they are harmless souls." In the 1960s, writers claimed its southern coast was Antarctica, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Most historians read that coast as South America, bent east to fit the skin. His notes name the sources: about twenty maps, one drawn by Columbus. His uncle held a captive who had sailed with Columbus three times. Columbus's own map is lost. Yet under that ice lie fossil forests, even dinosaurs. So who knows... did anyone ever live there? Real or myth? Tell me below.
+
+## v4 (smoother story, awaiting approval)
+
+One line from start to end: mystery -> legend -> debunk -> the real secret (Columbus) -> the wonders as part of
+that secret -> the closing question. The wonders move from a detour after the find into the notes, as things Piri
+Reis copied from his sources. 171 words, ~73 s at 141 wpm.
+
+This Ottoman map is famous for showing Antarctica. It doesn't. But it may hide a copy of Columbus's lost map. In 1929, a scholar at Topkapı Palace unrolled a scrap of gazelle skin. Admiral Piri Reis had drawn it in Gallipoli, in 1513. In the 1960s, writers saw Antarctica in its southern coast, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Most historians read that coast as South America, bent east to fit the skin. So where did Piri Reis get his map? His own notes tell us. About twenty maps, one drawn by Columbus. His uncle held a captive who sailed with Columbus three times. He copied their wonders too: monks on a giant fish, one-horned oxen, monsters seven spans long, "but they are harmless souls." Columbus's own map is lost. Yet under that ice lie fossil forests, even dinosaurs. So who knows... did anyone ever live there? Real or myth? Tell me below.
