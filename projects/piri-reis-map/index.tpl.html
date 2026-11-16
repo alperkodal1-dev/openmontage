@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Piri Reis Map Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  :root{ --ink:#0a1417; --bone:#efe6d2; --gold:#d9b26a; --gold2:#f1d49a; --red:#9c2f1f; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'Manrope',sans-serif;color:var(--bone)}
+  .clip{position:absolute;inset:0}
+  .bg{overflow:hidden;background:#05090a}
+  .bg img{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;filter:sepia(.2) contrast(1.06) brightness(.82) saturate(.9)}
+  .bg.dim img{filter:sepia(.3) contrast(1.05) brightness(.4) saturate(.7) blur(2px)}
+  #vig{background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%);z-index:30}
+  #plate{background:linear-gradient(180deg,rgba(6,12,14,0) 0px,rgba(6,12,14,.9) 95px,rgba(6,12,14,.9) 290px,rgba(6,12,14,0) 380px);top:1235px;height:380px;bottom:auto;z-index:40}
+  #caps{z-index:41} #chaps{z-index:42} #s0{z-index:35}
+  .scene{z-index:32}
+  .cap{position:absolute;left:80px;right:80px;top:1395px;height:150px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.5px;opacity:0;text-shadow:0 3px 18px rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em;color:var(--bone)}
+  .chap{position:absolute;top:268px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0}
+  .chap .num{font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:10px;color:var(--gold)}
+  .chap .name{font-family:'Cinzel';font-weight:500;font-size:28px;letter-spacing:8px;opacity:.85}
+  .chap .rule{display:block;width:120px;height:2px;background:var(--gold)}
+  .center{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .ital{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+  .card{background:rgba(7,13,15,.86);border:1px solid rgba(217,178,106,.6)}
+  .stamp{font-family:'Cinzel';font-weight:900;color:#ffe9c4;background:var(--red);padding:12px 26px;transform:rotate(-4deg);white-space:nowrap}
+  .tag{font-family:'Cinzel';font-weight:700;letter-spacing:3px;background:var(--ink);border:2px solid var(--gold);padding:10px 18px;white-space:nowrap}
+  .big{font-family:'Cinzel';font-weight:900;letter-spacing:4px;line-height:1.05;text-shadow:0 6px 40px rgba(0,0,0,.85)}
+  .row{position:absolute;left:0;right:0;display:flex;justify-content:center}
+
+  #s0 img{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;filter:sepia(.3) contrast(1.2) brightness(.85)}
+  #s0 .flash{position:absolute;inset:0;background:#f4ead2;opacity:0}
+  #hk{z-index:45;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.85) 330px,rgba(6,12,14,0) 470px);height:470px;bottom:auto}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:2px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95)}
+  #hk .l1{top:200px;color:var(--bone)} #hk .l2{top:276px;color:var(--gold2)}
+
+  /* the map, full frame, moved by x/y/scale */
+  #bgm{overflow:hidden;background:#140d06}
+  #bgm img{position:absolute;left:0;top:0;width:{{MW}}px;height:{{MH}}px;max-width:none;transform-origin:0 0;filter:sepia(.1) contrast(1.08) brightness(.95)}
+  
+  /* S1 */
+  #no{top:620px} #no .stamp{font-size:76px}
+  #lost{top:560px} #lost .ital{font-size:54px;color:var(--gold2)} #lost .big{font-size:96px;margin-top:10px}
+  /* S2 */
+  #y29{top:520px} #y29 .big{font-size:180px}
+  #tp{top:790px} #tp .tag{font-size:42px}
+  #gz{top:900px} #gz .ital{font-size:54px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
+  .mapcard{position:absolute;left:60px;width:960px;background:#d9c9a3;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden}
+  .mapcard:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,250,235,.25),rgba(90,60,20,.35));z-index:1;pointer-events:none}
+  .mapcard svg{position:absolute;left:0;top:0}
+  .pin{position:absolute;z-index:3;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--red);border:4px solid #fff4dc}
+  .ptag{position:absolute;z-index:4;font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:3px;background:var(--ink);color:var(--bone);padding:8px 14px;white-space:nowrap}
+  #y13{top:1090px} #y13 .tag{font-size:44px}
+  /* S3 wonders */
+  .wt{position:absolute;left:0;right:0;top:1100px;display:flex;justify-content:center}
+  .wt .tag{font-size:40px}
+  #hq{position:absolute;left:90px;width:900px;top:520px;padding:46px 50px;text-align:center}
+  #hq .q{font-size:72px;line-height:1.12}
+  #hq .src{margin-top:18px;font-family:'Cinzel';font-weight:700;font-size:26px;letter-spacing:5px;color:var(--gold)}
+  /* S4 legend */
+  #y60{top:520px} #y60 .big{font-size:170px}
+  #books{position:absolute;left:0;right:0;top:780px;display:flex;flex-direction:column;align-items:center;gap:22px}
+  #books .tag{font-size:40px}
+  #lc{top:1080px} #lc .stamp{font-size:50px}
+  /* S5 ice */
+  #globe{position:absolute;left:90px;top:400px;width:900px;height:900px;border-radius:50%;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 0 3px var(--gold)}
+  #globe svg{position:absolute;left:0;top:0}
+  #iceT{position:absolute;left:0;right:0;top:1150px;display:flex;justify-content:center;gap:18px}
+  #iceT .tag{font-size:34px}
+  #bend{top:1100px} #bend .tag{font-size:38px}
+  #arrow{position:absolute;z-index:33;left:0;top:0;width:1080px;height:1920px;pointer-events:none}
+  /* S6 notes */
+  #n20{top:520px} #n20 .big{font-size:200px} #n20 .l{font-family:'Cinzel';font-weight:700;font-size:40px;letter-spacing:10px;color:var(--gold)}
+  #col{position:absolute;left:90px;width:900px;top:820px;padding:30px 40px;display:flex;gap:30px;align-items:center}
+  #col .med{flex:0 0 190px;width:190px;height:236px;border:3px solid var(--gold);overflow:hidden}
+  #col .med img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+  #col .nm{font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px;line-height:1.05}
+  #col .d{font-size:40px;color:var(--gold2);line-height:1.15;margin-top:8px}
+  #kr{position:absolute;left:90px;width:900px;top:520px;padding:40px 50px;text-align:center}
+  #kr .nm{font-family:'Cinzel';font-weight:900;font-size:62px;letter-spacing:4px}
+  #kr .d{margin-top:14px;font-size:50px;color:var(--gold2);line-height:1.15}
+  #kr .v{margin-top:24px;display:flex;justify-content:center;gap:22px}
+  #kr .v span{font-family:'Cinzel';font-weight:900;font-size:40px;border:2px solid var(--gold);padding:8px 22px}
+  #ml{top:1060px} #ml .stamp{font-size:54px}
+  /* S7 */
+  #green{position:absolute;left:0;right:0;top:1120px;display:flex;justify-content:center;gap:18px}
+  #green .tag{font-size:34px}
+  #wk{top:560px} #wk .big{font-size:110px}
+  #poll{position:absolute;left:130px;width:820px;top:560px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6);color:#132024;text-align:center}
+  #poll .qq{font-family:'Cinzel';font-weight:900;font-size:50px;line-height:1.14}
+  #poll .opts{display:flex;gap:22px;margin-top:34px}
+  #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
+  #poll .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:2px;color:#6c5a37}
+  #o1{background:#132024;color:var(--gold2)} #o2{background:#e9dcc0;color:#132024}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{{END}}">
+
+  <section id="bgm" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="0"><img id="mapi" src="assets/piri_map.jpg" alt=""><div id="mdim" style="position:absolute;inset:0;background:rgba(5,9,10,.66);opacity:0"></div></section>
+  <section id="bgc" class="clip bg dim" style="opacity:0" data-start="49.2" data-duration="12.4" data-track-index="1"><img id="bgci" src="assets/columbus.jpg" alt="" style="object-position:50% 30%"></section>
+
+  <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
+  <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
+  <div id="caps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="9"></div>
+  <div id="chaps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="10">
+    <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE FIND</div></div>
+    <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">THE WONDERS</div></div>
+    <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THE LEGEND</div></div>
+    <div class="chap" id="ch4"><div class="num">IV</div><span class="rule"></span><div class="name">THE ICE</div></div>
+    <div class="chap" id="ch5"><div class="num">V</div><span class="rule"></span><div class="name">THE NOTES</div></div>
+  </div>
+
+  <section id="s0" class="clip" data-start="0" data-duration="1.3" data-track-index="11">
+    <img id="cold" src="assets/piri_map.jpg" alt=""><span class="flash" id="flash"></span>
+  </section>
+  <section id="hk" class="clip" data-start="0" data-duration="3.0" data-track-index="20">
+    <div class="l l1" id="hk1">THE MAP THAT SHOWS</div><div class="l l2" id="hk2">ANTARCTICA?</div>
+  </section>
+
+  <section id="s1" class="clip scene" data-start="0.9" data-duration="7.3" data-track-index="12">
+    <div class="row" id="no"><div class="stamp" id="nos">IT DOESN'T</div></div>
+    <div class="center" id="lost"><div class="ital">but it may hold a copy of</div><div class="big">COLUMBUS'S<br>LOST MAP</div></div>
+  </section>
+
+  <section id="s2" class="clip scene" data-start="8.1" data-duration="10.5" data-track-index="13">
+    <div class="center" id="y29"><div class="big">1929</div></div>
+    <div class="row" id="tp"><div class="tag" id="tpt">TOPKAPI PALACE · ISTANBUL</div></div>
+    <div class="center" id="gz"><div class="ital">a scrap of gazelle skin</div></div>
+    <div class="mapcard" id="med" style="top:420px;height:600px">
+      {{MED}}
+      <div class="pin" id="pg" style="left:{{GX}}px;top:{{GY}}px"></div>
+      <div class="pin" id="pi" style="left:{{IX}}px;top:{{IY}}px;background:var(--gold)"></div>
+      <div class="ptag" id="pgt" style="left:{{GTX}}px;top:{{GTY}}px">GALLIPOLI</div>
+      <div class="ptag" id="pit" style="left:{{ITX}}px;top:{{ITY}}px">ISTANBUL</div>
+    </div>
+    <div class="row" id="y13"><div class="tag" id="y13t">PIRI REIS · 1513</div></div>
+  </section>
+
+  <section id="s3" class="clip scene" data-start="18.5" data-duration="11.2" data-track-index="14">
+    <div class="wt" id="w1"><div class="tag">MONKS ON A GIANT FISH</div></div>
+    <div class="wt" id="w2"><div class="tag">ONE-HORNED OXEN</div></div>
+    <div class="wt" id="w3"><div class="tag">MONSTERS · SEVEN SPANS LONG</div></div>
+    <div id="hq" class="card"><div class="q ital">“…but they are harmless souls.”</div><div class="src">PIRI REIS · 1513 · TR. AKÇURA 1935</div></div>
+  </section>
+
+  <section id="s4" class="clip scene" data-start="29.6" data-duration="8.2" data-track-index="15">
+    <div class="center" id="y60"><div class="big">1960s</div></div>
+    <div id="books"><div class="tag" id="b1">HAPGOOD · 1966</div><div class="tag" id="b2">VON DÄNIKEN · 1968</div></div>
+    <div class="row" id="lc"><div class="stamp" id="lcs">A LOST CIVILIZATION?</div></div>
+  </section>
+
+  <section id="s5" class="clip scene" data-start="37.7" data-duration="11.6" data-track-index="16">
+    <div id="globe">{{GLOBE}}</div>
+    <div id="iceT"><div class="tag" id="it1">ICE · ~34 MILLION YEARS</div><div class="tag" id="it2">FIRST SEEN · 1820</div></div>
+    <div class="row" id="bend"><div class="tag" id="bendt">SOUTH AMERICA, BENT EAST</div></div>
+    <svg id="arrow" viewBox="0 0 1080 1920"><path id="arp" d="M 300,880 C 300,1010 420,1060 700,1040" fill="none" stroke="#e0623f" stroke-width="12" stroke-linecap="round" stroke-dasharray="900" stroke-dashoffset="900"/><path id="arh" d="M 670,1005 L 712,1040 L 668,1075" fill="none" stroke="#e0623f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0"/></svg>
+  </section>
+
+  <section id="s6" class="clip scene" data-start="49.4" data-duration="12.1" data-track-index="17">
+    <div class="center" id="n20"><div class="big" id="n20n">~20</div><div class="l">SOURCE MAPS</div></div>
+    <div id="col" class="card">
+      <div class="med"><img src="assets/columbus.jpg" alt=""></div>
+      <div><div class="nm">ONE BY COLUMBUS</div><div class="d ital">“a map drawn by Colombo in the western region”</div></div>
+    </div>
+    <div id="kr" class="card">
+      <div class="nm">KEMAL REIS</div>
+      <div class="d ital">his captive sailed with Columbus</div>
+      <div class="v"><span>I</span><span>II</span><span>III</span></div>
+    </div>
+    <div class="row" id="ml"><div class="stamp" id="mls">COLUMBUS'S MAP: LOST</div></div>
+  </section>
+
+  <section id="s7" class="clip scene" data-start="61.5" data-duration="{{S7D}}" data-track-index="19">
+    <div id="globe2" style="position:absolute;left:190px;top:400px;width:700px;height:700px;border-radius:50%;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7),0 0 0 3px var(--gold)"><div style="transform:scale(.7778);transform-origin:0 0">{{GLOBE2}}</div></div>
+    <div id="green"><div class="tag" id="g1">FOSSIL FORESTS</div><div class="tag" id="g2">DINOSAURS</div></div>
+    <div class="center" id="wk"><div class="big">WHO KNOWS…</div></div>
+    <div id="poll">
+      <div class="qq">Someone lived in Antarctica before the ice.</div>
+      <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
+      <div class="hint" id="hint">TELL ME BELOW</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const E = "power3.out";
+  const MW = {{MW}}, MH = {{MH}};
+  // put map point (fx, fy) at screen (cx, cy) with zoom s
+  const at = (fx, fy, s, cx = 540, cy = 800) => ({ x: cx - fx * MW * s, y: cy - fy * MH * s, scale: s });
+  const capRoot = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "cap" + i;
+    c.w.forEach((w, j) => { const s = document.createElement("span"); s.id = `cap${i}w${j}`; s.textContent = w.t; d.appendChild(s); });
+    capRoot.appendChild(d);
+  });
+  CAPS.forEach((c, i) => {
+    tl.fromTo("#cap" + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, c.s);
+    tl.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
+    c.w.forEach((w, j) => tl.to(`#cap${i}w${j}`, { color: "#f1d49a", duration: 0.08 }, w.s));
+  });
+  [["#ch1",8.3,18.5],["#ch2",18.7,29.6],["#ch3",29.8,37.7],["#ch4",37.9,49.3],["#ch5",49.5,61.5]].forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
+    tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
+    tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
+  });
+  // the map: one continuous camera through the whole video
+  const M = "#mapi";
+  tl.fromTo(M, at(0.42, 0.86, 0.6, 540, 820), { ...at(0.42, 0.84, 0.68, 540, 820), duration: 4.0, ease: "none" }, 0);   // southern coast
+  tl.to(M, { ...at(0.5, 0.5, 0.4, 540, 820), duration: 3.0, ease: "power2.inOut" }, 4.6);                             // whole map
+  tl.to("#mdim", { opacity: 1, duration: 0.4 }, 8.2);
+  tl.to(M, { ...at(0.5, 0.5, 0.45, 540, 820), duration: 10.0, ease: "none" }, 8.2);
+  tl.to("#mdim", { opacity: 0, duration: 0.4 }, 18.6);
+  tl.to(M, { ...at({{W1X}}, {{W1Y}}, 1.6), duration: 2.4, ease: "power2.inOut" }, 18.7);                                // the fish
+  tl.to(M, { ...at({{W2X}}, {{W2Y}}, 1.6), duration: 1.6, ease: "power2.inOut" }, 22.9);                                 // the ox
+  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.7), duration: 1.4, ease: "power2.inOut" }, 24.7);                                 // the monsters
+  tl.to("#mdim", { opacity: 1, duration: 0.4 }, 26.9);
+  tl.to(M, { ...at({{W3X}}, {{W3Y}}, 1.85), duration: 2.8, ease: "none" }, 26.9);
+  tl.to("#mdim", { opacity: 0, duration: 0.4 }, 29.7);
+  tl.to(M, { ...at(0.45, 0.9, 0.9, 540, 900), duration: 2.0, ease: "power2.inOut" }, 29.7);                            // the "Antarctica" coast
+  tl.to("#mdim", { opacity: 1, duration: 0.4 }, 37.7);
+  tl.to("#mdim", { opacity: 0, duration: 0.4 }, 43.8);
+  tl.fromTo(M, at(0.35, 0.72, 0.75, 540, 760), { ...at(0.4, 0.8, 0.8, 540, 760), duration: 5.4, ease: "none" }, 43.8);  // the bend
+  tl.to("#mdim", { opacity: 1, duration: 0.4 }, 49.3);
+  tl.to(M, { ...at(0.18, 0.5, 1.1), duration: 12.0, ease: "none" }, 49.3);                                              // the notes
+  tl.to(M, { ...at(0.5, 0.5, 0.45, 540, 820), duration: 1.0, ease: "power2.inOut" }, 61.4);
+  tl.fromTo("#bgc", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 49.2);
+  tl.to("#bgc", { opacity: 0, duration: 0.4 }, 61.2);
+  // cold open
+  tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
+  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => tl.to("#cold", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 0.02 + i * 0.055));
+  tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none" }, 0.98);
+  tl.to("#s0", { opacity: 0, duration: 0.25 }, 1.04);
+  tl.from("#hk2", { scale: 1.3, duration: 0.5, ease: E }, 0.25);
+  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, 3.4);
+  // S1
+  tl.from("#nos", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 3.85);
+  tl.to("#no", { opacity: 0, duration: 0.3 }, 4.7);
+  tl.from("#lost .ital", { opacity: 0, y: 16, duration: 0.4, ease: E }, 4.85);
+  tl.from("#lost .big", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 6.2);
+  tl.to("#lost", { opacity: 0, duration: 0.3 }, 7.9);
+  // S2
+  tl.from("#y29", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 8.4);
+  tl.from("#tpt", { opacity: 0, y: 14, duration: 0.4, ease: E }, 10.5);
+  tl.from("#gz", { opacity: 0, y: 14, duration: 0.4, ease: E }, 12.1);
+  tl.to(["#y29","#tp","#gz"], { opacity: 0, y: -30, duration: 0.3 }, 14.0);
+  tl.from("#med", { opacity: 0, y: 70, duration: 0.55, ease: E }, 14.25);
+  tl.from("#pg", { opacity: 0, scale: 0, duration: 0.35, ease: "back.out(3)" }, 16.15);
+  tl.from("#pgt", { opacity: 0, x: -20, duration: 0.3, ease: E }, 16.3);
+  tl.from(["#pi","#pit"], { opacity: 0, duration: 0.3 }, 16.5);
+  tl.from("#y13t", { opacity: 0, scale: 1.4, duration: 0.35, ease: "back.out(2)" }, 16.9);
+  tl.to(["#med","#y13"], { opacity: 0, duration: 0.3 }, 18.3);
+  // S3
+  tl.fromTo("#w1", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 21.2);
+  tl.to("#w1", { opacity: 0, duration: 0.25 }, 23.4);
+  tl.fromTo("#w2", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 23.66);
+  tl.to("#w2", { opacity: 0, duration: 0.25 }, 25.0);
+  tl.fromTo("#w3", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.35, ease: E }, 25.2);
+  tl.to("#w3", { opacity: 0, duration: 0.25 }, 26.8);
+  tl.from("#hq", { opacity: 0, y: 50, duration: 0.5, ease: E }, 27.0);
+  tl.to("#hq", { opacity: 0, duration: 0.3 }, 29.4);
+  // S4
+  tl.from("#y60", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 29.85);
+  tl.from("#b1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 31.2);
+  tl.from("#b2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 32.0);
+  tl.to(["#y60","#books"], { opacity: 0, y: -30, duration: 0.3 }, 34.0);
+  tl.from("#lcs", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 35.95);
+  tl.to("#lc", { opacity: 0, duration: 0.3 }, 37.5);
+  // S5
+  tl.from("#globe", { opacity: 0, scale: 0.85, duration: 0.6, ease: E }, 37.85);
+  tl.fromTo("#globe svg", { rotation: -8 }, { rotation: 0, duration: 6.0, ease: "none", transformOrigin: "50% 50%" }, 37.85);
+  tl.from("#it1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 39.6);
+  tl.from("#it2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 42.3);
+  tl.to(["#globe","#iceT"], { opacity: 0, duration: 0.3 }, 43.6);
+  tl.to("#arp", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, 46.9);
+  tl.to("#arh", { opacity: 1, duration: 0.2 }, 47.75);
+  tl.from("#bendt", { opacity: 0, scale: 1.4, duration: 0.3, ease: "back.out(2)" }, 47.2);
+  tl.to(["#arrow","#bend"], { opacity: 0, duration: 0.3 }, 49.1);
+  // S6
+  tl.from("#n20", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 50.9);
+  tl.to("#n20", { opacity: 0, y: -30, duration: 0.3 }, 52.75);
+  tl.from("#col", { opacity: 0, y: 50, duration: 0.5, ease: E }, 52.9);
+  tl.fromTo("#col .med img", { scale: 1.0 }, { scale: 1.15, duration: 2.2, ease: "none" }, 52.9);
+  tl.to("#col", { opacity: 0, duration: 0.3 }, 54.85);
+  tl.from("#kr", { opacity: 0, y: 50, duration: 0.5, ease: E }, 55.0);
+  tl.from("#kr .v span", { opacity: 0, scale: 1.6, duration: 0.25, stagger: 0.2, ease: "back.out(2)" }, 57.6);
+  tl.to("#kr", { opacity: 0, duration: 0.3 }, 59.3);
+  tl.from("#mls", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 60.6);
+  tl.to("#ml", { opacity: 0, duration: 0.3 }, 61.35);
+  // S7: Antarctica turns green, then the question
+  tl.from("#globe2", { opacity: 0, scale: 0.85, duration: 0.6, ease: E }, 61.65);
+  tl.fromTo("#gant2", { attr: { fill: "#f4f7f8" } }, { attr: { fill: "#5f8a4a" }, duration: 1.4, ease: "power1.inOut" }, 62.4);
+  tl.from("#g1", { opacity: 0, y: 14, duration: 0.35, ease: E }, 63.0);
+  tl.from("#g2", { opacity: 0, y: 14, duration: 0.35, ease: E }, 64.7);
+  tl.to(["#globe2","#green"], { opacity: 0, duration: 0.3 }, 65.8);
+  tl.from("#wk", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 66.0);
+  tl.to("#wk", { opacity: 0, y: -30, duration: 0.3 }, 68.9);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.6, ease: "back.out(1.7)" }, 69.1);
+  tl.to("#o1", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 69.2);
+  tl.to("#o2", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 69.95);
+  tl.from("#hint", { opacity: 0, y: 12, duration: 0.4, ease: E }, 70.85);
+  tl.to("#hint", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 71.6);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>
