@@ -59,7 +59,7 @@
   .arttag .tag{font-size:40px}
 
   /* hook numbers */
-  #n23{top:560px} #n23 .big{font-size:150px} #n23 .l{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:10px;color:var(--gold)}
+  #n23{top:560px} #n23 .big{font-size:150px} #n23 .l{white-space:nowrap} #n23 .l{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:10px;color:var(--gold)}
   #tons{top:1060px} #tons .tag{font-size:40px}
   #north{position:absolute;left:290px;top:440px;width:500px;height:500px}
   #northT{top:1000px} #northT .tag{font-size:40px}
@@ -147,8 +147,8 @@
 
   <!-- hook facts -->
   <section id="s1" class="clip scene" data-start="4.2" data-duration="10.0" data-track-index="13">
-    <div class="center" id="n23"><div class="big" id="n23n">2,300,000</div><div class="l">STONE BLOCKS</div></div>
-    <div class="row" id="tons"><div class="tag" id="tonst">GRANITE BEAMS · UP TO 80 TONS</div></div>
+    <div class="center" id="n23"><div class="big" id="n23n">2,300,000</div><div class="l">STONE BLOCKS · EST.</div></div>
+    <div class="row" id="tons"><div class="tag" id="tonst">GRANITE BEAMS · 25–80 TONS</div></div>
     <svg id="north" viewBox="0 0 500 500">
       <circle cx="250" cy="250" r="230" fill="rgba(7,13,15,.82)" stroke="#d9b26a" stroke-width="4"/>
       <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(217,178,106,.4)" stroke-width="2" stroke-dasharray="4 14"/>
@@ -157,7 +157,7 @@
       <circle cx="250" cy="250" r="14" fill="#d9b26a"/>
     </svg>
     <div class="row" id="northT"><div class="tag" id="northTt">TRUE NORTH · OFF BY 0.05°</div></div>
-    <div class="center" id="bc"><div class="big">2560 BC</div><div class="ital">four and a half thousand years ago</div></div>
+    <div class="center" id="bc"><div class="big">c. 2560 BC</div><div class="ital">four and a half thousand years ago</div></div>
   </section>
 
   <!-- I. the visitors -->
@@ -195,22 +195,23 @@
       <line id="shaft" x1="505" y1="600" x2="900" y2="190" stroke="#7dffb0" stroke-width="7" stroke-linecap="round" stroke-dasharray="580" stroke-dashoffset="580"/>
       <g id="belt"><circle cx="830" cy="230" r="11" fill="#fff"/><circle cx="880" cy="190" r="13" fill="#fff"/><circle cx="930" cy="150" r="11" fill="#fff"/></g>
     </svg>
-    <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION'S BELT</div></div>
+    <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION, 2500 BC</div></div>
   </section>
 
   <!-- III. the builders -->
   <section id="s5" class="clip scene" data-start="40.3" data-duration="13.3" data-track-index="17">
     <div class="center" id="y90"><div class="big">1990</div></div>
+    <div class="row" id="ph53" style="top:1180px"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
     <div class="row" id="horse"><div class="tag" id="horset">A HORSE TRIPS ON A BURIED WALL</div></div>
-    <div class="row" id="bk"><div class="stamp" id="bks">BURIED BESIDE THEIR KING</div></div>
+    <div class="row" id="bk"><div class="stamp" id="bks">BY THEIR KING'S PYRAMID</div></div>
     <div class="center" id="gangs"><div class="ital">their work gangs<br>signed the stones</div></div>
-    <div class="gang card" id="g1"><div class="nm">FRIENDS<br>OF KHUFU</div><div class="d">GANG NAME · GIZA</div></div>
-    <div class="gang card" id="g2"><div class="mk"><img src="assets/menkaure.jpg" alt=""></div><div class="nm">DRUNKARDS<br>OF MENKAURE</div><div class="d">GANG NAME · GIZA</div></div>
+    <div class="gang card" id="g1"><div class="nm">FRIENDS<br>OF KHUFU</div><div class="d">PAINTED INSIDE THE GREAT PYRAMID</div></div>
+    <div class="gang card" id="g2"><div class="mk"><img src="assets/menkaure.jpg" alt=""></div><div class="nm">DRUNKARDS<br>OF MENKAURE</div><div class="d">GANG NAME · MENKAURE'S PYRAMID</div></div>
   </section>
 
   <!-- IV. the logbook -->
   <section id="s6" class="clip scene" data-start="53.5" data-duration="4.7" data-track-index="18">
-    <div id="pap"><div class="h">THE DIARY OF MERER</div><div class="s">oldest papyri ever found</div><div class="lines"><span style="width:92%"></span><span style="width:80%"></span><span style="width:95%"></span><span style="width:70%"></span><span style="width:88%"></span></div></div>
+    <div id="pap"><div class="h">THE DIARY OF MERER</div><div class="s">oldest inscribed papyri ever found</div><div class="lines"><span style="width:92%"></span><span style="width:80%"></span><span style="width:95%"></span><span style="width:70%"></span><span style="width:88%"></span></div></div>
     <div class="mapcard" id="eg2" style="top:400px;height:800px;opacity:0"><div class="mv" id="eg2v">{{EGYPT2}}
       <svg id="route" width="960" height="1100" viewBox="0 0 960 1100"><path id="rp" d="M {{TUX}},{{TUY}} C {{TUX}},{{TUY2}} {{GIX}},{{GIY2}} {{GIX}},{{GIY}}" fill="none" stroke="#9c2f1f" stroke-width="6" stroke-dasharray="10 8"/></svg>
       <div class="pin" style="left:{{TUX}}px;top:{{TUY}}px"></div><div class="pin" style="left:{{GIX}}px;top:{{GIY}}px;background:var(--gold)"></div>
@@ -227,9 +228,9 @@
     <div class="row" id="nf"><div class="stamp" id="nfs">NEVER FOUND</div></div>
     <div class="center" id="wk"><div class="ital">who knows…</div></div>
     <div id="poll">
-      <div class="qq">The Egyptians had help from an alien race.</div>
+      <div class="qq">Did the Egyptians get help from an alien race?</div>
       <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
-      <div class="hint" id="hint">REAL OR MYTH? TELL ME BELOW</div>
+      <div class="hint" id="hint">THE EVIDENCE IS ABOVE · TELL ME BELOW</div>
     </div>
   </section>
 </div>
