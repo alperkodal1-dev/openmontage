@@ -4,6 +4,9 @@
    distance to Syene. Reported by Cleomedes, *On the Circular Motions of the Celestial Bodies* I.7.
 2. **Bede (c. 725):** *De temporum ratione*, ch. 32, describes the Earth as a globe ("orbis ... quasi pila").
 3. **Johannes de Sacrobosco (c. 1230):** *De sphaera mundi*, a standard university astronomy text into the 1600s.
+3b. **Sea monsters:** Olaus Magnus, *Carta Marina* (Venice, 1539), sea serpents and monsters across the North
+   Atlantic. The Hunt-Lenox globe (c. 1510, New York Public Library) carries "HC SVNT DRACONES" off East Asia,
+   one of only two known maps with the phrase.
 4. **Columbus's distance error:** he used Alfraganus's degree in Italian miles, giving a globe roughly 25% too
    small, and placed Japan about 4,000 km west of the Canaries. The Talavera/Salamanca commission (1486-1490)
    rejected the plan on distance, not shape. Sources: Samuel Eliot Morison, *Admiral of the Ocean Sea* (1942);
@@ -23,4 +26,5 @@ Caution in the narration: "every educated European" (not "everyone"); "about a q
 - *De sphaera* manuscript or early printed edition pages, Wikimedia Commons, public domain.
 - Washington Irving portrait (John Wesley Jarvis, 1809) and the 1828 title page, public domain.
 - Eratosthenes: Bernardo Strozzi, *Eratosthenes Teaching in Alexandria* (1635), public domain.
+- Olaus Magnus, *Carta Marina* (1539), public domain; Hunt-Lenox globe, public domain photos.
 - Maps drawn from Natural Earth (public domain), as in the Noah's Ark Short.
