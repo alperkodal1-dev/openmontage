@@ -15,7 +15,7 @@ A follow-on to the Columbus Short: the map that may preserve Columbus's lost cha
 
 ## Spoken text (for the voiceover)
 
-This Ottoman map is famous for showing Antarctica. It doesn't. But it may hold a copy of Columbus's lost map. In 1929, it turned up in Topkapı Palace: a scrap of gazelle skin. Admiral Piri Reis drew it in Gallipoli in 1513. Its margins are full of wonders: monks who camped on a giant fish, one-horned oxen, and monsters seven spans long, "but they are harmless souls." In the 1960s, writers claimed its southern coast was Antarctica, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Most historians read that coast as South America, bent east to fit the skin. His notes name the sources: about twenty maps, one drawn by Columbus. His uncle held a captive who had sailed with Columbus three times. Columbus's own map is lost. Yet under that ice lie fossil forests, even dinosaurs. So who knows... did anyone ever live there? Real or myth? Tell me below.
+This Ottoman map is famous for showing Antarctica. It doesn't. But it may hide a copy of Columbus's lost map. In 1929, it surfaced in Topkapı Palace: a scrap of gazelle skin. Piri Reis drew it in Gallipoli, in 1513. Later, writers saw Antarctica in its southern coast, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Historians see South America there, bent east to fit the skin. So where did he get it? His notes list about twenty maps, one drawn by Columbus. His uncle's captive had sailed with Columbus three times. He copied their wonders too: monks on a giant fish, one-horned oxen, monsters seven spans long. And beside them, he even wrote a note... "But they are harmless souls." Columbus's own map was never found. Yet under that ice lie fossil forests, even dinosaurs. We still know so little about Antarctica... so how can we be so sure of anything? Did anyone ever live there? Tell me below.
 
 ## v2 (after vidIQ script guidance, awaiting approval)
 
@@ -53,3 +53,8 @@ This Ottoman map is famous for showing Antarctica. It doesn't. But it may hide a
 179 words, ~76 s at 141 wpm (over the 75 s limit by ~1 s before the outro).
 
 This Ottoman map is famous for showing Antarctica. It doesn't. But it may hide a copy of Columbus's lost map. In 1929, it surfaced in Topkapı Palace: a scrap of gazelle skin. Piri Reis drew it in Gallipoli, in 1513. Later, writers saw Antarctica in its southern coast, mapped before the ice by a lost civilization. But Antarctica has been frozen for millions of years, and no one saw it until 1820. Historians see South America there, bent east to fit the skin. So where did he get it? His notes list about twenty maps, one drawn by Columbus. His uncle's captive had sailed with Columbus three times. He copied their wonders too: monks on a giant fish, one-horned oxen, monsters seven spans long. And beside them, he even wrote a note... "But they are harmless souls." Columbus's own map was never found. Yet under that ice lie fossil forests, even dinosaurs. We still know so little about Antarctica... so how can we be so sure of anything? Did anyone ever live there? Real or myth? Tell me below.
+
+
+## v7 (final, voiced)
+
+v6 without "Real or myth?": the poll card asks it on screen. 176 words.
