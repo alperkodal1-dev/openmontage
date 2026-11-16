@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "7e2ef8f3-d793-44ae-8715-bcf2969396d2",
-  "currentRevision": "d64c43e5-d15d-462e-bb28-737a05598005",
+  "currentRevision": "e8ca221a-3380-4bab-a3fc-640b8de5782c",
   "pendingChanges": false,
   "files": {
     "assets/columbus.jpg": {
@@ -89,8 +89,8 @@
       "content": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/b7/b77be06e853092a50c121cb3dbb13f19b7909deafb213fca9536adc1af2791e9"
     },
     "index.html": {
-      "hash": "0c833b9e3401676d387083a7e107f92fa314e202f55b82d517b88267ee547ad1",
-      "content": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/0c/0c833b9e3401676d387083a7e107f92fa314e202f55b82d517b88267ee547ad1"
+      "hash": "0773e0c1ed9319d38ed0d12a44fc68d44ceb0661a5b8308901ffec56455a4f00",
+      "content": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/07/0773e0c1ed9319d38ed0d12a44fc68d44ceb0661a5b8308901ffec56455a4f00"
     },
     "mappts.json": {
       "hash": "605685f7eb262b8c948abd741ed1968ebd60725109e292294001896de3f76387",
@@ -122,6 +122,21 @@
         "index.html": {
           "before": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/37/37db1949eba90c5bbb8e4bedc3021af6a5c7f7b326c712796a24f2c3b08455cc",
           "after": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/0c/0c833b9e3401676d387083a7e107f92fa314e202f55b82d517b88267ee547ad1"
+        }
+      }
+    },
+    "e8ca221a-3380-4bab-a3fc-640b8de5782c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794839968730,
+      "endedAt": 1794839968732,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/0c/0c833b9e3401676d387083a7e107f92fa314e202f55b82d517b88267ee547ad1",
+          "after": "/root/.cache/hyperframes/history/7e2ef8f3-d793-44ae-8715-bcf2969396d2/blobs/07/0773e0c1ed9319d38ed0d12a44fc68d44ceb0661a5b8308901ffec56455a4f00"
         }
       }
     }
