@@ -4,7 +4,7 @@ import difflib, json, re, sys
 from faster_whisper import WhisperModel
 
 audio, out = sys.argv[1], sys.argv[2]
-script = open('script.md').read().split('## Spoken text (for the voiceover)')[1].strip()
+script = open('script.md').read().split('## Spoken text (for the voiceover)')[1].strip().split('\n\n')[0]
 sw = script.split()
 m = WhisperModel('small.en', device='cpu', compute_type='int8')
 import subprocess, numpy as np
