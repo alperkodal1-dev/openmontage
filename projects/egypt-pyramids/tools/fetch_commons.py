@@ -2,14 +2,15 @@
 Usage: python3 tools/fetch_commons.py search "query" | get "File:Name.jpg" out.jpg [width]"""
 import json, sys, time, urllib.parse, urllib.request
 UA = {'User-Agent': 'OpenMontageHistoryShorts/1.0 (educational history video)'}
-def fetch(url, tries=8):
+def fetch(url, tries=10):
     for i in range(tries):
         try:
             with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=60) as r:
                 return r.read()
         except urllib.error.HTTPError as e:
             if e.code != 429: raise
-            time.sleep(4 * (i + 1))
+            ra = e.headers.get('Retry-After')
+            time.sleep(int(ra) + 2 if ra and ra.isdigit() else 10 * (i + 1))
     raise SystemExit('still rate limited: ' + url)
 API = 'https://commons.wikimedia.org/w/api.php?format=json&action=query&'
 if sys.argv[1] == 'search':
@@ -21,5 +22,6 @@ else:
     p = next(iter(d['query']['pages'].values()))
     if 'imageinfo' not in p: raise SystemExit('missing: ' + title)
     ii = p['imageinfo'][0]; md = ii['extmetadata']
-    open(out, 'wb').write(fetch(ii.get('thumburl') or ii['url']))
+    data = fetch(ii.get('thumburl') or ii['url'])
+    open(out, 'wb').write(data)   # write only after a full download, so a 429 leaves no empty file
     print(out, ii['width'], ii['height'], md.get('LicenseShortName', {}).get('value'), '|', md.get('Artist', {}).get('value', '')[:80])
