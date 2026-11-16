@@ -1,0 +1,7 @@
+out/work-*/
+out/render.log
+out/visual.mp4
+out/.*hf-transaction*/
+hf/.hyperframes/
+.hyperframes/
+ref/
