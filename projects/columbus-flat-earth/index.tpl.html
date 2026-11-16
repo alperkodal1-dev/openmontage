@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Columbus Flat Earth Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  :root{ --ink:#0a1417; --bone:#efe6d2; --gold:#d9b26a; --gold2:#f1d49a; --red:#9c2f1f; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'Manrope',sans-serif;color:var(--bone)}
+  .clip{position:absolute;inset:0}
+  .bg{overflow:hidden;background:#05090a}
+  .bg img{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;filter:sepia(.25) contrast(1.08) brightness(.82) saturate(.85)}
+  .bg.dim img{filter:sepia(.3) contrast(1.05) brightness(.42) saturate(.7) blur(2px)}
+  #vig{background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%);z-index:30}
+  #plate{background:linear-gradient(180deg,rgba(6,12,14,0) 0px,rgba(6,12,14,.9) 95px,rgba(6,12,14,.9) 290px,rgba(6,12,14,0) 380px);top:1235px;height:380px;bottom:auto;z-index:40}
+  #caps{z-index:41} #chaps{z-index:42} #s0{z-index:35}
+  .scene{z-index:32}
+  .cap{position:absolute;left:80px;right:80px;top:1395px;height:150px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.5px;opacity:0;text-shadow:0 3px 18px rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em;color:var(--bone)}
+  .chap{position:absolute;top:268px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0}
+  .chap .num{font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:10px;color:var(--gold)}
+  .chap .name{font-family:'Cinzel';font-weight:500;font-size:28px;letter-spacing:8px;opacity:.85}
+  .chap .rule{display:block;width:120px;height:2px;background:var(--gold)}
+  .center{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .ital{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+  .card{background:rgba(7,13,15,.84);border:1px solid rgba(217,178,106,.6)}
+  .stamp{font-family:'Cinzel';font-weight:900;color:#ffe9c4;background:var(--red);padding:12px 26px;transform:rotate(-4deg);white-space:nowrap}
+  .tag{font-family:'Cinzel';font-weight:700;letter-spacing:3px;background:var(--ink);border:2px solid var(--gold);padding:10px 18px;white-space:nowrap}
+  .big{font-family:'Cinzel';font-weight:900;letter-spacing:4px;line-height:1.05;text-shadow:0 6px 40px rgba(0,0,0,.8)}
+  .row{position:absolute;left:0;right:0;display:flex;justify-content:center}
+
+  #s0 img{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;object-position:30% 50%;filter:grayscale(1) sepia(.4) contrast(1.25) brightness(.8)}
+  #s0 .flash{position:absolute;inset:0;background:#f4ead2;opacity:0}
+  #hk{z-index:45;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.85) 330px,rgba(6,12,14,0) 470px);height:470px;bottom:auto}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:2px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95),0 0 60px rgba(0,0,0,.8)}
+  #hk .l1{top:200px;color:var(--bone)} #hk .l2{top:276px;color:var(--gold2)}
+
+  /* S1 hook */
+  #t1{top:560px}
+  #t1w{display:flex;gap:2px}
+  #t1w span{display:block;font-family:'Cinzel';font-weight:900;font-size:128px;letter-spacing:3px;text-shadow:0 6px 40px rgba(0,0,0,.65)}
+  #t1r{display:block;width:620px;height:3px;margin-top:18px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  #t1s{margin-top:28px;font-size:58px;color:var(--gold2)}
+  #y1{top:520px} #y1 .big{font-size:170px}
+  #knew{top:800px} #knew .stamp{font-size:54px}
+  #exp{top:560px} #exp .big{font-size:88px} #exp .ital{font-size:56px;color:var(--gold2);margin-top:12px}
+  #right{top:880px} #right .stamp{font-size:60px}
+
+  /* S2 ancients */
+  #bc{top:560px} #bc .big{font-size:180px} #bc .l{font-family:'Cinzel';font-weight:700;font-size:40px;letter-spacing:10px;color:var(--gold)}
+  .mapcard{position:absolute;left:60px;width:960px;background:#d9c9a3;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden}
+  .mapcard:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,250,235,.25),rgba(90,60,20,.35));z-index:1;pointer-events:none}
+  .mapcard svg{position:absolute;left:0;top:0}
+  .pin{position:absolute;z-index:3;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--red);border:4px solid #fff4dc}
+  .ptag{position:absolute;z-index:4;font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:3px;background:var(--ink);color:var(--bone);padding:8px 14px;white-space:nowrap}
+  .ray{position:absolute;z-index:2;width:6px;background:linear-gradient(180deg,rgba(255,226,140,0),#ffd36b);transform-origin:50% 100%}
+  #sun{position:absolute;z-index:2;width:90px;height:90px;margin:-45px 0 0 -45px;border-radius:50%;background:radial-gradient(circle,#fff3c4 0,#ffc94d 55%,rgba(255,180,40,0) 72%)}
+  #ang{position:absolute;z-index:4;font-family:'Cinzel';font-weight:900;font-size:44px;color:var(--red);text-shadow:0 0 12px #fff4dc}
+  #close{top:1150px} #close .tag{font-size:40px}
+  #bede{position:absolute;left:90px;width:900px;top:500px;padding:46px 50px;text-align:center}
+  #bede .ref{font-family:'Cinzel';font-weight:700;font-size:32px;letter-spacing:8px;color:var(--gold)}
+  #bede .q{margin-top:22px;font-size:66px;line-height:1.15}
+  #bede .lat{margin-top:18px;font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:4px;color:var(--gold2)}
+  #bede img{display:block;margin:26px auto 0;height:380px;border:2px solid var(--gold);filter:sepia(.35)}
+  #bede .cap2{margin-top:12px;font-family:'Cinzel';font-weight:700;font-size:24px;letter-spacing:4px;color:var(--gold)}
+
+  /* S3 sea of darkness */
+  #bg3 img.pan{width:1700px;height:2844px;object-fit:fill;inset:auto;left:0;top:0;filter:sepia(.15) contrast(1.06) brightness(.9) saturate(.95)}
+  #cm{top:1120px} #cm .tag{font-size:34px}
+  #glb{position:absolute;left:110px;width:860px;top:410px;padding:34px 34px 30px;text-align:center}
+  #glb img{display:block;width:790px;height:548px;object-fit:cover;border:2px solid var(--gold);filter:grayscale(.2) sepia(.3) contrast(1.2)}
+  #glb .ref{margin-top:18px;font-family:'Cinzel';font-weight:700;font-size:28px;letter-spacing:6px;color:var(--gold)}
+  #hsd{top:1100px} #hsd .lat{font-family:'Cinzel';font-weight:900;font-size:78px;letter-spacing:6px;color:var(--gold2);text-shadow:0 6px 30px rgba(0,0,0,.9)}
+  #hsd .en{font-size:54px;margin-top:4px;text-shadow:0 2px 14px rgba(0,0,0,.9)}
+
+  /* S4 the real mistake */
+  #size{top:560px} #size .big{font-size:150px}
+  #bars{position:absolute;left:110px;width:860px;top:820px;padding:36px 44px}
+  #bars .b{display:flex;align-items:center;gap:20px;margin:16px 0}
+  #bars .n{width:250px;font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:3px;color:var(--gold2);text-align:right}
+  #bars .bar{height:54px;transform-origin:0 50%}
+  #bars .pct{font-family:'Cinzel';font-weight:900;font-size:40px}
+  #ocean{top:610px;height:336px}
+  #ocl{top:470px} #ocl .big{font-size:64px}
+  #oca{top:990px} #oca .tag{font-size:36px}
+  #starve{top:1130px} #starve .stamp{font-size:46px}
+
+  /* S5 the invention */
+  #who{top:600px} #who .big{font-size:104px}
+  #y5{top:470px} #y5 .big{font-size:150px}
+  #irv{position:absolute;left:90px;width:900px;top:690px;padding:36px 40px;display:flex;gap:34px;align-items:center}
+  #irv .med{flex:0 0 220px;width:220px;height:280px;border:3px solid var(--gold);overflow:hidden}
+  #irv .med img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+  #irv .nm{font-family:'Cinzel';font-weight:900;font-size:54px;letter-spacing:3px;line-height:1.05}
+  #irv .d{font-size:40px;color:var(--gold2);line-height:1.15;margin-top:10px}
+  #fic{top:1090px} #fic .stamp{font-size:48px}
+  #sb{top:600px} #sb .big{font-size:96px} #sb .ital{font-size:52px;color:var(--gold2);margin-top:10px}
+
+  /* S6 the engraving */
+  #fl{position:absolute;left:70px;width:940px;top:410px;padding:22px;background:#f2ead6;box-shadow:0 30px 80px rgba(0,0,0,.7)}
+  #fl img{display:block;width:896px;height:750px;object-fit:cover}
+  #flq{top:1185px} #flq .tag{font-size:36px}
+  #y6{top:600px} #y6 .stamp{font-size:84px}
+  #y6s{top:780px} #y6s .ital{font-size:46px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
+
+  /* S7 poll */
+  #brand{top:330px} #brand .w{font-family:'Cinzel';font-weight:900;font-size:80px;letter-spacing:8px;text-shadow:0 6px 30px rgba(0,0,0,.7)}
+  #tou{top:640px} #tou .big{font-size:120px} #tou .or{font-size:64px;color:var(--gold2)}
+  #poll{position:absolute;left:130px;width:820px;top:560px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6);color:#132024;text-align:center}
+  #poll .qq{font-family:'Cinzel';font-weight:900;font-size:50px;line-height:1.14}
+  #poll .opts{display:flex;gap:22px;margin-top:34px}
+  #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
+  #poll .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:2px;color:#6c5a37}
+  #o1{background:#132024;color:var(--gold2)} #o2{background:#e9dcc0;color:#132024}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{{END}}">
+
+  <!-- backgrounds -->
+  <section id="bg1" class="clip bg" data-start="0.9" data-duration="10.0" data-track-index="0"><img id="bg1i" src="assets/columbus.jpg" alt="" style="object-position:50% 30%;filter:sepia(.25) brightness(.6)"></section>
+  <section id="bg2" class="clip bg dim" data-start="10.6" data-duration="11.3" data-track-index="1"><img id="bg2i" src="assets/eratosthenes.jpg" alt=""></section>
+  <section id="bg3" class="clip bg" data-start="21.6" data-duration="10.9" data-track-index="2"><img id="bg3i" class="pan" src="assets/carta_west.jpg" alt=""></section>
+  <section id="bg4" class="clip bg dim" data-start="32.2" data-duration="12.8" data-track-index="3"><img id="bg4i" src="assets/carta_west.jpg" alt="" style="object-position:30% 70%"></section>
+  <section id="bg5" class="clip bg dim" data-start="44.7" data-duration="11.7" data-track-index="4"><img id="bg5i" src="assets/irving.jpg" alt=""></section>
+  <section id="bg6" class="clip bg dim" data-start="56.1" data-duration="8.9" data-track-index="5"><img id="bg6i" src="assets/flammarion.jpg" alt=""></section>
+  <section id="bg7" class="clip bg" data-start="64.7" data-duration="{{BG7D}}" data-track-index="6"><img id="bg7i" src="assets/flammarion.jpg" alt="" style="object-position:30% 50%;filter:sepia(.4) brightness(.45)"></section>
+
+  <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
+  <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
+  <div id="caps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="9"></div>
+  <div id="chaps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="10">
+    <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE LEGEND</div></div>
+    <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">THE ANCIENTS</div></div>
+    <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THE SEA OF DARKNESS</div></div>
+    <div class="chap" id="ch4"><div class="num">IV</div><span class="rule"></span><div class="name">THE REAL MISTAKE</div></div>
+    <div class="chap" id="ch5"><div class="num">V</div><span class="rule"></span><div class="name">THE INVENTION</div></div>
+  </div>
+
+  <section id="s0" class="clip" data-start="0" data-duration="1.3" data-track-index="11">
+    <img id="cold" src="assets/flammarion.jpg" alt=""><span class="flash" id="flash"></span>
+  </section>
+
+  <section id="hk" class="clip" data-start="0" data-duration="2.7" data-track-index="20">
+    <div class="l l1" id="hk1">COLUMBUS NEVER PROVED</div><div class="l l2" id="hk2">THE EARTH WAS ROUND</div>
+  </section>
+
+  <section id="s1" class="clip scene" data-start="0.9" data-duration="9.8" data-track-index="12">
+    <div class="center" id="t1">
+      <div id="t1w"><span>C</span><span>O</span><span>L</span><span>U</span><span>M</span><span>B</span><span>U</span><span>S</span></div>
+      <span id="t1r"></span>
+      <div id="t1s" class="ital">and the flat Earth</div>
+    </div>
+    <div class="center" id="y1"><div class="big">1492</div></div>
+    <div class="row" id="knew"><div class="stamp" id="knews">THEY ALREADY KNEW</div></div>
+    <div class="center" id="exp"><div class="big">THE EXPERTS<br>SAID NO</div><div class="ital">and they had a reason</div></div>
+    <div class="row" id="right"><div class="stamp" id="rights">THEY WERE RIGHT</div></div>
+  </section>
+
+  <section id="s2" class="clip scene" data-start="10.9" data-duration="10.9" data-track-index="13">
+    <div class="center" id="bc"><div class="big">240 BC</div><div class="l">ERATOSTHENES</div></div>
+    <div class="mapcard" id="eg" style="top:420px;height:700px">
+      {{EGYPT}}
+      <div id="sun" style="left:{{SUNX}}px;top:70px"></div>
+      <div class="ray" id="ray1" style="left:{{SYX_R}}px;top:110px;height:{{SYH}}px"></div>
+      <div class="ray" id="ray2" style="left:{{ALX_R}}px;top:-40px;height:{{ALH}}px;transform:rotate(-7.2deg)"></div>
+      <div class="pin" style="left:{{ALX}}px;top:{{ALY}}px"></div>
+      <div class="pin" style="left:{{SYX}}px;top:{{SYY}}px"></div>
+      <div class="ptag" id="alt" style="left:{{ALTX}}px;top:{{ALTY}}px">ALEXANDRIA · SHADOW</div>
+      <div class="ptag" id="syt" style="left:{{SYTX}}px;top:{{SYTY}}px">SYENE · NO SHADOW</div>
+      <div id="ang" style="left:{{ANGX}}px;top:{{ANGY}}px">7.2°</div>
+    </div>
+    <div class="row" id="close"><div class="tag" id="closet">HE WAS CLOSE</div></div>
+    <div id="bede" class="card">
+      <div class="ref">BEDE · c. 725 AD</div>
+      <div class="q ital">“…the Earth is round, like a ball.”</div>
+      <div class="lat">DE TEMPORUM RATIONE · 32</div>
+      {{SACRO}}
+    </div>
+  </section>
+
+  <section id="s3" class="clip scene" data-start="21.8" data-duration="10.6" data-track-index="14">
+    <div class="row" id="cm"><div class="tag" id="cmt">CARTA MARINA · 1539</div></div>
+    <div id="glb" class="card"><img src="assets/lenox_dragons.png" alt=""><div class="ref">HUNT-LENOX GLOBE · c. 1510</div></div>
+    <div class="center" id="hsd"><div class="lat">HC SVNT DRACONES</div><div class="en ital">“here be dragons”</div></div>
+  </section>
+
+  <section id="s4" class="clip scene" data-start="32.4" data-duration="12.5" data-track-index="15">
+    <div class="center" id="size"><div class="big">SIZE.</div></div>
+    <div id="bars" class="card">
+      <div class="b"><div class="n">REAL EARTH</div><span class="bar" id="bar1" style="width:440px;background:var(--gold)"></span><div class="pct">100%</div></div>
+      <div class="b"><div class="n">COLUMBUS'S</div><span class="bar" id="bar2" style="width:330px;background:var(--red)"></span><div class="pct" id="b2p">~75%</div></div>
+    </div>
+    <div class="center" id="ocl"><div class="big">WEST TO ASIA</div></div>
+    <div class="mapcard" id="ocean">
+      {{OCEAN}}
+      <div class="pin" style="left:{{CAX}}px;top:{{CAY}}px"></div>
+      <div class="ptag" id="hisl" style="left:{{HISX}}px;top:{{HISY}}px;background:var(--red)">HIS ASIA · ~4,400 km</div>
+      <div class="ptag" id="reall" style="left:{{JPX}}px;top:{{JPY}}px">REAL ASIA · ~19,600 km</div>
+    </div>
+    <div class="row" id="oca"><div class="tag" id="ocat">AN UNKNOWN CONTINENT</div></div>
+    <div class="row" id="starve"><div class="stamp" id="starves">SAVED BY AMERICA</div></div>
+  </section>
+
+  <section id="s5" class="clip scene" data-start="45.0" data-duration="11.2" data-track-index="16">
+    <div class="center" id="who"><div class="big">SO WHO<br>INVENTED IT?</div></div>
+    <div class="center" id="y5"><div class="big">1828</div></div>
+    <div id="irv" class="card">
+      <div class="med"><img src="assets/irving.jpg" alt=""></div>
+      <div><div class="nm">WASHINGTON IRVING</div><div class="d ital">A History of the Life and Voyages of Christopher Columbus</div></div>
+    </div>
+    <div class="row" id="fic"><div class="stamp" id="fics">A NOVELIST'S SCENE</div></div>
+    <div class="center" id="sb"><div class="big">SCHOOLBOOKS</div><div class="ital">copied it as fact</div></div>
+  </section>
+
+  <section id="s6" class="clip scene" data-start="56.2" data-duration="8.7" data-track-index="17">
+    <div id="fl"><img id="fli" src="assets/flammarion.jpg" alt=""></div>
+    <div class="row" id="flq"><div class="tag" id="flqt">“MEDIEVAL” WOODCUT?</div></div>
+    <div class="row" id="y6"><div class="stamp" id="y6st">PARIS · 1888</div></div>
+    <div class="center" id="y6s"><div class="ital">Camille Flammarion, L'atmosphère</div></div>
+  </section>
+
+  <section id="s7" class="clip scene" data-start="64.9" data-duration="{{S7D}}" data-track-index="19">
+    <div class="center" id="brand"><div class="w">THE FLAT EARTH</div></div>
+    <div class="center" id="tou"><div class="big">THEM</div><div class="or ital">or</div><div class="big">US?</div></div>
+    <div id="poll">
+      <div class="qq">Medieval people believed the Earth was flat.</div>
+      <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
+      <div class="hint" id="hint">TELL ME BELOW</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const tl = gsap.timeline({ paused: true });
+  const E = "power3.out";
+  // captions
+  const capRoot = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "cap" + i;
+    c.w.forEach((w, j) => { const s = document.createElement("span"); s.id = `cap${i}w${j}`; s.textContent = w.t; d.appendChild(s); });
+    capRoot.appendChild(d);
+  });
+  CAPS.forEach((c, i) => {
+    tl.fromTo("#cap" + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, c.s);
+    tl.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
+    c.w.forEach((w, j) => tl.to(`#cap${i}w${j}`, { color: "#f1d49a", duration: 0.08 }, w.s));
+  });
+  // chapters
+  [["#ch1",2.9,10.6],["#ch2",11.0,21.6],["#ch3",22.0,32.3],["#ch4",32.7,44.8],["#ch5",45.1,64.6]].forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
+    tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
+    tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
+  });
+  // backgrounds: slow push + crossfades
+  [["#bg1",0.9,10.9],["#bg2",10.6,21.9],["#bg4",32.2,45.0],["#bg5",44.7,56.4],["#bg6",56.1,65.0],["#bg7",64.7,{{END}}]].forEach(([id,a,b]) => {
+    tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "none" }, a);
+    tl.fromTo(id + "i", { scale: 1.12 }, { scale: 1.0, duration: b - a, ease: "none" }, a);
+  });
+  // the sea of darkness: a pan across the Carta Marina, from the sea pig to the red serpent
+  tl.fromTo("#bg3", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "none" }, 21.6);
+  tl.fromTo("#bg3i", { x: -40, y: -820, scale: 1.0 }, { x: -260, y: -560, duration: 3.6, ease: "sine.inOut" }, 21.6);
+  tl.to("#bg3i", { x: -700, y: -40, scale: 1.12, duration: 3.2, ease: "power2.inOut" }, 25.3);
+  tl.to("#bg3i", { x: -760, y: -10, scale: 1.18, duration: 4.0, ease: "none" }, 28.5);
+  // cold open: the engraving, shaken
+  tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
+  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => tl.to("#cold", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 0.02 + i * 0.055));
+  tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none" }, 0.98);
+  tl.to("#s0", { opacity: 0, duration: 0.25 }, 1.04);
+  tl.from("#hk2", { scale: 1.3, duration: 0.5, ease: E }, 0.25);
+  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, 2.4);
+  // S1
+  tl.from("#t1w span", { opacity: 0, scale: 2.2, duration: 0.3, ease: "power4.out", stagger: 0.03 }, 1.0);
+  tl.fromTo("#t1r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, 1.45);
+  tl.from("#t1s", { opacity: 0, y: 20, duration: 0.5, ease: E }, 1.9);
+  tl.to("#t1", { opacity: 0, y: -40, duration: 0.35, ease: "power2.in" }, 2.75);
+  tl.from("#y1", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 3.1);
+  tl.from("#knews", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 6.55);
+  tl.to(["#y1","#knew"], { opacity: 0, duration: 0.3 }, 7.3);
+  tl.from("#exp", { opacity: 0, y: 30, duration: 0.45, ease: E }, 7.6);
+  tl.from("#rights", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 9.95);
+  // S2 ancients
+  tl.from("#bc", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 11.05);
+  tl.to("#bc", { opacity: 0, y: -30, duration: 0.3 }, 13.0);
+  tl.from("#eg", { opacity: 0, y: 80, rotation: -2, duration: 0.6, ease: E }, 13.2);
+  tl.from("#sun", { opacity: 0, scale: 0.3, duration: 0.5, ease: "back.out(2)" }, 15.6);
+  tl.fromTo("#ray1", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: E }, 15.75);
+  tl.fromTo("#ray2", { scaleY: 0 }, { scaleY: 1, duration: 0.5, ease: E }, 16.0);
+  tl.from("#syt", { opacity: 0, x: 30, duration: 0.35, ease: E }, 16.6);
+  tl.from("#alt", { opacity: 0, x: -30, duration: 0.35, ease: E }, 17.0);
+  tl.from("#ang", { opacity: 0, scale: 1.8, duration: 0.3, ease: "back.out(2)" }, 17.5);
+  tl.from("#closet", { opacity: 0, scale: 1.5, duration: 0.3, ease: "back.out(2)" }, 18.6);
+  tl.to(["#eg","#close"], { opacity: 0, y: -30, duration: 0.3 }, 19.5);
+  tl.from("#bede", { opacity: 0, y: 50, duration: 0.5, ease: E }, 19.75);
+  tl.to("#bede", { opacity: 0, duration: 0.3 }, 21.5);
+  // S3 sea of darkness
+  tl.from("#cmt", { opacity: 0, y: 14, duration: 0.4, ease: E }, 25.4);
+  tl.to("#cm", { opacity: 0, duration: 0.3 }, 28.4);
+  tl.from("#glb", { opacity: 0, y: 60, scale: 0.94, duration: 0.55, ease: E }, 28.65);
+  tl.fromTo("#glb img", { scale: 1 }, { scale: 1.08, duration: 3.6, ease: "none" }, 28.65);
+  tl.from("#hsd .lat", { opacity: 0, scale: 1.25, duration: 0.6, ease: E }, 30.55);
+  tl.from("#hsd .en", { opacity: 0, y: 14, duration: 0.4, ease: E }, 31.0);
+  tl.to(["#glb","#hsd"], { opacity: 0, duration: 0.3 }, 32.2);
+  // S4 the real mistake
+  tl.from("#size", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 33.95);
+  tl.from("#bars", { opacity: 0, y: 40, duration: 0.45, ease: E }, 34.9);
+  tl.fromTo("#bar1", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, 35.1);
+  tl.fromTo("#bar2", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, 35.6);
+  tl.from("#b2p", { opacity: 0, duration: 0.3 }, 36.4);
+  tl.to(["#size","#bars"], { opacity: 0, y: -30, duration: 0.3 }, 37.25);
+  tl.from("#ocl", { opacity: 0, y: -20, duration: 0.4, ease: E }, 37.5);
+  tl.from("#ocean", { opacity: 0, y: 60, duration: 0.5, ease: E }, 37.55);
+  tl.fromTo("#rHis", { strokeDashoffset: 0, opacity: 0 }, { opacity: 1, duration: 0.2 }, 38.3);
+  tl.from("#hisl", { opacity: 0, scale: 1.4, duration: 0.3, ease: "back.out(2)" }, 38.6);
+  tl.fromTo("#rReal", { attr: { "stroke-dasharray": "0 4000" } }, { attr: { "stroke-dasharray": "4000 0" }, duration: 1.3, ease: "power1.inOut" }, 39.0);
+  tl.from("#reall", { opacity: 0, scale: 1.4, duration: 0.3, ease: "back.out(2)" }, 40.1);
+  tl.fromTo("#amer", { attr: { fill: "#c9b07a" } }, { attr: { fill: "#e6b04f" }, duration: 0.4, yoyo: true, repeat: 3 }, 41.1);
+  tl.from("#ocat", { opacity: 0, scale: 1.5, duration: 0.3, ease: "back.out(2)" }, 41.5);
+  tl.from("#starves", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 43.4);
+  tl.to(["#ocl","#ocean","#oca","#starve"], { opacity: 0, duration: 0.3 }, 44.75);
+  // S5 the invention
+  tl.from("#who", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 45.15);
+  tl.to("#who", { opacity: 0, y: -30, duration: 0.3 }, 47.1);
+  tl.from("#y5", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 47.45);
+  tl.from("#irv", { opacity: 0, y: 50, duration: 0.5, ease: E }, 48.9);
+  tl.from("#fics", { opacity: 0, scale: 1.8, duration: 0.3, ease: "power4.out" }, 52.3);
+  tl.to(["#y5","#irv","#fic"], { opacity: 0, y: -30, duration: 0.3 }, 54.5);
+  tl.from("#sb", { opacity: 0, y: 30, duration: 0.45, ease: E }, 54.8);
+  tl.to("#sb", { opacity: 0, duration: 0.3 }, 56.0);
+  // S6 the engraving
+  tl.from("#fl", { opacity: 0, y: 80, rotation: 2, duration: 0.6, ease: E }, 56.4);
+  tl.fromTo("#fli", { scale: 1.0 }, { scale: 1.12, duration: 5.2, ease: "none" }, 56.4);
+  tl.from("#flqt", { opacity: 0, y: 14, duration: 0.4, ease: E }, 57.4);
+  tl.to(["#fl","#flq"], { opacity: 0, duration: 0.3 }, 61.55);
+  tl.from("#y6st", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 62.65);
+  tl.from("#y6s", { opacity: 0, y: 14, duration: 0.4, ease: E }, 63.2);
+  tl.to(["#y6","#y6s"], { opacity: 0, duration: 0.3 }, 64.6);
+  // S7 poll
+  tl.from("#brand", { opacity: 0, y: -20, duration: 0.6, ease: E }, 65.1);
+  tl.from("#tou", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 67.85);
+  tl.to("#tou", { opacity: 0, y: -30, duration: 0.3 }, 69.05);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.6, ease: "back.out(1.7)" }, 69.25);
+  tl.to("#o1", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 69.4);
+  tl.to("#o2", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 70.15);
+  tl.from("#hint", { opacity: 0, y: 12, duration: 0.4, ease: E }, 71.05);
+  tl.to("#hint", { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 71.7);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>
