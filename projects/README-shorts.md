@@ -1,5 +1,7 @@
 # History Shorts: Atlantis and Noah's Ark
 
+> Open items from the last session: `channel-branding/PENDING.md`.
+
 **Before starting a new Short, read [`channel-branding/SIGNATURES.md`](channel-branding/SIGNATURES.md): the channel's
 signatures (opening question with the grey shock, look, voice, sound, cover, delivery).**
 
