@@ -10,7 +10,7 @@ Two vertical (1080x1920) history Shorts for the Unsealed History channel, built 
 | `atlantis-story/` | https://www.youtube.com/watch?v=_PpRv_GMMlk | `atlantis-story/out/atlantis_story_v2_strings.mp4` | `atlantis-story/out/atlantis_tr.srt` |
 | `noah-ark/` | https://www.youtube.com/watch?v=68mjjXGN5EI | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
 | `piri-reis-map/` | https://www.youtube.com/watch?v=5SXAmr8qgFM | `piri-reis-map/out/piri_reis_v9_loop.mp4` | `piri-reis-map/out/piri_reis_tr.srt` |
-| `egypt-pyramids/` | not published yet (draft v10) | `egypt-pyramids/out/pyramid_v10_draft.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
+| `egypt-pyramids/` | not published yet (v11, ready) | `egypt-pyramids/out/pyramid_v11.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
 | `columbus-flat-earth/` | not published yet | `columbus-flat-earth/out/columbus_final.mp4` | `columbus-flat-earth/out/columbus_tr.srt` |
 
 ## Shared look
