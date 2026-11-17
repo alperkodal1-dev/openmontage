@@ -5,4 +5,4 @@ Its music (Pixabay "Cinematic Strings" + Mussorgsky) carried a Content ID risk (
 Steps: Demucs (htdemucs, two stems) split the narration from the music; residual music in the voice stem measured
 25-30 dB below the original in the narration gaps. The voice stem was re-mixed with the vidIQ tension score
 (`noah-ark/long/music_tension_72.wav`), side-chain ducked, -14 LUFS. Picture and burned-in captions are unchanged.
-Output: `out/salem_ownmusic.mp4`. Upload package: `publish/` (metadata + 7 SRTs, same timing as the original).
+Outputs: `out/salem_ownmusic.mp4` (all new music) and `out/salem_v2_mussorgsky.mp4` (owner pick: keeps the Mussorgsky legend part 0-35 s from the separated music stem, replaces only the Pixabay part from 35 s with the vidIQ tension score). Upload package: `publish/` (metadata + 7 SRTs, same timing as the original).
