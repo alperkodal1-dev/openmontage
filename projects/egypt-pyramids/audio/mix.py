@@ -4,7 +4,7 @@ and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.
 import subprocess
 SFX = '../../atlantis-story/sfx/'
 D = 3.9             # the signature question (vo_v3.mp3 = hook + narration); everything after it moves by D
-END = 85.17          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
+END = 80.2          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
 SONG_AT, MAIN_END = 65.6, 68.7   # the song fades in under the closing question and keeps rising, softly, to the end
 SONG_FROM = 0.0
 SONG_PEAK = 0.18    # about -25 LUFS: under the narrator's level even at its highest
