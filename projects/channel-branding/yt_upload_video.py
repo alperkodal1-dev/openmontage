@@ -22,7 +22,10 @@ size = os.path.getsize(path)
 req = urllib.request.Request('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
                              json.dumps(meta).encode(), {'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json; charset=UTF-8',
                                                          'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(size)})
-loc = urllib.request.urlopen(req).headers['Location']
+try:
+    loc = urllib.request.urlopen(req).headers['Location']
+except urllib.error.HTTPError as e:
+    sys.exit(f'init failed: {e.code} {e.read().decode()[:600]}')
 up = urllib.request.Request(loc, open(path, 'rb').read(), {'Authorization': 'Bearer ' + tok, 'Content-Type': 'video/mp4'}, method='PUT')
 r = json.load(urllib.request.urlopen(up))
 print(r['id'], r['status']['privacyStatus'], 'https://youtube.com/shorts/' + r['id'])
