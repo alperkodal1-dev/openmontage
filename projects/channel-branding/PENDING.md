@@ -50,3 +50,9 @@ custom thumbnails enabled, set (owner may do it in Studio):
 
 ## Drafts uploaded 2026-11-17 (private, owner publishes later)
 - Pyramid 5xT5DXyXcVA, Atlantis v4 PhG3ypH77QM. Captions scheduled for 2026-11-19 08:25 UTC (quota). Covers: Pyramid E, Atlantis none yet.
+
+## 2026-11-17 evening
+- Owner published everything: Noah x5FLR7Iwv_A, Salem Y_Apy6CZdHI, Piri Reis 5SXAmr8qgFM, Pyramid 5xT5DXyXcVA, Atlantis d2PR8LPYXzo (+ Ankara).
+- From now: one Short a day at a fixed time (SIGNATURES.md section 8). Next in the queue: Assassins of Alamut (script ready,
+  voiceover needs owner OK), then Machiavelli, Mona Lisa 1911, Mary Celeste, Sphinx's nose.
+- Scheduled: 18 Nov 11:05 TR captions day1; 11:25 TR language + comments (4 videos) + rename_channel.py; 19 Nov 11:05 TR captions day2.

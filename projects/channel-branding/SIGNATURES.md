@@ -84,3 +84,11 @@ Pyramid). Every new video should use all of these unless the owner asks otherwis
   {download_url: raw GitHub URL}. Single textured picture + long stamp scored 20.
 - **Titles.** Put the main search phrase in the title ("who built the pyramids", "noah's ark") plus 2-3 hashtags; score
   with vidIQ, aim for 90+. Tags: the highest-volume and rising keywords from `vidiq_keyword_research`.
+
+## 8. Publishing rhythm (owner's rule, from 2026-11-18)
+- One Short a day, at the same time every day (default 20:00 Istanbul = 17:00 UTC = 12:00 New York), scheduled ahead with
+  publishAt (private + publishAt) so nothing goes out by hand.
+- Never delete and re-upload a published video; fix metadata in place.
+- Each Short ships with: title + tags from vidIQ research (title score 90+), cover in channel style (score with vidIQ),
+  captions en/tr/es/pt/de/fr/ja + hi/ur (API quota: ~24 tracks a day, so upload them the day before), a pinned question
+  comment, and an under-60 s cut with the loop ending.
