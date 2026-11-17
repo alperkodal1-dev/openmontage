@@ -67,3 +67,20 @@ Pyramid). Every new video should use all of these unless the owner asks otherwis
 - Turkish SRT for the owner; subtitles in en, tr, es, pt, de, fr, ja uploaded with
   `channel-branding/subtitles/yt_captions.py` (YouTube Data API; 25 tracks a day on the default quota).
 - Titles scored with vidIQ before upload. Always ask the owner before spending credits and before publishing.
+
+## 7. Lessons from vidIQ reviews (Pyramid, Noah, Nov 2026) — apply to every new Short
+- **Under 60 s.** A Short over 60 s with any Content ID claim is blocked worldwide. Aim for 55-59 s; tighten pauses
+  (0.22 s inside a passage, 0.34 s at a beat) instead of cutting content (`noah-ark/short/retime.py`).
+- **Loop the ending.** No "tell me in the comments" line: the last sentence should lead straight back into the opening
+  line, so a replay feels seamless.
+- **First 1.5 s must move.** Punch-in, shake or a high-contrast image under the hook; never a static texture.
+- **Hook and body must match.** If the hook names one myth (slaves), the first 20 s must not drift to another (aliens)
+  without saying why.
+- **Safe area.** Captions from x 70 to x 930 (clear of the like/comment buttons on the right); titles at least 60 px from
+  the frame edges.
+- **Music.** Only generated (vidIQ) or own tracks. Pixabay tracks can be claimed by distributors (Noah was blocked).
+- **Covers that score.** Two-sided split for "X or Y?" topics (Pyramid E, 86), or one clear subject with a ring and a
+  short question (Noah "THE ARK / NOT HERE?", 91). Score with `vidiq_score_thumbnail`, passing the image as
+  {download_url: raw GitHub URL}. Single textured picture + long stamp scored 20.
+- **Titles.** Put the main search phrase in the title ("who built the pyramids", "noah's ark") plus 2-3 hashtags; score
+  with vidIQ, aim for 90+. Tags: the highest-volume and rising keywords from `vidiq_keyword_research`.
