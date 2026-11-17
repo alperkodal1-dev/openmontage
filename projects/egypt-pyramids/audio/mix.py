@@ -4,11 +4,11 @@ and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.
 import subprocess
 SFX = '../../atlantis-story/sfx/'
 D = 3.9             # the signature question (vo_v3.mp3 = hook + narration); everything after it moves by D
-END = 83.84          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
+END = 85.17          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
 SONG_AT, MAIN_END = 65.6, 68.7   # the song fades in under the closing question and keeps rising, softly, to the end
 SONG_FROM = 0.0
-SONG_PEAK = 0.28    # about -25 LUFS: under the narrator's level even at its highest
-SONG_RISE = 9.0     # seconds from a whisper to the peak
+SONG_PEAK = 0.18    # about -25 LUFS: under the narrator's level even at its highest
+SONG_RISE = 7.0     # seconds from a whisper to the peak
 LIFT = [(0.0, 20.3), (26.6, 33.8), (57.0, 68.6)]   # the alien legend, power plant and stargate, the stairway to the stars
 LOW = [(33.8, 56.9)]                                 # the evidence
 BASE, UP, DOWN = 0.095, 0.135, 0.067
@@ -34,11 +34,12 @@ ev = [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("whoosh", 0.2, 0.3), ("swell", 0
 # "Or so the story goes." spliced in after the stargate line (narration time 33.45 s): later cues move with the new read
 remap = lambda t: t if t < 33.45 else (t + 2.60 if t < 35.5 else t + 1.74)
 ev = [(n, remap(t), v) for n, t, v in ev] + [("hit", 33.8, 0.5), ("rumble", 33.8, 0.45), ("hit", 34.35, 0.5)]
-LIFT = [(0.0, 20.3), (26.6, 33.6), (58.74, 70.34)]; LOW = [(33.8, 58.64)]
+LIFT = [(0.0, 20.3), (26.6, 33.6), (58.74, 71.6)]; LOW = [(33.8, 58.64)]
 SONG_AT, MAIN_END = remap(SONG_AT), remap(MAIN_END)
 ev = [(n, round(t + D, 2), v) for n, t, v in ev] + [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("swell", 0.15, 0.22), ("hit", 2.15, 0.45)]
 LIFT = [(a + D, b + D) for a, b in LIFT]; LOW = [(a + D, b + D) for a, b in LOW]
 SONG_AT, MAIN_END = SONG_AT + D, MAIN_END + D
+SONG_AT = 66.0      # the owner's end song starts earlier: a whisper under "...to become Orion", there for the question
 lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
 low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
 vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"

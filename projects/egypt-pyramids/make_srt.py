@@ -19,7 +19,7 @@ TR = ["Piramitleri köleler yaptı... öyle mi?",
       "Ama kralın lahdi boş bulundu.",
       "Daha sonraki piramit metinleri, krala göğe bir merdiven ve Orion'a dönüşmeyi vaat eder.",
       "Bir mezar mı... yoksa yıldızlara giden bir merdiven mi?",
-      "Peki piramitler aslında neydi?"]
+      "Peki sence piramitler aslında neydi?"]
 spans, a = [], 0
 for i, w in enumerate(W):
     if w['t'].endswith('?') or (w['t'].endswith('.') and not w['t'].endswith('...')):

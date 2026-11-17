@@ -3,7 +3,7 @@ hf/assets/ at render size. Keyword colours in the captions: green for the alien 
 import json, os, re
 from PIL import Image
 D = 3.9          # the signature question before the narration
-OEND = 79.94     # the end in the narration's own timeline
+OEND = 81.27     # the end in the narration's own timeline
 END = round(OEND + D, 2)
 A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'dauzats.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'greene_1853.jpg',
      'giza.jpg': 'frith_1858.jpg', 'menkaure.jpg': 'menkaure.jpg', 'legray.jpg': 'legray.jpg', 'bonfils.jpg': 'bonfils.jpg', 'ptexts.jpg': 'pyramid_texts.jpg', 'dogu.jpg': 'dogu.jpg', 'daniken.jpg': 'daniken_eth.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
