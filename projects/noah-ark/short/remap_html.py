@@ -22,6 +22,7 @@ js = ("const CUTS=" + json.dumps(cuts) + ", END=" + str(END) + ";\n"
 s = s.replace('window.__timelines = window.__timelines || {};', js, 1)
 # Shorts safe area: keep captions clear of the right-hand action buttons
 s = s.replace('.cap{position:absolute;left:80px;right:80px;', '.cap{position:absolute;left:70px;right:150px;')
+s = s.replace('#hk .l1{top:200px;color:var(--bone)}', '#hk .l1{top:206px;font-size:66px;color:var(--bone)}')  # keep the hook line inside the safe area
 open('hf/index.html', 'w').write(s)
 caps = open('short/captions_final72.js').read()
 C2 = json.loads(caps[len('window.CAPS='):].rstrip(';\n'))
