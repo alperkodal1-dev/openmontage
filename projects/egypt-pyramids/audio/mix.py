@@ -43,7 +43,22 @@ SONG_AT = 66.0      # the owner's end song starts earlier: a whisper under "...t
 lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
 low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
 vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
-inp = ["-i", "vo_v3.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
+# v11: the narration was re-cut (vo_v11.mp3); every cue moves through the word anchors in timemap.json
+import json
+TM = json.load(open('timemap.json'))
+def M(t):
+    o, n = TM['old'], TM['new']
+    for i in range(1, len(o)):
+        if t <= o[i] or i == len(o) - 1:
+            return n[i-1] + (n[i] - n[i-1]) * ((t - o[i-1]) / (o[i] - o[i-1]) if o[i] > o[i-1] else 0)
+ev = [(n, round(M(t), 2), v) for n, t, v in ev]
+LIFT = [(M(a), M(b)) for a, b in LIFT]; LOW = [(M(a), M(b)) for a, b in LOW]
+lift = '+'.join(f"between(t,{a:.2f},{b:.2f})" for a, b in LIFT)
+low = '+'.join(f"between(t,{a:.2f},{b:.2f})" for a, b in LOW)
+vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
+END = TM['end']; SONG_AT = round(M(66.0), 2); MAIN_END = END
+SONG_RISE = 5.0
+inp = ["-i", "vo_v11.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
 song = len(ev) + 2
 for i, (n, t, v) in enumerate(ev):
     inp += ["-i", f"{SFX}{n}.wav"]; ms = int(t * 1000)
@@ -52,10 +67,10 @@ fl.append(f"[0]aformat=channel_layouts=stereo,aresample=48000,apad=whole_dur={EN
 fl.append("[v]asplit=2[v1][vk]")
 fl.append(f"[1]aformat=channel_layouts=stereo,aresample=48000,adelay={int(D*1000)}|{int(D*1000)},volume='{vol}':eval=frame,"
           f"afade=t=out:st={MAIN_END - 0.6}:d=0.6,apad=whole_dur={END}[m0]")
-inp += ["-i", "end_song.wav"]
+inp += ["-i", "end_original.wav"]   # original Arabian-style finale (vidIQ), replacing the Disney song
 fl.append(f"[{song}]aformat=channel_layouts=stereo,aresample=48000,atrim={SONG_FROM}:{SONG_FROM + END - SONG_AT},asetpts=PTS-STARTPTS,"
           f"volume='{SONG_PEAK}*(0.12+0.88*min(1,t/{SONG_RISE}))':eval=frame,"
-          f"afade=t=out:st={END - SONG_AT - 2.0}:d=2.0,adelay={int(SONG_AT*1000)}|{int(SONG_AT*1000)},apad=whole_dur={END}[song]")
+          f"afade=t=out:st={END - SONG_AT - 1.2}:d=1.2,adelay={int(SONG_AT*1000)}|{int(SONG_AT*1000)},apad=whole_dur={END}[song]")
 fl.append("[m0][song]amix=inputs=2:normalize=0:duration=first[bed]")
 fl.append("[bed][vk]sidechaincompress=threshold=0.015:ratio=8:attack=15:release=300[m]")
 fl.append(f"[v1][m]{''.join(lab)}amix=inputs={len(ev)+2}:normalize=0:duration=first,atrim=0:{END},loudnorm=I=-14:TP=-1.5:LRA=11[out]")

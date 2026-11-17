@@ -44,3 +44,5 @@
 
 - Dogū with goggle-shaped eyes, Kamegaoka, Jōmon period (Tokyo National Museum), photo by Daderot, Wikimedia Commons, public domain. Von Däniken presented dogū figures as astronauts in spacesuits (1968).
 - Erich von Däniken, 1987: ETH-Bibliothek Zürich, Bildarchiv / Com_L36-0120-0001-0005, photo Somorjai Zsolt, CC BY-SA 4.0 (credit shown on screen).
+- Khufu cartouche relief: "LSR Pharao - Cheops Kartusche.jpg", Wikimedia Commons, CC BY-SA 4.0 (Wolfgang Sauber / Xenophon).
+- Finale music: original track generated with vidIQ (replaces the Disney song: a Short over 60 s with a Content ID claim is blocked).

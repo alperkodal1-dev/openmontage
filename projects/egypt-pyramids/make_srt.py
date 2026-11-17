@@ -7,14 +7,14 @@ TR = ["Piramitleri köleler yaptı... öyle mi?",
       "Takipçileri daha fazla ipucu gördü.",
       "Dendera'da, dev bir ampule benzeyen şeyin içinde bir yılan.",
       "Sakkara'da, planör kanatlı tahta bir kuş.",
-      "Ve Büyük Piramit: yaklaşık 2,3 milyon blok, gerçek kuzeye hizalı.",
+      "Ve Büyük Piramit: yaklaşık 2,3 milyon blok.",
       "Kimine göre bir enerji santraliydi.",
       "Kimine göre bir yıldız kapısı: içindeki bir kanal bir zamanlar Orion Kuşağı'na bakıyordu.",
       "Ya da öyle anlatılır.",
       "1990'da bir at gömülü bir duvara takıldı.",
-      "Altında, kralın piramidinin gölgesinde, inşaatçılar yatıyordu.",
+      "Altında inşaatçılar yatıyordu; köle olarak değil, onurla gömülmüşlerdi.",
       "Ekipleri taşlara adlarını yazdı: Keops'un Dostları.",
-      "Hemen yanında: Mikerinos'un Sarhoşları.",
+      "Mikerinos'un Sarhoşları.",
       "Bir papirüs seyir defteri, kireçtaşı yüklü tekneleri Gize'ye kadar izliyor.",
       "Ama kralın lahdi boş bulundu.",
       "Daha sonraki piramit metinleri, krala göğe bir merdiven ve Orion'a dönüşmeyi vaat eder.",
@@ -22,7 +22,7 @@ TR = ["Piramitleri köleler yaptı... öyle mi?",
       "Peki sence piramitler aslında neydi?"]
 spans, a = [], 0
 for i, w in enumerate(W):
-    if w['t'].endswith('?') or (w['t'].endswith('.') and not w['t'].endswith('...')):
+    if w['t'].endswith('?') or w['t'] == 'blocks,' or (w['t'].endswith('.') and not w['t'].endswith('...')):
         spans.append((a, i)); a = i + 1
 assert len(spans) == len(TR), (len(spans), len(TR))
 ts = lambda t: f"{int(t//3600):02}:{int(t%3600//60):02}:{int(t%60):02},{int(round(t%1*1000)):03}"
