@@ -15,7 +15,7 @@ PLAN = {
  'day2': [
   ('5xT5DXyXcVA', 'Pyramid', {**seven('egypt-pyramids/publish', 'pyramid'), 'hi': HU + 'pyramid_hi.srt', 'ur': HU + 'pyramid_ur.srt'}),
   ('d2PR8LPYXzo', 'Atlantis', {**seven('atlantis-story/v4/publish', 'atlantis'), 'hi': HU + 'atlantis_hi.srt', 'ur': HU + 'atlantis_ur.srt'}),
-  ('MP9oLB-ND9A', 'Ankara', {l: P + f'channel-branding/subtitles/out/ankara_MP9oLB-ND9A/ankara_{l}.srt' for l in ['de', 'fr', 'ja']} | {'hi': HU + 'ankara_hi.srt', 'ur': HU + 'ankara_ur.srt'}),
+  # Ankara left out at the owner's request
  ]}
 NAMES = {'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
