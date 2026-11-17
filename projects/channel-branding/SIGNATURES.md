@@ -1,4 +1,4 @@
-# Unsealed History: channel signatures (read this before every new Short)
+# Or So The Story Goes (formerly Unsealed History): channel signatures (read this before every new Short)
 
 The house style of the channel, collected from the published Shorts (Noah's Ark, Piri Reis, Salem, Rome, Great
 Pyramid). Every new video should use all of these unless the owner asks otherwise. Reference implementation:
@@ -20,7 +20,7 @@ Pyramid). Every new video should use all of these unless the owner asks otherwis
 
 ## 1b. The story turn: "Or so the story goes." (story-led videos)
 - When a video first tells the legend as a story (Salem, Rome), the legend ends on a climax line, and the
-  narrator closes it with its own short sentence: **"Or so the story goes."** Then the evidence begins with a
+  narrator closes it with its own short sentence: **"Or so the story goes."** (also the channel name) Then the evidence begins with a
   plain turn: "But the records say otherwise." (Salem), Livy / the evidence chapter (Rome).
 - On screen, on "Or so...": the legend picture (often the cold-open picture again, Rome) snaps to grey
   (`grayscale(1)`, a little darker), the legend's labels and chapter title drop, and the red stamp **MYTH** slams

@@ -1,6 +1,6 @@
 # Open items (as of 2026-11-17) — read this at the start of a new chat
 
-Channel: Unsealed History (UC-56SCswc-CVcH835YjGyow). House style: `SIGNATURES.md` (incl. section 7, vidIQ lessons).
+Channel: renaming from "Unsealed History" to "Or So The Story Goes" (UC-56SCswc-CVcH835YjGyow). Owner renames it in Studio; then run `channel-branding/rename_channel.py` (video descriptions/tags + channel description/keywords). House style: `SIGNATURES.md` (incl. section 7, vidIQ lessons).
 
 ## Waiting for the owner's channel verification (custom thumbnails)
 Thumbnail uploads are blocked ("too many thumbnails" / verification). Once https://www.youtube.com/features shows
