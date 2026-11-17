@@ -27,7 +27,8 @@ meta = {'id': vid, 'snippet': {'title': m['title'], 'description': m['descriptio
         'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}}
 call(urllib.request.Request('https://www.googleapis.com/youtube/v3/videos?part=snippet,status', json.dumps(meta).encode(),
                             {**A, 'Content-Type': 'application/json'}, method='PUT'), 'metadata')
-call(urllib.request.Request(f'https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}',
+if m.get('thumb'):
+  call(urllib.request.Request(f'https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}',
                             open(os.path.join(H, m['thumb']), 'rb').read(), {**A, 'Content-Type': 'image/jpeg'}), 'thumbnail')
 names = {'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語'}
 for lang, name in names.items():

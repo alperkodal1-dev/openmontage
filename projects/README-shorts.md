@@ -8,7 +8,7 @@ Two vertical (1080x1920) history Shorts for the Unsealed History channel, built 
 | Project | Published | Final file | Turkish subtitles |
 |---|---|---|---|
 | `atlantis-story/` | https://www.youtube.com/watch?v=_PpRv_GMMlk | `atlantis-story/out/atlantis_story_v2_strings.mp4` | `atlantis-story/out/atlantis_tr.srt` |
-| `noah-ark/` | https://youtube.com/shorts/jPUkaMEQ_wU (re-upload with own music; old 68mjjXGN5EI was blocked by Content ID) | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
+| `noah-ark/` | https://youtube.com/shorts/hgJgE_9AVFo (59 s Shorts cut, vidIQ tension score; earlier uploads 68mjjXGN5EI blocked by Content ID and deleted, jPUkaMEQ_wU 72 s set private) | `noah-ark/out/nuh_ark_short.mp4` | `noah-ark/out/nuh_tr.srt` |
 | `piri-reis-map/` | https://www.youtube.com/watch?v=5SXAmr8qgFM | `piri-reis-map/out/piri_reis_v9_loop.mp4` | `piri-reis-map/out/piri_reis_tr.srt` |
 | `egypt-pyramids/` | https://youtube.com/shorts/eb9hr58dpCI | `egypt-pyramids/out/pyramid_v11.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
 | `columbus-flat-earth/` | not published yet | `columbus-flat-earth/out/columbus_final.mp4` | `columbus-flat-earth/out/columbus_tr.srt` |
