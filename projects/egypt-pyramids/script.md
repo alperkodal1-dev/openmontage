@@ -46,3 +46,11 @@ came after 1968), "what looks like a bulb", "about 2.3 million", "once aimed at"
 pyramid), "boats of limestone", "sarcophagus was found empty", "Khufu's body".
 
 This carving in an Egyptian temple seems to show a helicopter. In 1968, a Swiss writer said astronauts from the stars had visited Egypt. His followers saw more clues. At Dendera, a snake in what looks like a giant bulb. At Saqqara, a wooden bird with the wings of a glider. And the Great Pyramid: about two point three million blocks, aligned to true north. Some claim it was a power plant. Others, a stargate: one shaft once aimed at Orion's belt. Then, in 1990, the story goes, a horse tripped on a buried wall. Beneath it lay the builders, in the shadow of their king's pyramid. Their gangs signed the stones: Friends of Khufu. Next door, Drunkards of Menkaure. A papyrus logbook even tracks boats of limestone to Giza. Yet the king's sarcophagus was found empty. Khufu's body has never been found. So who knows... were the Egyptians getting help from an alien race?
+
+## v5 (v4 with the owner's ending: "what were the pyramids, really?"; awaiting approval to voice)
+
+154 words (vidIQ count), ~66 s at 141 wpm. The empty sarcophagus sets up the question ("A tomb with no king..."),
+and "...what were the pyramids, really?" loops into "This carving in an Egyptian temple seems to show a helicopter."
+Poll card: "The Great Pyramid was only a tomb." REAL / MYTH.
+
+This carving in an Egyptian temple seems to show a helicopter. In 1968, a Swiss writer said astronauts from the stars had visited Egypt. His followers saw more clues. At Dendera, a snake in what looks like a giant bulb. At Saqqara, a wooden bird with the wings of a glider. And the Great Pyramid: about two point three million blocks, aligned to true north. Some claim it was a power plant. Others, a stargate: one shaft once aimed at Orion's belt. Then, in 1990, the story goes, a horse tripped on a buried wall. Beneath it lay the builders, in the shadow of their king's pyramid. Their gangs signed the stones: Friends of Khufu. Next door, Drunkards of Menkaure. A papyrus logbook even tracks boats of limestone to Giza. Yet the king's sarcophagus was found empty. Khufu's body has never been found. A tomb with no king... so what were the pyramids, really?
