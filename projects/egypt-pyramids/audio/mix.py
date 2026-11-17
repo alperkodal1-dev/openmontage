@@ -3,7 +3,8 @@ The music lifts in the fantastical passages: the alien legend and its clues (0-2
 and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.2 s), where the generated score swells on its own."""
 import subprocess
 SFX = '../../atlantis-story/sfx/'
-END = 68.6          # the Short loops: no outro, "what were the pyramids, really?" leads back into the opening carving
+END = 78.2          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) plays the last 10 s
+SONG_AT, MAIN_END = 68.2, 68.6
 LIFT = [(0.0, 20.3), (26.6, 33.8), (57.0, 68.6)]   # the alien legend, power plant and stargate, the stairway to the stars
 LOW = [(33.8, 56.9)]                                 # the evidence
 BASE, UP, DOWN = 0.20, 0.36, 0.14
@@ -27,14 +28,19 @@ ev = [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("whoosh", 0.2, 0.3), ("swell", 0
       ("swell", 56.95, 0.3), ("wash", 60.4, 0.35), ("tick", 60.6, 0.2), ("tick", 60.9, 0.2), ("tick", 61.2, 0.2),
       ("whoosh", 62.8, 0.25), ("whoosh", 63.7, 0.25), ("swell", 66.0, 0.3), ("hit", 66.05, 0.35)]
 inp = ["-i", "vo_v2.mp3", "-i", "music_v2.wav"]; fl = []; lab = []
+song = len(ev) + 2
 for i, (n, t, v) in enumerate(ev):
     inp += ["-i", f"{SFX}{n}.wav"]; ms = int(t * 1000)
     fl.append(f"[{i+2}]aformat=channel_layouts=stereo,aresample=48000,adelay={ms}|{ms},volume={v}[e{i}]"); lab.append(f"[e{i}]")
 fl.append(f"[0]aformat=channel_layouts=stereo,aresample=48000,apad=whole_dur={END}[v]")
 fl.append("[v]asplit=2[v1][vk]")
 fl.append(f"[1]aformat=channel_layouts=stereo,aresample=48000,volume='{vol}':eval=frame,"
-          f"afade=t=out:st={END - 0.5}:d=0.5,apad=whole_dur={END}[m0]")
+          f"afade=t=out:st={MAIN_END - 0.6}:d=0.6,apad=whole_dur={END}[m0]")
 fl.append("[m0][vk]sidechaincompress=threshold=0.03:ratio=5:attack=20:release=350[m]")
-fl.append(f"[v1][m]{''.join(lab)}amix=inputs={len(ev)+2}:normalize=0:duration=first,atrim=0:{END},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
+inp += ["-i", "end_song.wav"]
+fl.append(f"[{song}]aformat=channel_layouts=stereo,aresample=48000,atrim=0:{END - SONG_AT},afade=t=in:d=0.25,"
+          f"afade=t=out:st={END - SONG_AT - 2.0}:d=2.0,volume=0.85,adelay={int(SONG_AT*1000)}|{int(SONG_AT*1000)}[song]")
+lab.append("[song]")
+fl.append(f"[v1][m]{''.join(lab)}amix=inputs={len(ev)+3}:normalize=0:duration=first,atrim=0:{END},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", ";".join(fl), "-map", "[out]", "-ar", "48000", "-c:a", "aac", "-b:a", "192k", "mix.m4a"], check=True)
 print("ok")

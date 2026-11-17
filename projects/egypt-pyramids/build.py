@@ -2,7 +2,7 @@
 hf/assets/ at render size. Keyword colours in the captions: green for the alien legend, orange for the evidence."""
 import json, os, re
 from PIL import Image
-END = 68.6
+END = 78.2
 A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'dauzats.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'greene_1853.jpg',
      'giza.jpg': 'frith_1858.jpg', 'menkaure.jpg': 'menkaure.jpg', 'legray.jpg': 'legray.jpg', 'bonfils.jpg': 'bonfils.jpg', 'ptexts.jpg': 'pyramid_texts.jpg', 'dogu.jpg': 'dogu.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
      'saqqara.jpg': 'saqqara_bird.jpg'}
