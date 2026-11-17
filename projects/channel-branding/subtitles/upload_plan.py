@@ -6,20 +6,19 @@ P = '/home/user/openmontage/projects/'
 HU = P + 'channel-branding/subtitles/hi_ur/out/'
 ALL7 = ['en', 'tr', 'es', 'pt', 'de', 'fr', 'ja']
 def seven(d, stem): return {l: f'{P}{d}/{stem}_{l}.srt' for l in ALL7}
-AID_F = P + 'alexander-great/publish/video_id.txt'   # written after the Alexander upload succeeds
-AID = open(AID_F).read().strip() if os.path.exists(AID_F) else None
-PLAN = {
- 'day1': ([(AID, 'Alexander', {**seven('alexander-great/publish', 'alexander'), 'hi': P + 'alexander-great/publish/alexander_hi.srt', 'ur': P + 'alexander-great/publish/alexander_ur.srt'})] if AID else []) + [
-  ('x5FLR7Iwv_A', 'Noah', {**seven('noah-ark/publish_long', 'noah'), 'hi': HU + 'noah_hi.srt', 'ur': HU + 'noah_ur.srt'}),
- ],
- 'day2': [
-  ('5SXAmr8qgFM', 'Piri Reis', {'fr': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_fr.srt', 'ja': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_ja.srt', 'hi': HU + 'piri_hi.srt', 'ur': HU + 'piri_ur.srt'}),
-  ('Y_Apy6CZdHI', 'Salem', {**seven('salem-remix/publish', 'salem'), 'hi': HU + 'salem_hi.srt', 'ur': HU + 'salem_ur.srt'}),
-  ('5xT5DXyXcVA', 'Pyramid', {**seven('egypt-pyramids/publish', 'pyramid'), 'hi': HU + 'pyramid_hi.srt', 'ur': HU + 'pyramid_ur.srt'}),
- ],
- 'day3': [
-  ('d2PR8LPYXzo', 'Atlantis', {**seven('atlantis-story/v4/publish', 'atlantis'), 'hi': HU + 'atlantis_hi.srt', 'ur': HU + 'atlantis_ur.srt'}),
- ]}  # Ankara left out at the owner's request
+PIRI = {'fr': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_fr.srt', 'ja': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_ja.srt', 'hi': HU + 'piri_hi.srt', 'ur': HU + 'piri_ur.srt'}
+V = {
+ 'piri': ('5SXAmr8qgFM', 'Piri Reis', PIRI),
+ 'noah': ('x5FLR7Iwv_A', 'Noah', {**seven('noah-ark/publish_long', 'noah'), 'hi': HU + 'noah_hi.srt', 'ur': HU + 'noah_ur.srt'}),
+ 'salem': ('Y_Apy6CZdHI', 'Salem', {**seven('salem-remix/publish', 'salem'), 'hi': HU + 'salem_hi.srt', 'ur': HU + 'salem_ur.srt'}),
+ 'pyramid': ('5xT5DXyXcVA', 'Pyramid', {**seven('egypt-pyramids/publish', 'pyramid'), 'hi': HU + 'pyramid_hi.srt', 'ur': HU + 'pyramid_ur.srt'}),
+ 'atlantis': ('d2PR8LPYXzo', 'Atlantis', {**seven('atlantis-story/v4/publish', 'atlantis'), 'hi': HU + 'atlantis_hi.srt', 'ur': HU + 'atlantis_ur.srt'}),
+}
+# Owner (17 Nov): this week's only job is captions on every Short on the channel. ~24 tracks fit in a day's quota.
+PLAN = {'day1': [V['piri'], V['noah'], V['salem']],   # 4 + 9 + 9 = 22 tracks
+        'day2': [V['pyramid'], V['atlantis']],         # 9 + 9 = 18 tracks
+        'day3': list(V.values())}                      # retry anything that failed (skips what is already there)
+# Ankara (long video) left out at the owner's request
 NAMES = {'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
 b = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'], 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
