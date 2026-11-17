@@ -1,5 +1,8 @@
 # History Shorts: Atlantis and Noah's Ark
 
+**Before starting a new Short, read [`channel-branding/SIGNATURES.md`](channel-branding/SIGNATURES.md): the channel's
+signatures (opening question with the grey shock, look, voice, sound, cover, delivery).**
+
 Two vertical (1080x1920) history Shorts for the Unsealed History channel, built with HyperFrames (HTML/GSAP) and ffmpeg.
 
 | Project | Published | Final file | Turkish subtitles |
