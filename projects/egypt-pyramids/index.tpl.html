@@ -107,7 +107,7 @@
   #kh .cart{font-family:'Cinzel';font-weight:900;font-size:110px;letter-spacing:8px;padding:20px 70px;border-width:6px;border-radius:120px;color:var(--bone);background:rgba(7,13,15,.75)}
   #nf{top:900px} #nf .stamp{font-size:60px}
   #wk{top:640px} #wk .ital{font-size:92px;color:var(--gold2);text-shadow:0 3px 20px rgba(0,0,0,.9)}
-  #poll{position:absolute;left:130px;width:820px;top:560px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 60px rgba(125,255,176,.35);color:#132024;text-align:center}
+  #poll{position:absolute;left:130px;width:820px;top:760px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 60px rgba(125,255,176,.35);color:#132024;text-align:center}
   #poll .qq{font-family:'Cinzel';font-weight:900;font-size:50px;line-height:1.14}
   #poll .opts{display:flex;gap:22px;margin-top:34px}
   #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
@@ -238,6 +238,7 @@
     <div class="row" id="stT"><div class="tag al" id="stTt">“A STAIRCASE TO THE SKY”</div></div>
     <div class="half" id="hA"><img src="assets/chamber.jpg" alt=""><div class="lab"><span>A TOMB…</span></div></div>
     <div class="half" id="hB"><svg width="960" height="390" viewBox="0 0 960 390"><polygon points="300,390 480,250 660,390" fill="rgba(217,178,106,.35)" stroke="#f1d49a" stroke-width="4"/><g fill="#7dffb0">{{STEPS2}}</g><circle cx="700" cy="70" r="8" fill="#fff"/><circle cx="740" cy="48" r="9" fill="#fff"/><circle cx="780" cy="26" r="8" fill="#fff"/></svg><div class="lab"><span>…OR A STAIRWAY?</span></div></div>
+    <div class="center" id="fq" style="top:0;height:700px;padding-top:290px;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.8) 560px,rgba(6,12,14,0) 700px)"><div class="big" style="font-size:84px;line-height:1.08;color:#efe6d2">WHAT WERE<br><span style="color:#f1d49a">THE PYRAMIDS,</span><br>REALLY?</div></div>
     <div id="poll">
       <div class="qq">The Great Pyramid was only a tomb.</div>
       <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
@@ -289,6 +290,7 @@
   tl.from("#hk1", { opacity: 0, y: -16, duration: 0.3, ease: E }, 0.15);
   tl.from("#hk2", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 0.9);
   tl.to(["#hk1","#hk2"], { opacity: 0, duration: 0.3 }, 4.4);
+  tl.to("#hk", { opacity: 0, duration: 0.2 }, 4.6);
   // 2. the visitors
   tl.from("#y68", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 4.95);
   tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 6.45);
@@ -383,7 +385,9 @@
   tl.fromTo("#hA img", { scale: 1.0 }, { scale: 1.1, duration: 3.0, ease: "none" }, 62.8);
   tl.from("#hB", { opacity: 0, x: 80, duration: 0.4, ease: E }, 63.7);
   tl.to(["#hA","#hB"], { opacity: 0, duration: 0.3 }, 65.75);
-  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 66.05);
+  dim("#b1", 0, 65.7); tl.to("#b1", { opacity: 1, duration: 0.4 }, 65.75); kb("#b1i", 65.75, {{END}} - 65.75, 1.0, 0.92);
+  tl.from("#fq", { opacity: 0, y: -20, scale: 1.1, duration: 0.45, ease: E }, 66.1);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 66.9);
   tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.0);
   tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.5);
   // alien glow in the fantastical passages
