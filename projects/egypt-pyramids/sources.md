@@ -43,3 +43,4 @@
   (1865-69); Félix Bonfils, Pyramides et le Sphinx (c. 1870); Seated Statue of King Menkaure.
 
 - Dogū with goggle-shaped eyes, Kamegaoka, Jōmon period (Tokyo National Museum), photo by Daderot, Wikimedia Commons, public domain. Von Däniken presented dogū figures as astronauts in spacesuits (1968).
+- Erich von Däniken, 1987: ETH-Bibliothek Zürich, Bildarchiv / Com_L36-0120-0001-0005, photo Somorjai Zsolt, CC BY-SA 4.0 (credit shown on screen).

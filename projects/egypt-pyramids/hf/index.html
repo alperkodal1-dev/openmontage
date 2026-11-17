@@ -67,8 +67,11 @@
   #northT{top:1000px} #northT .tag{font-size:44px}
   #bc{top:560px} #bc .big{font-size:170px} #bc .ital{font-size:58px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
   /* the visitors */
-  #y68{top:520px} #y68 .big{font-size:200px}
-  #vd{top:800px;gap:20px} #vd .tag{font-size:40px}
+  #y68{top:300px} #y68 .big{font-size:150px}
+  .por{position:absolute;left:240px;width:600px;top:480px;height:640px;border:3px solid var(--gold);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+  .por img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:sepia(.35) contrast(1.1)}
+  .por .cr{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Manrope;font-weight:700;font-size:18px;letter-spacing:1px;color:rgba(239,230,210,.8);text-shadow:0 1px 6px #000}
+  #vd{top:1140px;gap:12px} #vd .tag{font-size:34px}
   #astro{top:640px} #astro .stamp{font-size:50px}
   /* the clues map */
   .mapcard{position:absolute;left:60px;width:960px;top:400px;height:800px;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;background:#7f9c9a}
@@ -170,6 +173,7 @@
   <!-- 2. the visitors, 3. the clues -->
   <section id="s2" class="clip scene" data-start="8.7" data-duration="15.6" data-track-index="14">
     <div class="center" id="y68"><div class="big">1968</div></div>
+    <div class="por" id="vdp"><img src="assets/daniken.jpg" alt=""><div class="cr">PHOTO: ETH-BIBLIOTHEK, 1987 · CC BY-SA 4.0</div></div>
     <div class="center" id="vd"><div class="tag" id="vd1">ERICH VON DÄNIKEN</div><div class="tag al" id="vd2">“CHARIOTS OF THE GODS?”</div></div>
     <div class="art" id="a4" style="top:400px;height:820px"><img src="assets/dogu.jpg" alt="" id="a4i" style="object-position:50% 30%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:26%;width:360px;height:360px;margin:-180px 0 0 -180px"></div><div class="scan"></div></div>
     <div class="arttag" id="a4t" style="top:1130px"><div class="tag al" style="font-size:32px">DOGŪ · JAPAN, c. 1000 BC · “A SPACESUIT”?</div></div>
@@ -310,9 +314,11 @@
   tl.to("#hk", { opacity: 0, duration: 0.2 }, 4.6);
   // 2. the visitors
   tl.from("#y68", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 4.95);
+  tl.from("#vdp", { opacity: 0, y: 50, scale: 0.95, duration: 0.45, ease: E }, 5.5);
+  tl.fromTo("#vdp img", { scale: 1.12 }, { scale: 1.0, duration: 2.4, ease: "none" }, 5.5);
   tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 6.45);
   tl.from("#vd2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 6.9);
-  tl.to(["#y68","#vd"], { opacity: 0, y: -30, duration: 0.3 }, 7.8);
+  tl.to(["#y68","#vd","#vdp"], { opacity: 0, y: -30, duration: 0.3 }, 7.8);
   tl.from("#a4", { opacity: 0, scale: 0.94, duration: 0.35, ease: E }, 7.8);
   tl.fromTo("#a4i", { scale: 1.0 }, { scale: 1.15, duration: 2.6, ease: "none" }, 7.8);
   tl.fromTo("#a4 .scan", { y: 0, opacity: 1 }, { y: 820, duration: 0.9, ease: "power1.inOut" }, 8.0);
@@ -418,6 +424,7 @@
   root.from("#q0a", { opacity: 0, scale: 1.25, duration: 0.45, ease: E }, 0.1);
   root.from("#q0s", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 2.15);
   root.to(["#q0a", "#q0b"], { opacity: 0, duration: 0.25 }, 3.9 - 0.3);
+  root.to("#q0", { opacity: 0, duration: 0.2 }, 3.9 - 0.2);
   root.to("#b1", { opacity: 0, duration: 0.2 }, 3.9 - 0.2);
   root.add(tl, 3.9);
   window.__timelines["main"] = root;
