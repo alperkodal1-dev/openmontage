@@ -33,3 +33,9 @@ custom thumbnails enabled, set (owner may do it in Studio):
   Next step: owner approval for the voiceover (~28 vidIQ credits). Search ~45k/month, low competition.
 - Machiavelli ("The end justifies the means. He never said it."): ~476k searches/month, high competition. Not written yet.
 - Other researched topics: Sphinx's nose (sphinx +845%), Mary Celeste (178k, +152%), Mona Lisa theft 1911.
+
+## Salem re-upload (2026-11-17)
+- New Salem with own music is live: F_HL18etevs (title, description, tags set at upload).
+- Quota ran out: tomorrow run `python3 egypt-pyramids/publish/finish.py F_HL18etevs public salem-remix/publish`
+  (sets metadata again, 7 captions, posts the comment; owner pins it). Owner deletes the old Salem (5phbMr3egWo) in Studio.
+- Atlantis v4 script waits for the owner's OK on the voiceover (~28 credits): `atlantis-story/v4/script.md`.
