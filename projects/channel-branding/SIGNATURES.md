@@ -18,6 +18,16 @@ Pyramid). Every new video should use all of these unless the owner asks otherwis
   Code: `signatures/grey_signature.js`.
 - The question must be answered (or honestly left open) by the evidence in the body.
 
+## 1b. The story turn: "Or so the story goes." (story-led videos)
+- When a video first tells the legend as a story (Salem, Rome), the legend ends on a climax line, and the
+  narrator closes it with its own short sentence: **"Or so the story goes."** Then the evidence begins with a
+  plain turn: "But the records say otherwise." (Salem), Livy / the evidence chapter (Rome).
+- On screen, on "Or so...": the legend picture (often the cold-open picture again, Rome) snaps to grey
+  (`grayscale(1)`, a little darker), the legend's labels and chapter title drop, and the red stamp **MYTH** slams
+  in (Salem) a beat later. Sound: hit + rumble on "Or", the score drops to its low bed for the evidence.
+- The climax line before it gets a big Cinzel two-line title over warm, fiery light (Salem: "...AND THEY BURNED").
+- Code: `signatures/grey_signature.js` (`storyGoes`).
+
 ## 2. Look
 - Vertical 1080x1920. Top 250 px clear for the platform UI; karaoke captions on a dark plate at y 1235-1615.
 - Fonts (self-hosted): Cinzel (titles, tags, stamps), Cormorant Garamond italic (quotes, asides), Manrope (captions).

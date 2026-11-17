@@ -19,3 +19,13 @@ function greySignature(tl, img, flash, t) {
 //   <div class="row" style="top:1080px"><div class="stamp" style="font-size:72px">…OR DID THEY?</div></div>
 // </section>
 // The narration's own timeline is then placed after the question: root.add(scenes, D).
+
+// The story turn, "Or so the story goes." (Salem, Rome): at time t the legend picture turns grey and a little darker,
+// the legend's labels fade, and the red MYTH stamp slams in at t + 0.6. `labels` = the legend's on-screen texts.
+function storyGoes(tl, img, labels, stamp, t) {
+  tl.to(labels, { opacity: 0, duration: 0.2 }, t);
+  tl.fromTo(img, { filter: "grayscale(0) brightness(.85)" },
+    { filter: "grayscale(1) contrast(1.1) brightness(.7)", duration: 0.15, ease: "none", immediateRender: false }, t);
+  tl.fromTo(stamp, { opacity: 0, scale: 2.2, rotation: -4 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.3, ease: "power4.out", immediateRender: false }, t + 0.6);
+}
+// Stamp HTML: <div class="row" style="top:640px"><div class="stamp" style="font-size:96px">MYTH</div></div>
