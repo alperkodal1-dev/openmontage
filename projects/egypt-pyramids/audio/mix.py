@@ -6,7 +6,7 @@ SFX = '../../atlantis-story/sfx/'
 END = 68.6          # the Short loops: no outro, "what were the pyramids, really?" leads back into the opening carving
 LIFT = [(0.0, 20.3), (26.6, 33.8), (57.0, 68.6)]   # the alien legend, power plant and stargate, the stairway to the stars
 LOW = [(33.8, 56.9)]                                 # the evidence
-BASE, UP, DOWN = 0.22, 0.40, 0.14
+BASE, UP, DOWN = 0.20, 0.36, 0.14
 lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
 low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
 vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
@@ -26,7 +26,7 @@ ev = [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("whoosh", 0.2, 0.3), ("swell", 0
       # the pyramid texts, the stairway, the question
       ("swell", 56.95, 0.3), ("wash", 60.4, 0.35), ("tick", 60.6, 0.2), ("tick", 60.9, 0.2), ("tick", 61.2, 0.2),
       ("whoosh", 62.8, 0.25), ("whoosh", 63.7, 0.25), ("swell", 66.0, 0.3), ("hit", 66.05, 0.35)]
-inp = ["-i", "vo_v2.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
+inp = ["-i", "vo_v2.mp3", "-i", "music_v2.wav"]; fl = []; lab = []
 for i, (n, t, v) in enumerate(ev):
     inp += ["-i", f"{SFX}{n}.wav"]; ms = int(t * 1000)
     fl.append(f"[{i+2}]aformat=channel_layouts=stereo,aresample=48000,adelay={ms}|{ms},volume={v}[e{i}]"); lab.append(f"[e{i}]")
