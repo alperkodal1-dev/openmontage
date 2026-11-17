@@ -8,9 +8,9 @@ Two vertical (1080x1920) history Shorts for the Unsealed History channel, built 
 | Project | Published | Final file | Turkish subtitles |
 |---|---|---|---|
 | `atlantis-story/` | https://www.youtube.com/watch?v=_PpRv_GMMlk | `atlantis-story/out/atlantis_story_v2_strings.mp4` | `atlantis-story/out/atlantis_tr.srt` |
-| `noah-ark/` | https://www.youtube.com/watch?v=68mjjXGN5EI | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
+| `noah-ark/` | https://youtube.com/shorts/jPUkaMEQ_wU (re-upload with own music; old 68mjjXGN5EI was blocked by Content ID) | `noah-ark/out/nuh_ark_final.mp4` | `noah-ark/out/nuh_tr.srt` |
 | `piri-reis-map/` | https://www.youtube.com/watch?v=5SXAmr8qgFM | `piri-reis-map/out/piri_reis_v9_loop.mp4` | `piri-reis-map/out/piri_reis_tr.srt` |
-| `egypt-pyramids/` | not published yet (v11, ready) | `egypt-pyramids/out/pyramid_v11.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
+| `egypt-pyramids/` | https://youtube.com/shorts/eb9hr58dpCI | `egypt-pyramids/out/pyramid_v11.mp4` | `egypt-pyramids/out/pyramid_tr.srt` |
 | `columbus-flat-earth/` | not published yet | `columbus-flat-earth/out/columbus_final.mp4` | `columbus-flat-earth/out/columbus_tr.srt` |
 
 ## Shared look
@@ -63,7 +63,7 @@ The map (`hf/map.svg.html`) is drawn from Natural Earth lakes and rivers (public
 - Gustave Doré, *The Deluge*, public domain. Athanasius Kircher, Atlantis map (1678), public domain.
 - Plato and Solon busts, Josephus portrait (Rijksmuseum, CC0): Wikimedia Commons.
 - Mount Ararat photo by Dosseman; Mount Cudi photos by KediÇobanı and M. Abokaram (Wikimedia Commons, CC BY-SA 4.0).
-- Music: "Cinematic Strings" by AtlasAudio (Pixabay Content License), not stored here; it is mixed into the final audio.
+- Music: the first upload used "Cinematic Strings" by AtlasAudio (Pixabay), which was blocked worldwide by a Content ID claim; the re-upload (`out/nuh_ark_final_ownmusic.mp4`) uses the channel's own generated score.
 
 ## Piri Reis map
 
