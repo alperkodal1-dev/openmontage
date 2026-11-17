@@ -122,3 +122,24 @@ CHUNKS = [
   "それとも、効いた呪文は恐怖だけだったのか？本当か、神話か？"),
 ]),
 ]
+
+TR = [
+ "1692'de Salem'de yaşasaydın, bir başkasının kâbusu seni öldürtebilirdi.",
+ "Her şey kışın başladı. İki küçük kız çığlık atmaya başladı.",
+ "Kıvranıyorlardı. Sandalyelerin altında sürünüyorlardı.",
+ "Karanlıkta görünmez ellerin onları çimdiklediğine yemin ettiler.",
+ "Tituba adında köle bir kadın itiraf etti.",
+ "Siyahlar giymiş uzun boylu bir adam ona bir kitap göstermiş, o da kitaba işaretini koymuştu.",
+ "Kısa süre sonra 50 kişi daha itiraf etti.",
+ "Yabancılar, şeytanın işaretini bulmak için bedenlerini aradı,",
+ "ve Salem cadıları yakıldı. Ya da öyle anlatılır.",
+ "Ama kayıtlar başka bir şey söylüyor. Salem'de tek bir cadı bile yakılmadı.",
+ "İngiliz hukukunda büyücülük ağır bir suçtu ve cezası ipti.",
+ "19 kişi asıldı.",
+ "Giles Corey adlı bir adam, savunma yapmayı reddettiği için taşların altında ezildi.",
+ "Asıl kanıt: rüyalar ve hayaller.",
+ "1697'de bir yargıç kilisede ayağa kalkıp af diledi.",
+ "Son isim 2022'de aklandı.",
+ "Peki Salem'de hiç büyü var mıydı?",
+ "Yoksa işe yarayan tek büyü korku muydu? Gerçek mi, efsane mi?",
+]

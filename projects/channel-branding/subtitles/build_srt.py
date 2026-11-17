@@ -3,6 +3,10 @@ the videos whose timings are approximate (YouTube Studio > Subtitles > Upload fi
 Run: python3 build_srt.py"""
 import importlib, os, textwrap
 LANGS = ['en', 'es', 'pt', 'de', 'fr', 'ja']
+# Turkish: the reviewed project SRTs for the three Shorts made here, TR lists in data_salem/data_ankara for the others
+TR_FILES = {'piri': '../../piri-reis-map/out/piri_reis_tr.srt', 'noah': '../../noah-ark/out/nuh_tr.srt',
+            'atlantis': '../../atlantis-story/out/atlantis_tr.srt'}
+import shutil
 VIDEOS = {'piri': '5SXAmr8qgFM', 'noah': '68mjjXGN5EI', 'atlantis': '_PpRv_GMMlk', 'salem': '5phbMr3egWo', 'ankara': 'MP9oLB-ND9A'}
 
 def ts(t):
@@ -40,6 +44,15 @@ for name, vid in VIDEOS.items():
             if k + 1 < len(cues): e = min(e + 0.3, cues[k + 1][0] - 0.05)
             out.append(f"{k + 1}\n{ts(s)} --> {ts(e)}\n{wrap(texts[li], lang)}\n")
         open(f'{d}/{name}_{lang}.srt', 'w', encoding='utf-8').write('\n'.join(out))
+    if name in TR_FILES: shutil.copy(TR_FILES[name], f'{d}/{name}_tr.srt')
+    else:
+        assert len(mod.TR) == len(cues), (name, len(mod.TR), len(cues))
+        out = []
+        for k, c in enumerate(cues):
+            s, e = c[0], c[1]
+            if k + 1 < len(cues): e = min(e + 0.3, cues[k + 1][0] - 0.05)
+            out.append(f"{k + 1}\n{ts(s)} --> {ts(e)}\n{wrap(mod.TR[k], 'tr')}\n")
+        open(f'{d}/{name}_tr.srt', 'w', encoding='utf-8').write('\n'.join(out))
     if not hasattr(mod, 'CUES'):
         open(f'{d}/{name}_en_transcript.txt', 'w', encoding='utf-8').write('\n'.join(c[2] for c in cues) + '\n')
     print(name, vid, len(cues), 'cues')

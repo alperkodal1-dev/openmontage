@@ -5,7 +5,7 @@ Usage: python3 yt_captions.py [--dry-run] [--limit N] [video ...]     (videos: p
 Already uploaded tracks are recorded in uploaded.json and skipped."""
 import json, os, sys, urllib.parse, urllib.request, uuid
 VIDEOS = {'piri': '5SXAmr8qgFM', 'noah': '68mjjXGN5EI', 'atlantis': '_PpRv_GMMlk', 'salem': '5phbMr3egWo', 'ankara': 'MP9oLB-ND9A'}
-LANGS = ['en', 'es', 'pt', 'de', 'fr', 'ja']
+LANGS = ['en', 'tr', 'es', 'pt', 'de', 'fr', 'ja']
 DONE = 'uploaded.json'
 
 def token():
@@ -33,9 +33,10 @@ names = [a for a in args if a in VIDEOS] or list(VIDEOS)
 done = json.load(open(DONE)) if os.path.exists(DONE) else {}
 tok = None if dry else token()
 n = 0
-for name in names:
+# language by language across the videos, so every Short gets English, Turkish, Spanish... before the next language
+for lang, name in [(l, v) for l in LANGS for v in names]:
     vid = VIDEOS[name]
-    for lang in LANGS:
+    if True:
         key = f'{vid}:{lang}'
         if key in done: continue
         if n >= limit: print('limit reached'); break
