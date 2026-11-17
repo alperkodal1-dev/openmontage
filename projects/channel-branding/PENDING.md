@@ -35,7 +35,7 @@ custom thumbnails enabled, set (owner may do it in Studio):
 - Other researched topics: Sphinx's nose (sphinx +845%), Mary Celeste (178k, +152%), Mona Lisa theft 1911.
 
 ## Salem re-upload (2026-11-17)
-- New Salem with own music is live: F_HL18etevs (title, description, tags set at upload).
-- Quota ran out: tomorrow run `python3 egypt-pyramids/publish/finish.py F_HL18etevs public salem-remix/publish`
-  (sets metadata again, 7 captions, posts the comment; owner pins it). Owner deletes the old Salem (5phbMr3egWo) in Studio.
+- First re-upload F_HL18etevs (all-new music): owner to delete. FINAL Salem = Y_Apy6CZdHI (Mussorgsky legend part kept, Pixabay part replaced), public.
+- Quota ran out: tomorrow run `python3 egypt-pyramids/publish/finish.py Y_Apy6CZdHI public salem-remix/publish`
+  (sets metadata again, 7 captions, posts the comment; owner pins it). Owner deletes the old Salem (5phbMr3egWo) and F_HL18etevs in Studio.
 - Atlantis v4 script waits for the owner's OK on the voiceover (~28 credits): `atlantis-story/v4/script.md`.
