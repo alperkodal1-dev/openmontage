@@ -4,10 +4,11 @@ and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.
 import subprocess
 SFX = '../../atlantis-story/sfx/'
 END = 78.2          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) plays the last 10 s
-SONG_AT, MAIN_END = 68.2, 68.6
+SONG_AT, MAIN_END = 68.25, 68.5
+SONG_FROM = 1.88   # the first strong downbeat in the recording (librosa beat track: 143.6 BPM, beats from 1.90 s)
 LIFT = [(0.0, 20.3), (26.6, 33.8), (57.0, 68.6)]   # the alien legend, power plant and stargate, the stairway to the stars
 LOW = [(33.8, 56.9)]                                 # the evidence
-BASE, UP, DOWN = 0.20, 0.36, 0.14
+BASE, UP, DOWN = 0.09, 0.14, 0.06
 lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
 low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
 vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
@@ -36,10 +37,10 @@ fl.append(f"[0]aformat=channel_layouts=stereo,aresample=48000,apad=whole_dur={EN
 fl.append("[v]asplit=2[v1][vk]")
 fl.append(f"[1]aformat=channel_layouts=stereo,aresample=48000,volume='{vol}':eval=frame,"
           f"afade=t=out:st={MAIN_END - 0.6}:d=0.6,apad=whole_dur={END}[m0]")
-fl.append("[m0][vk]sidechaincompress=threshold=0.03:ratio=5:attack=20:release=350[m]")
+fl.append("[m0][vk]sidechaincompress=threshold=0.015:ratio=8:attack=15:release=300[m]")
 inp += ["-i", "end_song.wav"]
-fl.append(f"[{song}]aformat=channel_layouts=stereo,aresample=48000,atrim=0:{END - SONG_AT},afade=t=in:d=0.25,"
-          f"afade=t=out:st={END - SONG_AT - 2.0}:d=2.0,volume=0.85,adelay={int(SONG_AT*1000)}|{int(SONG_AT*1000)}[song]")
+fl.append(f"[{song}]aformat=channel_layouts=stereo,aresample=48000,atrim={SONG_FROM}:{SONG_FROM + END - SONG_AT},asetpts=PTS-STARTPTS,afade=t=in:d=0.02,"
+          f"afade=t=out:st={END - SONG_AT - 2.0}:d=2.0,volume=0.422,adelay={int(SONG_AT*1000)}|{int(SONG_AT*1000)}[song]")
 lab.append("[song]")
 fl.append(f"[v1][m]{''.join(lab)}amix=inputs={len(ev)+3}:normalize=0:duration=first,atrim=0:{END},loudnorm=I=-14:TP=-1.5:LRA=11[out]")
 subprocess.run(["ffmpeg", "-v", "error", "-y", *inp, "-filter_complex", ";".join(fl), "-map", "[out]", "-ar", "48000", "-c:a", "aac", "-b:a", "192k", "mix.m4a"], check=True)
