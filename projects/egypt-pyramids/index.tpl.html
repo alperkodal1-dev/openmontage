@@ -332,6 +332,7 @@
   art(2, 13.0, 16.95); art(3, 17.0, 20.35);
   // 4. the Great Pyramid
   tl.to("#stars", { opacity: 0, duration: 0.2 }, 20.3);
+  tl.set("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9)", x: 0, y: 0 }, 20.3);
   tl.to("#b1", { opacity: 1, duration: 0.15 }, 20.35); kb("#b1i", 20.35, 2.0, 1.25, 1.1);
   tl.to("#b1", { opacity: 0, duration: 0.3 }, 22.2);
   show("#b7", 22.2, 24.7); kb("#b7i", 22.2, 2.5, 1.05, 1.2); dim("#b7", 1, 22.2);
@@ -412,8 +413,13 @@
   // 0. the signature question over the pyramid, then the scenes
   root.fromTo("#q0f", { opacity: 0.9 }, { opacity: 0, duration: 0.35, ease: "power2.out" }, 0);
   root.fromTo("#b1", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
-  root.fromTo("#b1i", { scale: 1.25, x: 0 }, { scale: 1.08, x: 0, duration: {{D}}, ease: "power2.out" }, 0);
+  root.fromTo("#b1i", { scale: 1.25 }, { scale: 1.08, duration: {{D}}, ease: "power2.out" }, 0);
   root.from("#q0a", { opacity: 0, scale: 1.25, duration: 0.45, ease: E }, 0.1);
+  // the channel's signature on "...or did they?": the picture turns grey, shakes, and flashes (as in the Noah Short)
+  root.fromTo("#b1i", { filter: "grayscale(0) sepia(.2) contrast(1.06) brightness(.8)" }, { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.8)", duration: 0.12, ease: "none", immediateRender: false }, 2.1);
+  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => root.to("#b1i", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 2.14 + i * 0.055));
+  root.fromTo("#q0f", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none", immediateRender: false }, 2.72);
+  root.to("#q0f", { opacity: 0, duration: 0.3, ease: "power2.out" }, 2.78);
   root.from("#q0s", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 2.15);
   root.to(["#q0a", "#q0b"], { opacity: 0, duration: 0.25 }, {{D}} - 0.3);
   root.to("#q0", { opacity: 0, duration: 0.2 }, {{D}} - 0.2);
