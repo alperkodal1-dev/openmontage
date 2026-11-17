@@ -97,3 +97,9 @@ This carving in an Egyptian temple seems to show a helicopter. In 1968, a Swiss 
 Music: low and mysterious under 1-2, lift under the alien legend (3-12), lower under the evidence (13-19), lift again
 for the stairway to the stars and the question (20-23). New picture needed: Pyramid Texts in the Pyramid of Unas
 (Wikimedia Commons, public domain or CC).
+
+## v7 (signature opening question, voiced separately: audio/vo_hook.mp3; vo_v3.mp3 = hook + 0.3 s + v6 read)
+
+"Slaves built the pyramids... or did they?" over the pyramid, card "BUILT BY SLAVES?" / stamp "...OR DID THEY?", then the
+v6 narration from 3.9 s. The evidence section answers it (the builders buried in the shadow of their king's pyramid).
+Total 82.1 s with the owner's end song.

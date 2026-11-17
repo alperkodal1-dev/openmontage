@@ -3,7 +3,8 @@ The music lifts in the fantastical passages: the alien legend and its clues (0-2
 and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.2 s), where the generated score swells on its own."""
 import subprocess
 SFX = '../../atlantis-story/sfx/'
-END = 78.2          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
+D = 3.9             # the signature question (vo_v3.mp3 = hook + narration); everything after it moves by D
+END = 82.1          # narration ends at 68.1 s; the owner's end song (end_song.wav, from their screen recording) carries the ending
 SONG_AT, MAIN_END = 65.6, 68.7   # the song fades in under the closing question and keeps rising, softly, to the end
 SONG_FROM = 0.0
 SONG_PEAK = 0.28    # about -25 LUFS: under the narrator's level even at its highest
@@ -30,14 +31,20 @@ ev = [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("whoosh", 0.2, 0.3), ("swell", 0
       # the pyramid texts, the stairway, the question
       ("swell", 56.95, 0.3), ("wash", 60.4, 0.35), ("tick", 60.6, 0.2), ("tick", 60.9, 0.2), ("tick", 61.2, 0.2),
       ("whoosh", 62.8, 0.25), ("whoosh", 63.7, 0.25), ("swell", 66.0, 0.3), ("hit", 66.05, 0.35)]
-inp = ["-i", "vo_v2.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
+ev = [(n, round(t + D, 2), v) for n, t, v in ev] + [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("swell", 0.15, 0.22), ("hit", 2.15, 0.45)]
+LIFT = [(a + D, b + D) for a, b in LIFT]; LOW = [(a + D, b + D) for a, b in LOW]
+SONG_AT, MAIN_END = SONG_AT + D, MAIN_END + D
+lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
+low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
+vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
+inp = ["-i", "vo_v3.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
 song = len(ev) + 2
 for i, (n, t, v) in enumerate(ev):
     inp += ["-i", f"{SFX}{n}.wav"]; ms = int(t * 1000)
     fl.append(f"[{i+2}]aformat=channel_layouts=stereo,aresample=48000,adelay={ms}|{ms},volume={v}[e{i}]"); lab.append(f"[e{i}]")
 fl.append(f"[0]aformat=channel_layouts=stereo,aresample=48000,apad=whole_dur={END}[v]")
 fl.append("[v]asplit=2[v1][vk]")
-fl.append(f"[1]aformat=channel_layouts=stereo,aresample=48000,volume='{vol}':eval=frame,"
+fl.append(f"[1]aformat=channel_layouts=stereo,aresample=48000,adelay={int(D*1000)}|{int(D*1000)},volume='{vol}':eval=frame,"
           f"afade=t=out:st={MAIN_END - 0.6}:d=0.6,apad=whole_dur={END}[m0]")
 inp += ["-i", "end_song.wav"]
 fl.append(f"[{song}]aformat=channel_layouts=stereo,aresample=48000,atrim={SONG_FROM}:{SONG_FROM + END - SONG_AT},asetpts=PTS-STARTPTS,"

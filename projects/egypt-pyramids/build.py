@@ -2,7 +2,9 @@
 hf/assets/ at render size. Keyword colours in the captions: green for the alien legend, orange for the evidence."""
 import json, os, re
 from PIL import Image
-END = 78.2
+D = 3.9          # the signature question before the narration
+OEND = 78.2      # the end in the narration's own timeline
+END = round(OEND + D, 2)
 A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'dauzats.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'greene_1853.jpg',
      'giza.jpg': 'frith_1858.jpg', 'menkaure.jpg': 'menkaure.jpg', 'legray.jpg': 'legray.jpg', 'bonfils.jpg': 'bonfils.jpg', 'ptexts.jpg': 'pyramid_texts.jpg', 'dogu.jpg': 'dogu.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
      'saqqara.jpg': 'saqqara_bird.jpg'}
@@ -16,18 +18,19 @@ eg = open('maps/egypt.svg.html').read()
 # a stair of light from the apex (540,580) to Orion's belt (860,110), and a small one for the split screen
 steps = ''.join(f'<rect x="{540 + 32 * i:.0f}" y="{560 - 46 * i:.0f}" width="26" height="12" rx="3"/>' for i in range(10))
 steps2 = ''.join(f'<rect x="{480 + 30 * i:.0f}" y="{238 - 22 * i:.0f}" width="20" height="8" rx="2"/>' for i in range(9))
-R = {'END': END, 'S7D': round(END - 56.9, 2), 'STEPS': steps, 'STEPS2': steps2, 'EGYPT': eg, 'EGYPT2': eg.replace('id="egsvg"', 'id="egsvg2"').replace('id="nile"', 'id="nile2"'),
+R = {'END': END, 'OEND': OEND, 'D': D, 'S7D': round(OEND - 56.9, 2), 'STEPS': steps, 'STEPS2': steps2, 'EGYPT': eg, 'EGYPT2': eg.replace('id="egsvg"', 'id="egsvg2"').replace('id="nile"', 'id="nile2"'),
      'ABX': P['abydos'][0], 'ABY': P['abydos'][1], 'DEX': P['dendera'][0], 'DEY': P['dendera'][1],
      'SAX': P['saqqara'][0], 'SAY': P['saqqara'][1], 'GIX': gx, 'GIY': gy, 'TUX': tx, 'TUY': ty,
      'TUY2': round(ty - 30, 1), 'GIY2': round(gy + 30, 1), 'MIDX': round((gx + tx) / 2, 1), 'MIDY': round((gy + ty) / 2, 1),
      # where the "helicopter" and the "bulb" sit in their photos, in % (checked on snapshots)
      'RAX': 30, 'RAY': 45, 'RDX': 50, 'RDY': 45}
 s = open('index.tpl.html').read()
+s = re.sub(r'\{\{D\+([0-9.]+)\}\}', lambda m: str(round(D + float(m.group(1)), 2)), s)
 for k, v in R.items(): s = s.replace('{{' + k + '}}', str(v))
 assert '{{' not in s, re.findall(r'\{\{\w+\}\}', s)
 open('hf/index.html', 'w').write(s)
 ALIEN = {'helicopter.', 'astronauts', 'bulb.', 'glider', 'power', 'plant.', 'stargate:', "orion's", 'staircase', 'sky,', 'orion.', 'stairway', 'stars?', 'really?'}
-FACT = {'1968,', '1990,', 'builders,', 'khufu.', 'menkaure.', 'papyrus', 'logbook', 'empty.', 'sarcophagus', 'north.', 'tomb...', 'texts'}
+FACT = {'slaves', '1968,', '1990,', 'builders,', 'khufu.', 'menkaure.', 'papyrus', 'logbook', 'empty.', 'sarcophagus', 'north.', 'tomb...', 'texts'}
 W = json.load(open('audio/words.json'))
 for x in W:
     t = x['t'].lower()
