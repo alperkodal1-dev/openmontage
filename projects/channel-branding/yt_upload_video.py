@@ -1,7 +1,8 @@
 """Upload a video file to the channel (YouTube Data API v3, videos.insert with a resumable upload; 1600 quota units).
 Auth: refresh token in the JSON file given by YT_OAUTH_JSON (from the OAuth code exchange) + YT_CLIENT_ID/YT_CLIENT_SECRET,
 or a short-lived access token in YT_ACCESS_TOKEN_FILE.
-Usage: python3 yt_upload_video.py <file.mp4> "<title>" [unlisted|private|public] [description]"""
+Usage: python3 yt_upload_video.py <file.mp4> "<title>" [unlisted|private|public] [description]
+   or: python3 yt_upload_video.py <file.mp4> @metadata.json [privacy]   (title, description, tags; language en)"""
 import json, os, sys, urllib.parse, urllib.request
 
 def token():
@@ -14,10 +15,14 @@ def token():
 
 path, title = sys.argv[1], sys.argv[2]
 privacy = sys.argv[3] if len(sys.argv) > 3 else 'unlisted'
-desc = sys.argv[4] if len(sys.argv) > 4 else ''
+desc, tags = (sys.argv[4] if len(sys.argv) > 4 else ''), []
+if title.startswith('@'):
+    m = json.load(open(title[1:]))
+    title, desc, tags = m['title'], m['description'], m.get('tags', [])
 tok = token()
-meta = {'snippet': {'title': title, 'description': desc, 'categoryId': '27'},
-        'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False}}
+meta = {'snippet': {'title': title, 'description': desc, 'categoryId': '27', 'tags': tags,
+                    'defaultLanguage': 'en', 'defaultAudioLanguage': 'en'},
+        'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}}
 size = os.path.getsize(path)
 req = urllib.request.Request('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
                              json.dumps(meta).encode(), {'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json; charset=UTF-8',
