@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/fonts.css"><style>
+html,body{margin:0;background:#000}
+#c{position:relative;width:2560px;height:1440px;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#16262b 0%,#0a1417 55%,#05090a 100%)}
+#tex{position:absolute;inset:0;background:url(dore_deluge.jpg) center 60%/2560px auto;opacity:.10;filter:grayscale(1) contrast(1.3)}
+#band{position:absolute;left:0;right:0;top:508px;height:423px;background:linear-gradient(180deg,transparent,rgba(217,178,106,.05) 30%,rgba(217,178,106,.05) 70%,transparent)}
+svg#thread{position:absolute;left:0;top:0}
+.med{position:absolute;width:200px;height:200px;border-radius:50%;overflow:hidden;border:6px solid #d9b26a;box-shadow:0 0 0 6px #0a1417,0 0 40px rgba(217,178,106,.35),0 20px 50px rgba(0,0,0,.8)}
+.med img{width:100%;height:100%;object-fit:cover;filter:sepia(.45) contrast(1.15) brightness(.95)}
+.yr{position:absolute;width:260px;text-align:center;font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:5px;color:#f1d49a;text-shadow:0 3px 12px #000}
+.nm{position:absolute;width:260px;text-align:center;font-family:'Cormorant Garamond';font-style:italic;font-size:27px;color:#efe6d2;opacity:.85}
+.wh{position:absolute;font-family:'Cormorant Garamond';font-style:italic;font-size:30px;color:#d9b26a;opacity:.75;white-space:nowrap;text-shadow:0 2px 10px #000}
+#t{position:absolute;left:0;right:0;top:618px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:96px;letter-spacing:8px;line-height:1;background:linear-gradient(180deg,#fff1c7 0%,#f1d49a 40%,#d9b26a 65%,#9a6f2c 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 8px 30px rgba(0,0,0,.95))}
+#s{position:absolute;left:0;right:0;top:770px;text-align:center;font-family:'Cinzel';font-weight:700;font-size:34px;letter-spacing:9px;color:#efe6d2;text-shadow:0 3px 14px #000}
+#s b{color:#9c2f1f;background:#ffe9c4;padding:2px 14px;margin:0 6px;font-weight:900}
+#rule{position:absolute;left:930px;width:700px;top:745px;height:3px;background:linear-gradient(90deg,transparent,#d9b26a,transparent)}
+</style></head><body><div id="c">
+<div id="tex"></div><div id="band"></div>
+<svg id="thread" width="2560" height="1440" viewBox="0 0 2560 1440">
+ <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f1d49a"/><stop offset=".5" stop-color="#d9b26a"/><stop offset="1" stop-color="#9c2f1f"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+ <path d="M -20 680 C 60 600, 120 760, 240 680 S 420 600, 520 690 S 900 880, 1280 880 S 1660 880, 2040 690 S 2200 600, 2320 680 S 2500 760, 2600 680" fill="none" stroke="url(#g)" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round" filter="url(#glow)"/>
+ <path d="M -20 680 C 60 600, 120 760, 240 680 S 420 600, 520 690 S 900 880, 1280 880 S 1660 880, 2040 690 S 2200 600, 2320 680 S 2500 760, 2600 680" fill="none" stroke="url(#g)" stroke-width="2.5" opacity=".7"/>
+</svg>
+<div class="med" style="left:40px;top:575px"><img src="solon.jpg"></div>
+<div class="yr" style="left:10px;top:790px">600 BC</div><div class="nm" style="left:10px;top:830px">Solon heard it</div>
+<div class="med" style="left:280px;top:575px"><img src="plato_bust.jpg" style="object-position:50% 25%"></div>
+<div class="yr" style="left:250px;top:790px">360 BC</div><div class="nm" style="left:250px;top:830px">Plato wrote it</div>
+<div class="med" style="left:2080px;top:575px"><img src="kircher_map.jpg" style="object-position:50% 50%"></div>
+<div class="yr" style="left:2050px;top:790px">AD 1678</div><div class="nm" style="left:2050px;top:830px">Kircher mapped it</div>
+<div class="med" style="left:2320px;top:575px"><img src="donnelly.jpg" style="object-position:50% 25%"></div>
+<div class="yr" style="left:2290px;top:790px">AD 1882</div><div class="nm" style="left:2290px;top:830px">Donnelly sold it</div>
+<div class="wh" style="left:40px;top:525px">"...an island beyond the pillars..."</div>
+<div class="wh" style="left:2130px;top:525px">"...a lost super-civilization!"</div>
+<div id="t">OR SO THE STORY GOES</div>
+<div id="rule"></div>
+<div id="s">LEGENDS <b>VS</b> RECORDS · NEW SHORT EVERY DAY</div>
+</div></body></html>
