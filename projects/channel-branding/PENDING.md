@@ -47,3 +47,6 @@ custom thumbnails enabled, set (owner may do it in Studio):
   old Salem 5phbMr3egWo, F_HL18etevs, Noah drafts AuveB2unXDM / hgJgE_9AVFo.
 - Scheduled for 2026-11-18 08:25 UTC: captions/language/comment for x5FLR7Iwv_A and Y_Apy6CZdHI, then rename_channel.py.
 - Atlantis v4 (own music, 56 s) rendered in atlantis-story/v4/out/ for the owner's review; not uploaded.
+
+## Drafts uploaded 2026-11-17 (private, owner publishes later)
+- Pyramid 5xT5DXyXcVA, Atlantis v4 PhG3ypH77QM. Captions scheduled for 2026-11-19 08:25 UTC (quota). Covers: Pyramid E, Atlantis none yet.
