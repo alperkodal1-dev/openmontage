@@ -39,3 +39,11 @@ custom thumbnails enabled, set (owner may do it in Studio):
 - Quota ran out: tomorrow run `python3 egypt-pyramids/publish/finish.py Y_Apy6CZdHI public salem-remix/publish`
   (sets metadata again, 7 captions, posts the comment; owner pins it). Owner deletes the old Salem (5phbMr3egWo) and F_HL18etevs in Studio.
 - Atlantis v4 script waits for the owner's OK on the voiceover (~28 credits): `atlantis-story/v4/script.md`.
+
+## State at end of 2026-11-17 (from vidIQ's channel listing)
+- Channel title is already "Or So The Story Goes".
+- On the channel: Noah x5FLR7Iwv_A (owner's own upload, public; title/description/tags fixed via vidIQ), Salem Y_Apy6CZdHI,
+  Piri Reis 5SXAmr8qgFM (976 views), Ankara MP9oLB-ND9A. Not listed any more: Pyramid eb9hr58dpCI, Atlantis _PpRv_GMMlk,
+  old Salem 5phbMr3egWo, F_HL18etevs, Noah drafts AuveB2unXDM / hgJgE_9AVFo.
+- Scheduled for 2026-11-18 08:25 UTC: captions/language/comment for x5FLR7Iwv_A and Y_Apy6CZdHI, then rename_channel.py.
+- Atlantis v4 (own music, 56 s) rendered in atlantis-story/v4/out/ for the owner's review; not uploaded.
