@@ -32,3 +32,12 @@
 - "Chambre-roi-grande-pyramide.jpg" (King's Chamber): free use, Jon Bodsworth.
 - Egypt map: Natural Earth (land 50m, rivers 10m), public domain.
 - Music: generated with vidIQ (royalty-free). Narration: vidIQ voiceover, George.
+
+## v6 additions
+- Pyramid Texts: first carved in the pyramid of Unas (end of the 5th Dynasty, c. 2350 BC), about two centuries after
+  Khufu. They speak of a stairway/ladder to the sky for the king (e.g. PT 267, "a stairway to the sky is set up for
+  him") and identify the dead king with Orion (Sah). Translations: Faulkner (1969); Allen (2005).
+- Image: "Pyramid Texts in Unas’ Pyramid 2017.jpg", Wikimedia Commons, CC BY-SA 2.0.
+- Images from The Met Open Access (CC0): Adrien Dauzats, The Great Pyramid, Giza; John Beasley Greene, Excavations near
+  the Sphinx (1853); Francis Frith, The Great Pyramid and the Great Sphinx (1858); Gustave Le Gray, Pyramides de Gizèh
+  (1865-69); Félix Bonfils, Pyramides et le Sphinx (c. 1870); Seated Statue of King Menkaure.

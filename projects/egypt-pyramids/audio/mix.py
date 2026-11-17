@@ -1,31 +1,32 @@
 """Narration + music + sound effects -> mix.m4a at -14 LUFS.
-The music lifts in the fantastical passages: the alien legend and its clues (14.2-40.2 s) and the closing alien
-question (63.3-67.7 s). It sits lower under the evidence (40.3-63.2 s), where the generated score swells on its own."""
+The music lifts in the fantastical passages: the alien legend and its clues (0-20.3 s, 26.6-33.8 s) and the stairway to the stars
+and the closing question (57-68.6 s). It sits lower under the evidence (40.3-63.2 s), where the generated score swells on its own."""
 import subprocess
 SFX = '../../atlantis-story/sfx/'
-END = 67.7          # the Short loops: no outro, the last line leads back into the opening question
-LIFT = [(14.2, 40.2), (63.3, 67.7)]
-LOW = [(47.5, 63.2)]
+END = 68.6          # the Short loops: no outro, "what were the pyramids, really?" leads back into the opening carving
+LIFT = [(0.0, 20.3), (26.6, 33.8), (57.0, 68.6)]   # the alien legend, power plant and stargate, the stairway to the stars
+LOW = [(33.8, 56.9)]                                 # the evidence
 BASE, UP, DOWN = 0.22, 0.40, 0.14
 lift = '+'.join(f"between(t,{a},{b})" for a, b in LIFT)
 low = '+'.join(f"between(t,{a},{b})" for a, b in LOW)
 vol = f"if({lift},{UP},if({low},{DOWN},{BASE}))"
-ev = [("rumble", 0.0, 0.45), ("wash", 0.05, 0.2), ("hit", 1.0, 0.55), ("swell", 1.3, 0.16),
-      ("hit", 4.3, 0.4), ("whoosh", 6.3, 0.2), ("tick", 6.45, 0.3), ("whoosh", 8.3, 0.25), ("tick", 9.4, 0.25), ("hit", 11.55, 0.4),
-      # the visitors
-      ("swell", 14.2, 0.3), ("hit", 14.35, 0.45), ("tick", 15.8, 0.25), ("tick", 16.4, 0.25), ("hit", 18.05, 0.45), ("rumble", 18.1, 0.35),
-      ("whoosh", 20.1, 0.25), ("tick", 20.7, 0.2), ("tick", 21.0, 0.2), ("tick", 21.3, 0.2), ("tick", 21.55, 0.2),
-      # the clues
-      ("whoosh", 22.75, 0.3), ("swell", 23.65, 0.22), ("whoosh", 24.8, 0.3), ("swell", 25.7, 0.22), ("whoosh", 28.1, 0.3), ("swell", 29.0, 0.22),
-      ("hit", 33.6, 0.45), ("rumble", 33.8, 0.4), ("swell", 35.1, 0.28), ("tick", 37.0, 0.22), ("tick", 37.12, 0.22), ("tick", 37.24, 0.22),
-      ("whoosh", 37.9, 0.3), ("wash", 38.6, 0.3),
+ev = [("hit", 0.0, 0.5), ("rumble", 0.0, 0.4), ("whoosh", 0.2, 0.3), ("swell", 0.8, 0.22), ("tick", 0.9, 0.25), ("hit", 0.95, 0.35),
+      # the visitors and the clues
+      ("hit", 4.95, 0.45), ("tick", 6.45, 0.25), ("tick", 6.9, 0.25), ("hit", 7.95, 0.45), ("rumble", 8.0, 0.35),
+      ("whoosh", 10.4, 0.25), ("tick", 10.65, 0.2), ("tick", 10.95, 0.2), ("tick", 11.25, 0.2), ("tick", 11.55, 0.2),
+      ("whoosh", 13.0, 0.3), ("swell", 13.8, 0.22), ("whoosh", 17.0, 0.3), ("swell", 17.8, 0.22),
+      # the Great Pyramid, power plant, stargate
+      ("hit", 20.35, 0.5), ("rumble", 20.4, 0.4), ("whoosh", 22.2, 0.2), ("tick", 22.3, 0.25), ("whoosh", 24.6, 0.2), ("tick", 25.5, 0.25),
+      ("hit", 27.75, 0.45), ("rumble", 27.8, 0.4), ("swell", 29.2, 0.28), ("tick", 30.6, 0.22), ("tick", 30.72, 0.22), ("tick", 30.84, 0.22),
+      ("whoosh", 31.3, 0.3), ("wash", 32.0, 0.3),
       # the builders
-      ("hit", 40.9, 0.4), ("rumble", 42.7, 0.35), ("hit", 46.6, 0.4), ("tick", 50.85, 0.3), ("tick", 52.4, 0.3),
-      # the logbook
-      ("wash", 53.6, 0.25), ("tick", 54.4, 0.25), ("whoosh", 55.75, 0.25),
-      # the empty tomb and the question
-      ("hit", 59.9, 0.5), ("rumble", 60.0, 0.35), ("hit", 61.85, 0.45), ("swell", 63.3, 0.3), ("wash", 63.4, 0.3)]
-inp = ["-i", "vo_v1.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
+      ("hit", 33.9, 0.45), ("rumble", 36.6, 0.35), ("whoosh", 38.6, 0.2), ("hit", 40.4, 0.4), ("tick", 45.3, 0.3), ("tick", 47.05, 0.3),
+      # the logbook, the empty sarcophagus
+      ("wash", 49.75, 0.25), ("tick", 50.4, 0.25), ("whoosh", 51.4, 0.25), ("hit", 55.65, 0.5), ("rumble", 55.7, 0.35),
+      # the pyramid texts, the stairway, the question
+      ("swell", 56.95, 0.3), ("wash", 60.4, 0.35), ("tick", 60.6, 0.2), ("tick", 60.9, 0.2), ("tick", 61.2, 0.2),
+      ("whoosh", 62.8, 0.25), ("whoosh", 63.7, 0.25), ("swell", 66.0, 0.3), ("hit", 66.05, 0.35)]
+inp = ["-i", "vo_v2.mp3", "-i", "music_v1.wav"]; fl = []; lab = []
 for i, (n, t, v) in enumerate(ev):
     inp += ["-i", f"{SFX}{n}.wav"]; ms = int(t * 1000)
     fl.append(f"[{i+2}]aformat=channel_layouts=stereo,aresample=48000,adelay={ms}|{ms},volume={v}[e{i}]"); lab.append(f"[e{i}]")

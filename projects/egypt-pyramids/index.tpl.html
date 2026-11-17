@@ -113,61 +113,57 @@
   #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
   #poll .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:2px;color:#6c5a37}
   #o1{background:#132024;color:var(--gold2)} #o2{background:#e9dcc0;color:#132024}
+  /* v3 additions */
+  #hk{z-index:45;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.8) 300px,rgba(6,12,14,0) 420px);height:420px;bottom:auto}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:2px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95)}
+  #hk .l1{top:220px;color:var(--bone)} #hk .l2{top:292px;color:var(--alien);text-shadow:0 0 30px rgba(125,255,176,.6)}
+  #a1{top:470px}
+  #ptx{top:1080px} #ptx .tag{font-size:38px}
+  #stair{position:absolute;left:0;top:240px;width:1080px;height:1000px}
+  #stT{top:1110px} #stT .tag{font-size:40px}
+  .half{position:absolute;left:60px;width:960px;height:390px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.2) brightness(.75)}
+  .half .lab{position:absolute;left:0;right:0;bottom:24px;text-align:center}
+  .half .lab span{font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:4px;background:var(--ink);border:2px solid var(--gold);padding:8px 24px}
+  #hA{top:400px} #hB{top:820px;background:radial-gradient(ellipse at 50% 30%,#0d1b2e 0%,#04070d 70%);border-color:var(--alien)}
+  #hB .lab span{color:var(--alien);border-color:var(--alien)}
+  #hB svg{position:absolute;left:0;top:0}
 </style>
 </head>
 <body>
 <div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{{END}}">
 
   <div id="stars" class="clip" data-start="0" data-duration="{{END}}" data-track-index="0"></div>
-  <section id="b1" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="1"><img id="b1i" src="assets/pyr.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b1d"></div></section>
-  <section id="b2" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="2"><img id="b2i" src="assets/roberts.jpg" alt="" style="object-position:40% 50%"><div class="dimmer" id="b2d"></div></section>
+  <section id="b1" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="1"><img id="b1i" src="assets/pyr.jpg" alt=""><div class="dimmer" id="b1d"></div></section>
   <section id="b3" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="3"><img id="b3i" src="assets/orion.jpg" alt="" style="object-position:50% 45%;filter:sepia(.1) brightness(.75) contrast(1.1)"><div class="dimmer" id="b3d"></div></section>
-  <section id="b4" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="4"><img id="b4i" src="assets/desc.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b4d"></div></section>
-  <section id="b5" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="5"><img id="b5i" src="assets/giza.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b5d"></div></section>
-  <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b6d"></div></section>
+  <section id="b4" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="4"><img id="b4i" src="assets/desc.jpg" alt=""><div class="dimmer" id="b4d"></div></section>
+  <section id="b5" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="5"><img id="b5i" src="assets/giza.jpg" alt=""><div class="dimmer" id="b5d"></div></section>
+  <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt=""><div class="dimmer" id="b6d"></div></section>
+  <section id="b7" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="21"><img id="b7i" src="assets/legray.jpg" alt=""><div class="dimmer" id="b7d"></div></section>
+  <section id="b8" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="22"><img id="b8i" src="assets/bonfils.jpg" alt=""><div class="dimmer" id="b8d"></div></section>
+  <section id="b9" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="23"><img id="b9i" src="assets/ptexts.jpg" alt="" style="filter:sepia(.15) contrast(1.1) brightness(.85)"><div class="dimmer" id="b9d"></div></section>
 
-  <section id="b7" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="21"><img id="b7i" src="assets/legray.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b7d"></div></section>
-  <section id="b8" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="22"><img id="b8i" src="assets/bonfils.jpg" alt="" style="object-position:50% 50%"><div class="dimmer" id="b8d"></div></section>
   <div id="glow" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
   <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
   <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="9"></div>
   <div id="caps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="10"></div>
-  <div id="chaps" style="display:none" class="clip" data-start="0" data-duration="{{END}}" data-track-index="11">
-    <div class="chap" id="ch1"><div class="num">I</div><span class="rule"></span><div class="name">THE VISITORS</div></div>
-    <div class="chap" id="ch2"><div class="num">II</div><span class="rule"></span><div class="name">THE CLUES</div></div>
-    <div class="chap" id="ch3"><div class="num">III</div><span class="rule"></span><div class="name">THE BUILDERS</div></div>
-    <div class="chap" id="ch4"><div class="num">IV</div><span class="rule"></span><div class="name">THE LOGBOOK</div></div>
-    <div class="chap" id="ch5"><div class="num">V</div><span class="rule"></span><div class="name">THE EMPTY TOMB</div></div>
-  </div>
 
-  <section id="s0" class="clip" data-start="0" data-duration="1.3" data-track-index="12">
-    <img id="cold" src="assets/pyr.jpg" alt=""><span class="flash" id="flash"></span>
+  <!-- 1. the "helicopter" (cold open) -->
+  <section id="hk" class="clip" data-start="0" data-duration="4.7" data-track-index="20">
+    <div class="l l1" id="hk1">A HELICOPTER…</div><div class="l l2" id="hk2">IN AN EGYPTIAN TEMPLE?</div>
   </section>
-  <section id="hk" class="clip" data-start="0" data-duration="4.3" data-track-index="20">
-    <div class="l l1" id="hk1">WHO REALLY BUILT</div><div class="l l2" id="hk2">THE GREAT PYRAMID?</div>
-    <div class="l l3" id="hk3">…AND WHAT WAS IT FOR?</div>
+  <section id="s1" class="clip scene" data-start="0" data-duration="4.8" data-track-index="12">
+    <div class="art" id="a1"><img src="assets/abydos.jpg" alt="" id="a1i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RAX}}%;top:{{RAY}}%"></div><div class="scan"></div></div>
+    <div class="clue" id="c1" style="top:1260px;opacity:0">CLUE 1/3</div>
+    <div class="arttag" id="a1t" style="top:1130px"><div class="tag al">ABYDOS · TEMPLE OF SETI I</div></div>
+    <span class="flash" id="flash" style="position:absolute;inset:0;background:#f4ead2;opacity:0"></span>
   </section>
 
-  <!-- hook facts -->
-  <section id="s1" class="clip scene" data-start="4.2" data-duration="10.0" data-track-index="13">
-    <div class="center" id="n23"><div class="big" id="n23n">2,300,000</div><div class="l">STONE BLOCKS · EST.</div></div>
-    <div class="row" id="tons"><div class="tag" id="tonst">GRANITE BEAMS · 25–80 TONS</div></div>
-    <svg id="north" viewBox="0 0 500 500">
-      <circle cx="250" cy="250" r="230" fill="rgba(7,13,15,.82)" stroke="#d9b26a" stroke-width="4"/>
-      <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(217,178,106,.4)" stroke-width="2" stroke-dasharray="4 14"/>
-      <text x="250" y="78" text-anchor="middle" font-family="Cinzel" font-weight="900" font-size="54" fill="#f1d49a">N</text>
-      <g id="needle"><polygon points="250,95 272,250 250,405 228,250" fill="#e9dcc0"/><polygon points="250,95 272,250 228,250" fill="#9c2f1f"/></g>
-      <circle cx="250" cy="250" r="14" fill="#d9b26a"/>
-    </svg>
-    <div class="row" id="northT"><div class="tag" id="northTt">TRUE NORTH · OFF BY 0.05°</div></div>
-    <div class="center" id="bc"><div class="big">c. 2560 BC</div><div class="ital">four and a half thousand years ago</div></div>
-  </section>
-
-  <!-- I. the visitors -->
-  <section id="s2" class="clip scene" data-start="14.2" data-duration="8.4" data-track-index="14">
+  <!-- 2. the visitors, 3. the clues -->
+  <section id="s2" class="clip scene" data-start="4.8" data-duration="15.6" data-track-index="14">
     <div class="center" id="y68"><div class="big">1968</div></div>
     <div class="center" id="vd"><div class="tag" id="vd1">ERICH VON DÄNIKEN</div><div class="tag al" id="vd2">“CHARIOTS OF THE GODS?”</div></div>
-    <div class="row" id="astro"><div class="stamp al" id="astros">ASTRONAUTS FROM THE STARS</div></div>
+    <div class="row" id="astro"><div class="stamp al" id="astros">ANCIENT ASTRONAUTS?</div></div>
     <div class="mapcard" id="eg"><div class="mv" id="egv">{{EGYPT}}
       <div class="pin al" id="pab" style="left:{{ABX}}px;top:{{ABY}}px"></div>
       <div class="pin al" id="pde" style="left:{{DEX}}px;top:{{DEY}}px"></div>
@@ -178,19 +174,23 @@
       <div class="ptag" id="tsa" style="left:{{SAX}}px;top:{{SAY}}px;transform:translate(14%,-10%)">SAQQARA</div>
       <div class="ptag" id="tgi" style="left:{{GIX}}px;top:{{GIY}}px;transform:translate(-112%,-90%)">GIZA</div>
     </div></div>
-  </section>
-
-  <!-- II. the clues: one artifact at a time -->
-  <section id="s3" class="clip scene" data-start="22.6" data-duration="9.9" data-track-index="15">
-    <div class="art" id="a1"><img src="assets/abydos.jpg" alt="" id="a1i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RAX}}%;top:{{RAY}}%"></div><div class="scan"></div></div>
-    <div class="clue" id="c1">CLUE 1/3</div><div class="arttag" id="a1t"><div class="tag al">ABYDOS · “A HELICOPTER”</div></div>
-    <div class="art" id="a2"><img src="assets/dendera.jpg" alt="" id="a2i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RDX}}%;top:{{RDY}}%"></div><div class="scan"></div></div>
+    <div class="art" id="a2"><img src="assets/dendera.jpg" alt="" id="a2i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RDX}}%;top:{{RDY}}%"></div><div class="scan"></div></div>
     <div class="clue" id="c2">CLUE 2/3</div><div class="arttag" id="a2t"><div class="tag al">DENDERA · “A GIANT BULB”</div></div>
-    <div class="art" id="a3"><img src="assets/saqqara.jpg" alt="" id="a3i" style="object-position:50% 50%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:50%;width:520px;height:520px;margin:-260px 0 0 -260px"></div><div class="scan"></div></div>
+    <div class="art" id="a3"><img src="assets/saqqara.jpg" alt="" id="a3i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:50%;width:520px;height:520px;margin:-260px 0 0 -260px"></div><div class="scan"></div></div>
     <div class="clue" id="c3">CLUE 3/3</div><div class="arttag" id="a3t"><div class="tag al">SAQQARA · “A GLIDER”</div></div>
   </section>
 
-  <section id="s4" class="clip scene" data-start="32.3" data-duration="8.1" data-track-index="16">
+  <!-- 4. the Great Pyramid, power plant, stargate -->
+  <section id="s4" class="clip scene" data-start="20.3" data-duration="13.6" data-track-index="13">
+    <div class="center" id="n23"><div class="big" id="n23n">2,300,000</div><div class="l">STONE BLOCKS · EST.</div></div>
+    <svg id="north" viewBox="0 0 500 500">
+      <circle cx="250" cy="250" r="230" fill="rgba(7,13,15,.82)" stroke="#d9b26a" stroke-width="4"/>
+      <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(217,178,106,.4)" stroke-width="2" stroke-dasharray="4 14"/>
+      <text x="250" y="78" text-anchor="middle" font-family="Cinzel" font-weight="900" font-size="54" fill="#f1d49a">N</text>
+      <g id="needle"><polygon points="250,95 272,250 250,405 228,250" fill="#e9dcc0"/><polygon points="250,95 272,250 228,250" fill="#9c2f1f"/></g>
+      <circle cx="250" cy="250" r="14" fill="#d9b26a"/>
+    </svg>
+    <div class="row" id="northT"><div class="tag" id="northTt">TRUE NORTH · OFF BY 0.05°</div></div>
     <div class="row" id="pp"><div class="stamp al" id="pps">A POWER PLANT?</div></div>
     <svg id="sg" viewBox="0 0 960 820">
       <polygon id="pyr" points="120,760 480,400 840,760" fill="rgba(217,178,106,.32)" stroke="#f1d49a" stroke-width="7"/>
@@ -198,40 +198,46 @@
       <line id="shaft" x1="505" y1="600" x2="900" y2="190" stroke="#7dffb0" stroke-width="10" stroke-linecap="round" style="filter:drop-shadow(0 0 12px #7dffb0)" stroke-dasharray="580" stroke-dashoffset="580"/>
       <g id="belt"><circle cx="830" cy="230" r="11" fill="#fff"/><circle cx="880" cy="190" r="13" fill="#fff"/><circle cx="930" cy="150" r="11" fill="#fff"/></g>
     </svg>
-    <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION, 2500 BC</div></div>
+    <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION, c. 2500 BC</div></div>
   </section>
 
-  <!-- III. the builders -->
-  <section id="s5" class="clip scene" data-start="40.3" data-duration="13.3" data-track-index="17">
+  <!-- 5. the builders -->
+  <section id="s5" class="clip scene" data-start="33.8" data-duration="15.9" data-track-index="17">
     <div class="center" id="y90"><div class="big">1990</div></div>
-    <div class="row" id="ph53" style="top:1180px;opacity:0"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
     <div class="row" id="horse"><div class="tag" id="horset">A HORSE TRIPS ON A BURIED WALL</div></div>
+    <div class="row" id="ph53" style="top:1180px;opacity:0"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
     <div class="row" id="bk"><div class="stamp" id="bks">BY THEIR KING'S PYRAMID</div></div>
     <div class="center" id="gangs"><div class="ital">their work gangs<br>signed the stones</div></div>
     <div class="gang card" id="g1"><div class="nm">FRIENDS<br>OF KHUFU</div><div class="d">PAINTED INSIDE THE GREAT PYRAMID</div></div>
     <div class="gang card" id="g2"><div class="mk"><img src="assets/menkaure.jpg" alt=""></div><div class="nm">DRUNKARDS<br>OF MENKAURE</div><div class="d">GANG NAME · MENKAURE'S PYRAMID</div></div>
   </section>
 
-  <!-- IV. the logbook -->
-  <section id="s6" class="clip scene" data-start="53.5" data-duration="4.7" data-track-index="18">
+  <!-- 6. the logbook, the empty sarcophagus -->
+  <section id="s6" class="clip scene" data-start="49.6" data-duration="7.5" data-track-index="18">
     <div id="pap"><div class="h">THE DIARY OF MERER</div><div class="s">oldest inscribed papyri ever found</div><div class="lines"><span style="width:92%"></span><span style="width:80%"></span><span style="width:95%"></span><span style="width:70%"></span><span style="width:88%"></span></div></div>
-    <div class="mapcard" id="eg2" style="top:400px;height:800px;opacity:0"><div class="mv" id="eg2v">{{EGYPT2}}
+    <div class="mapcard" id="eg2" style="opacity:0"><div class="mv" id="eg2v">{{EGYPT2}}
       <svg id="route" width="960" height="1100" viewBox="0 0 960 1100"><path id="rp" d="M {{TUX}},{{TUY}} C {{TUX}},{{TUY2}} {{GIX}},{{GIY2}} {{GIX}},{{GIY}}" fill="none" stroke="#9c2f1f" stroke-width="6" stroke-dasharray="10 8"/></svg>
       <div class="pin" style="left:{{TUX}}px;top:{{TUY}}px"></div><div class="pin" style="left:{{GIX}}px;top:{{GIY}}px;background:var(--gold)"></div>
       <div class="ptag" style="left:{{TUX}}px;top:{{TUY}}px;transform:translate(16%,-20%)">TURA</div>
       <div class="ptag" style="left:{{GIX}}px;top:{{GIY}}px;transform:translate(-112%,-90%)">GIZA</div>
     </div></div>
     <div class="center" id="papT"><div class="tag" id="papT1">WADI AL-JARF · FOUND 2013</div><div class="tag" id="papT2">LIMESTONE BY BOAT · TURA → GIZA</div></div>
+    <div class="row" id="empty"><div class="stamp" id="emptys">EMPTY</div></div>
   </section>
 
-  <!-- V. the empty tomb, and the loop -->
-  <section id="s7" class="clip scene" data-start="58.1" data-duration="{{S7D}}" data-track-index="19">
-    <div class="row" id="empty"><div class="stamp" id="emptys">EMPTY</div></div>
-    <div id="kh"><div class="cart">KHUFU</div></div>
-    <div class="row" id="nf"><div class="stamp" id="nfs">NEVER FOUND</div></div>
-    
+  <!-- 7. the pyramid texts, the stairway, the question -->
+  <section id="s7" class="clip scene" data-start="56.9" data-duration="{{S7D}}" data-track-index="19">
+    <div class="row" id="ptx"><div class="tag" id="ptxt">PYRAMID TEXTS · UNAS · c. 2350 BC</div></div>
+    <svg id="stair" viewBox="0 0 1080 1000">
+      <polygon points="140,980 540,580 940,980" fill="rgba(217,178,106,.28)" stroke="#f1d49a" stroke-width="6"/>
+      <g id="steps" fill="#7dffb0" style="filter:drop-shadow(0 0 14px #7dffb0)">{{STEPS}}</g>
+      <g id="belt2"><circle cx="800" cy="150" r="13" fill="#fff"/><circle cx="860" cy="110" r="15" fill="#fff"/><circle cx="920" cy="70" r="13" fill="#fff"/></g>
+    </svg>
+    <div class="row" id="stT"><div class="tag al" id="stTt">“A STAIRCASE TO THE SKY”</div></div>
+    <div class="half" id="hA"><img src="assets/chamber.jpg" alt=""><div class="lab"><span>A TOMB…</span></div></div>
+    <div class="half" id="hB"><svg width="960" height="390" viewBox="0 0 960 390"><polygon points="300,390 480,250 660,390" fill="rgba(217,178,106,.35)" stroke="#f1d49a" stroke-width="4"/><g fill="#7dffb0">{{STEPS2}}</g><circle cx="700" cy="70" r="8" fill="#fff"/><circle cx="740" cy="48" r="9" fill="#fff"/><circle cx="780" cy="26" r="8" fill="#fff"/></svg><div class="lab"><span>…OR A STAIRWAY?</span></div></div>
     <div id="poll">
-      <div class="qq">Did the Egyptians get help from an alien race?</div>
+      <div class="qq">The Great Pyramid was only a tomb.</div>
       <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
       <div class="hint" id="hint">THE EVIDENCE IS ABOVE · TELL ME BELOW</div>
     </div>
@@ -242,12 +248,10 @@
 (function(){
   const tl = gsap.timeline({ paused: true });
   const E = "power3.out";
-  // seeded star field (deterministic, so every render frame matches)
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   const st = document.getElementById("stars");
   for (let i = 0; i < 260; i++) { const s = document.createElement("i"); const z = rnd() < 0.08 ? 4 : rnd() < 0.3 ? 3 : 2;
     s.style.cssText = `left:${rnd()*1080}px;top:${rnd()*1920}px;width:${z}px;height:${z}px;opacity:${0.35 + rnd()*0.65}`; st.appendChild(s); }
-  // captions
   const capRoot = document.getElementById("caps");
   CAPS.forEach((c, i) => {
     const d = document.createElement("div"); d.className = "cap"; d.id = "cap" + i;
@@ -259,137 +263,120 @@
     tl.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
     c.w.forEach((w, j) => tl.to(`#cap${i}w${j}`, { color: w.k ? (w.k === 2 ? "#7dffb0" : "#ff9a6b") : "#f1d49a", duration: 0.08 }, w.s));
   });
-  [["#ch1",14.4,22.5],["#ch2",22.8,40.2],["#ch3",40.5,53.4],["#ch4",53.7,58.0],["#ch5",58.3,63.2]].forEach(([id,a,b]) => {
-    tl.fromTo(id, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.5, ease: E }, a);
-    tl.fromTo(id + " .rule", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E }, a + 0.1);
-    tl.to(id, { opacity: 0, duration: 0.3 }, b - 0.3);
-  });
-  // backgrounds: show(id, from, to) cross-fades one layer in; dim(id, on, t)
-  const show = (id, a, b) => { tl.to(id, { opacity: 1, duration: 0.4 }, a); tl.to(id, { opacity: 0, duration: 0.4 }, b); };
+  const show = (id, a, b, f = 0.4) => { tl.to(id, { opacity: 1, duration: f }, a); tl.to(id, { opacity: 0, duration: 0.4 }, b); };
   const dim = (id, on, t) => tl.to(id + "d", { opacity: on ? 1 : 0, duration: 0.4 }, t);
   const kb = (img, a, d, s0, s1, x0 = 0, x1 = 0) => tl.fromTo(img, { scale: s0, x: x0 }, { scale: s1, x: x1, duration: d, ease: "none" }, a);
-  // b1 pyramid: hook, power plant, loop
-  kb("#b1i", 0, 4.3, 1.15, 1.05);
-  dim("#b1", 1, 4.2);
-  tl.to("#b1", { opacity: 0, duration: 0.3 }, 6.3);
-  show("#b7", 4.2, 6.6); kb("#b7i", 4.2, 2.4, 1.05, 1.2); dim("#b7", 1, 4.2);
-  show("#b6", 6.3, 8.6); kb("#b6i", 6.3, 2.3, 1.0, 1.15); dim("#b6", 1, 6.3);
-  show("#b8", 8.3, 11.6); kb("#b8i", 8.3, 3.3, 1.05, 1.2, 0, -40); dim("#b8", 1, 8.3);
-  tl.to("#b1", { opacity: 1, duration: 0.4 }, 32.2); dim("#b1", 0, 32.2);
-  kb("#b1i", 32.2, 3.0, 1.0, 1.12);
-  tl.to("#b1", { opacity: 0, duration: 0.4 }, 35.0);
-  tl.to("#b1", { opacity: 1, duration: 0.6 }, 63.2); dim("#b1", 1, 63.2);
-  kb("#b1i", 63.2, 5.0, 1.0, 1.15);
-  // b2 Roberts 1839: 2560 BC
-  show("#b2", 11.2, 14.2); kb("#b2i", 11.2, 3.2, 1.0, 1.1, 0, -40);
-  // stars: visitors, clues, stargate
-  tl.to("#stars", { opacity: 1, duration: 0.6 }, 14.0);
-  tl.fromTo("#stars", { scale: 1.0 }, { scale: 1.25, duration: 26, ease: "none" }, 14.0);
-  tl.to("#stars", { opacity: 0, duration: 0.4 }, 40.2);
-  tl.to("#stars", { opacity: 1, duration: 0.6 }, 63.3);
-  // b3 Orion atlas: the stargate
-  show("#b3", 35.0, 40.3); kb("#b3i", 35.0, 5.3, 1.05, 1.2); dim("#b3", 1, 35.0);
-  // b4 Description de l'Egypte: 1990 and the gangs
-  show("#b4", 40.3, 48.3); kb("#b4i", 40.3, 8.0, 1.0, 1.15, 0, 40); dim("#b4", 1, 40.3);
-  // b5 Giza: the gangs, the logbook
-  show("#b5", 48.2, 58.2); kb("#b5i", 48.2, 10.0, 1.05, 1.18); dim("#b5", 1, 48.2);
-  // b6 King's Chamber: empty coffin, Khufu
-  dim("#b6", 0, 58.1); show("#b6", 58.1, 63.4); kb("#b6i", 58.1, 5.3, 1.0, 1.14);
-  dim("#b6", 1, 60.9);
-  // alien glow in the fantastical passages
-  [[14.2, 22.6], [22.8, 40.2], [63.3, 67.7]].forEach(([a, b]) => { tl.to("#glow", { opacity: 1, duration: 0.6 }, a); tl.to("#glow", { opacity: 0, duration: 0.5 }, b - 0.5); });
-
-  // cold open
-  tl.fromTo("#cold", { scale: 1.18 }, { scale: 1.04, duration: 1.3, ease: "power2.out" }, 0);
-  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => tl.to("#cold", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 0.02 + i * 0.055));
-  tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none" }, 0.98);
-  tl.to("#s0", { opacity: 0, duration: 0.25 }, 1.04);
-  tl.from("#hk2", { scale: 1.3, duration: 0.5, ease: E }, 0.25);
-  tl.to(["#hk1","#hk2"], { opacity: 0, y: -20, duration: 0.3 }, 2.4);
-  tl.fromTo("#hk3", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.4, ease: E }, 2.6);
-  tl.to("#hk3", { opacity: 0, duration: 0.3 }, 4.0);
-  // hook facts
-  tl.from("#n23", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 4.3);
-  const cnt = { v: 0 }; tl.to(cnt, { v: 2300000, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n23n").textContent = Math.round(cnt.v).toLocaleString("en-US"); } }, 4.3);
-  tl.from("#tonst", { opacity: 0, scale: 1.4, duration: 0.35, ease: "back.out(2)" }, 6.45);
-  tl.to(["#n23","#tons"], { opacity: 0, y: -30, duration: 0.3 }, 8.1);
-  tl.from("#north", { opacity: 0, scale: 0.8, duration: 0.45, ease: E }, 8.3);
-  tl.fromTo("#needle", { rotation: -38, svgOrigin: "250 250" }, { rotation: 0, svgOrigin: "250 250", duration: 1.6, ease: "elastic.out(1,0.5)" }, 8.5);
-  tl.from("#northTt", { opacity: 0, y: 14, duration: 0.35, ease: E }, 9.4);
-  tl.to(["#north","#northT"], { opacity: 0, duration: 0.3 }, 11.1);
-  tl.from("#bc", { opacity: 0, scale: 1.3, duration: 0.45, ease: E }, 11.55);
-  tl.to("#bc", { opacity: 0, y: -30, duration: 0.3 }, 13.9);
-  // I. the visitors
-  tl.from("#y68", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 14.35);
-  tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 15.8);
-  tl.from("#vd2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 16.4);
-  tl.to(["#y68","#vd"], { opacity: 0, y: -30, duration: 0.3 }, 17.75);
-  tl.from("#astros", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 18.05);
-  tl.to("#astro", { opacity: 0, duration: 0.3 }, 19.9);
-  tl.from("#eg", { opacity: 0, y: 70, duration: 0.5, ease: E }, 20.1);
-  tl.fromTo("#egv", { scale: 0.73, x: 130, y: 0 }, { scale: 0.76, x: 115, y: -20, duration: 2.5, ease: "none" }, 20.1);
-  [["#pab","#tab",20.7],["#pde","#tde",21.0],["#psa","#tsa",21.3],["#pgi","#tgi",21.55]].forEach(([p,t,a]) => {
-    tl.from(p, { opacity: 0, scale: 0, duration: 0.3, ease: "back.out(3)" }, a); tl.from(t, { opacity: 0, duration: 0.25 }, a + 0.1); });
-  tl.to("#eg", { opacity: 0, duration: 0.3 }, 22.4);
-  // II. the clues: picture in, scan sweep, glow ring, tag
   const art = (n, a, b) => {
     const id = "#a" + n;
-    tl.from(id, { opacity: 0, scale: 0.94, duration: 0.4, ease: E }, a);
-    tl.fromTo(id + "i", { scale: 1.0 }, { scale: 1.12, duration: b - a, ease: "none" }, a);
-    tl.fromTo(id + " .scan", { y: 0, opacity: 1 }, { y: 760, duration: 0.9, ease: "power1.inOut" }, a + 0.25);
-    tl.to(id + " .scan", { opacity: 0, duration: 0.1 }, a + 1.15);
-    tl.fromTo(id + " .grid", { opacity: 0 }, { opacity: 1, duration: 0.3 }, a + 0.3);
-    tl.fromTo(id + " .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, a + 0.6);
-    tl.fromTo(id + " .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, a + 0.9);
-    tl.from(id + "t", { opacity: 0, y: 16, duration: 0.3, ease: E }, a + 0.95);
-    tl.from("#c" + n, { opacity: 0, y: -14, duration: 0.3, ease: E }, a + 0.1);
+    tl.from(id, { opacity: 0, scale: 0.94, duration: 0.35, ease: E }, a);
+    tl.fromTo(id + "i", { scale: 1.0 }, { scale: 1.14, duration: b - a, ease: "none" }, a);
+    tl.fromTo(id + " .scan", { y: 0, opacity: 1 }, { y: 760, duration: 0.9, ease: "power1.inOut" }, a + 0.2);
+    tl.to(id + " .scan", { opacity: 0, duration: 0.1 }, a + 1.1);
+    tl.fromTo(id + " .grid", { opacity: 0 }, { opacity: 1, duration: 0.3 }, a + 0.25);
+    tl.fromTo(id + " .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, a + 0.5);
+    tl.fromTo(id + " .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, a + 0.8);
+    tl.fromTo("#c" + n, { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.3, ease: E }, a + 0.1);
+    tl.from(id + "t", { opacity: 0, y: 16, duration: 0.3, ease: E }, a + 0.9);
     tl.to([id, id + "t", "#c" + n], { opacity: 0, duration: 0.25 }, b - 0.25);
   };
-  art(1, 22.75, 24.75); art(2, 24.8, 28.05); art(3, 28.1, 32.35);
-  // power plant and stargate
-  tl.from("#pps", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 33.6);
-  tl.fromTo("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9)" }, { filter: "sepia(0) contrast(1.2) brightness(1.1) saturate(1.4) hue-rotate(70deg)", duration: 0.25, yoyo: true, repeat: 3 }, 33.8);
-  tl.to("#pp", { opacity: 0, duration: 0.3 }, 34.85);
-  tl.from("#sg", { opacity: 0, duration: 0.4 }, 35.1);
-  tl.from("#pyr", { opacity: 0, y: 30, duration: 0.5, ease: E }, 35.1);
-  tl.from("#belt circle", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.3, stagger: 0.12, ease: "back.out(3)" }, 37.0);
-  tl.to("#shaft", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, 37.9);
-  tl.from("#sgTt", { opacity: 0, scale: 1.3, duration: 0.35, ease: "back.out(2)" }, 35.7);
-  tl.to("#belt circle", { attr: { r: 16 }, duration: 0.3, yoyo: true, repeat: 3 }, 39.1);
-  tl.to(["#sg","#sgT"], { opacity: 0, duration: 0.3 }, 40.0);
-  // III. the builders
-  tl.to("#ph53", { opacity: 1, duration: 0.3 }, 40.6); tl.to("#ph53", { opacity: 0, duration: 0.3 }, 47.9);
-  tl.from("#y90", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 40.9);
-  tl.from("#horset", { opacity: 0, y: 14, duration: 0.35, ease: E }, 42.3);
-  tl.fromTo("#horse", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 42.7);
-  tl.to(["#y90","#horse"], { opacity: 0, y: -30, duration: 0.3 }, 44.5);
-  tl.from("#bks", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 46.6);
-  tl.to("#bk", { opacity: 0, duration: 0.3 }, 48.2);
-  tl.from("#gangs", { opacity: 0, y: 20, duration: 0.5, ease: E }, 48.45);
-  tl.to("#gangs", { opacity: 0, duration: 0.3 }, 50.6);
-  tl.from("#g1", { opacity: 0, y: 50, duration: 0.4, ease: E }, 50.85);
-  tl.to("#g1", { opacity: 0, duration: 0.25 }, 52.25);
-  tl.from("#g2", { opacity: 0, y: 50, duration: 0.4, ease: E }, 52.4);
-  tl.to("#g2", { opacity: 0, duration: 0.25 }, 53.4);
-  // IV. the logbook
-  tl.from("#pap", { opacity: 0, y: 60, rotation: -6, duration: 0.5, ease: E }, 53.6);
-  tl.from("#pap .lines span", { scaleX: 0, transformOrigin: "0 50%", duration: 0.3, stagger: 0.12 }, 54.0);
-  tl.from("#papT1", { opacity: 0, y: 14, duration: 0.3, ease: E }, 54.4);
-  tl.to(["#pap","#papT1"], { opacity: 0, duration: 0.25 }, 55.6);
-  tl.to("#eg2", { opacity: 1, duration: 0.35 }, 55.75);
-  tl.fromTo("#eg2v", { scale: 2.6, x: 540 - {{MIDX}} * 2.6, y: 400 - {{MIDY}} * 2.6 }, { scale: 2.9, x: 540 - {{MIDX}} * 2.9, y: 400 - {{MIDY}} * 2.9, duration: 2.4, ease: "none" }, 55.75);
-  tl.fromTo("#rp", { strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 1.4, ease: "none" }, 56.0);
-  tl.from("#papT2", { opacity: 0, y: 14, duration: 0.3, ease: E }, 56.2);
-  tl.to(["#eg2","#papT2"], { opacity: 0, duration: 0.25 }, 57.95);
-  // V. the empty tomb
-  tl.from("#emptys", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 59.9);
-  tl.to("#empty", { opacity: 0, duration: 0.3 }, 60.95);
-  tl.from("#kh", { opacity: 0, scale: 1.2, duration: 0.45, ease: E }, 61.15);
-  tl.from("#nfs", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 61.85);
-  tl.to(["#kh","#nf"], { opacity: 0, duration: 0.3 }, 63.0);
-  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 63.3);
-  tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 66.4);
-  tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 66.9);
+
+  // 1. cold open on the "helicopter"
+  tl.fromTo("#flash", { opacity: 0.9 }, { opacity: 0, duration: 0.35, ease: "power2.out" }, 0);
+  tl.to("#stars", { opacity: 1, duration: 0.3 }, 0);
+  art(1, 0.0, 4.75);
+  tl.from("#hk1", { opacity: 0, y: -16, duration: 0.3, ease: E }, 0.15);
+  tl.from("#hk2", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 0.9);
+  tl.to(["#hk1","#hk2"], { opacity: 0, duration: 0.3 }, 4.4);
+  // 2. the visitors
+  tl.from("#y68", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 4.95);
+  tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 6.45);
+  tl.from("#vd2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 6.9);
+  tl.to(["#y68","#vd"], { opacity: 0, y: -30, duration: 0.3 }, 7.8);
+  tl.from("#astros", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 7.95);
+  tl.fromTo("#stars", { scale: 1.0 }, { scale: 1.3, duration: 16, ease: "none" }, 4.8);
+  tl.to("#astro", { opacity: 0, duration: 0.3 }, 10.2);
+  // 3. the clues
+  tl.from("#eg", { opacity: 0, y: 70, duration: 0.45, ease: E }, 10.4);
+  tl.fromTo("#egv", { scale: 0.73, x: 130, y: 0 }, { scale: 0.76, x: 115, y: -20, duration: 2.6, ease: "none" }, 10.4);
+  [["#pab","#tab",10.65],["#pde","#tde",10.95],["#psa","#tsa",11.25],["#pgi","#tgi",11.55]].forEach(([p,t,a]) => {
+    tl.from(p, { opacity: 0, scale: 0, duration: 0.3, ease: "back.out(3)" }, a); tl.from(t, { opacity: 0, duration: 0.25 }, a + 0.1); });
+  tl.to("#eg", { opacity: 0, duration: 0.3 }, 12.75);
+  art(2, 13.0, 16.95); art(3, 17.0, 20.35);
+  // 4. the Great Pyramid
+  tl.to("#stars", { opacity: 0, duration: 0.2 }, 20.3);
+  tl.to("#b1", { opacity: 1, duration: 0.15 }, 20.35); kb("#b1i", 20.35, 2.0, 1.25, 1.1);
+  tl.to("#b1", { opacity: 0, duration: 0.3 }, 22.2);
+  show("#b7", 22.2, 24.7); kb("#b7i", 22.2, 2.5, 1.05, 1.2); dim("#b7", 1, 22.2);
+  tl.from("#n23", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 22.3);
+  const cnt = { v: 0 }; tl.to(cnt, { v: 2300000, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n23n").textContent = Math.round(cnt.v).toLocaleString("en-US"); } }, 22.3);
+  tl.to("#n23", { opacity: 0, y: -30, duration: 0.3 }, 24.45);
+  show("#b8", 24.6, 26.8); kb("#b8i", 24.6, 2.2, 1.05, 1.2, 0, -40); dim("#b8", 1, 24.6);
+  tl.from("#north", { opacity: 0, scale: 0.8, duration: 0.4, ease: E }, 24.7);
+  tl.fromTo("#needle", { rotation: -38, svgOrigin: "250 250" }, { rotation: 0, svgOrigin: "250 250", duration: 1.4, ease: "elastic.out(1,0.5)" }, 24.85);
+  tl.from("#northTt", { opacity: 0, y: 14, duration: 0.3, ease: E }, 25.5);
+  tl.to(["#north","#northT"], { opacity: 0, duration: 0.3 }, 26.5);
+  tl.to("#b1", { opacity: 1, duration: 0.2 }, 26.6); kb("#b1i", 26.6, 2.6, 1.0, 1.12);
+  tl.from("#pps", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 27.75);
+  tl.fromTo("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9) hue-rotate(0deg)" }, { filter: "sepia(0) contrast(1.2) brightness(1.1) saturate(1.4) hue-rotate(70deg)", duration: 0.22, yoyo: true, repeat: 3 }, 27.8);
+  tl.to("#pp", { opacity: 0, duration: 0.3 }, 28.9);
+  tl.to("#b1", { opacity: 0, duration: 0.3 }, 29.1);
+  show("#b3", 29.1, 33.8); kb("#b3i", 29.1, 4.7, 1.05, 1.2); dim("#b3", 1, 29.1);
+  tl.from("#sg", { opacity: 0, duration: 0.35 }, 29.2);
+  tl.from("#pyr", { opacity: 0, y: 30, duration: 0.45, ease: E }, 29.2);
+  tl.from("#sgTt", { opacity: 0, scale: 1.3, duration: 0.35, ease: "back.out(2)" }, 29.6);
+  tl.from("#belt circle", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.3, stagger: 0.12, ease: "back.out(3)" }, 30.6);
+  tl.to("#shaft", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, 31.3);
+  tl.to("#belt circle", { attr: { r: 16 }, duration: 0.3, yoyo: true, repeat: 3 }, 32.4);
+  tl.to(["#sg","#sgT"], { opacity: 0, duration: 0.3 }, 33.55);
+  // 5. the builders
+  show("#b4", 33.8, 38.8, 0.15); kb("#b4i", 33.8, 5.0, 1.0, 1.15, 0, 40); dim("#b4", 1, 33.8);
+  tl.from("#y90", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 33.9);
+  tl.to("#ph53", { opacity: 1, duration: 0.3 }, 34.2); tl.to("#ph53", { opacity: 0, duration: 0.3 }, 38.4);
+  tl.from("#horset", { opacity: 0, y: 14, duration: 0.3, ease: E }, 36.15);
+  tl.fromTo("#horse", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 36.6);
+  tl.to(["#y90","#horse"], { opacity: 0, y: -30, duration: 0.3 }, 38.45);
+  show("#b5", 38.6, 49.7); kb("#b5i", 38.6, 11.1, 1.05, 1.2); dim("#b5", 1, 42.6);
+  tl.from("#bks", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 40.4);
+  tl.to("#bk", { opacity: 0, duration: 0.3 }, 42.5);
+  tl.from("#gangs", { opacity: 0, y: 20, duration: 0.45, ease: E }, 42.85);
+  tl.to("#gangs", { opacity: 0, duration: 0.3 }, 45.05);
+  tl.from("#g1", { opacity: 0, y: 50, duration: 0.4, ease: E }, 45.3);
+  tl.to("#g1", { opacity: 0, duration: 0.25 }, 46.85);
+  tl.from("#g2", { opacity: 0, y: 50, duration: 0.4, ease: E }, 47.05);
+  tl.fromTo("#g2 .mk img", { scale: 1.0 }, { scale: 1.12, duration: 2.6, ease: "none" }, 47.05);
+  tl.to("#g2", { opacity: 0, duration: 0.25 }, 49.45);
+  // 6. the logbook, the empty sarcophagus
+  tl.from("#pap", { opacity: 0, y: 60, rotation: -6, duration: 0.45, ease: E }, 49.75);
+  tl.from("#pap .lines span", { scaleX: 0, transformOrigin: "0 50%", duration: 0.3, stagger: 0.12 }, 50.1);
+  tl.from("#papT1", { opacity: 0, y: 14, duration: 0.3, ease: E }, 50.4);
+  tl.to(["#pap","#papT1"], { opacity: 0, duration: 0.25 }, 51.3);
+  tl.to("#eg2", { opacity: 1, duration: 0.3 }, 51.4);
+  tl.fromTo("#eg2v", { scale: 2.6, x: 540 - {{MIDX}} * 2.6, y: 400 - {{MIDY}} * 2.6 }, { scale: 2.9, x: 540 - {{MIDX}} * 2.9, y: 400 - {{MIDY}} * 2.9, duration: 2.2, ease: "none" }, 51.4);
+  tl.fromTo("#rp", { strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 1.3, ease: "none" }, 51.6);
+  tl.from("#papT2", { opacity: 0, y: 14, duration: 0.3, ease: E }, 51.8);
+  tl.to(["#eg2","#papT2"], { opacity: 0, duration: 0.25 }, 53.4);
+  show("#b6", 53.6, 57.0, 0.2); kb("#b6i", 53.6, 3.4, 1.0, 1.15);
+  tl.from("#emptys", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 55.65);
+  tl.to("#empty", { opacity: 0, duration: 0.3 }, 56.75);
+  // 7. the pyramid texts, the stairway, the question
+  show("#b9", 56.95, 60.6, 0.3); kb("#b9i", 56.95, 3.7, 1.05, 1.22, 0, -30);
+  tl.from("#ptxt", { opacity: 0, y: 14, duration: 0.35, ease: E }, 57.6);
+  tl.to("#ptx", { opacity: 0, duration: 0.3 }, 60.3);
+  tl.to("#stars", { opacity: 1, duration: 0.5 }, 60.4);
+  tl.from("#stair", { opacity: 0, duration: 0.4 }, 60.5);
+  tl.from("#steps rect", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.2, stagger: 0.07, ease: "back.out(3)" }, 60.6);
+  tl.from("#belt2 circle", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.3, stagger: 0.1 }, 61.2);
+  tl.from("#stTt", { opacity: 0, scale: 1.3, duration: 0.35, ease: "back.out(2)" }, 60.7);
+  tl.to(["#stair","#stT"], { opacity: 0, duration: 0.3 }, 62.55);
+  tl.from("#hA", { opacity: 0, x: -80, duration: 0.4, ease: E }, 62.8);
+  tl.fromTo("#hA img", { scale: 1.0 }, { scale: 1.1, duration: 3.0, ease: "none" }, 62.8);
+  tl.from("#hB", { opacity: 0, x: 80, duration: 0.4, ease: E }, 63.7);
+  tl.to(["#hA","#hB"], { opacity: 0, duration: 0.3 }, 65.75);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 66.05);
+  tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.0);
+  tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.5);
+  // alien glow in the fantastical passages
+  [[0.0, 20.3], [26.6, 33.8], [60.4, {{END}}]].forEach(([a, b]) => { tl.to("#glow", { opacity: 1, duration: 0.5 }, a); tl.to("#glow", { opacity: 0, duration: 0.4 }, b - 0.4); });
   window.__timelines = window.__timelines || {};
   window.__timelines["main"] = tl;
 })();
