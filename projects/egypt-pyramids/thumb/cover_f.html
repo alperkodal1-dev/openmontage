@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/fonts.css"><style>
+html,body{margin:0;background:#05090a}
+#c{position:relative;width:1080px;height:1920px;overflow:hidden;background:#070b0d}
+.p{position:absolute;top:0;height:1920px;width:540px;overflow:hidden}
+.p img{position:absolute;height:1920px;width:auto}
+#L{left:0}#L img{left:-500px;filter:sepia(.3) contrast(1.15) saturate(1.1)}
+#R{left:540px}#R img{left:-560px;width:1380px;height:1922px;filter:contrast(1.2) saturate(.6) brightness(.85) hue-rotate(60deg)}
+#R:after{content:'';position:absolute;inset:0;background:rgba(40,255,140,.18);mix-blend-mode:screen}
+#div{position:absolute;left:532px;top:0;width:16px;height:1920px;background:#efe6d2;box-shadow:0 0 30px rgba(0,0,0,.8)}
+#shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.5) 380px,rgba(6,12,14,0) 560px),linear-gradient(0deg,rgba(6,12,14,.9) 0,rgba(6,12,14,0) 420px)}
+.h{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;letter-spacing:3px;line-height:1;text-shadow:0 6px 30px rgba(0,0,0,.95)}
+#h1{top:150px;font-size:118px;white-space:nowrap;color:#efe6d2}
+.lab{position:absolute;top:1150px;width:540px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:100px;line-height:1;text-shadow:0 6px 24px rgba(0,0,0,1),0 0 4px #000}
+#l1{left:0;color:#f1d49a}#l2{left:540px;color:#7dffb0}
+#vs{position:absolute;left:440px;top:1300px;width:200px;height:200px;border-radius:50%;background:#9c2f1f;color:#ffe9c4;font-family:'Cinzel';font-weight:900;font-size:84px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.7);border:6px solid #ffe9c4}
+#l1{left:0}#l2{left:540px}
+.lab{background:rgba(5,9,10,.78);padding:14px 0 18px;border-top:4px solid #d9b26a;border-bottom:4px solid #d9b26a}
+#L img{filter:sepia(.3) contrast(1.15) saturate(1.1) brightness(.7) blur(1.2px)!important}
+#R img{filter:contrast(1.2) saturate(.6) brightness(.6) hue-rotate(60deg) blur(1.2px)!important}
+#rc{position:absolute;left:600px;top:560px;width:300px;height:300px;border:12px solid #d62b1e;border-radius:50%;box-shadow:0 0 30px rgba(214,43,30,.7)}
+</style></head><body><div id="c">
+<div class="p" id="L"><img src="roberts.jpg"></div><div class="p" id="R"><img src="dogu.jpg"></div><div id="div"></div><div id="shade"></div>
+<div id="rc"></div><div class="h" id="h1">WHO BUILT IT?</div>
+<div class="lab" id="l1">SLAVES</div><div class="lab" id="l2">ALIENS</div><div id="vs">OR</div>
+</div></body></html>
