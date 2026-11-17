@@ -27,3 +27,9 @@ custom thumbnails enabled, set (owner may do it in Studio):
 - Upload with metadata: `yt_upload_video.py <mp4> @<publish>/metadata.json [private|public]`
 - Everything after upload (metadata, captions, comment, optional thumbnail): `egypt-pyramids/publish/finish.py <id> <privacy> <publish dir>`
 - YouTube API daily quota: 10,000 units (upload 1600, caption 400).
+
+## Parked ideas (owner: on hold until Noah and Pyramid are finished)
+- Assassins of Alamut: script v2 ready (`assassins-alamut/script.md`, 128 words, ~58 s, includes Nizam al-Mulk 1092).
+  Next step: owner approval for the voiceover (~28 vidIQ credits). Search ~45k/month, low competition.
+- Machiavelli ("The end justifies the means. He never said it."): ~476k searches/month, high competition. Not written yet.
+- Other researched topics: Sphinx's nose (sphinx +845%), Mary Celeste (178k, +152%), Mona Lisa theft 1911.
