@@ -143,7 +143,7 @@
   <section id="b3" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="3"><img id="b3i" src="assets/orion.jpg" alt="" style="object-position:50% 45%;filter:sepia(.1) brightness(.75) contrast(1.1)"><div class="dimmer" id="b3d"></div></section>
   <section id="b4" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="4"><img id="b4i" src="assets/desc.jpg" alt=""><div class="dimmer" id="b4d"></div></section>
   <section id="b5" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="5"><img id="b5i" src="assets/giza.jpg" alt=""><div class="dimmer" id="b5d"></div></section>
-  <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt="" style="left:-200px;top:-1050px;width:1480px;height:2700px;object-position:50% 100%"><div class="dimmer" id="b6d"></div></section>
+  <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt="" style="left:-200px;top:-1500px;width:1480px;height:3440px;object-position:50% 100%"><div class="dimmer" id="b6d"></div></section>
   <section id="b7" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="21"><img id="b7i" src="assets/legray.jpg" alt=""><div class="dimmer" id="b7d"></div></section>
   <section id="b8" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="22"><img id="b8i" src="assets/bonfils.jpg" alt=""><div class="dimmer" id="b8d"></div></section>
   <section id="b9" class="clip bg" style="opacity:0" data-start="0" data-duration="67.45" data-track-index="23"><img id="b9i" src="assets/ptexts.jpg" alt="" style="filter:sepia(.15) contrast(1.1) brightness(.85)"><div class="dimmer" id="b9d"></div></section>
@@ -337,7 +337,7 @@
   tl.set("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9)", x: 0, y: 0 }, 20.3);
   tl.to("#b1", { opacity: 1, duration: 0.15 }, 20.35); kb("#b1i", 20.35, 2.0, 1.25, 1.1);
   tl.to("#b1", { opacity: 0, duration: 0.3 }, 22.2);
-  show("#b7", 22.2, 24.7); kb("#b7i", 22.2, 2.5, 1.05, 1.2); dim("#b7", 1, 22.2);
+  show("#b7", 22.2, 26.7); kb("#b7i", 22.2, 4.5, 1.05, 1.25); dim("#b7", 1, 22.2);
   tl.from("#n23", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 22.3);
   const cnt = { v: 0 }; tl.to(cnt, { v: 2300000, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n23n").textContent = Math.round(cnt.v).toLocaleString("en-US"); } }, 22.3);
   tl.to("#n23", { opacity: 0, y: -30, duration: 0.3 }, 24.45);
