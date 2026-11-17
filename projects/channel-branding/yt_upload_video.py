@@ -23,6 +23,8 @@ tok = token()
 meta = {'snippet': {'title': title, 'description': desc, 'categoryId': '27', 'tags': tags,
                     'defaultLanguage': 'en', 'defaultAudioLanguage': 'en'},
         'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': False}}
+if os.environ.get('PUBLISH_AT'):  # scheduled: private until this UTC time, then public
+    meta['status'].update(privacyStatus='private', publishAt=os.environ['PUBLISH_AT'])
 size = os.path.getsize(path)
 req = urllib.request.Request('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
                              json.dumps(meta).encode(), {'Authorization': 'Bearer ' + tok, 'Content-Type': 'application/json; charset=UTF-8',
