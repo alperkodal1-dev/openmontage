@@ -163,7 +163,9 @@
   <section id="s2" class="clip scene" data-start="4.8" data-duration="15.6" data-track-index="14">
     <div class="center" id="y68"><div class="big">1968</div></div>
     <div class="center" id="vd"><div class="tag" id="vd1">ERICH VON DÄNIKEN</div><div class="tag al" id="vd2">“CHARIOTS OF THE GODS?”</div></div>
-    <div class="row" id="astro"><div class="stamp al" id="astros">ANCIENT ASTRONAUTS?</div></div>
+    <div class="art" id="a4" style="top:400px;height:820px"><img src="assets/dogu.jpg" alt="" id="a4i" style="object-position:50% 30%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:26%;width:360px;height:360px;margin:-180px 0 0 -180px"></div><div class="scan"></div></div>
+    <div class="arttag" id="a4t" style="top:1130px"><div class="tag al" style="font-size:32px">DOGŪ · JAPAN, c. 1000 BC · “A SPACESUIT”?</div></div>
+    <div class="row" id="astro" style="top:330px"><div class="stamp al" id="astros">ANCIENT ASTRONAUTS?</div></div>
     <div class="mapcard" id="eg"><div class="mv" id="egv"><svg id="egsvg" viewBox="0 0 960 1100" width="960" height="1100" xmlns="http://www.w3.org/2000/svg">
 <rect width="960" height="1100" fill="#7f9c9a"/>
 <path d="M960,635.781L934.282,633.336L918.082,629.498L903.502,640.715L902.422,626.544L912.682,606.747L926.722,565.308L929.962,528.823L952.642,420.409L957.502,397.689L955.882,385.719L945.622,398.886L937.522,406.661L920.242,434.445L902.422,522.586L877.042,591.07L874.342,633.631L870.022,648.976L857.601,670.496L843.021,691.696L816.561,680.804L773.901,643.666L749.06,608.225L722.6,585.447L697.22,554.934L690.2,533.276L690.74,519.021L679.4,484.822L671.3,468.443L640.519,431.758L631.879,412.341L624.859,403.671L618.379,391.406L607.039,343.46L594.619,313.125L581.119,321.54L583.279,334.455L571.399,352.16L563.839,372.543L569.779,389.311L594.619,414.732L600.019,425.786L605.959,449.663L604.879,482.441L608.659,493.453L627.559,517.536L634.579,531.792L638.359,544.256L644.839,555.527L663.2,576.565L690.2,616.205L715.58,643.075L734.48,656.054L742.04,669.022L743.66,702.287L742.58,718.456L758.78,748.112L764.721,763.362L780.381,775.67L787.401,789.727L793.881,812.546L803.601,879.967L817.641,896.275L859.221,984.279L894.862,1039.839L912.142,1081.407L921.759,1100L0,1100L0,131.27L30.853,144.555L55.693,159.728L70.814,164.278L83.774,163.671L101.594,157.908L124.274,147.287L148.574,132.71L199.335,94.688L217.155,87.987L229.035,89.815L243.615,89.206L249.555,79.15L257.115,72.138L261.436,63.903L269.536,54.442L295.456,51.695L348.376,35.199L342.436,42.838L294.376,61.462L314.896,63.903L335.956,57.495L360.257,53.526L364.577,45.587L367.817,30.614L372.677,28.78L388.877,31.531L438.557,54.137L450.977,54.748L486.078,42.227L493.098,39.477L504.438,46.503L530.358,74.882L521.178,74.273L493.638,49.863L491.478,62.072L475.818,83.417L495.258,92.556L511.458,95.906L520.098,107.777L525.498,118.424L541.158,113.862L552.498,99.56L546.558,91.338L542.238,83.112L547.638,82.807L558.438,89.815L589.759,116.903L600.559,122.68L612.439,121.768L638.359,113.862L645.379,115.079L679.4,105.039L683.72,112.645L689.12,119.944L716.66,111.733L759.86,111.733L795.501,102.908L836.541,81.284L839.781,77.931L867.862,49.863L881.362,31.837L882.442,30.614L899.101,0L960,0Z" fill="#d9c9a3" stroke="#6b5636" stroke-width="1.5"/>
@@ -300,6 +302,15 @@
   tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 6.45);
   tl.from("#vd2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 6.9);
   tl.to(["#y68","#vd"], { opacity: 0, y: -30, duration: 0.3 }, 7.8);
+  tl.from("#a4", { opacity: 0, scale: 0.94, duration: 0.35, ease: E }, 7.8);
+  tl.fromTo("#a4i", { scale: 1.0 }, { scale: 1.15, duration: 2.6, ease: "none" }, 7.8);
+  tl.fromTo("#a4 .scan", { y: 0, opacity: 1 }, { y: 820, duration: 0.9, ease: "power1.inOut" }, 8.0);
+  tl.to("#a4 .scan", { opacity: 0, duration: 0.1 }, 8.9);
+  tl.fromTo("#a4 .grid", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 8.05);
+  tl.fromTo("#a4 .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 8.3);
+  tl.fromTo("#a4 .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 8.6);
+  tl.from("#a4t", { opacity: 0, y: 16, duration: 0.3, ease: E }, 8.7);
+  tl.to(["#a4", "#a4t"], { opacity: 0, duration: 0.25 }, 10.1);
   tl.from("#astros", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 7.95);
   tl.fromTo("#stars", { scale: 1.0 }, { scale: 1.3, duration: 16, ease: "none" }, 4.8);
   tl.to("#astro", { opacity: 0, duration: 0.3 }, 10.2);

@@ -41,3 +41,5 @@
 - Images from The Met Open Access (CC0): Adrien Dauzats, The Great Pyramid, Giza; John Beasley Greene, Excavations near
   the Sphinx (1853); Francis Frith, The Great Pyramid and the Great Sphinx (1858); Gustave Le Gray, Pyramides de Gizèh
   (1865-69); Félix Bonfils, Pyramides et le Sphinx (c. 1870); Seated Statue of King Menkaure.
+
+- Dogū with goggle-shaped eyes, Kamegaoka, Jōmon period (Tokyo National Museum), photo by Daderot, Wikimedia Commons, public domain. Von Däniken presented dogū figures as astronauts in spacesuits (1968).
