@@ -13,7 +13,7 @@ L = {
 "The battles are real: Issus, Gaugamela, the Hydaspes, all won.",
 "But the tears? A philosopher told him there were infinite worlds... and he wept because he hadn't conquered even one.",
 "And no text from his lifetime calls him \"the Great.\" The first one we have is a Roman comedy.",
-"So was he great... or did the story make him great?"
+"If the worlds are infinite... can anyone ever be great?"
 ],
 "tr": [
 "İskender ağladı. Fethedecek dünya kalmamıştı... öyle mi?",
@@ -26,7 +26,7 @@ L = {
 "Savaşlar gerçek: İssos, Gaugamela, Hydaspes, hepsi kazanıldı.",
 "Peki ya gözyaşları? Bir filozof ona sonsuz sayıda dünya olduğunu söyledi... ve o, tek birini bile fethedemediği için ağladı.",
 "Ve onun yaşadığı döneme ait hiçbir metin ona \"Büyük\" demiyor. Elimizdeki ilk örnek bir Roma komedisi.",
-"Peki o gerçekten büyük müydü... yoksa onu hikâye mi büyük yaptı?"
+"Dünyalar sonsuzsa... kimse gerçekten büyük olabilir mi?"
 ],
 "es": [
 "Alejandro lloró. No quedaban mundos por conquistar... ¿o no?",
@@ -39,7 +39,7 @@ L = {
 "Las batallas son reales: Issos, Gaugamela, el Hidaspes, todas ganadas.",
 "¿Y las lágrimas? Un filósofo le dijo que había infinitos mundos... y lloró porque no había conquistado ni uno.",
 "Y ningún texto de su vida lo llama \"el Grande\". El primero que tenemos es una comedia romana.",
-"Entonces, ¿fue grande... o lo hizo grande la historia?"
+"Si los mundos son infinitos... ¿puede alguien ser grande de verdad?"
 ],
 "pt": [
 "Alexandre chorou. Não havia mais mundos para conquistar... ou não?",
@@ -52,7 +52,7 @@ L = {
 "As batalhas são reais: Isso, Gaugamela, o Hidaspes, todas vencidas.",
 "E as lágrimas? Um filósofo lhe disse que havia infinitos mundos... e ele chorou porque não tinha conquistado nem um.",
 "E nenhum texto da sua época o chama de \"o Grande\". O primeiro que temos é uma comédia romana.",
-"Então, ele foi grande... ou a história o tornou grande?"
+"Se os mundos são infinitos... alguém pode ser realmente grande?"
 ],
 "de": [
 "Alexander weinte. Keine Welten mehr zu erobern... oder doch nicht?",
@@ -65,7 +65,7 @@ L = {
 "Die Schlachten sind echt: Issos, Gaugamela, der Hydaspes, alle gewonnen.",
 "Und die Tränen? Ein Philosoph sagte ihm, es gebe unendlich viele Welten... und er weinte, weil er nicht einmal eine erobert hatte.",
 "Und kein Text aus seiner Lebenszeit nennt ihn \"den Großen\". Der erste, den wir haben, ist eine römische Komödie.",
-"War er also groß... oder hat die Geschichte ihn groß gemacht?"
+"Wenn die Welten unendlich sind... kann dann überhaupt jemand groß sein?"
 ],
 "fr": [
 "Alexandre a pleuré. Plus de mondes à conquérir... vraiment ?",
@@ -78,7 +78,7 @@ L = {
 "Les batailles sont réelles : Issos, Gaugamèles, l'Hydaspe, toutes gagnées.",
 "Et les larmes ? Un philosophe lui dit qu'il existait une infinité de mondes... et il pleura de n'en avoir conquis aucun.",
 "Et aucun texte de son vivant ne l'appelle « le Grand ». Le premier que nous ayons est une comédie romaine.",
-"Alors, était-il grand... ou est-ce l'histoire qui l'a rendu grand ?"
+"Si les mondes sont infinis... quelqu'un peut-il vraiment être grand ?"
 ],
 "ja": [
 "アレクサンドロスは泣いた。征服すべき世界はもう無い…本当に？",
@@ -91,7 +91,7 @@ L = {
 "戦いは本物だ。イッソス、ガウガメラ、ヒュダスペス、すべて勝利。",
 "では涙は？ある哲学者が世界は無数にあると語ると…彼は一つも征服していないと泣いたのだ。",
 "そして存命中の文献で彼を「大王」と呼ぶものは無い。現存する最初の例はローマの喜劇だ。",
-"彼は偉大だったのか…それとも物語が彼を偉大にしたのか？"
+"世界が無数にあるなら…誰かが本当に偉大になれるのだろうか？"
 ],
 "hi": [
 "सिकंदर रोया। जीतने को कोई दुनिया नहीं बची थी... या नहीं?",
@@ -104,7 +104,7 @@ L = {
 "लड़ाइयाँ सच्ची हैं: इसस, गौगामेला, झेलम (हाइडस्पीज़), सब जीतीं।",
 "लेकिन आँसू? एक दार्शनिक ने उससे कहा कि दुनियाएँ अनगिनत हैं... और वह रोया क्योंकि उसने एक भी नहीं जीती थी।",
 "और उसके जीवनकाल का कोई भी लेख उसे \"महान\" नहीं कहता। हमारे पास पहला उदाहरण एक रोमन कॉमेडी है।",
-"तो क्या वह महान था... या कहानी ने उसे महान बनाया?"
+"अगर दुनियाएँ अनगिनत हैं... तो क्या कोई सच में महान हो सकता है?"
 ],
 "ur": [
 "سکندر رویا۔ فتح کرنے کو کوئی دنیا باقی نہیں تھی... یا نہیں؟",
@@ -117,7 +117,7 @@ L = {
 "جنگیں سچی ہیں: اسوس، گاگامیلا، دریائے جہلم (ہائیڈاسپیز)، سب جیتیں۔",
 "لیکن آنسو؟ ایک فلسفی نے اسے بتایا کہ دنیائیں بے شمار ہیں... اور وہ رویا کیونکہ اس نے ایک بھی فتح نہیں کی تھی۔",
 "اور اس کی زندگی کی کوئی تحریر اسے \"اعظم\" نہیں کہتی۔ ہمارے پاس پہلی مثال ایک رومی مزاحیہ ڈرامہ ہے۔",
-"تو کیا وہ واقعی عظیم تھا... یا کہانی نے اسے عظیم بنایا؟"
+"اگر دنیائیں بے شمار ہیں... تو کیا کوئی واقعی عظیم ہو سکتا ہے؟"
 ]
 }
 ts = lambda t: f"{int(t//3600):02}:{int(t%3600//60):02}:{int(t%60):02},{int(round(t%1*1000)):03}"

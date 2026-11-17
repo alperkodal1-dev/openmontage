@@ -16,7 +16,7 @@ Format: hook with the grey signature -> legends told vividly -> "Or so the story
 | 7 | EVIDENCE | The battles are real: Issus, Gaugamela, the Hydaspes, all won. | Three battle names stamped on the map |
 | 8 | EVIDENCE | But the tears? A philosopher told him there were infinite worlds... and he wept because he hadn't conquered even one. | Plutarch bust; quote card |
 | 9 | EVIDENCE | And no text from his lifetime calls him "the Great." The first one we have is a Roman comedy. | "MAGNUS" card; Plautus, Mostellaria (c. 200 BC) |
-| 10 | QUESTION (loops to 0) | So was he great... or did the story make him great? | Mosaic face, big Cinzel "WHO MADE HIM / GREAT?" |
+| 10 | QUESTION (loops to 0) | If the worlds are infinite... can anyone ever be great? | Mosaic face, big Cinzel "WHO MADE HIM / GREAT?" |
 
 ## Sources (checked)
 - Plutarch, On Tranquility of Mind 466D: Alexander weeps at Anaxarchus' talk of infinite worlds, "not yet lord of one".
