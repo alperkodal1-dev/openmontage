@@ -3,7 +3,7 @@ hf/assets/ at render size. Keyword colours in the captions: green for the alien 
 import json, os, re
 from PIL import Image
 D = 3.9          # the signature question before the narration
-OEND = 78.2      # the end in the narration's own timeline
+OEND = 79.94     # the end in the narration's own timeline
 END = round(OEND + D, 2)
 A = {'pyr.jpg': 'pyr_khufu.jpg', 'roberts.jpg': 'dauzats.jpg', 'orion.jpg': 'orion.jpg', 'desc.jpg': 'greene_1853.jpg',
      'giza.jpg': 'frith_1858.jpg', 'menkaure.jpg': 'menkaure.jpg', 'legray.jpg': 'legray.jpg', 'bonfils.jpg': 'bonfils.jpg', 'ptexts.jpg': 'pyramid_texts.jpg', 'dogu.jpg': 'dogu.jpg', 'daniken.jpg': 'daniken_eth.jpg', 'chamber.jpg': 'kings_chamber.jpg', 'abydos.jpg': 'abydos.jpg', 'dendera.jpg': 'dendera.jpg',
@@ -18,7 +18,7 @@ eg = open('maps/egypt.svg.html').read()
 # a stair of light from the apex (540,580) to Orion's belt (860,110), and a small one for the split screen
 steps = ''.join(f'<rect x="{540 + 32 * i:.0f}" y="{560 - 46 * i:.0f}" width="26" height="12" rx="3"/>' for i in range(10))
 steps2 = ''.join(f'<rect x="{480 + 30 * i:.0f}" y="{238 - 22 * i:.0f}" width="20" height="8" rx="2"/>' for i in range(9))
-R = {'END': END, 'OEND': OEND, 'D': D, 'S7D': round(OEND - 56.9, 2), 'STEPS': steps, 'STEPS2': steps2, 'EGYPT': eg, 'EGYPT2': eg.replace('id="egsvg"', 'id="egsvg2"').replace('id="nile"', 'id="nile2"'),
+R = {'END': END, 'OEND': OEND, 'D': D, 'S7D': round(OEND - 58.64, 2), 'STEPS': steps, 'STEPS2': steps2, 'EGYPT': eg, 'EGYPT2': eg.replace('id="egsvg"', 'id="egsvg2"').replace('id="nile"', 'id="nile2"'),
      'ABX': P['abydos'][0], 'ABY': P['abydos'][1], 'DEX': P['dendera'][0], 'DEY': P['dendera'][1],
      'SAX': P['saqqara'][0], 'SAY': P['saqqara'][1], 'GIX': gx, 'GIY': gy, 'TUX': tx, 'TUY': ty,
      'TUY2': round(ty - 30, 1), 'GIY2': round(gy + 30, 1), 'MIDX': round((gx + tx) / 2, 1), 'MIDY': round((gy + ty) / 2, 1),

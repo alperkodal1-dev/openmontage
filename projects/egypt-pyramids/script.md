@@ -103,3 +103,8 @@ for the stairway to the stars and the question (20-23). New picture needed: Pyra
 "Slaves built the pyramids... or did they?" over the pyramid, card "BUILT BY SLAVES?" / stamp "...OR DID THEY?", then the
 v6 narration from 3.9 s. The evidence section answers it (the builders buried in the shadow of their king's pyramid).
 Total 82.1 s with the owner's end song.
+
+## v8 (channel signatures: grey shock on "...or did they?", story turn "Or so the story goes.")
+
+"Or so the story goes." (audio/vo_story.mp3, George) spliced in after the stargate line; "the story goes," cut from
+the 1990 line so it is not said twice (audio/vo_v2b.mp3). Picture: the Orion scene turns grey, MYTH stamp. 83.9 s.

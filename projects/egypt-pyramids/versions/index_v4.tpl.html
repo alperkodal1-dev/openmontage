@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Great Pyramid Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<script src="captions.js"></script>
+<style>
+  :root{ --ink:#0a1417; --bone:#efe6d2; --gold:#d9b26a; --gold2:#f1d49a; --red:#9c2f1f; --alien:#7dffb0; }
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'Manrope',sans-serif;color:var(--bone)}
+  .clip{position:absolute;inset:0}
+  .bg{overflow:hidden;background:#05090a;z-index:1}
+  .bg img{position:absolute;left:-60px;top:-80px;width:1200px;height:2080px;object-fit:cover;filter:sepia(.2) contrast(1.06) brightness(.8) saturate(.9)}
+  .bg .dimmer{position:absolute;inset:0;background:rgba(5,9,10,.6);opacity:0}
+  #vig{background:radial-gradient(ellipse at 50% 42%,rgba(0,0,0,0) 45%,rgba(0,0,0,.6) 100%);z-index:30}
+  #plate{background:linear-gradient(180deg,rgba(6,12,14,0) 0px,rgba(6,12,14,.9) 95px,rgba(6,12,14,.9) 290px,rgba(6,12,14,0) 380px);top:1235px;height:380px;bottom:auto;z-index:40}
+  #caps{z-index:41} #chaps{z-index:42} #s0{z-index:35}
+  .scene{z-index:32}
+  .cap{position:absolute;left:80px;right:80px;top:1395px;height:150px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:62px;line-height:1.14;letter-spacing:-.5px;opacity:0;text-shadow:0 3px 18px rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em;color:var(--bone)}
+  .chap{position:absolute;top:268px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0}
+  .chap .num{font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:10px;color:var(--gold)}
+  .chap .name{font-family:'Cinzel';font-weight:500;font-size:28px;letter-spacing:8px;opacity:.85}
+  .chap .rule{display:block;width:120px;height:2px;background:var(--gold)}
+  .center{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .ital{font-family:'Cormorant Garamond';font-style:italic;font-weight:500}
+  .card{background:rgba(7,13,15,.86);border:1px solid rgba(217,178,106,.6)}
+  .stamp{font-family:'Cinzel';font-weight:900;color:#ffe9c4;background:var(--red);padding:12px 26px;transform:rotate(-4deg);white-space:nowrap}
+  .stamp.al{background:#0f3b2a;color:var(--alien);border:3px solid var(--alien);box-shadow:0 0 40px rgba(125,255,176,.45)}
+  .tag{font-family:'Cinzel';font-weight:700;letter-spacing:3px;background:var(--ink);border:2px solid var(--gold);padding:10px 18px;white-space:nowrap}
+  .tag.al{border-color:var(--alien);color:var(--alien);box-shadow:0 0 26px rgba(125,255,176,.35)}
+  .big{font-family:'Cinzel';font-weight:900;letter-spacing:4px;line-height:1.05;text-shadow:0 6px 40px rgba(0,0,0,.85)}
+  .row{position:absolute;left:0;right:0;display:flex;justify-content:center}
+
+  /* stars: a seeded field, drawn by the script */
+  #stars{z-index:0;background:radial-gradient(ellipse at 50% 30%,#0d1b2e 0%,#04070d 70%);opacity:0}
+  #stars i{position:absolute;border-radius:50%;background:#fff}
+  #glow{z-index:31;background:radial-gradient(ellipse at 50% 40%,rgba(125,255,176,.22),rgba(125,255,176,0) 60%);opacity:0;mix-blend-mode:screen}
+
+  #s0 img{position:absolute;left:-60px;top:-60px;width:1200px;height:2040px;object-fit:cover;filter:sepia(.3) contrast(1.2) brightness(.85)}
+  #s0 .flash{position:absolute;inset:0;background:#f4ead2;opacity:0}
+  #q0{z-index:46;background:linear-gradient(180deg,rgba(6,12,14,.9) 0,rgba(6,12,14,.55) 640px,rgba(6,12,14,0) 820px)}
+  #hk{z-index:45;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.85) 330px,rgba(6,12,14,0) 470px);height:470px;bottom:auto}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:2px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95)}
+  #hk .l1{top:200px;color:var(--bone)} #hk .l2{top:276px;color:var(--gold2)}
+  #hk .l3{top:236px;color:var(--alien);opacity:0;font-size:56px}
+
+  /* artifact cards: one picture at a time, with an "alien scan" */
+  .art{position:absolute;left:60px;width:960px;top:430px;height:760px;border:3px solid var(--gold);background:#120d07;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+  .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .art .scan{position:absolute;left:0;right:0;top:0;height:6px;background:var(--alien);box-shadow:0 0 30px 10px rgba(125,255,176,.6);opacity:0}
+  .art .tint{position:absolute;inset:0;background:rgba(40,255,140,.16);mix-blend-mode:screen;opacity:0}
+  .art .grid{position:absolute;inset:0;background-image:linear-gradient(rgba(125,255,176,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(125,255,176,.18) 1px,transparent 1px);background-size:60px 60px;opacity:0}
+  .art .ring{position:absolute;width:300px;height:300px;margin:-150px 0 0 -150px;border:4px solid var(--alien);border-radius:50%;box-shadow:0 0 30px rgba(125,255,176,.6);opacity:0}
+  .clue{position:absolute;left:0;right:0;top:340px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:46px;letter-spacing:8px;color:var(--alien);text-shadow:0 0 24px rgba(125,255,176,.6)}
+  .arttag{position:absolute;left:0;right:0;top:1100px;display:flex;justify-content:center;z-index:3}
+  .arttag .tag{font-size:40px}
+
+  /* hook numbers */
+  #n23{top:560px} #n23 .big{font-size:150px} #n23 .l{white-space:nowrap} #n23 .l{font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:10px;color:var(--gold)}
+  #tons{top:1060px} #tons .tag{font-size:40px}
+  #north{position:absolute;left:290px;top:440px;width:500px;height:500px}
+  #northT{top:1000px} #northT .tag{font-size:44px}
+  #bc{top:560px} #bc .big{font-size:170px} #bc .ital{font-size:58px;color:var(--gold2);text-shadow:0 2px 14px rgba(0,0,0,.9)}
+  /* the visitors */
+  #y68{top:300px} #y68 .big{font-size:150px}
+  .por{position:absolute;left:240px;width:600px;top:480px;height:640px;border:3px solid var(--gold);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+  .por img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:sepia(.35) contrast(1.1)}
+  .por .cr{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-family:Manrope;font-weight:700;font-size:18px;letter-spacing:1px;color:rgba(239,230,210,.8);text-shadow:0 1px 6px #000}
+  #vd{top:1140px;gap:12px} #vd .tag{font-size:34px}
+  #astro{top:640px} #astro .stamp{font-size:50px}
+  /* the clues map */
+  .mapcard{position:absolute;left:60px;width:960px;top:400px;height:800px;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,.6);overflow:hidden;background:#7f9c9a}
+  .mapcard .mv{position:absolute;left:0;top:0;width:960px;height:1100px;transform-origin:0 0}
+  .mapcard:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,250,235,.2),rgba(90,60,20,.35));z-index:5;pointer-events:none}
+  .pin{position:absolute;z-index:3;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;background:var(--red);border:4px solid #fff4dc}
+  .pin.al{background:var(--alien);border-color:#06281a;box-shadow:0 0 22px rgba(125,255,176,.9)}
+  .ptag{position:absolute;z-index:4;font-family:'Cinzel';font-weight:700;font-size:30px;letter-spacing:3px;background:var(--ink);color:var(--bone);padding:8px 14px;white-space:nowrap}
+  #route{position:absolute;left:0;top:0;z-index:2}
+  /* power plant and stargate */
+  #pp{top:1080px} #pp .stamp{font-size:64px}
+  #sg{position:absolute;left:60px;top:400px;width:960px;height:820px}
+  #sgT{top:1100px} #sgT .tag{font-size:36px}
+  /* the builders */
+  #y90{top:520px} #y90 .big{font-size:200px}
+  #horse{top:800px} #horse .tag{font-size:40px}
+  #bk{top:1060px} #bk .stamp{font-size:54px}
+  #gangs{top:560px} #gangs .ital{font-size:68px;color:var(--gold2);text-shadow:0 3px 20px rgba(0,0,0,.9)}
+  .gang{position:absolute;left:120px;width:840px;top:560px;padding:40px 40px;text-align:center}
+  .gang .mk{width:300px;height:380px;margin:0 auto 26px;border:3px solid var(--gold);overflow:hidden}
+  .gang .mk img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+  #g2{top:430px}
+  .gang .nm{font-family:'Cinzel';font-weight:900;font-size:76px;letter-spacing:3px;line-height:1.05}
+  .gang .d{margin-top:14px;font-family:'Cinzel';font-weight:700;font-size:34px;letter-spacing:6px;color:var(--gold)}
+  .cart{display:inline-block;margin:0 auto 22px;padding:10px 34px;border:4px solid var(--gold);border-radius:60px;font-size:64px;color:var(--gold2);font-family:'Noto Serif Hebrew'}
+  /* the logbook */
+  #pap{position:absolute;left:110px;width:860px;top:470px;height:560px;background:linear-gradient(90deg,#cdb27a,#e3cf9d 20%,#d8c08a 50%,#e6d3a2 80%,#c9ac72);border:2px solid #8a6a36;box-shadow:0 30px 80px rgba(0,0,0,.6);transform:rotate(-2deg);overflow:hidden}
+  #pap:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(120,90,40,.12) 0 3px,transparent 3px 14px),repeating-linear-gradient(0deg,rgba(120,90,40,.10) 0 2px,transparent 2px 22px)}
+  #pap .h{position:absolute;left:0;right:0;top:60px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:62px;color:#3a2810;letter-spacing:3px}
+  #pap .s{position:absolute;left:0;right:0;top:160px;text-align:center;font-family:'Cormorant Garamond';font-style:italic;font-weight:600;font-size:52px;color:#4a3416}
+  #pap .lines{position:absolute;left:80px;right:80px;top:270px;display:flex;flex-direction:column;gap:26px}
+  #pap .lines span{display:block;height:12px;background:rgba(40,25,8,.55);border-radius:6px}
+  #papT{top:1090px;gap:16px} #papT .tag{font-size:40px}
+  /* the empty tomb */
+  #empty{top:1060px} #empty .stamp{font-size:76px}
+  #kh{position:absolute;left:0;right:0;top:520px;display:flex;flex-direction:column;align-items:center}
+  #kh .cart{font-family:'Cinzel';font-weight:900;font-size:110px;letter-spacing:8px;padding:20px 70px;border-width:6px;border-radius:120px;color:var(--bone);background:rgba(7,13,15,.75)}
+  #nf{top:900px} #nf .stamp{font-size:60px}
+  #wk{top:640px} #wk .ital{font-size:92px;color:var(--gold2);text-shadow:0 3px 20px rgba(0,0,0,.9)}
+  #poll{position:absolute;left:130px;width:820px;top:760px;background:#fbf6ea;border-radius:44px;padding:46px 40px 40px;box-shadow:0 30px 90px rgba(0,0,0,.6),0 0 60px rgba(125,255,176,.35);color:#132024;text-align:center}
+  #poll .qq{font-family:'Cinzel';font-weight:900;font-size:50px;line-height:1.14}
+  #poll .opts{display:flex;gap:22px;margin-top:34px}
+  #poll .opt{flex:1;height:130px;border-radius:26px;display:flex;align-items:center;justify-content:center;font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:3px}
+  #poll .hint{margin-top:26px;font-family:'Manrope';font-weight:800;font-size:30px;letter-spacing:2px;color:#6c5a37}
+  #o1{background:#132024;color:var(--gold2)} #o2{background:#e9dcc0;color:#132024}
+  /* v3 additions */
+  #q0{z-index:46;background:linear-gradient(180deg,rgba(6,12,14,.9) 0,rgba(6,12,14,.55) 640px,rgba(6,12,14,0) 820px)}
+  #hk{z-index:45;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.8) 300px,rgba(6,12,14,0) 420px);height:420px;bottom:auto}
+  #hk .l{position:absolute;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:900;font-size:58px;letter-spacing:2px;line-height:1.1;text-shadow:0 4px 24px rgba(0,0,0,.95)}
+  #hk .l1{top:220px;color:var(--bone)} #hk .l2{top:292px;color:var(--alien);text-shadow:0 0 30px rgba(125,255,176,.6)}
+  #a1{top:470px}
+  #ptx{top:1080px} #ptx .tag{font-size:38px}
+  #stair{position:absolute;left:0;top:240px;width:1080px;height:1000px}
+  #stT{top:1110px} #stT .tag{font-size:40px}
+  .half{position:absolute;left:60px;width:960px;height:390px;overflow:hidden;border:3px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  .half img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.2) brightness(.75)}
+  .half .lab{position:absolute;left:0;right:0;bottom:24px;text-align:center}
+  .half .lab span{font-family:'Cinzel';font-weight:900;font-size:52px;letter-spacing:4px;background:var(--ink);border:2px solid var(--gold);padding:8px 24px}
+  #hA{top:400px} #hB{top:820px;background:radial-gradient(ellipse at 50% 30%,#0d1b2e 0%,#04070d 70%);border-color:var(--alien)}
+  #hB .lab span{color:var(--alien);border-color:var(--alien)}
+  #hB svg{position:absolute;left:0;top:0}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{{END}}">
+
+  <div id="stars" class="clip" data-start="0" data-duration="{{END}}" data-track-index="0"></div>
+  <section id="b1" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="1"><img id="b1i" src="assets/pyr.jpg" alt=""><div class="dimmer" id="b1d"></div></section>
+  <section id="b3" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="3"><img id="b3i" src="assets/orion.jpg" alt="" style="object-position:50% 45%;filter:sepia(.1) brightness(.75) contrast(1.1)"><div class="dimmer" id="b3d"></div></section>
+  <section id="b4" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="4"><img id="b4i" src="assets/desc.jpg" alt=""><div class="dimmer" id="b4d"></div></section>
+  <section id="b5" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="5"><img id="b5i" src="assets/giza.jpg" alt=""><div class="dimmer" id="b5d"></div></section>
+  <section id="b6" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="6"><img id="b6i" src="assets/chamber.jpg" alt=""><div class="dimmer" id="b6d"></div></section>
+  <section id="b7" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="21"><img id="b7i" src="assets/legray.jpg" alt=""><div class="dimmer" id="b7d"></div></section>
+  <section id="b8" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="22"><img id="b8i" src="assets/bonfils.jpg" alt=""><div class="dimmer" id="b8d"></div></section>
+  <section id="b9" class="clip bg" style="opacity:0" data-start="0" data-duration="{{END}}" data-track-index="23"><img id="b9i" src="assets/ptexts.jpg" alt="" style="filter:sepia(.15) contrast(1.1) brightness(.85)"><div class="dimmer" id="b9d"></div></section>
+
+  <div id="glow" class="clip" data-start="0" data-duration="{{END}}" data-track-index="7"></div>
+  <div id="vig" class="clip" data-start="0" data-duration="{{END}}" data-track-index="8"></div>
+  <div id="plate" class="clip" data-start="0" data-duration="{{END}}" data-track-index="9"></div>
+  <div id="caps" class="clip" data-start="0" data-duration="{{END}}" data-track-index="10"></div>
+
+  <!-- 0. the signature question -->
+  <section id="q0" class="clip" data-start="0" data-duration="{{D}}" data-track-index="24">
+    <div class="center" id="q0a" style="top:330px"><div class="big" style="font-size:118px;color:#efe6d2">BUILT BY</div><div class="big" style="font-size:150px;color:#f1d49a">SLAVES?</div></div>
+    <div class="row" id="q0b" style="top:1080px"><div class="stamp" id="q0s" style="font-size:72px">…OR DID THEY?</div></div>
+    <span id="q0f" style="position:absolute;inset:0;background:#f4ead2;opacity:0"></span>
+  </section>
+  <!-- 1. the "helicopter" -->
+  <section id="hk" class="clip" data-start="{{D+0}}" data-duration="4.7" data-track-index="20">
+    <div class="l l1" id="hk1">A HELICOPTER…</div><div class="l l2" id="hk2">IN AN EGYPTIAN TEMPLE?</div>
+  </section>
+  <section id="s1" class="clip scene" data-start="{{D+0}}" data-duration="4.8" data-track-index="12">
+    <div class="art" id="a1"><img src="assets/abydos.jpg" alt="" id="a1i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RAX}}%;top:{{RAY}}%"></div><div class="scan"></div></div>
+    <div class="clue" id="c1" style="top:1260px;opacity:0">CLUE 1/3</div>
+    <div class="arttag" id="a1t" style="top:1130px"><div class="tag al">ABYDOS · TEMPLE OF SETI I</div></div>
+    <span class="flash" id="flash" style="position:absolute;inset:0;background:#f4ead2;opacity:0"></span>
+  </section>
+
+  <!-- 2. the visitors, 3. the clues -->
+  <section id="s2" class="clip scene" data-start="{{D+4.8}}" data-duration="15.6" data-track-index="14">
+    <div class="center" id="y68"><div class="big">1968</div></div>
+    <div class="por" id="vdp"><img src="assets/daniken.jpg" alt=""><div class="cr">PHOTO: ETH-BIBLIOTHEK, 1987 · CC BY-SA 4.0</div></div>
+    <div class="center" id="vd"><div class="tag" id="vd1">ERICH VON DÄNIKEN</div><div class="tag al" id="vd2">“CHARIOTS OF THE GODS?”</div></div>
+    <div class="art" id="a4" style="top:400px;height:820px"><img src="assets/dogu.jpg" alt="" id="a4i" style="object-position:50% 30%"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:26%;width:360px;height:360px;margin:-180px 0 0 -180px"></div><div class="scan"></div></div>
+    <div class="arttag" id="a4t" style="top:1130px"><div class="tag al" style="font-size:32px">DOGŪ · JAPAN, c. 1000 BC · “A SPACESUIT”?</div></div>
+    <div class="row" id="astro" style="top:330px"><div class="stamp al" id="astros">ANCIENT ASTRONAUTS?</div></div>
+    <div class="mapcard" id="eg"><div class="mv" id="egv">{{EGYPT}}
+      <div class="pin al" id="pab" style="left:{{ABX}}px;top:{{ABY}}px"></div>
+      <div class="pin al" id="pde" style="left:{{DEX}}px;top:{{DEY}}px"></div>
+      <div class="pin al" id="psa" style="left:{{SAX}}px;top:{{SAY}}px"></div>
+      <div class="pin" id="pgi" style="left:{{GIX}}px;top:{{GIY}}px;background:var(--gold)"></div>
+      <div class="ptag" id="tab" style="left:{{ABX}}px;top:{{ABY}}px;transform:translate(-110%,-50%)">ABYDOS</div>
+      <div class="ptag" id="tde" style="left:{{DEX}}px;top:{{DEY}}px;transform:translate(14%,-130%)">DENDERA</div>
+      <div class="ptag" id="tsa" style="left:{{SAX}}px;top:{{SAY}}px;transform:translate(14%,-10%)">SAQQARA</div>
+      <div class="ptag" id="tgi" style="left:{{GIX}}px;top:{{GIY}}px;transform:translate(-112%,-90%)">GIZA</div>
+    </div></div>
+    <div class="art" id="a2"><img src="assets/dendera.jpg" alt="" id="a2i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:{{RDX}}%;top:{{RDY}}%"></div><div class="scan"></div></div>
+    <div class="clue" id="c2">CLUE 2/3</div><div class="arttag" id="a2t"><div class="tag al">DENDERA · “A GIANT BULB”</div></div>
+    <div class="art" id="a3"><img src="assets/saqqara.jpg" alt="" id="a3i"><div class="tint"></div><div class="grid"></div><div class="ring" style="left:50%;top:50%;width:520px;height:520px;margin:-260px 0 0 -260px"></div><div class="scan"></div></div>
+    <div class="clue" id="c3">CLUE 3/3</div><div class="arttag" id="a3t"><div class="tag al">SAQQARA · “A GLIDER”</div></div>
+  </section>
+
+  <!-- 4. the Great Pyramid, power plant, stargate -->
+  <section id="s4" class="clip scene" data-start="{{D+20.3}}" data-duration="13.6" data-track-index="13">
+    <div class="center" id="n23"><div class="big" id="n23n">2,300,000</div><div class="l">STONE BLOCKS · EST.</div></div>
+    <svg id="north" viewBox="0 0 500 500">
+      <circle cx="250" cy="250" r="230" fill="rgba(7,13,15,.82)" stroke="#d9b26a" stroke-width="4"/>
+      <circle cx="250" cy="250" r="200" fill="none" stroke="rgba(217,178,106,.4)" stroke-width="2" stroke-dasharray="4 14"/>
+      <text x="250" y="78" text-anchor="middle" font-family="Cinzel" font-weight="900" font-size="54" fill="#f1d49a">N</text>
+      <g id="needle"><polygon points="250,95 272,250 250,405 228,250" fill="#e9dcc0"/><polygon points="250,95 272,250 228,250" fill="#9c2f1f"/></g>
+      <circle cx="250" cy="250" r="14" fill="#d9b26a"/>
+    </svg>
+    <div class="row" id="northT"><div class="tag" id="northTt">TRUE NORTH · OFF BY 0.05°</div></div>
+    <div class="row" id="pp"><div class="stamp al" id="pps">A POWER PLANT?</div></div>
+    <svg id="sg" viewBox="0 0 960 820">
+      <polygon id="pyr" points="120,760 480,400 840,760" fill="rgba(217,178,106,.32)" stroke="#f1d49a" stroke-width="7"/>
+      <rect x="455" y="590" width="50" height="34" fill="#0a1417" stroke="#d9b26a" stroke-width="3"/>
+      <line id="shaft" x1="505" y1="600" x2="900" y2="190" stroke="#7dffb0" stroke-width="10" stroke-linecap="round" style="filter:drop-shadow(0 0 12px #7dffb0)" stroke-dasharray="580" stroke-dashoffset="580"/>
+      <g id="belt"><circle cx="830" cy="230" r="11" fill="#fff"/><circle cx="880" cy="190" r="13" fill="#fff"/><circle cx="930" cy="150" r="11" fill="#fff"/></g>
+    </svg>
+    <div class="row" id="sgT"><div class="tag al" id="sgTt">A STARGATE? · SHAFT → ORION, c. 2500 BC</div></div>
+  </section>
+
+  <!-- 5. the builders -->
+  <section id="s5" class="clip scene" data-start="{{D+33.8}}" data-duration="15.9" data-track-index="17">
+    <div class="center" id="y90"><div class="big">1990</div></div>
+    <div class="row" id="horse"><div class="tag" id="horset">A HORSE TRIPS ON A BURIED WALL</div></div>
+    <div class="row" id="ph53" style="top:1180px;opacity:0"><div class="tag" style="font-size:22px;opacity:.8">PHOTO: EXCAVATION AT GIZA, 1853</div></div>
+    <div class="row" id="bk"><div class="stamp" id="bks">BY THEIR KING'S PYRAMID</div></div>
+    <div class="center" id="gangs"><div class="ital">their work gangs<br>signed the stones</div></div>
+    <div class="gang card" id="g1"><div class="nm">FRIENDS<br>OF KHUFU</div><div class="d">PAINTED INSIDE THE GREAT PYRAMID</div></div>
+    <div class="gang card" id="g2"><div class="mk"><img src="assets/menkaure.jpg" alt=""></div><div class="nm">DRUNKARDS<br>OF MENKAURE</div><div class="d">GANG NAME · MENKAURE'S PYRAMID</div></div>
+  </section>
+
+  <!-- 6. the logbook, the empty sarcophagus -->
+  <section id="s6" class="clip scene" data-start="{{D+49.6}}" data-duration="7.5" data-track-index="18">
+    <div id="pap"><div class="h">THE DIARY OF MERER</div><div class="s">oldest inscribed papyri ever found</div><div class="lines"><span style="width:92%"></span><span style="width:80%"></span><span style="width:95%"></span><span style="width:70%"></span><span style="width:88%"></span></div></div>
+    <div class="mapcard" id="eg2" style="opacity:0"><div class="mv" id="eg2v">{{EGYPT2}}
+      <svg id="route" width="960" height="1100" viewBox="0 0 960 1100"><path id="rp" d="M {{TUX}},{{TUY}} C {{TUX}},{{TUY2}} {{GIX}},{{GIY2}} {{GIX}},{{GIY}}" fill="none" stroke="#9c2f1f" stroke-width="6" stroke-dasharray="10 8"/></svg>
+      <div class="pin" style="left:{{TUX}}px;top:{{TUY}}px"></div><div class="pin" style="left:{{GIX}}px;top:{{GIY}}px;background:var(--gold)"></div>
+      <div class="ptag" style="left:{{TUX}}px;top:{{TUY}}px;transform:translate(16%,-20%)">TURA</div>
+      <div class="ptag" style="left:{{GIX}}px;top:{{GIY}}px;transform:translate(-112%,-90%)">GIZA</div>
+    </div></div>
+    <div class="center" id="papT"><div class="tag" id="papT1">WADI AL-JARF · FOUND 2013</div><div class="tag" id="papT2">LIMESTONE BY BOAT · TURA → GIZA</div></div>
+    <div class="row" id="empty"><div class="stamp" id="emptys">EMPTY</div></div>
+  </section>
+
+  <!-- 7. the pyramid texts, the stairway, the question -->
+  <section id="s7" class="clip scene" data-start="{{D+56.9}}" data-duration="{{S7D}}" data-track-index="19">
+    <div class="row" id="ptx"><div class="tag" id="ptxt">PYRAMID TEXTS · UNAS · c. 2350 BC</div></div>
+    <svg id="stair" viewBox="0 0 1080 1000">
+      <polygon points="140,980 540,580 940,980" fill="rgba(217,178,106,.28)" stroke="#f1d49a" stroke-width="6"/>
+      <g id="steps" fill="#7dffb0" style="filter:drop-shadow(0 0 14px #7dffb0)">{{STEPS}}</g>
+      <g id="belt2"><circle cx="800" cy="150" r="13" fill="#fff"/><circle cx="860" cy="110" r="15" fill="#fff"/><circle cx="920" cy="70" r="13" fill="#fff"/></g>
+    </svg>
+    <div class="row" id="stT"><div class="tag al" id="stTt">“A STAIRCASE TO THE SKY”</div></div>
+    <div class="half" id="hA"><img src="assets/chamber.jpg" alt=""><div class="lab"><span>A TOMB…</span></div></div>
+    <div class="half" id="hB"><svg width="960" height="390" viewBox="0 0 960 390"><polygon points="300,390 480,250 660,390" fill="rgba(217,178,106,.35)" stroke="#f1d49a" stroke-width="4"/><g fill="#7dffb0">{{STEPS2}}</g><circle cx="700" cy="70" r="8" fill="#fff"/><circle cx="740" cy="48" r="9" fill="#fff"/><circle cx="780" cy="26" r="8" fill="#fff"/></svg><div class="lab"><span>…OR A STAIRWAY?</span></div></div>
+    <div class="center" id="fq" style="top:0;height:700px;padding-top:290px;background:linear-gradient(180deg,rgba(6,12,14,.92) 0,rgba(6,12,14,.8) 560px,rgba(6,12,14,0) 700px)"><div class="big" style="font-size:84px;line-height:1.08;color:#efe6d2">WHAT WERE<br><span style="color:#f1d49a">THE PYRAMIDS,</span><br>REALLY?</div></div>
+    <div id="poll">
+      <div class="qq">The Great Pyramid was only a tomb.</div>
+      <div class="opts"><div class="opt" id="o1">REAL</div><div class="opt" id="o2">MYTH</div></div>
+      <div class="hint" id="hint">THE EVIDENCE IS ABOVE · TELL ME BELOW</div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const root = gsap.timeline({ paused: true });   // the video
+  const tl = gsap.timeline();                      // the scenes, in the narration's own timeline, placed at D
+  const E = "power3.out";
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const st = document.getElementById("stars");
+  for (let i = 0; i < 260; i++) { const s = document.createElement("i"); const z = rnd() < 0.08 ? 4 : rnd() < 0.3 ? 3 : 2;
+    s.style.cssText = `left:${rnd()*1080}px;top:${rnd()*1920}px;width:${z}px;height:${z}px;opacity:${0.35 + rnd()*0.65}`; st.appendChild(s); }
+  const capRoot = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "cap" + i;
+    c.w.forEach((w, j) => { const s = document.createElement("span"); s.id = `cap${i}w${j}`; s.textContent = w.t; d.appendChild(s); });
+    capRoot.appendChild(d);
+  });
+  CAPS.forEach((c, i) => {
+    root.fromTo("#cap" + i, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.14, ease: "power2.out" }, c.s);
+    root.to("#cap" + i, { opacity: 0, duration: 0.1 }, Math.max(c.s + 0.2, c.e - 0.1));
+    c.w.forEach((w, j) => root.to(`#cap${i}w${j}`, { color: w.k ? (w.k === 2 ? "#7dffb0" : "#ff9a6b") : "#f1d49a", duration: 0.08 }, w.s));
+  });
+  const show = (id, a, b, f = 0.4) => { tl.to(id, { opacity: 1, duration: f }, a); tl.to(id, { opacity: 0, duration: 0.4 }, b); };
+  const dim = (id, on, t) => tl.to(id + "d", { opacity: on ? 1 : 0, duration: 0.4 }, t);
+  const kb = (img, a, d, s0, s1, x0 = 0, x1 = 0) => tl.fromTo(img, { scale: s0, x: x0 }, { scale: s1, x: x1, duration: d, ease: "none" }, a);
+  const art = (n, a, b) => {
+    const id = "#a" + n;
+    tl.from(id, { opacity: 0, scale: 0.94, duration: 0.35, ease: E }, a);
+    tl.fromTo(id + "i", { scale: 1.0 }, { scale: 1.14, duration: b - a, ease: "none" }, a);
+    tl.fromTo(id + " .scan", { y: 0, opacity: 1 }, { y: 760, duration: 0.9, ease: "power1.inOut" }, a + 0.2);
+    tl.to(id + " .scan", { opacity: 0, duration: 0.1 }, a + 1.1);
+    tl.fromTo(id + " .grid", { opacity: 0 }, { opacity: 1, duration: 0.3 }, a + 0.25);
+    tl.fromTo(id + " .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, a + 0.5);
+    tl.fromTo(id + " .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, a + 0.8);
+    tl.fromTo("#c" + n, { opacity: 0, y: -14 }, { opacity: 1, y: 0, duration: 0.3, ease: E }, a + 0.1);
+    tl.from(id + "t", { opacity: 0, y: 16, duration: 0.3, ease: E }, a + 0.9);
+    tl.to([id, id + "t", "#c" + n], { opacity: 0, duration: 0.25 }, b - 0.25);
+  };
+
+  // 1. cold open on the "helicopter"
+  tl.fromTo("#flash", { opacity: 0.9 }, { opacity: 0, duration: 0.35, ease: "power2.out", immediateRender: false }, 0);
+  tl.to("#stars", { opacity: 1, duration: 0.3 }, 0);
+  art(1, 0.0, 4.75);
+  tl.from("#hk1", { opacity: 0, y: -16, duration: 0.3, ease: E }, 0.15);
+  tl.from("#hk2", { opacity: 0, scale: 1.3, duration: 0.4, ease: E }, 0.9);
+  tl.to(["#hk1","#hk2"], { opacity: 0, duration: 0.3 }, 4.4);
+  tl.to("#hk", { opacity: 0, duration: 0.2 }, 4.6);
+  // 2. the visitors
+  tl.from("#y68", { opacity: 0, scale: 1.4, duration: 0.45, ease: E }, 4.95);
+  tl.from("#vdp", { opacity: 0, y: 50, scale: 0.95, duration: 0.45, ease: E }, 5.5);
+  tl.fromTo("#vdp img", { scale: 1.12 }, { scale: 1.0, duration: 2.4, ease: "none" }, 5.5);
+  tl.from("#vd1", { opacity: 0, x: -60, duration: 0.35, ease: E }, 6.45);
+  tl.from("#vd2", { opacity: 0, x: 60, duration: 0.35, ease: E }, 6.9);
+  tl.to(["#y68","#vd","#vdp"], { opacity: 0, y: -30, duration: 0.3 }, 7.8);
+  tl.from("#a4", { opacity: 0, scale: 0.94, duration: 0.35, ease: E }, 7.8);
+  tl.fromTo("#a4i", { scale: 1.0 }, { scale: 1.15, duration: 2.6, ease: "none" }, 7.8);
+  tl.fromTo("#a4 .scan", { y: 0, opacity: 1 }, { y: 820, duration: 0.9, ease: "power1.inOut" }, 8.0);
+  tl.to("#a4 .scan", { opacity: 0, duration: 0.1 }, 8.9);
+  tl.fromTo("#a4 .grid", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 8.05);
+  tl.fromTo("#a4 .tint", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 8.3);
+  tl.fromTo("#a4 .ring", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, 8.6);
+  tl.from("#a4t", { opacity: 0, y: 16, duration: 0.3, ease: E }, 8.7);
+  tl.to(["#a4", "#a4t"], { opacity: 0, duration: 0.25 }, 10.1);
+  tl.from("#astros", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 7.95);
+  tl.fromTo("#stars", { scale: 1.0 }, { scale: 1.3, duration: 16, ease: "none" }, 4.8);
+  tl.to("#astro", { opacity: 0, duration: 0.3 }, 10.2);
+  // 3. the clues
+  tl.from("#eg", { opacity: 0, y: 70, duration: 0.45, ease: E }, 10.4);
+  tl.fromTo("#egv", { scale: 0.73, x: 130, y: 0 }, { scale: 0.76, x: 115, y: -20, duration: 2.6, ease: "none" }, 10.4);
+  [["#pab","#tab",10.65],["#pde","#tde",10.95],["#psa","#tsa",11.25],["#pgi","#tgi",11.55]].forEach(([p,t,a]) => {
+    tl.from(p, { opacity: 0, scale: 0, duration: 0.3, ease: "back.out(3)" }, a); tl.from(t, { opacity: 0, duration: 0.25 }, a + 0.1); });
+  tl.to("#eg", { opacity: 0, duration: 0.3 }, 12.75);
+  art(2, 13.0, 16.95); art(3, 17.0, 20.35);
+  // 4. the Great Pyramid
+  tl.to("#stars", { opacity: 0, duration: 0.2 }, 20.3);
+  tl.set("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9)", x: 0, y: 0 }, 20.3);
+  tl.to("#b1", { opacity: 1, duration: 0.15 }, 20.35); kb("#b1i", 20.35, 2.0, 1.25, 1.1);
+  tl.to("#b1", { opacity: 0, duration: 0.3 }, 22.2);
+  show("#b7", 22.2, 24.7); kb("#b7i", 22.2, 2.5, 1.05, 1.2); dim("#b7", 1, 22.2);
+  tl.from("#n23", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 22.3);
+  const cnt = { v: 0 }; tl.to(cnt, { v: 2300000, duration: 1.2, ease: "power2.out", onUpdate: () => { document.getElementById("n23n").textContent = Math.round(cnt.v).toLocaleString("en-US"); } }, 22.3);
+  tl.to("#n23", { opacity: 0, y: -30, duration: 0.3 }, 24.45);
+  show("#b8", 24.6, 26.8); kb("#b8i", 24.6, 2.2, 1.05, 1.2, 0, -40); dim("#b8", 1, 24.6);
+  tl.from("#north", { opacity: 0, scale: 0.8, duration: 0.4, ease: E }, 24.7);
+  tl.fromTo("#needle", { rotation: -38, svgOrigin: "250 250" }, { rotation: 0, svgOrigin: "250 250", duration: 1.4, ease: "elastic.out(1,0.5)" }, 24.85);
+  tl.from("#northTt", { opacity: 0, y: 14, duration: 0.3, ease: E }, 25.5);
+  tl.to(["#north","#northT"], { opacity: 0, duration: 0.3 }, 26.5);
+  tl.to("#b1", { opacity: 1, duration: 0.2 }, 26.6); kb("#b1i", 26.6, 2.6, 1.0, 1.12);
+  tl.from("#pps", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 27.75);
+  tl.fromTo("#b1i", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.9) hue-rotate(0deg)" }, { filter: "sepia(0) contrast(1.2) brightness(1.1) saturate(1.4) hue-rotate(70deg)", duration: 0.22, yoyo: true, repeat: 3 }, 27.8);
+  tl.to("#pp", { opacity: 0, duration: 0.3 }, 28.9);
+  tl.to("#b1", { opacity: 0, duration: 0.3 }, 29.1);
+  show("#b3", 29.1, 33.8); kb("#b3i", 29.1, 4.7, 1.05, 1.2); dim("#b3", 1, 29.1);
+  tl.from("#sg", { opacity: 0, duration: 0.35 }, 29.2);
+  tl.from("#pyr", { opacity: 0, y: 30, duration: 0.45, ease: E }, 29.2);
+  tl.from("#sgTt", { opacity: 0, scale: 1.3, duration: 0.35, ease: "back.out(2)" }, 29.6);
+  tl.from("#belt circle", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.3, stagger: 0.12, ease: "back.out(3)" }, 30.6);
+  tl.to("#shaft", { strokeDashoffset: 0, duration: 1.2, ease: "power2.inOut" }, 31.3);
+  tl.to("#belt circle", { attr: { r: 16 }, duration: 0.3, yoyo: true, repeat: 3 }, 32.4);
+  tl.to(["#sg","#sgT"], { opacity: 0, duration: 0.3 }, 33.55);
+  // 5. the builders
+  show("#b4", 33.8, 38.8, 0.15); kb("#b4i", 33.8, 5.0, 1.0, 1.15, 0, 40); dim("#b4", 1, 33.8);
+  tl.from("#y90", { opacity: 0, scale: 1.4, duration: 0.4, ease: E }, 33.9);
+  tl.to("#ph53", { opacity: 1, duration: 0.3 }, 34.2); tl.to("#ph53", { opacity: 0, duration: 0.3 }, 38.4);
+  tl.from("#horset", { opacity: 0, y: 14, duration: 0.3, ease: E }, 36.15);
+  tl.fromTo("#horse", { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 5, ease: "none" }, 36.6);
+  tl.to(["#y90","#horse"], { opacity: 0, y: -30, duration: 0.3 }, 38.45);
+  show("#b5", 38.6, 49.7); kb("#b5i", 38.6, 11.1, 1.05, 1.2); dim("#b5", 1, 42.6);
+  tl.from("#bks", { opacity: 0, scale: 1.9, duration: 0.35, ease: "power4.out" }, 40.4);
+  tl.to("#bk", { opacity: 0, duration: 0.3 }, 42.5);
+  tl.from("#gangs", { opacity: 0, y: 20, duration: 0.45, ease: E }, 42.85);
+  tl.to("#gangs", { opacity: 0, duration: 0.3 }, 45.05);
+  tl.from("#g1", { opacity: 0, y: 50, duration: 0.4, ease: E }, 45.3);
+  tl.to("#g1", { opacity: 0, duration: 0.25 }, 46.85);
+  tl.from("#g2", { opacity: 0, y: 50, duration: 0.4, ease: E }, 47.05);
+  tl.fromTo("#g2 .mk img", { scale: 1.0 }, { scale: 1.12, duration: 2.6, ease: "none" }, 47.05);
+  tl.to("#g2", { opacity: 0, duration: 0.25 }, 49.45);
+  // 6. the logbook, the empty sarcophagus
+  tl.from("#pap", { opacity: 0, y: 60, rotation: -6, duration: 0.45, ease: E }, 49.75);
+  tl.from("#pap .lines span", { scaleX: 0, transformOrigin: "0 50%", duration: 0.3, stagger: 0.12 }, 50.1);
+  tl.from("#papT1", { opacity: 0, y: 14, duration: 0.3, ease: E }, 50.4);
+  tl.to(["#pap","#papT1"], { opacity: 0, duration: 0.25 }, 51.3);
+  tl.to("#eg2", { opacity: 1, duration: 0.3 }, 51.4);
+  tl.fromTo("#eg2v", { scale: 2.6, x: 540 - {{MIDX}} * 2.6, y: 400 - {{MIDY}} * 2.6 }, { scale: 2.9, x: 540 - {{MIDX}} * 2.9, y: 400 - {{MIDY}} * 2.9, duration: 2.2, ease: "none" }, 51.4);
+  tl.fromTo("#rp", { strokeDashoffset: 300 }, { strokeDashoffset: 0, duration: 1.3, ease: "none" }, 51.6);
+  tl.from("#papT2", { opacity: 0, y: 14, duration: 0.3, ease: E }, 51.8);
+  tl.to(["#eg2","#papT2"], { opacity: 0, duration: 0.25 }, 53.4);
+  show("#b6", 53.6, 57.0, 0.2); kb("#b6i", 53.6, 3.4, 1.0, 1.15);
+  tl.from("#emptys", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 55.65);
+  tl.to("#empty", { opacity: 0, duration: 0.3 }, 56.75);
+  // 7. the pyramid texts, the stairway, the question
+  show("#b9", 56.95, 60.6, 0.3); kb("#b9i", 56.95, 3.7, 1.05, 1.22, 0, -30);
+  tl.from("#ptxt", { opacity: 0, y: 14, duration: 0.35, ease: E }, 57.6);
+  tl.to("#ptx", { opacity: 0, duration: 0.3 }, 60.3);
+  tl.to("#stars", { opacity: 1, duration: 0.5 }, 60.4);
+  tl.from("#stair", { opacity: 0, duration: 0.4 }, 60.5);
+  tl.from("#steps rect", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.2, stagger: 0.07, ease: "back.out(3)" }, 60.6);
+  tl.from("#belt2 circle", { opacity: 0, scale: 0, transformOrigin: "50% 50%", duration: 0.3, stagger: 0.1 }, 61.2);
+  tl.from("#stTt", { opacity: 0, scale: 1.3, duration: 0.35, ease: "back.out(2)" }, 60.7);
+  tl.to(["#stair","#stT"], { opacity: 0, duration: 0.3 }, 62.55);
+  tl.from("#hA", { opacity: 0, x: -80, duration: 0.4, ease: E }, 62.8);
+  tl.fromTo("#hA img", { scale: 1.0 }, { scale: 1.1, duration: 3.0, ease: "none" }, 62.8);
+  tl.from("#hB", { opacity: 0, x: 80, duration: 0.4, ease: E }, 63.7);
+  tl.to(["#hA","#hB"], { opacity: 0, duration: 0.3 }, 65.75);
+  dim("#b1", 0, 65.7); tl.to("#b1", { opacity: 1, duration: 0.4 }, 65.75); kb("#b1i", 65.75, {{OEND}} - 65.75, 1.0, 0.92);
+  tl.from("#fq", { opacity: 0, y: -20, scale: 1.1, duration: 0.45, ease: E }, 66.1);
+  tl.from("#poll", { opacity: 0, scale: 0.7, y: 60, duration: 0.5, ease: "back.out(1.7)" }, 66.9);
+  tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.0);
+  tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, 67.5);
+  [70.0, 72.6, 75.2].forEach(t => { tl.to("#o1", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, t); tl.to("#o2", { scale: 1.08, duration: 0.2, yoyo: true, repeat: 1 }, t + 0.5); });
+  // alien glow in the fantastical passages
+  [[0.0, 20.3], [26.6, 33.8], [60.4, {{OEND}}]].forEach(([a, b]) => { tl.to("#glow", { opacity: 1, duration: 0.5 }, a); tl.to("#glow", { opacity: 0, duration: 0.4 }, b - 0.4); });
+  window.__timelines = window.__timelines || {};
+  // 0. the signature question over the pyramid, then the scenes
+  root.fromTo("#q0f", { opacity: 0.9 }, { opacity: 0, duration: 0.35, ease: "power2.out" }, 0);
+  root.fromTo("#b1", { opacity: 1 }, { opacity: 1, duration: 0.01 }, 0);
+  root.fromTo("#b1i", { scale: 1.25 }, { scale: 1.08, duration: {{D}}, ease: "power2.out" }, 0);
+  root.from("#q0a", { opacity: 0, scale: 1.25, duration: 0.45, ease: E }, 0.1);
+  // the channel's signature on "...or did they?": the picture turns grey, shakes, and flashes (as in the Noah Short)
+  root.fromTo("#b1i", { filter: "grayscale(0) sepia(.2) contrast(1.06) brightness(.8)" }, { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.8)", duration: 0.12, ease: "none", immediateRender: false }, 2.1);
+  [18,-22,16,-12,10,-8,6,-4,2,0].forEach((x, i) => root.to("#b1i", { x, y: (i % 2 ? 1 : -1) * x * 0.6, duration: 0.05, ease: "none" }, 2.14 + i * 0.055));
+  root.fromTo("#q0f", { opacity: 0 }, { opacity: 0.85, duration: 0.06, ease: "none", immediateRender: false }, 2.72);
+  root.to("#q0f", { opacity: 0, duration: 0.3, ease: "power2.out" }, 2.78);
+  root.from("#q0s", { opacity: 0, scale: 2.0, duration: 0.35, ease: "power4.out" }, 2.15);
+  root.to(["#q0a", "#q0b"], { opacity: 0, duration: 0.25 }, {{D}} - 0.3);
+  root.to("#q0", { opacity: 0, duration: 0.2 }, {{D}} - 0.2);
+  root.to("#b1", { opacity: 0, duration: 0.2 }, {{D}} - 0.2);
+  root.add(tl, {{D}});
+  window.__timelines["main"] = root;
+})();
+</script>
+</body>
+</html>
