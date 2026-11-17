@@ -9,9 +9,9 @@ for w in W:
     F.append(dict(w))
 for w in F:
     w['t'] = w['t'].replace('9,000', '9,000')
-END = 54.6
+END = 54.0
 LEG = {'wept', 'worlds', 'conquer', 'zeus', 'son', 'tamed', 'horse', 'oracle', 'asia', 'knot', 'cut', 'sword', 'never', 'lost'}
-FACT = {'issus', 'gaugamela', 'hydaspes', 'won', 'plutarch', 'endless', 'greek', 'roman', 'comedy', 'real'}
+FACT = {'philosopher', 'infinite', 'text', 'lifetime', 'first', 'issus', 'gaugamela', 'hydaspes', 'won', 'plutarch', 'greek', 'roman', 'comedy', 'real'}
 key = lambda t: re.sub(r"[^a-z0-9,\-]", "", t.lower()).strip(',')
 ch, cur = [], []
 for w in F:

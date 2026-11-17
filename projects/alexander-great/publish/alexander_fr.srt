@@ -1,43 +1,43 @@
 1
-00:00:00,000 --> 00:00:06,258
-Alexandre a pleuré parce qu'il n'y avait plus de mondes à conquérir... vraiment ?
+00:00:00,000 --> 00:00:04,940
+Alexandre a pleuré. Plus de mondes à conquérir... vraiment ?
 
 2
-00:00:06,508 --> 00:00:09,213
+00:00:04,990 --> 00:00:07,695
 Sa mère disait qu'il était fils de Zeus.
 
 3
-00:00:09,263 --> 00:00:12,868
+00:00:07,745 --> 00:00:11,351
 À douze ans, il dompta un cheval que personne ne pouvait monter.
 
 4
-00:00:12,918 --> 00:00:19,598
+00:00:11,401 --> 00:00:18,080
 À Gordion, un oracle promettait l'Asie à qui dénouerait un nœud. Il le trancha d'un coup d'épée.
 
 5
-00:00:19,648 --> 00:00:24,783
+00:00:18,130 --> 00:00:23,266
 À trente-deux ans, il régnait de la Grèce à l'Inde et n'avait jamais perdu une bataille.
 
 6
-00:00:24,933 --> 00:00:27,035
+00:00:23,416 --> 00:00:25,517
 C'est du moins ce qu'on raconte.
 
 7
-00:00:27,185 --> 00:00:28,858
+00:00:25,667 --> 00:00:27,341
 Reprenons depuis le début.
 
 8
-00:00:28,908 --> 00:00:34,807
+00:00:27,391 --> 00:00:33,289
 Les batailles sont réelles : Issos, Gaugamèles, l'Hydaspe, toutes gagnées.
 
 9
-00:00:34,857 --> 00:00:42,410
-Et les larmes ? Plutarque dit qu'il pleura parce que les mondes étaient infinis... et qu'il n'en gouvernait pas un seul.
+00:00:33,339 --> 00:00:41,683
+Et les larmes ? Un philosophe lui dit qu'il existait une infinité de mondes... et il pleura de n'en avoir conquis aucun.
 
 10
-00:00:42,510 --> 00:00:48,797
-Et aucun Grec de son temps ne l'appelait « le Grand ». Ce nom apparaît d'abord dans une comédie romaine.
+00:00:41,783 --> 00:00:48,132
+Et aucun texte de son vivant ne l'appelle « le Grand ». Le premier que nous ayons est une comédie romaine.
 
 11
-00:00:48,947 --> 00:00:54,287
-Alors, était-il grand... ou Rome l'a-t-elle rendu grand ?
+00:00:48,282 --> 00:00:53,683
+Alors, était-il grand... ou est-ce l'histoire qui l'a rendu grand ?

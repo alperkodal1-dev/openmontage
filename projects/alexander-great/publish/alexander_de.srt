@@ -1,43 +1,43 @@
 1
-00:00:00,000 --> 00:00:06,258
-Alexander weinte, weil es keine Welten mehr zu erobern gab... oder doch nicht?
+00:00:00,000 --> 00:00:04,940
+Alexander weinte. Keine Welten mehr zu erobern... oder doch nicht?
 
 2
-00:00:06,508 --> 00:00:09,213
+00:00:04,990 --> 00:00:07,695
 Seine Mutter sagte, er sei ein Sohn des Zeus.
 
 3
-00:00:09,263 --> 00:00:12,868
+00:00:07,745 --> 00:00:11,351
 Mit zwölf zähmte er ein Pferd, das niemand reiten konnte.
 
 4
-00:00:12,918 --> 00:00:19,598
+00:00:11,401 --> 00:00:18,080
 In Gordion versprach ein Orakel Asien dem, der einen Knoten löst. Er durchschlug ihn mit dem Schwert.
 
 5
-00:00:19,648 --> 00:00:24,783
+00:00:18,130 --> 00:00:23,266
 Mit zweiunddreißig herrschte er von Griechenland bis Indien und verlor nie eine Schlacht.
 
 6
-00:00:24,933 --> 00:00:27,035
+00:00:23,416 --> 00:00:25,517
 So erzählt man es jedenfalls.
 
 7
-00:00:27,185 --> 00:00:28,858
+00:00:25,667 --> 00:00:27,341
 Fangen wir von vorne an.
 
 8
-00:00:28,908 --> 00:00:34,807
+00:00:27,391 --> 00:00:33,289
 Die Schlachten sind echt: Issos, Gaugamela, der Hydaspes, alle gewonnen.
 
 9
-00:00:34,857 --> 00:00:42,410
-Und die Tränen? Plutarch sagt, er weinte, weil die Welten unendlich waren... und er nicht einmal eine beherrschte.
+00:00:33,339 --> 00:00:41,683
+Und die Tränen? Ein Philosoph sagte ihm, es gebe unendlich viele Welten... und er weinte, weil er nicht einmal eine erobert hatte.
 
 10
-00:00:42,510 --> 00:00:48,797
-Und kein Grieche seiner Zeit nannte ihn "den Großen". Der Name taucht zuerst in einer römischen Komödie auf.
+00:00:41,783 --> 00:00:48,132
+Und kein Text aus seiner Lebenszeit nennt ihn "den Großen". Der erste, den wir haben, ist eine römische Komödie.
 
 11
-00:00:48,947 --> 00:00:54,287
-War er also groß... oder hat Rom ihn groß gemacht?
+00:00:48,282 --> 00:00:53,683
+War er also groß... oder hat die Geschichte ihn groß gemacht?

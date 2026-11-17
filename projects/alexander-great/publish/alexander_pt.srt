@@ -1,43 +1,43 @@
 1
-00:00:00,000 --> 00:00:06,258
-Alexandre chorou porque não havia mais mundos para conquistar... ou não?
+00:00:00,000 --> 00:00:04,940
+Alexandre chorou. Não havia mais mundos para conquistar... ou não?
 
 2
-00:00:06,508 --> 00:00:09,213
+00:00:04,990 --> 00:00:07,695
 Sua mãe dizia que ele era filho de Zeus.
 
 3
-00:00:09,263 --> 00:00:12,868
+00:00:07,745 --> 00:00:11,351
 Aos doze anos, domou um cavalo que ninguém conseguia montar.
 
 4
-00:00:12,918 --> 00:00:19,598
+00:00:11,401 --> 00:00:18,080
 Em Górdio, um oráculo prometia a Ásia a quem desatasse um nó. Ele o cortou com a espada.
 
 5
-00:00:19,648 --> 00:00:24,783
+00:00:18,130 --> 00:00:23,266
 Aos trinta e dois, governava da Grécia à Índia e nunca perdeu uma batalha.
 
 6
-00:00:24,933 --> 00:00:27,035
+00:00:23,416 --> 00:00:25,517
 Ou assim diz a história.
 
 7
-00:00:27,185 --> 00:00:28,858
+00:00:25,667 --> 00:00:27,341
 Vamos começar do início.
 
 8
-00:00:28,908 --> 00:00:34,807
+00:00:27,391 --> 00:00:33,289
 As batalhas são reais: Isso, Gaugamela, o Hidaspes, todas vencidas.
 
 9
-00:00:34,857 --> 00:00:42,410
-E as lágrimas? Plutarco diz que ele chorou porque os mundos eram infinitos... e ele não governava nem um.
+00:00:33,339 --> 00:00:41,683
+E as lágrimas? Um filósofo lhe disse que havia infinitos mundos... e ele chorou porque não tinha conquistado nem um.
 
 10
-00:00:42,510 --> 00:00:48,797
-E nenhum grego de sua época o chamou de "o Grande". Esse nome aparece pela primeira vez numa comédia romana.
+00:00:41,783 --> 00:00:48,132
+E nenhum texto da sua época o chama de "o Grande". O primeiro que temos é uma comédia romana.
 
 11
-00:00:48,947 --> 00:00:54,287
-Então, ele foi grande... ou Roma o tornou grande?
+00:00:48,282 --> 00:00:53,683
+Então, ele foi grande... ou a história o tornou grande?

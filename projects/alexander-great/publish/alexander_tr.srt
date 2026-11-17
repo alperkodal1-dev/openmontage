@@ -1,43 +1,43 @@
 1
-00:00:00,000 --> 00:00:06,258
-İskender, fethedecek başka dünya kalmadığı için ağladı... öyle mi?
+00:00:00,000 --> 00:00:04,940
+İskender ağladı. Fethedecek dünya kalmamıştı... öyle mi?
 
 2
-00:00:06,508 --> 00:00:09,213
+00:00:04,990 --> 00:00:07,695
 Annesi onun Zeus'un oğlu olduğunu söylerdi.
 
 3
-00:00:09,263 --> 00:00:12,868
+00:00:07,745 --> 00:00:11,351
 On iki yaşında, kimsenin binemediği bir atı evcilleştirdi.
 
 4
-00:00:12,918 --> 00:00:19,598
+00:00:11,401 --> 00:00:18,080
 Gordion'da bir kehanet, bir düğümü çözene Asya'yı vaat ediyordu. O düğümü kılıcıyla kesti.
 
 5
-00:00:19,648 --> 00:00:24,783
+00:00:18,130 --> 00:00:23,266
 Otuz iki yaşında Yunanistan'dan Hindistan'a kadar hüküm sürüyordu ve hiç savaş kaybetmemişti.
 
 6
-00:00:24,933 --> 00:00:27,035
+00:00:23,416 --> 00:00:25,517
 Ya da öyle anlatılır.
 
 7
-00:00:27,185 --> 00:00:28,858
+00:00:25,667 --> 00:00:27,341
 Hadi en baştan başlayalım.
 
 8
-00:00:28,908 --> 00:00:34,807
+00:00:27,391 --> 00:00:33,289
 Savaşlar gerçek: İssos, Gaugamela, Hydaspes, hepsi kazanıldı.
 
 9
-00:00:34,857 --> 00:00:42,410
-Peki ya gözyaşları? Plutarkhos'a göre dünyalar sonsuz olduğu... ve o tek birine bile hükmetmediği için ağladı.
+00:00:33,339 --> 00:00:41,683
+Peki ya gözyaşları? Bir filozof ona sonsuz sayıda dünya olduğunu söyledi... ve o, tek birini bile fethedemediği için ağladı.
 
 10
-00:00:42,510 --> 00:00:48,797
-Ve kendi döneminde hiçbir Yunan ona "Büyük" demedi. Bu ad ilk kez bir Roma komedisinde geçiyor.
+00:00:41,783 --> 00:00:48,132
+Ve onun yaşadığı döneme ait hiçbir metin ona "Büyük" demiyor. Elimizdeki ilk örnek bir Roma komedisi.
 
 11
-00:00:48,947 --> 00:00:54,287
-Peki o gerçekten büyük müydü... yoksa onu Roma mı büyük yaptı?
+00:00:48,282 --> 00:00:53,683
+Peki o gerçekten büyük müydü... yoksa onu hikâye mi büyük yaptı?

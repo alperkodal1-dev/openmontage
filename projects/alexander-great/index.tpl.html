@@ -49,7 +49,7 @@
   #chap .r{position:absolute;top:540px;left:340px;width:400px;height:3px;background:var(--gold)}
   .bt{position:absolute;left:120px;width:840px;height:120px;display:flex;align-items:center;gap:24px;padding:0 36px;font-family:'Cinzel';font-weight:900;font-size:50px;letter-spacing:4px;color:var(--bone);background:rgba(10,20,23,.85);border:3px solid var(--gold)}
   .bt small{font-size:28px;color:var(--gold2);letter-spacing:2px} .bt b{color:var(--fact);font-size:52px;margin-left:auto}
-  #plu .q{position:absolute;left:90px;right:90px;top:560px;padding:40px 50px;background:rgba(10,20,23,.86);border-left:8px solid var(--gold);font-family:'Cormorant Garamond';font-style:italic;font-size:60px;line-height:1.2;color:var(--bone)}
+  #plu .q{position:absolute;left:90px;right:90px;top:560px;padding:40px 50px;background:rgba(10,20,23,.86);border-left:8px solid var(--gold);font-family:'Cormorant Garamond';font-style:italic;font-size:76px;line-height:1.15;color:var(--bone)}
   #plu .src{position:absolute;left:0;right:0;top:1040px;text-align:center;font-family:'Cinzel';font-weight:700;font-size:32px;letter-spacing:6px;color:var(--gold2)}
   #mag .big{position:absolute;top:470px;left:0;right:0;font-size:190px}
   #mag .q{position:absolute;top:700px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond';font-style:italic;font-size:58px;color:var(--bone)}
@@ -109,15 +109,15 @@
  </section>
  <section id="plu" class="clip scene" data-start="0" data-duration="{{END}}" data-track-index="18">
   <div class="tag">PLUTARCH · c. AD 100<i></i></div>
-  <div class="q">"Worlds are endless... and we are not yet lord of even one."</div>
+  <div class="q">"Infinite worlds... and I am not yet lord of even one."</div>
   <div class="src">ON TRANQUILITY OF MIND · 466D</div>
  </section>
  <section id="mag" class="clip scene" data-start="0" data-duration="{{END}}" data-track-index="19">
-  <div class="tag">"THE GREAT"<i></i></div>
+  <div class="tag">FIRST KNOWN "GREAT"<i></i></div>
   <div class="cz gold big">MAGNUS</div>
   <div class="q">"Alexandrum Magnum..."</div>
   <div class="src">PLAUTUS · ROMAN COMEDY · c. 200 BC</div>
-  <div class="st"><span class="stamp">120 YEARS LATER</span></div>
+  <div class="st"><span class="stamp">OVER A CENTURY LATER</span></div>
  </section>
  <section id="fq" class="clip scene" data-start="0" data-duration="{{END}}" data-track-index="20">
   <div class="cz a">WHO MADE HIM</div><div class="cz gold b">GREAT?</div>
@@ -145,64 +145,64 @@
   const grey = (img, t) => tl.to(img, { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.8)", duration: 0.08, ease: "none" }, t);
 
   // 0 HOOK: grey signature on "Or did he?"
-  bg("bAlx", 0, 6.6, 1.2, 1.05);
+  bg("bAlx", 0, 5.2, 1.2, 1.05);
   tl.set("#hk", { opacity: 1 }, 0);
-  tl.from("#hk .t1", { opacity: 0, y: -20, duration: 0.5, ease: E }, 0.2);
-  tl.from("#hk .t2", { opacity: 0, scale: 1.25, duration: 0.6, ease: E }, 2.3);
-  pop("#hkS", 4.8); grey("#bAlxi", 4.8); shake(4.8); flash(5.1);
-  tl.to("#hk", { opacity: 0, duration: 0.35 }, 6.1);
+  tl.from("#hk .t1", { opacity: 0, y: -20, duration: 0.5, ease: E }, 0.05);
+  tl.from("#hk .t2", { opacity: 0, scale: 1.25, duration: 0.6, ease: E }, 1.0);
+  pop("#hkS", 4.0); grey("#bAlxi", 4.0); shake(4.0); flash(4.3);
+  tl.to("#hk", { opacity: 0, duration: 0.3 }, 4.75);
 
   // 1 LEGEND: son of Zeus (Ammon-horned coin portrait)
-  bg("bCoi", 6.3, 9.3, 1.0, 1.12);
-  sc("#s1", 6.4, 9.2); tag("#s1 .tag", 6.5); pop("#ring1", 8.3, 1.5);
+  bg("bCoi", 4.78, 7.78, 1.0, 1.12);
+  sc("#s1", 4.88, 7.68); tag("#s1 .tag", 4.98); pop("#ring1", 6.78, 1.5);
   // 2 LEGEND: Bucephalus
-  bg("bBuc", 9.0, 13.0, 1.15, 1.0);
-  sc("#s2", 9.1, 12.9); tag("#s2 .tag", 9.3);
+  bg("bBuc", 7.48, 11.48, 1.15, 1.0);
+  sc("#s2", 7.58, 11.38); tag("#s2 .tag", 7.78);
   // 3 LEGEND: the Gordian knot, cut
-  bg("bGor", 12.7, 19.7, 1.0, 1.15);
-  sc("#s3", 12.8, 19.6); tag("#s3 .tag", 13.0);
-  tl.fromTo("#slash", { opacity: 1, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.18, ease: "power4.out", immediateRender: false }, 17.95);
-  flash(17.98);
+  bg("bGor", 11.18, 18.18, 1.0, 1.15);
+  sc("#s3", 11.28, 18.08); tag("#s3 .tag", 11.48);
+  tl.fromTo("#slash", { opacity: 1, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.18, ease: "power4.out", immediateRender: false }, 16.43);
+  flash(16.46);
   // 4 LEGEND climax: Greece to India, undefeated
-  bg("bMos", 19.4, 27.1, 1.25, 1.1);
-  tl.set("#bMosi", { filter: "sepia(.3) brightness(.35)" }, 19.4);
-  sc("#s4", 19.5, 24.95); tag("#s4 .tag", 19.6);
+  bg("bMos", 17.88, 25.58, 1.25, 1.1);
+  tl.set("#bMosi", { filter: "sepia(.3) brightness(.35)" }, 17.88);
+  sc("#s4", 17.98, 23.43); tag("#s4 .tag", 18.08);
   const rt = document.getElementById("route"); const RL = rt.getTotalLength(); rt.style.strokeDasharray = RL;
-  tl.fromTo(rt, { strokeDashoffset: RL }, { strokeDashoffset: 0, duration: 2.8, ease: "power1.inOut", immediateRender: false }, 19.8);
-  pop("#und", 23.4, 1.6); shake(24.0);
+  tl.fromTo(rt, { strokeDashoffset: RL }, { strokeDashoffset: 0, duration: 2.8, ease: "power1.inOut", immediateRender: false }, 18.28);
+  pop("#und", 21.88, 1.6); shake(22.48);
   // 5 STORY TURN
-  tl.to("#bMosi", { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.6)", duration: 0.08 }, 24.96); shake(24.96);
-  tl.fromTo("#myth", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out", immediateRender: false }, 25.9);
-  tl.to("#myth", { opacity: 0, duration: 0.3 }, 26.85);
+  tl.to("#bMosi", { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.6)", duration: 0.08 }, 23.44); shake(23.44);
+  tl.fromTo("#myth", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out", immediateRender: false }, 24.38);
+  tl.to("#myth", { opacity: 0, duration: 0.3 }, 25.33);
   // 6 BEGINNING
-  bg("bAlx", 26.6, 29.3, 1.05, 1.0);
-  tl.set("#bAlxi", { filter: "grayscale(1) sepia(.3) brightness(.35)" }, 26.6);
-  sc("#chap", 27.1, 28.9); tl.fromTo("#chap .r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E, immediateRender: false }, 27.3);
+  bg("bAlx", 25.08, 27.78, 1.05, 1.0);
+  tl.set("#bAlxi", { filter: "grayscale(1) sepia(.3) brightness(.35)" }, 25.08);
+  sc("#chap", 25.58, 27.38); tl.fromTo("#chap .r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E, immediateRender: false }, 25.78);
   // 7 EVIDENCE: battles (the Issus mosaic itself)
-  bg("bMos", 28.8, 34.9, 1.0, 1.12);
-  tl.set("#bMosi", { filter: "sepia(.25) contrast(1.1) brightness(.55)" }, 28.8);
-  sc("#bat", 28.9, 34.8); tag("#bat .tag", 29.0);
-  [["#bt1", 30.9], ["#bt2", 31.6], ["#bt3", 32.55]].forEach(([id, t]) => tl.fromTo(id, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: E, immediateRender: false }, t));
+  bg("bMos", 27.28, 33.38, 1.0, 1.12);
+  tl.set("#bMosi", { filter: "sepia(.25) contrast(1.1) brightness(.7)" }, 27.28);
+  sc("#bat", 27.38, 33.28); tag("#bat .tag", 27.48);
+  [["#bt1", 29.38], ["#bt2", 30.08], ["#bt3", 31.03]].forEach(([id, t]) => tl.fromTo(id, { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.3, ease: E, immediateRender: false }, t));
   // 8 EVIDENCE: Plutarch, the tears
-  bg("bPlu", 34.7, 42.4, 1.15, 1.0);
-  tl.set("#bPlui", { filter: "sepia(.3) brightness(.5)" }, 34.7);
-  sc("#plu", 34.8, 42.3); tag("#plu .tag", 36.3);
-  tl.from("#plu .q", { opacity: 0, y: 30, duration: 0.5, ease: E }, 37.0);
-  tl.from("#plu .src", { opacity: 0, duration: 0.4 }, 38.0);
+  bg("bPlu", 33.18, 42.05, 1.15, 1.0);
+  tl.set("#bPlui", { filter: "sepia(.2) contrast(1.15) brightness(.85)" }, 33.18);
+  sc("#plu", 33.28, 41.7); tag("#plu .tag", 34.78);
+  tl.from("#plu .q", { opacity: 0, y: 30, duration: 0.5, ease: E }, 35.48);
+  tl.from("#plu .src", { opacity: 0, duration: 0.4 }, 36.48);
   // 9 EVIDENCE: "the Great" comes from a Roman comedy
-  bg("bAlx", 42.3, 49.0, 1.0, 1.1);
-  tl.set("#bAlxi", { filter: "grayscale(.6) sepia(.4) brightness(.35)" }, 42.3);
-  sc("#mag", 42.4, 48.9); tag("#mag .tag", 42.5);
-  tl.from("#mag .big", { opacity: 0, scale: 1.3, duration: 0.5, ease: E }, 44.9);
-  tl.from("#mag .q", { opacity: 0, duration: 0.4 }, 46.1);
-  tl.from("#mag .src", { opacity: 0, duration: 0.4 }, 46.6);
-  pop("#mag .stamp", 47.7);
+  bg("bAlx", 41.6, 48.4, 1.0, 1.1);
+  tl.set("#bAlxi", { filter: "grayscale(.6) sepia(.4) brightness(.35)" }, 41.6);
+  sc("#mag", 41.7, 48.3); tag("#mag .tag", 41.8);
+  tl.from("#mag .big", { opacity: 0, scale: 1.3, duration: 0.5, ease: E }, 44.1);
+  tl.from("#mag .q", { opacity: 0, duration: 0.4 }, 45.6);
+  tl.from("#mag .src", { opacity: 0, duration: 0.4 }, 46.9);
+  pop("#mag .stamp", 47.2);
   // 10 QUESTION -> loops to the hook
-  bg("bAlx", 48.8, END + 0.45, 1.05, 1.2);
-  tl.set("#bAlxi", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.95)" }, 48.8);
-  sc("#fq", 49.0, END + 0.3);
-  tl.from("#fq .a", { opacity: 0, y: -20, duration: 0.5, ease: E }, 49.2);
-  tl.from("#fq .b", { opacity: 0, scale: 1.3, duration: 0.6, ease: E }, 51.1);
+  bg("bAlx", 48.1, END + 0.45, 1.05, 1.2);
+  tl.set("#bAlxi", { filter: "sepia(.2) contrast(1.06) brightness(.8) saturate(.95)" }, 48.1);
+  sc("#fq", 48.2, END + 0.3);
+  tl.from("#fq .a", { opacity: 0, y: -20, duration: 0.5, ease: E }, 48.3);
+  tl.from("#fq .b", { opacity: 0, scale: 1.3, duration: 0.6, ease: E }, 51.5);
 
   const caps = document.getElementById("caps");
   CAPS.forEach((c, i) => {
