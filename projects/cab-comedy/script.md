@@ -24,3 +24,5 @@ NARRATOR (cracking up):
 - Narrator: "Lamar Lincoln – Black Male" (CVRACyqNcQefTlxMj9bt), raspy/smooth; alt "Nate" (KKjzrOiscwOprYdapRQa), warm storyteller with humour.
 - Driver: "CARTER D" (GorLj2SsI4u2JqL58gAA), New York, comedic.
 Blocked 18 Nov: ElevenLabs workspace has 6 credits left (needs ~1,000 for the 3 lines x2 takes); vidIQ voiceover only accepts its premade voices.
+
+## Status: CANCELLED by the owner (18 Nov 2026). Narrator takes kept in audio/ for reference; nothing published.
