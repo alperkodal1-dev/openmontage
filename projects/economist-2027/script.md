@@ -1,28 +1,10 @@
-# The Economist "World Ahead 2027" cover: script v0 (draft for the owner)
+# The Economist "World Ahead 2027" cover: final (vidIQ recipe, no channel signatures)
 
-Format (house style): hook with the grey shock -> the legend told vividly -> "Or so the story goes." -> "Let's start from the beginning." -> evidence -> a question that loops back. Target 45-55 s (George).
+Owner, 18 Nov: make it per vidIQ recommendations, without the channel signatures; use the cover if no strike risk.
+vidIQ recipe (from watching the top Shorts on this cover: 403k/19 s Russian, 103k/1:27 Spanish): ~20 s, snap zoom every ~1 s on single symbols, bold karaoke captions (white, yellow active word), urgent doom hook, no pauses, end abruptly on an open question so it loops; leave one symbol unexplained to drive comments.
 
-## Spoken text
-| # | Section | Line |
-|---|---|---|
-| 0 | HOOK | A crescent. A star. A rider on a camel. Hidden on The Economist's 2027 cover... a message? |
-| 1 | LEGEND | Every November, the magazine paints the coming year as one picture. |
-| 2 | LEGEND | And every year, people decode it like a prophecy. |
-| 3 | LEGEND | Last year: two giant syringes and an eye. Surveillance, some said. A pandemic plan. |
-| 4 | LEGEND | This year: tanks, missiles, burning markets... and that crescent in the corner. |
-| 5 | TURN | Or so the story goes. |
-| 6 | BEGINNING | Let's start from the beginning. |
-| 7 | EVIDENCE | The cover is a poster for the issue inside: ten trends the editors print for everyone to read. |
-| 8 | EVIDENCE | The aftershocks of the Iran war, AI risks, the bond market, Taiwan. Each picture points to an article. |
-| 9 | EVIDENCE | The magazine hasn't explained the crescent. But a prophecy printed in public every year... is just a forecast. |
-| 10 | QUESTION (loops to 0) | So who is really reading the future... the magazine, or us? |
+## Spoken (58 words, 20.1 s)
+The Economist dropped its 2027 cover... and it's dark. Tanks. Missiles. A forest on fire. A market crash. Syringes and pills. An AI brain. The Kremlin. And at the very top... the world's leaders, lined up. But look at this corner. A crescent, a star, and a rider on a camel. What are they trying to tell us?
 
-## Facts (checked 18 Nov 2026)
-- The World Ahead 2027 released 17 Nov 2026; cover by Cleon Peterson; red, black, white; tanks, missiles, protesters, surveillance cameras, AI, market turmoil (azernews, nmas, ambito).
-- Crescent-and-star motif on red and a figure on a camel, top right; noticed by Turkish users; the magazine has not explained it (haberler.com).
-- Ten themes listed by editor Tom Standage: post-Trump US, Iran-conflict aftershocks, super El Nino heat, AI financial/cyber risks, Le Pen, bond markets, Taiwan, Ozempic effect, cheap space launches, Hollywood (ambito).
-- 2026 cover: two large syringes near the bottom and an eye in the centre, read by some as surveillance / pharma (substack/vocal opinion pieces).
-- Fake AI-made "2027 covers" circulated before release (AAP FactCheck, Myth Detector).
-
-## Visual plan / risk
-- The cover art is copyrighted (The Economist / Cleon Peterson). Do not run the full cover as a background; draw our own red-black-white silhouettes of the motifs (crescent, camel rider, tanks, syringes, eye), at most a small cited still for commentary.
+Every item named is drawn on the cover (checked on the image). No claim about what it predicts.
+Title: vidIQ generate_titles (96). Cover image: 24horas.cl + nmas.com.mx copies of the official cover, aligned and merged (img/cover_circle_hd.png).

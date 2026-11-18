@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Economist 2027 Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script src="assets/gsap.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0c0c0c;font-family:'Manrope',sans-serif}
+  .clip{position:absolute;inset:0}
+  #stage{overflow:hidden;background:#efede8}
+  #cam{position:absolute;left:0;top:0;width:2010px;height:1980px;transform-origin:0 0}
+  #cam img{width:2010px;height:1980px;display:block}
+  #dark{background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%);pointer-events:none}
+  #top{z-index:20}
+  #top .bar{position:absolute;left:0;right:0;top:0;height:250px;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,0))}
+  #top .t{position:absolute;left:0;right:0;top:120px;text-align:center;font-weight:800;font-size:58px;letter-spacing:2px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.9)}
+  #top .t b{color:#e3120b}
+  #caps{z-index:30}
+  #plate{position:absolute;left:0;right:0;top:1200px;height:380px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.6) 30%,rgba(0,0,0,.6) 70%,rgba(0,0,0,0));z-index:25}
+  .cap{position:absolute;left:70px;right:150px;top:1300px;height:180px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:86px;line-height:1.05;letter-spacing:-1px;opacity:0;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em}
+  #credit{position:absolute;left:0;right:0;top:1640px;text-align:center;font-weight:600;font-size:26px;color:rgba(255,255,255,.75);z-index:31;text-shadow:0 2px 8px #000}
+  #flash{background:#fff;opacity:0;z-index:40}
+  #redflash{background:#e3120b;opacity:0;z-index:39;mix-blend-mode:multiply}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="20.4">
+ <section id="stage" class="clip" data-start="0" data-duration="20.4" data-track-index="1">
+  <div id="cam"><img src="assets/cover_circle.png" alt=""></div>
+ </section>
+ <div id="dark" class="clip" data-start="0" data-duration="20.4" data-track-index="2"></div>
+ <section id="top" class="clip" data-start="0" data-duration="20.4" data-track-index="3"><div class="bar"></div><div class="t">THE ECONOMIST <b>2027</b></div></section>
+ <div id="plate" data-start="0" data-duration="20.4" data-track-index="4"></div>
+ <div id="caps" class="clip" data-start="0" data-duration="20.4" data-track-index="5"></div>
+ <div id="credit" data-start="0" data-duration="20.4" data-track-index="6">Cover art: The Economist · The World Ahead 2027 · Cleon Peterson</div>
+ <div id="redflash" class="clip" data-start="0" data-duration="20.4" data-track-index="7"></div>
+ <div id="flash" class="clip" data-start="0" data-duration="20.4" data-track-index="8"></div>
+</div>
+<script>
+(function(){
+  const END = 20.4, CAPS = [{"s": 0.0, "e": 0.98, "w": [["THE", 0.0], ["ECONOMIST", 0.12], ["DROPPED", 0.5]]}, {"s": 0.98, "e": 3.04, "w": [["ITS", 0.98], ["2027", 1.28], ["COVER.", 2.22]]}, {"s": 3.04, "e": 4.38, "w": [["AND", 3.04], ["IT'S", 3.06], ["DARK.", 3.32]]}, {"s": 4.38, "e": 4.78, "w": [["TANKS.", 4.38]]}, {"s": 4.78, "e": 5.62, "w": [["MISSILES.", 4.78]]}, {"s": 5.62, "e": 6.22, "w": [["A", 5.62], ["FOREST", 5.68], ["ON", 5.96]]}, {"s": 6.22, "e": 6.92, "w": [["FIRE.", 6.22]]}, {"s": 6.92, "e": 8.22, "w": [["A", 6.92], ["MARKET", 7.02], ["CRASH.", 7.34]]}, {"s": 8.22, "e": 9.58, "w": [["SYRINGES", 8.22], ["AND", 8.62], ["PILLS.", 8.82]]}, {"s": 9.58, "e": 10.84, "w": [["AN", 9.58], ["AI", 9.7], ["BRAIN.", 10.06]]}, {"s": 10.84, "e": 11.66, "w": [["THE", 10.84], ["KREMLIN.", 10.96]]}, {"s": 11.66, "e": 12.0, "w": [["AND", 11.66], ["AT", 11.76], ["THE", 11.86]]}, {"s": 12.0, "e": 12.8, "w": [["VERY", 12.0], ["TOP,", 12.22]]}, {"s": 12.8, "e": 13.62, "w": [["THE", 12.8], ["WORLD'S", 12.88], ["LEADERS", 13.26]]}, {"s": 13.62, "e": 14.7, "w": [["LINED", 13.62], ["UP.", 14.16]]}, {"s": 14.7, "e": 15.04, "w": [["BUT", 14.7], ["LOOK", 14.8], ["AT", 14.92]]}, {"s": 15.04, "e": 15.86, "w": [["THIS", 15.04], ["CORNER.", 15.22]]}, {"s": 15.86, "e": 16.6, "w": [["A", 15.86], ["CRESCENT,", 15.96]]}, {"s": 16.6, "e": 17.3, "w": [["A", 16.6], ["STAR,", 16.7]]}, {"s": 17.3, "e": 17.82, "w": [["AND", 17.3], ["A", 17.46], ["RIDER", 17.58]]}, {"s": 17.82, "e": 18.4, "w": [["ON", 17.82], ["A", 18.0], ["CAMEL.", 18.12]]}, {"s": 18.4, "e": 19.04, "w": [["WHAT", 18.4], ["ARE", 18.8], ["THEY", 18.92]]}, {"s": 19.04, "e": 19.58, "w": [["TRYING", 19.04], ["TO", 19.22], ["TELL", 19.4]]}, {"s": 19.58, "e": 20.4, "w": [["US?", 19.58]]}], SHOTS = [[0.0, 1005, 990, 0.52], [2.22, 1005, 990, 0.62], [3.04, 1005, 940, 0.75], [4.38, 960, 1480, 1.7], [4.78, 240, 1155, 1.7], [5.62, 240, 960, 1.7], [6.92, 1140, 570, 1.7], [8.22, 840, 975, 1.8], [9.58, 975, 960, 1.8], [10.84, 1800, 630, 1.7], [11.66, 1020, 400, 1.0], [12.8, 1020, 140, 1.6], [13.62, 1020, 140, 2.1], [14.7, 1300, 300, 1.2], [15.86, 1530, 210, 2.2], [17.3, 1550, 225, 2.5]];
+  const tl = gsap.timeline({ paused: true });
+  const FX = 540, FY = 760;
+  const pos = (x, y, s) => ({ x: FX - x * s, y: FY - y * s, scale: s });
+  tl.set("#cam", pos(SHOTS[0][1], SHOTS[0][2], SHOTS[0][3]), 0);
+  SHOTS.forEach(([t, x, y, s], i) => {
+    if (i === 0) return;
+    const snap = s >= 1.6 && i < 10;          // symbol shots: snap zoom + white blink
+    tl.to("#cam", { ...pos(x, y, s), duration: snap ? 0.22 : 0.6, ease: snap ? "power4.out" : "power2.inOut" }, t - 0.05);
+    if (snap) { tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.35, duration: 0.04, immediateRender: false }, t - 0.05); tl.to("#flash", { opacity: 0, duration: 0.18 }, t - 0.01); }
+    const next = SHOTS[i + 1] ? SHOTS[i + 1][0] : END;   // slow push between hits
+    tl.to("#cam", { ...pos(x, y, s * 1.06), duration: Math.max(0.1, next - t - 0.3), ease: "none" }, t + 0.25);
+  });
+  // "dark" beat and the corner reveal
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.5, duration: 0.05, immediateRender: false }, 3.3); tl.to("#redflash", { opacity: 0, duration: 0.5 }, 3.36);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 15.86); tl.to("#redflash", { opacity: 0, duration: 0.6 }, 15.92);
+  // karaoke captions
+  const caps = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "c" + i;
+    c.w.forEach(([t], j) => { const s = document.createElement("span"); s.id = `c${i}w${j}`; s.textContent = t; d.appendChild(s); });
+    caps.appendChild(d);
+    tl.fromTo("#c" + i, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.1, ease: "back.out(2)", immediateRender: false }, c.s);
+    tl.to("#c" + i, { opacity: 0, duration: 0.04 }, Math.max(c.s + 0.15, c.e - 0.04));
+    c.w.forEach(([t, s], j) => tl.to(`#c${i}w${j}`, { color: "#ffd400", duration: 0.05 }, s));
+  });
+  tl.to({}, { duration: 0.01 }, END - 0.01);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>
