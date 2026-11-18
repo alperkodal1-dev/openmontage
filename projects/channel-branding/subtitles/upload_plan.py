@@ -18,7 +18,8 @@ V = {
 # Owner (17 Nov): this week's only job is captions on every Short on the channel. ~24 tracks fit in a day's quota.
 PLAN = {'day1': [V['economist'], V['piri'], V['noah']],   # 10 + 4 + 9 = 23 tracks (Economist first: it is trending)
         'day2': [V['salem'], V['pyramid']],                  # 9 + 9 = 18 tracks
-        'day3': list(V.values())}   # Atlantis (9) + retry anything missing on every Short
+        'day3': list(V.values()),
+        'en_fix': [(V['economist'][0], 'Economist 2027', {'en': V['economist'][2]['en']}), (V['noah'][0], 'Noah', {'en': V['noah'][2]['en']})]}   # Atlantis (9) + retry anything missing on every Short
 # Ankara (long video) left out at the owner's request
 NAMES = {'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
@@ -28,7 +29,7 @@ log_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploaded.json'
 for vid, name, tracks in PLAN[sys.argv[1]]:
     try:
         have = {c['snippet']['language'] for c in json.load(urllib.request.urlopen(urllib.request.Request(
-            f'https://www.googleapis.com/youtube/v3/captions?part=snippet&videoId={vid}', headers=A)))['items']}
+            f'https://www.googleapis.com/youtube/v3/captions?part=snippet&videoId={vid}', headers=A)))['items'] if c['snippet'].get('trackKind') != 'asr'}   # YouTube's auto captions do not count
     except urllib.error.HTTPError as e:
         print('FAIL list', name, e.code, e.read().decode()[:150]); continue
     for lang, path in tracks.items():
