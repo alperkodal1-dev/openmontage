@@ -9,6 +9,7 @@ for w in W:
     F.append(dict(w))
 for w in F:
     w['t'] = w['t'].replace('9,000', '9,000')
+    if w['t'] == 'one.' and 32.0 < w['s'] < 33.0: w['t'] = 'won.'   # "all won" (whisper heard "all one")
 END = 56.2
 LEG = {'wept', 'worlds', 'conquer', 'zeus', 'son', 'tamed', 'horse', 'oracle', 'asia', 'knot', 'cut', 'sword', 'never', 'lost'}
 FACT = {'philosopher', 'infinite', 'text', 'lifetime', 'first', 'issus', 'gaugamela', 'hydaspes', 'won', 'plutarch', 'greek', 'roman', 'comedy', 'real'}
