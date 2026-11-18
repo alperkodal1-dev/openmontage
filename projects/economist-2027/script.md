@@ -24,3 +24,5 @@ Ending re-voiced, slower, 2.6 s hold on the corner: "So is it a forecast... or a
 - 1988 phoenix coin flips to a Bitcoin coin on "world currency", tag "THE THEORY: IT MEANT BITCOIN" (the Bitcoin link is the online theory, not the 1988 article).
 - New shots: tanks / missiles / tents each on its word, surveillance camera on "cameras everywhere", China-Taiwan map card (d3 + Natural Earth) before the 2027 stamp.
 - Sharpness: rebuilt the cover from the 1920 px nmas.com.mx copy + 24horas.cl copy, 6x upscale and re-inked to the 3 cover colours (img/cover_circle_x6.png, 4020 px).
+
+## v6: real 1988 cover (Economist 9 Jan 1988, "Get ready for a world currency", phoenix coin 10 / 2018) with zoom to the coin; Bitcoin coin flips in over the real coin. vidIQ review of v5: 8.5/10, publish with minor fixes (tighten middle) -> whole video sped up 6% (60.1 s): out/economist_2027_final.mp4.
