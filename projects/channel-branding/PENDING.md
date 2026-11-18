@@ -33,3 +33,9 @@ vidIQ ~11 left (voiceover 28, thumbnail 22, watch 10). ElevenLabs 6 left. YouTub
 - OWNER RULE (18 Nov): spend nothing new. All remaining vidIQ / ElevenLabs / API usage is for caption uploads (or something urgent) only.
 ## Lessons (vidIQ + jury)
 Shorts that win: 20-40 s, hook in first 1-2 s, snap zooms, karaoke captions, trending topic, comment-bait ending that loops. vidIQ can only watch PUBLIC videos via vidiq_video_watch (long-form tool works on unlisted). Thumbnails with a big human face score 90+.
+
+## 18 Nov afternoon (new session)
+- Salem 9/9 captions, Pyramid 8/9 (ur missing). Salem + Atlantis titles now end with hashtags (owner approved).
+- OWNER PRIORITY: localized titles (tr es pt de fr ja hi ur) on Alexander, Piri, Noah, Salem, Pyramid, Atlantis: subtitles/title_localizations.json + apply_title_localizations.py (add only). Not applied yet (quota).
+- Piri Reis: add tag "or so the story goes" (approved, failed on quota) -> 19 Nov 11:40 task.
+- Auth: no refresh token yet (client 253977889197 seems gone: 'Client missing a project id'). Owner sends temporary OAuth Playground tokens; they use Playground's shared quota (busy; resets 11:00 TR). Long-term fix: owner creates own Google Cloud project.
