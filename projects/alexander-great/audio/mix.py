@@ -4,7 +4,7 @@ END = 52.6
 MUS = '../../noah-ark/audio/music_tension.wav'
 S = '../../atlantis-story/sfx/'
 SFX = [('hit', 4.0, 1.0), ('rumble', 4.0, 0.8), ('hit', 4.3, 0.7), ('whoosh', 4.78, 0.45), ('whoosh', 7.48, 0.4), ('whoosh', 11.18, 0.4),
-       ('hit', 16.44, 1.0), ('swell', 19.48, 0.5), ('hit', 21.88, 0.8), ('hit', 23.44, 1.0), ('rumble', 23.44, 0.8), ('hit', 24.38, 0.9),
+       ('hit', 16.44, 1.0), ('swell', 19.48, 0.5), ('hit', 21.88, 0.8), ('hit', 23.44, 1.0), ('rumble', 23.44, 0.8), ('hit', 23.95, 0.9), ('whoosh', 24.75, 0.6), ('hit', 25.5, 0.9),
        ('whoosh', 27.28, 0.4), ('tick', 29.38, 0.8), ('tick', 30.08, 0.8), ('tick', 31.03, 0.8), ('whoosh', 33.18, 0.4), ('hit', 47.2, 0.7), ('wash', 48.1, 0.5)]
 vol = "volume='if(lt(t,4.8),0.10,if(lt(t,23.4),0.14,if(lt(t,25.6),0.11,if(lt(t,48.1),0.08,0.12))))':eval=frame"
 inp = ['-i', 'vo.wav', '-i', MUS] + sum([['-i', S + f'{n}.wav'] for n, _, _ in SFX], [])

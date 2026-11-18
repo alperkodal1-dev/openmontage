@@ -43,7 +43,12 @@
   #und{position:absolute;top:1080px;left:0;right:0;text-align:center}
   #und .stamp{font-size:84px}
   #myth{z-index:50;opacity:0}
-  #myth .stamp{position:absolute;left:300px;top:640px;font-size:150px;padding:10px 46px;letter-spacing:14px;border:6px solid #ffe9c4}
+  #myth .stamp{position:absolute;left:190px;top:640px;font-size:140px;padding:10px 46px;letter-spacing:12px;background:transparent;color:var(--myth);border:10px solid var(--myth);box-shadow:0 0 40px rgba(125,255,176,.5);transform:rotate(-8deg)}
+  #scan{z-index:52;opacity:0} #scan i{position:absolute;left:0;right:0;top:0;height:10px;background:#fff;box-shadow:0 0 40px 12px rgba(255,255,255,.8)}
+  #fc{z-index:34;opacity:0}
+  #fc .box{position:absolute;left:0;right:0;top:470px;text-align:center}
+  #fc .box span{display:inline-block;background:#ffd400;color:#0a1417;font-family:'Manrope';font-weight:800;font-size:120px;letter-spacing:2px;padding:10px 44px;transform:rotate(-3deg);box-shadow:0 20px 60px rgba(0,0,0,.7)}
+  #fc .sub{position:absolute;left:0;right:0;top:700px;text-align:center;font-family:'Cinzel';font-weight:700;font-size:54px;letter-spacing:6px;color:var(--bone);text-shadow:0 4px 20px #000}
   #chap .n{position:absolute;top:330px;left:0;right:0;font-size:60px;color:var(--gold2)}
   #chap .h{position:absolute;top:420px;left:0;right:0;font-size:86px;color:var(--bone)}
   #chap .r{position:absolute;top:540px;left:340px;width:400px;height:3px;background:var(--gold)}
@@ -99,7 +104,9 @@
   </div>
   <div id="und"><span class="stamp">UNDEFEATED</span></div>
  </section>
- <section id="myth" class="clip" data-start="0" data-duration="52.6" data-track-index="15"><span class="stamp">MYTH</span></section>
+ <section id="myth" class="clip" data-start="0" data-duration="52.6" data-track-index="15"><span class="stamp">LEGEND</span></section>
+ <div id="scan" class="clip" data-start="0" data-duration="52.6" data-track-index="23"><i></i></div>
+ <section id="fc" class="clip" data-start="0" data-duration="52.6" data-track-index="24"><div class="box"><span>FACT CHECK</span></div><div class="sub">WHAT THE SOURCES SAY</div></section>
  <section id="chap" class="clip scene" data-start="0" data-duration="52.6" data-track-index="16">
   <div class="cz n">I</div><div class="cz h">THE SOURCES</div><div class="r"></div>
  </section>
@@ -174,12 +181,21 @@
   pop("#und", 21.88, 1.6); shake(22.48);
   // 5 STORY TURN
   tl.to("#bMosi", { filter: "grayscale(1) sepia(.4) contrast(1.25) brightness(.6)", duration: 0.08 }, 23.44); shake(23.44);
-  tl.fromTo("#myth", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out", immediateRender: false }, 24.38);
-  tl.to("#myth", { opacity: 0, duration: 0.3 }, 25.33);
+  tl.fromTo("#myth", { opacity: 0, scale: 1.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "power4.out", immediateRender: false }, 23.95);
+  tl.to("#myth", { opacity: 0, duration: 0.2 }, 24.75);
+  // "Now..." rewind-scan, then FACT CHECK
+  tl.fromTo("#scan", { opacity: 0 }, { opacity: 1, duration: 0.05, immediateRender: false }, 24.8);
+  tl.fromTo("#scan i", { y: 0 }, { y: 1920, duration: 0.6, ease: "power1.in", immediateRender: false }, 24.8);
+  tl.to("#scan", { opacity: 0, duration: 0.05 }, 25.4);
+  flash(25.4);
+  tl.fromTo("#fc", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 25.5);
+  tl.fromTo("#fc .box span", { scale: 1.8 }, { scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: false }, 25.5);
+  tl.from("#fc .sub", { opacity: 0, y: 20, duration: 0.35 }, 25.95);
+  tl.to("#fc", { opacity: 0, duration: 0.25 }, 27.2);
   // 6 BEGINNING
   bg("bAlx", 25.08, 27.78, 1.05, 1.0);
   tl.set("#bAlxi", { filter: "grayscale(1) sepia(.3) brightness(.35)" }, 25.08);
-  sc("#chap", 25.58, 27.38); tl.fromTo("#chap .r", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: E, immediateRender: false }, 25.78);
+  
   // 7 EVIDENCE: battles (the Issus mosaic itself)
   bg("bArb", 27.28, 33.38, 1.0, 1.12);
   sc("#bat", 27.38, 33.28); tag("#bat .tag", 27.48);

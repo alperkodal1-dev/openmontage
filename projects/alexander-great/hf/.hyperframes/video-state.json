@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "5a69dbd9-f2f4-4b64-9188-0c5dc297ac21",
-  "currentRevision": "b5b907e4-fa4e-4e84-8626-ffd5cb883b20",
+  "currentRevision": "3d477f13-6391-4468-ad72-0980b0dc03f1",
   "pendingChanges": false,
   "files": {
     "assets/bucephalus.jpg": {
@@ -81,16 +81,16 @@
       "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/a9/a9c6f4af4e98079be22ac0b9a6a1c07d4278cedd75a85c66772ebd64599be198"
     },
     "captions.js": {
-      "hash": "8eb683f35a5445fad4abebdfddab3c7070e2540022264dfebdb41905e24af10c",
-      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/8e/8eb683f35a5445fad4abebdfddab3c7070e2540022264dfebdb41905e24af10c"
+      "hash": "6039dfd641ef9a78a1a96f9bf7ac789553180f23373a9391ea9fab8b2c20fa56",
+      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/60/6039dfd641ef9a78a1a96f9bf7ac789553180f23373a9391ea9fab8b2c20fa56"
     },
     "assets/map.svg.html": {
       "hash": "4ff6518533ecc32dad4cbb5939102563701f3c42650b37a55e7095224c9c262c",
       "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/4f/4ff6518533ecc32dad4cbb5939102563701f3c42650b37a55e7095224c9c262c"
     },
     "index.html": {
-      "hash": "7f6bddd21d20e9bcd4ef010eee3459b6aecc4f1dd9830d58c7d2175c1f3839dd",
-      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/7f/7f6bddd21d20e9bcd4ef010eee3459b6aecc4f1dd9830d58c7d2175c1f3839dd"
+      "hash": "752bf23536d43a41e706feab4622fbf98e0423ba9815947c23d125ec2d7e5765",
+      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/75/752bf23536d43a41e706feab4622fbf98e0423ba9815947c23d125ec2d7e5765"
     },
     "assets/arbela.jpg": {
       "hash": "4d3e719aa9246caf30cb02f675347ed2be40d157ac71da3d3b07d44201b77464",
@@ -181,6 +181,25 @@
           "after": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/7f/7f6bddd21d20e9bcd4ef010eee3459b6aecc4f1dd9830d58c7d2175c1f3839dd"
         }
       }
+    },
+    "3d477f13-6391-4468-ad72-0980b0dc03f1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794980441080,
+      "endedAt": 1794980441088,
+      "files": {
+        "captions.js": {
+          "before": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/8e/8eb683f35a5445fad4abebdfddab3c7070e2540022264dfebdb41905e24af10c",
+          "after": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/60/6039dfd641ef9a78a1a96f9bf7ac789553180f23373a9391ea9fab8b2c20fa56"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/7f/7f6bddd21d20e9bcd4ef010eee3459b6aecc4f1dd9830d58c7d2175c1f3839dd",
+          "after": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/75/752bf23536d43a41e706feab4622fbf98e0423ba9815947c23d125ec2d7e5765"
+        }
+      }
     }
   },
   "checks": {
@@ -195,15 +214,15 @@
   },
   "renders": {
     "latest": {
-      "id": "413d6924-a99c-4768-9bca-4e171f3c4126",
-      "completedAt": 1794973538890,
+      "id": "6e5cd49d-1b06-4b71-a1c9-f5a52bca2085",
+      "completedAt": 1794980666229,
       "output": "/home/user/openmontage/projects/alexander-great/out/visual.mp4",
       "status": "completed",
-      "revision": "b5b907e4-fa4e-4e84-8626-ffd5cb883b20"
+      "revision": "3d477f13-6391-4468-ad72-0980b0dc03f1"
     },
     "retainedRevisions": [
-      "b5b907e4-fa4e-4e84-8626-ffd5cb883b20",
-      "357c51f8-8d21-4a02-a60d-643cd23ed720"
+      "3d477f13-6391-4468-ad72-0980b0dc03f1",
+      "b5b907e4-fa4e-4e84-8626-ffd5cb883b20"
     ]
   },
   "pendingArtifactCleanup": []
