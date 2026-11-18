@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "27b4f41e-5386-4ec4-b56d-cc460a2e731d",
-  "currentRevision": "468d8c74-5abf-4f36-9582-40c8a96e9b52",
+  "currentRevision": "335dfc92-f4b9-489c-9259-9327e5ece277",
   "pendingChanges": false,
   "files": {
     "assets/fonts/Amiri-arabic.woff2": {
@@ -61,8 +61,8 @@
       "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
     },
     "index.html": {
-      "hash": "c4d54079c7c92107b50cea3533d48f427e64f60169ed5e86769c64317b0b87f5",
-      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/c4/c4d54079c7c92107b50cea3533d48f427e64f60169ed5e86769c64317b0b87f5"
+      "hash": "d857169df52922663c63adee96d1195c1d2de30cc5ce8fd71b706ccc3ea9592f",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/d8/d857169df52922663c63adee96d1195c1d2de30cc5ce8fd71b706ccc3ea9592f"
     },
     "assets/cover_circle.png": {
       "hash": "b1dfdd58ce1a548b4a086d6b8c36a22de9976a1416c23c8b9862f8f8c8c076bd",
@@ -75,6 +75,10 @@
     "assets/cover88.jpg": {
       "hash": "f969705064385fc8c3eddab761089c6e6276fa84503d528dbc4fac12305e2e64",
       "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/f9/f969705064385fc8c3eddab761089c6e6276fa84503d528dbc4fac12305e2e64"
+    },
+    "assets/btc_photo.jpg": {
+      "hash": "e1b1ddc47fa3b8d2239e2008850410e8b926f38756420e0cefe7a95ceff50439",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/e1/e1b1ddc47fa3b8d2239e2008850410e8b926f38756420e0cefe7a95ceff50439"
     }
   },
   "revisions": {
@@ -241,6 +245,25 @@
         "index.html": {
           "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/ca/caa6d051e7b3ca1cc757705fc85fa9fb3244fd6f2b28c327c91c2193a1ec82e3",
           "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/c4/c4d54079c7c92107b50cea3533d48f427e64f60169ed5e86769c64317b0b87f5"
+        }
+      }
+    },
+    "335dfc92-f4b9-489c-9259-9327e5ece277": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794979530813,
+      "endedAt": 1794979530816,
+      "files": {
+        "assets/btc_photo.jpg": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/e1/e1b1ddc47fa3b8d2239e2008850410e8b926f38756420e0cefe7a95ceff50439"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/c4/c4d54079c7c92107b50cea3533d48f427e64f60169ed5e86769c64317b0b87f5",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/d8/d857169df52922663c63adee96d1195c1d2de30cc5ce8fd71b706ccc3ea9592f"
         }
       }
     }

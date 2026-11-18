@@ -26,3 +26,5 @@ Ending re-voiced, slower, 2.6 s hold on the corner: "So is it a forecast... or a
 - Sharpness: rebuilt the cover from the 1920 px nmas.com.mx copy + 24horas.cl copy, 6x upscale and re-inked to the 3 cover colours (img/cover_circle_x6.png, 4020 px).
 
 ## v6: real 1988 cover (Economist 9 Jan 1988, "Get ready for a world currency", phoenix coin 10 / 2018) with zoom to the coin; Bitcoin coin flips in over the real coin. vidIQ review of v5: 8.5/10, publish with minor fixes (tighten middle) -> whole video sped up 6% (60.1 s): out/economist_2027_final.mp4.
+
+Published 18 Nov 2026 as 3lRSiGfhOw0 (v6 final). The Bitcoin-photo variant in index.tpl.html (CC0 photo by David McBee) was not rendered/published.

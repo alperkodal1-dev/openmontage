@@ -44,6 +44,8 @@
   #quote .t em{font-style:normal;background:#ffd400}
   #dim{background:rgba(0,0,0,.6);z-index:21;opacity:0}
   .th{z-index:22}
+  #btcp{position:absolute;inset:0;opacity:0;overflow:hidden}
+  #btcp img{position:absolute;left:0;top:240px;width:1080px;height:1440px;object-fit:cover}
   #btc{position:absolute;left:283px;top:725px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd08a 0,#f7931a 45%,#b8640a 100%);box-shadow:0 0 90px rgba(247,147,26,.55),inset 0 0 0 14px rgba(150,80,0,.5);opacity:0}
   #btc .b{position:absolute;left:0;right:0;top:40px;text-align:center;font-weight:800;font-size:380px;line-height:1;color:#fff;transform:rotate(14deg)}
   #coinS .bt{position:absolute;left:0;right:0;top:1150px;text-align:center;opacity:0}
@@ -70,7 +72,7 @@
 
  <div id="dim" class="clip" data-start="0" data-duration="63.7" data-track-index="15"></div>
  <section id="th1" class="clip ov" data-start="0" data-duration="63.7" data-track-index="9"><div class="th"><span>THEORY #1</span><i>IT'S A SCRIPT</i></div></section>
- <section id="coinS" class="clip ov" data-start="0" data-duration="63.7" data-track-index="10"><div class="k">THE ECONOMIST · JANUARY 1988</div><div id="c88wrap" style="position:absolute;inset:0;overflow:hidden"><div id="c88"><img src="assets/cover88.jpg" alt=""></div></div><div id="btc"><div class="b">&#x20BF;</div></div><div class="q">"GET READY FOR A<br>WORLD CURRENCY"</div><div class="bt"><span>THE THEORY: IT MEANT BITCOIN</span></div><div class="n">Cover: The Economist, 9 January 1988 · Bitcoin coin: illustration of the online theory</div></section>
+ <section id="coinS" class="clip ov" data-start="0" data-duration="63.7" data-track-index="10"><div class="k">THE ECONOMIST · JANUARY 1988</div><div id="c88wrap" style="position:absolute;inset:0;overflow:hidden"><div id="c88"><img src="assets/cover88.jpg" alt=""></div></div><div id="btcp"><img src="assets/btc_photo.jpg" alt=""></div><div class="q">"GET READY FOR A<br>WORLD CURRENCY"</div><div class="bt"><span>THE THEORY: IT MEANT BITCOIN</span></div><div class="n">Cover: The Economist, 9 January 1988 · Bitcoin photo: David McBee (CC0)</div></section>
  <section id="th2" class="clip ov" data-start="0" data-duration="63.7" data-track-index="11"><div class="th"><span>THEORY #2</span><i>WAR</i></div></section>
  <section id="twmap" class="clip" data-start="0" data-duration="63.7" data-track-index="16"><div class="card"><img src="assets/taiwan.png" alt=""><div class="l2">CHINA</div><div class="l1">TAIWAN</div></div></section>
  <div id="d27" data-start="0" data-duration="63.7" data-track-index="12"><span>2027</span></div>
@@ -97,14 +99,14 @@
   const ov = (id, a, b) => { tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, a); tl.to(id, { opacity: 0, duration: 0.2 }, b - 0.2); };
   const pop = (sel, t) => tl.fromTo(sel, { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, t);
   [[5.5, 7.3], [25.8, 27.7], [33.3, 34.5]].forEach(([a, b]) => ov("#dim", a, b));
-  tl.to("#credit", { opacity: 0, duration: 0.2 }, 10.5); tl.to("#credit", { opacity: 1, duration: 0.2 }, 17.4);
+  tl.to("#credit", { opacity: 0, duration: 0.2 }, 10.5); tl.to("#credit", { opacity: 1, duration: 0.2 }, 17.8);
   tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.5, duration: 0.05, immediateRender: false }, 3.3); tl.to("#redflash", { opacity: 0, duration: 0.7 }, 3.36);
   ov("#th1", 5.5, 7.3); pop("#th1 .th", 5.5);
-  ov("#coinS", 10.5, 17.5); tl.fromTo("#c88", { scale: 0.8 }, { scale: 1, duration: 0.6, ease: "power3.out", immediateRender: false }, 10.5);
-  tl.to("#c88", { scale: 2.2, duration: 0.9, ease: "power2.inOut" }, 12.5); tl.to("#c88", { scale: 2.35, duration: 3.0, ease: "none" }, 13.4);
+  ov("#coinS", 10.5, 17.9); tl.fromTo("#c88", { scale: 0.8 }, { scale: 1, duration: 0.6, ease: "power3.out", immediateRender: false }, 10.5);
+  tl.to("#c88", { scale: 1.3, duration: 4.6, ease: "power1.inOut" }, 11.4);
   tl.fromTo("#coinS .q", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, immediateRender: false }, 15.55);
-  tl.to("#c88wrap", { opacity: 0.25, duration: 0.3 }, 16.4);
-  tl.fromTo("#btc", { opacity: 1, rotationY: -90 }, { rotationY: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, 16.6);
+  
+  tl.fromTo("#btcp", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 16.35); tl.fromTo("#btcp img", { scale: 1.15 }, { scale: 1.0, duration: 1.6, ease: "none", immediateRender: false }, 16.35);
   tl.fromTo("#coinS .bt", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 16.7);
   ov("#th2", 25.8, 27.7); pop("#th2 .th", 25.8);
   ov("#twmap", 30.4, 33.3); tl.from("#twmap .card", { scale: 0.85, duration: 0.4, ease: "power3.out" }, 30.4);

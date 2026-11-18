@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script data-hf-after-fonts-fallback="">document.addEventListener("DOMContentLoaded", function () {
+  if (window.__hfAfterFontsClaimed) return;
+  var T = "text/hf-after-fonts";
+  var all = [].slice.call(document.querySelectorAll('script[type="text/hf-after-fonts"], script[type="text/hf-after-fonts+module"]'));
+  if (!all.length) return;
+  console.warn("[hyperframes] the runtime has no web-font gate; composition scripts run without waiting for fonts");
+  var late = function (el) { return el.type !== T || el.matches('[defer][src], [defer][data-hf-inlined-src]'); };
+  var queue = all.filter(function (el) { return !late(el); }).concat(all.filter(late));
+  (function next() {
+    var el = queue.shift();
+    if (!el) return;
+    var s = document.createElement("script");
+    for (var i = 0; i < el.attributes.length; i++) s.setAttribute(el.attributes[i].name, el.attributes[i].value);
+    if (el.type === T) s.removeAttribute("type"); else s.type = "module";
+    s.async = el.hasAttribute("async");
+    s.text = el.text;
+    var waits = s.type !== "module" && s.hasAttribute("src") && !s.async && !s.noModule;
+    if (waits) { s.addEventListener("load", next); s.addEventListener("error", next); }
+    el.replaceWith(s);
+    if (!waits) next();
+  })();
+});
+//# sourceURL=hyperframes://after-fonts-fallback</script><style data-hyperframes-text-rendering="true">html,body,*{text-rendering:geometricPrecision}</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Economist 2027 Short</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<script src="assets/gsap.min.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#000}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0c0c0c;font-family:'Manrope',sans-serif}
+  .clip{position:absolute;inset:0}
+  #stage{overflow:hidden;background:#efede8}
+  #cam{position:absolute;left:0;top:0;width:2010px;height:1980px;transform-origin:0 0}
+  #cam img{width:2010px;height:1980px;display:block}
+  #dark{background:radial-gradient(ellipse at 50% 40%,rgba(0,0,0,0) 40%,rgba(0,0,0,.55) 100%);pointer-events:none}
+  #top{z-index:20}
+  #top .bar{position:absolute;left:0;right:0;top:0;height:250px;background:linear-gradient(180deg,rgba(0,0,0,.85),rgba(0,0,0,0))}
+  #top .t{position:absolute;left:0;right:0;top:120px;text-align:center;font-weight:800;font-size:58px;letter-spacing:2px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.9)}
+  #top .t b{color:#e3120b}
+  #caps{z-index:30}
+  #plate{position:absolute;left:0;right:0;top:1200px;height:380px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.6) 30%,rgba(0,0,0,.6) 70%,rgba(0,0,0,0));z-index:25}
+  .cap{position:absolute;left:70px;right:150px;top:1300px;height:180px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;text-align:center;font-weight:800;font-size:86px;line-height:1.05;letter-spacing:-1px;opacity:0;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.6)}
+  .cap span{display:inline-block;margin:0 .14em}
+  #credit{position:absolute;left:0;right:0;top:1640px;text-align:center;font-weight:600;font-size:26px;color:rgba(255,255,255,.75);z-index:31;text-shadow:0 2px 8px #000}
+  .ov{z-index:22;opacity:0}
+  .th{position:absolute;left:0;right:0;top:330px;text-align:center}
+  .th span{display:inline-block;background:#ffd400;color:#000;font-weight:800;font-size:64px;padding:14px 34px;transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,.6)}
+  .th i{display:block;margin-top:24px;font-style:normal;font-weight:800;font-size:92px;color:#fff;-webkit-text-stroke:3px #000;paint-order:stroke fill;text-shadow:0 8px 30px rgba(0,0,0,.8)}
+  #coinS{background:radial-gradient(ellipse at 50% 40%,#2a1d08 0,#0b0804 70%);z-index:21}
+  #coinS .k{position:absolute;left:0;right:0;top:230px;z-index:2;background:rgba(0,0,0,.8);padding:14px 0;text-align:center;font-weight:800;font-size:44px;letter-spacing:6px;color:#e3120b}
+  #c88{position:absolute;left:90px;top:330px;width:900px;height:1177px;transform-origin:453px 640px}
+  #c88 img{position:absolute;left:0;top:0;width:900px;height:1177px;box-shadow:0 30px 90px rgba(0,0,0,.8)}
+  #coinS .q{position:absolute;left:60px;right:60px;top:300px;background:rgba(0,0,0,.82);padding:22px 10px;opacity:0;text-align:center;font-weight:800;font-size:66px;line-height:1.1;color:#fff}
+  #coinS .n{position:absolute;left:0;right:0;top:1660px;text-align:center;font-size:24px;color:rgba(255,255,255,.55)}
+  #d27{position:absolute;left:0;right:0;top:880px;text-align:center;z-index:23;opacity:0}
+  #d27 span{display:inline-block;background:#e3120b;color:#fff;font-weight:800;font-size:150px;padding:4px 40px;transform:rotate(-5deg);border:8px solid #fff;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+  #quote .box{position:absolute;left:70px;right:70px;top:330px;background:#fff;border-radius:28px;padding:44px 50px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  #quote .h{display:flex;align-items:center;gap:22px;font-weight:800;font-size:40px;color:#111}
+  #quote .h b{display:inline-block;width:86px;height:86px;border-radius:50%;background:#e3120b;color:#fff;font-family:'Cormorant Garamond';font-size:30px;line-height:86px;text-align:center}
+  #quote .h small{display:block;font-weight:600;font-size:30px;color:#666}
+  #quote .t{margin-top:30px;font-weight:600;font-size:52px;line-height:1.25;color:#111}
+  #quote .t em{font-style:normal;background:#ffd400}
+  #dim{background:rgba(0,0,0,.6);z-index:21;opacity:0}
+  .th{z-index:22}
+  #btcp{position:absolute;inset:0;opacity:0;overflow:hidden}
+  #btcp img{position:absolute;left:0;top:240px;width:1080px;height:1440px;object-fit:cover}
+  #btc{position:absolute;left:283px;top:725px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd08a 0,#f7931a 45%,#b8640a 100%);box-shadow:0 0 90px rgba(247,147,26,.55),inset 0 0 0 14px rgba(150,80,0,.5);opacity:0}
+  #btc .b{position:absolute;left:0;right:0;top:40px;text-align:center;font-weight:800;font-size:380px;line-height:1;color:#fff;transform:rotate(14deg)}
+  #coinS .bt{position:absolute;left:0;right:0;top:1150px;text-align:center;opacity:0}
+  #coinS .bt span{display:inline-block;background:#f7931a;color:#111;font-weight:800;font-size:54px;padding:10px 30px;transform:rotate(-2deg)}
+  #twmap{z-index:22;opacity:0}
+  #twmap .card{position:absolute;left:70px;top:300px;width:940px;height:760px;border:6px solid #fff;box-shadow:0 30px 80px rgba(0,0,0,.7);overflow:hidden;background:#e9e7e2}
+  #twmap .card img{width:940px;height:760px;display:block}
+  #twmap .l1{position:absolute;left:560px;top:470px;font-weight:800;font-size:46px;color:#e3120b;text-shadow:0 2px 0 #fff}
+  #twmap .l2{position:absolute;left:150px;top:420px;font-weight:800;font-size:46px;color:#fff;letter-spacing:4px}
+  #flash{background:#fff;opacity:0;z-index:40}
+  #redflash{background:#e3120b;opacity:0;z-index:39;mix-blend-mode:multiply}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="63.7">
+ <section id="stage" class="clip" data-start="0" data-duration="63.7" data-track-index="1">
+  <div id="cam"><img src="assets/cover_circle.png" alt=""></div>
+ </section>
+ <div id="dark" class="clip" data-start="0" data-duration="63.7" data-track-index="2"></div>
+ <section id="top" class="clip" data-start="0" data-duration="63.7" data-track-index="3"><div class="bar"></div><div class="t">THE ECONOMIST <b>2027</b></div></section>
+ <div id="plate" data-start="0" data-duration="63.7" data-track-index="4"></div>
+ <div id="caps" class="clip" data-start="0" data-duration="63.7" data-track-index="5"></div>
+ <div id="credit" data-start="0" data-duration="63.7" data-track-index="6">Cover art: The Economist · The World Ahead 2027 · Cleon Peterson</div>
+
+ <div id="dim" class="clip" data-start="0" data-duration="63.7" data-track-index="15"></div>
+ <section id="th1" class="clip ov" data-start="0" data-duration="63.7" data-track-index="9"><div class="th"><span>THEORY #1</span><i>IT'S A SCRIPT</i></div></section>
+ <section id="coinS" class="clip ov" data-start="0" data-duration="63.7" data-track-index="10"><div class="k">THE ECONOMIST · JANUARY 1988</div><div id="c88wrap" style="position:absolute;inset:0;overflow:hidden"><div id="c88"><img src="assets/cover88.jpg" alt=""></div></div><div id="btcp"><img src="assets/btc_photo.jpg" alt=""></div><div class="q">"GET READY FOR A<br>WORLD CURRENCY"</div><div class="bt"><span>THE THEORY: IT MEANT BITCOIN</span></div><div class="n">Cover: The Economist, 9 January 1988 · Bitcoin photo: David McBee (CC0)</div></section>
+ <section id="th2" class="clip ov" data-start="0" data-duration="63.7" data-track-index="11"><div class="th"><span>THEORY #2</span><i>WAR</i></div></section>
+ <section id="twmap" class="clip" data-start="0" data-duration="63.7" data-track-index="16"><div class="card"><img src="assets/taiwan.png" alt=""><div class="l2">CHINA</div><div class="l1">TAIWAN</div></div></section>
+ <div id="d27" data-start="0" data-duration="63.7" data-track-index="12"><span>2027</span></div>
+ <section id="th3" class="clip ov" data-start="0" data-duration="63.7" data-track-index="13"><div class="th"><span>THEORY #3</span><i>AI TAKES OVER</i></div></section>
+ <section id="quote" class="clip ov" data-start="0" data-duration="63.7" data-track-index="14"><div class="box"><div class="h"><b>The<br></b><div>The Economist<small>@TheEconomist</small></div></div><div class="t">"Modern life can feel like being in a sci-fi story — <em>all that is missing is the aliens. They probably won't appear in 2027.</em>"</div></div></section>
+ <div id="redflash" class="clip" data-start="0" data-duration="63.7" data-track-index="7"></div>
+ <div id="flash" class="clip" data-start="0" data-duration="63.7" data-track-index="8"></div>
+</div>
+
+<script type="text/hf-after-fonts">(function(){
+  const END = 63.7, CAPS = [{"s": 0.0, "e": 0.98, "w": [["THE", 0.0], ["ECONOMIST", 0.12], ["DROPPED", 0.54]]}, {"s": 0.98, "e": 3.04, "w": [["ITS", 0.98], ["2027", 1.28], ["COVER,", 2.24]]}, {"s": 3.04, "e": 5.56, "w": [["AND", 3.04], ["IT'S", 3.06], ["DARK.", 3.3]]}, {"s": 5.56, "e": 6.3, "w": [["THEORY", 5.56], ["1.", 5.56]]}, {"s": 6.3, "e": 7.3, "w": [["IT'S", 6.3], ["A", 6.52], ["SCRIPT.", 6.64]]}, {"s": 7.3, "e": 8.02, "w": [["PEOPLE", 7.3], ["SAY", 7.52], ["IT", 7.82]]}, {"s": 8.02, "e": 8.76, "w": [["PRINTS", 8.02], ["THE", 8.26], ["FUTURE", 8.5]]}, {"s": 8.76, "e": 9.86, "w": [["IN", 8.76], ["ADVANCE.", 9.02]]}, {"s": 9.86, "e": 10.62, "w": [["THEIR", 9.86], ["PROOF?", 10.04]]}, {"s": 10.62, "e": 11.94, "w": [["IN", 10.62], ["1988,", 10.82]]}, {"s": 11.94, "e": 12.56, "w": [["A", 11.94], ["COVER", 12.04], ["SHOWED", 12.24]]}, {"s": 12.56, "e": 13.46, "w": [["A", 12.56], ["GOLDEN", 12.74], ["PHOENIX", 13.02]]}, {"s": 13.46, "e": 14.18, "w": [["COIN,", 13.46]]}, {"s": 14.18, "e": 15.62, "w": [["DATED", 14.18], ["2018.", 14.32]]}, {"s": 15.62, "e": 16.26, "w": [["GET", 15.62], ["READY", 15.76], ["FOR", 16.0]]}, {"s": 16.26, "e": 17.64, "w": [["A", 16.26], ["WORLD", 16.44], ["CURRENCY.", 16.7]]}, {"s": 17.64, "e": 18.14, "w": [["NOW", 17.64], ["LOOK", 17.82], ["AT", 18.0]]}, {"s": 18.14, "e": 19.36, "w": [["2027.", 18.14]]}, {"s": 19.36, "e": 19.82, "w": [["AT", 19.36], ["THE", 19.5], ["VERY", 19.6]]}, {"s": 19.82, "e": 20.38, "w": [["TOP,", 19.82]]}, {"s": 20.38, "e": 21.14, "w": [["THE", 20.38], ["WORLD'S", 20.48], ["LEADERS", 20.84]]}, {"s": 21.14, "e": 22.28, "w": [["LINED", 21.14], ["UP.", 21.68]]}, {"s": 22.28, "e": 23.2, "w": [["DOWN", 22.28], ["BELOW,", 22.46]]}, {"s": 23.2, "e": 23.78, "w": [["TANKS,", 23.2]]}, {"s": 23.78, "e": 24.74, "w": [["MISSILES", 23.78], ["AND", 24.06], ["REFUGEE", 24.34]]}, {"s": 24.74, "e": 25.9, "w": [["TENTS.", 24.74]]}, {"s": 25.9, "e": 26.8, "w": [["THEORY", 25.9], ["2.", 25.9]]}, {"s": 26.8, "e": 27.7, "w": [["WAR.", 26.8]]}, {"s": 27.7, "e": 28.48, "w": [["FIGHTER", 27.7], ["JETS.", 27.7]]}, {"s": 28.48, "e": 29.26, "w": [["AND", 28.48], ["BEIJING'S", 28.54], ["OWN", 29.04]]}, {"s": 29.26, "e": 30.04, "w": [["DEADLINE", 29.26], ["FOR", 29.64], ["ITS", 29.9]]}, {"s": 30.04, "e": 30.62, "w": [["ARMY", 30.04], ["TO", 30.28], ["BE", 30.5]]}, {"s": 30.62, "e": 31.42, "w": [["READY", 30.62], ["FOR", 30.8], ["TAIWAN", 31.0]]}, {"s": 31.42, "e": 33.36, "w": [["IS", 31.42], ["2027.", 31.88]]}, {"s": 33.36, "e": 34.88, "w": [["THEORY", 33.36], ["3.", 33.52]]}, {"s": 34.88, "e": 36.06, "w": [["AI", 34.88], ["TAKES", 34.88], ["OVER.", 35.24]]}, {"s": 36.06, "e": 37.2, "w": [["A", 36.06], ["ROBOT?", 36.26]]}, {"s": 37.2, "e": 38.58, "w": [["STEALING", 37.2], ["SOMETHING?", 37.46]]}, {"s": 38.58, "e": 39.48, "w": [["MHM.", 38.58]]}, {"s": 39.48, "e": 40.86, "w": [["CAMERAS", 39.48], ["EVERYWHERE", 39.8], ["AND", 40.24]]}, {"s": 40.86, "e": 42.4, "w": [["A", 40.86], ["MARKET", 40.98], ["CRASHING.", 41.3]]}, {"s": 42.4, "e": 42.9, "w": [["AND", 42.4], ["IN", 42.64], ["THE", 42.76]]}, {"s": 42.9, "e": 43.46, "w": [["CORNER,", 42.9]]}, {"s": 43.46, "e": 44.28, "w": [["THE", 43.46], ["DETAIL", 43.56], ["NOBODY", 43.98]]}, {"s": 44.28, "e": 45.34, "w": [["CAN", 44.28], ["EXPLAIN.", 44.54]]}, {"s": 45.34, "e": 46.12, "w": [["A", 45.34], ["CRESCENT,", 45.5]]}, {"s": 46.12, "e": 46.74, "w": [["A", 46.12], ["STAR,", 46.24]]}, {"s": 46.74, "e": 47.34, "w": [["AND", 46.74], ["A", 46.98], ["RIDER", 47.1]]}, {"s": 47.34, "e": 48.3, "w": [["ON", 47.34], ["A", 47.56], ["CAMEL.", 47.68]]}, {"s": 48.3, "e": 49.1, "w": [["THE", 48.3], ["MAGAZINE'S", 48.42], ["ONLY", 48.9]]}, {"s": 49.1, "e": 49.72, "w": [["COMMENT?", 49.1]]}, {"s": 49.72, "e": 50.44, "w": [["ALL", 49.72], ["THAT'S", 49.98], ["MISSING", 50.22]]}, {"s": 50.44, "e": 51.24, "w": [["IS", 50.44], ["THE", 50.68], ["ALIENS.", 50.84]]}, {"s": 51.24, "e": 52.42, "w": [["THEY", 51.24], ["PROBABLY", 51.76], ["WON'T", 52.06]]}, {"s": 52.42, "e": 54.22, "w": [["APPEAR", 52.42], ["IN", 52.7], ["2027.", 52.9]]}, {"s": 54.22, "e": 54.62, "w": [["SO,", 54.22]]}, {"s": 54.62, "e": 55.3, "w": [["IS", 54.62], ["IT", 55.04], ["A", 55.16]]}, {"s": 55.3, "e": 56.4, "w": [["FORECAST?", 55.3]]}, {"s": 56.4, "e": 57.96, "w": [["OR", 56.4], ["A", 56.6], ["WARNING?", 56.74]]}, {"s": 57.96, "e": 58.38, "w": [["LOOK", 57.96], ["AT", 58.08], ["THAT", 58.22]]}, {"s": 58.38, "e": 59.3, "w": [["CORNER", 58.38], ["ONE", 58.68], ["MORE", 59.06]]}, {"s": 59.3, "e": 60.32, "w": [["TIME.", 59.3]]}, {"s": 60.32, "e": 60.72, "w": [["WHAT", 60.32], ["DO", 60.48], ["YOU", 60.62]]}, {"s": 60.72, "e": 63.7, "w": [["SEE?", 60.72]]}], SHOTS = [[0.0, 1005, 990, 0.52, 0], [2.4, 1005, 990, 0.66, 0], [7.3, 1080, 1590, 1.5, 1], [17.64, 1005, 990, 0.55, 0], [19.36, 1020, 140, 1.5, 1], [22.28, 1005, 1450, 0.95, 0], [23.1, 960, 1310, 1.6, 1], [23.7, 240, 1180, 1.6, 1], [24.3, 810, 1725, 1.6, 1], [27.72, 1680, 1290, 1.5, 1], [28.48, 260, 640, 1.6, 1], [34.52, 975, 960, 1.5, 1], [36.0, 430, 880, 1.9, 1], [39.4, 326, 570, 2.2, 1], [40.88, 1140, 570, 1.5, 1], [42.34, 1300, 300, 1.1, 0], [45.32, 1530, 210, 2.0, 1], [48.2, 1005, 990, 0.6, 0], [54.24, 1005, 990, 0.7, 0], [57.96, 1400, 380, 1.3, 0], [59.3, 1530, 210, 2.2, 0]];
+  const tl = gsap.timeline({ paused: true });
+  const FX = 540, FY = 760;
+  const pos = (x, y, s) => ({ x: FX - x * s, y: FY - y * s, scale: s });
+  tl.set("#cam", pos(SHOTS[0][1], SHOTS[0][2], SHOTS[0][3]), 0);
+  SHOTS.forEach(([t, x, y, s, sn], i) => {
+    if (i === 0) return;
+    const snap = !!sn;
+    tl.to("#cam", { ...pos(x, y, s), duration: snap ? 0.22 : 0.6, ease: snap ? "power4.out" : "power2.inOut" }, t - 0.05);
+    if (snap) { tl.fromTo("#flash", { opacity: 0 }, { opacity: 0.35, duration: 0.04, immediateRender: false }, t - 0.05); tl.to("#flash", { opacity: 0, duration: 0.18 }, t - 0.01); }
+    const next = SHOTS[i + 1] ? SHOTS[i + 1][0] : END;   // slow push between hits
+    tl.to("#cam", { ...pos(x, y, s * 1.08), duration: Math.max(0.1, next - t - 0.3), ease: "none" }, t + (snap ? 0.25 : 0.65));
+  });
+  const ov = (id, a, b) => { tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, a); tl.to(id, { opacity: 0, duration: 0.2 }, b - 0.2); };
+  const pop = (sel, t) => tl.fromTo(sel, { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, t);
+  [[5.5, 7.3], [25.8, 27.7], [33.3, 34.5]].forEach(([a, b]) => ov("#dim", a, b));
+  tl.to("#credit", { opacity: 0, duration: 0.2 }, 10.5); tl.to("#credit", { opacity: 1, duration: 0.2 }, 17.8);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.5, duration: 0.05, immediateRender: false }, 3.3); tl.to("#redflash", { opacity: 0, duration: 0.7 }, 3.36);
+  ov("#th1", 5.5, 7.3); pop("#th1 .th", 5.5);
+  ov("#coinS", 10.5, 17.9); tl.fromTo("#c88", { scale: 0.8 }, { scale: 1, duration: 0.6, ease: "power3.out", immediateRender: false }, 10.5);
+  tl.to("#c88", { scale: 1.3, duration: 4.6, ease: "power1.inOut" }, 11.4);
+  tl.fromTo("#coinS .q", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, immediateRender: false }, 15.55);
+  
+  tl.fromTo("#btcp", { opacity: 0 }, { opacity: 1, duration: 0.15, immediateRender: false }, 16.35); tl.fromTo("#btcp img", { scale: 1.15 }, { scale: 1.0, duration: 1.6, ease: "none", immediateRender: false }, 16.35);
+  tl.fromTo("#coinS .bt", { opacity: 0, scale: 1.4 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, 16.7);
+  ov("#th2", 25.8, 27.7); pop("#th2 .th", 25.8);
+  ov("#twmap", 30.4, 33.3); tl.from("#twmap .card", { scale: 0.85, duration: 0.4, ease: "power3.out" }, 30.4);
+  ov("#d27", 31.8, 33.5); pop("#d27 span", 31.8);
+  ov("#th3", 33.3, 34.5); pop("#th3 .th", 33.3);
+  ov("#quote", 48.2, 53.9); tl.from("#quote .box", { y: 80, duration: 0.4, ease: "power3.out" }, 48.2);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 45.32); tl.to("#redflash", { opacity: 0, duration: 0.6 }, 45.38);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 60.3); tl.to("#redflash", { opacity: 0, duration: 0.9 }, 60.36);
+  // karaoke captions
+  const caps = document.getElementById("caps");
+  CAPS.forEach((c, i) => {
+    const d = document.createElement("div"); d.className = "cap"; d.id = "c" + i;
+    c.w.forEach(([t], j) => { const s = document.createElement("span"); s.id = `c${i}w${j}`; s.textContent = t; d.appendChild(s); });
+    caps.appendChild(d);
+    tl.fromTo("#c" + i, { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.1, ease: "back.out(2)", immediateRender: false }, c.s);
+    tl.to("#c" + i, { opacity: 0, duration: 0.04 }, Math.max(c.s + 0.15, c.e - 0.04));
+    c.w.forEach(([t, s], j) => tl.to(`#c${i}w${j}`, { color: "#ffd400", duration: 0.05 }, s));
+  });
+  tl.to({}, { duration: 0.01 }, END - 0.01);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["main"] = tl;
+})();
+//# sourceURL=hyperframes-composition://body</script></body>
+</html>
