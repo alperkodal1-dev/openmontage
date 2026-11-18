@@ -19,25 +19,33 @@ In Gordion versprach ein Orakel Asien dem, der einen Knoten löst. Er durchschlu
 Mit zweiunddreißig herrschte er von Griechenland bis Indien und verlor nie eine Schlacht.
 
 6
-00:00:23,416 --> 00:00:25,517
-So erzählt man es jedenfalls.
+00:00:23,460 --> 00:00:27,200
+Das ist die Legende. Und jetzt... prüfen wir die Quellen.
 
 7
-00:00:25,667 --> 00:00:27,341
-Fangen wir von vorne an.
-
-8
-00:00:27,391 --> 00:00:33,289
+00:00:27,390 --> 00:00:33,210
 Die Schlachten sind echt: Issos, Gaugamela, der Hydaspes, alle gewonnen.
 
+8
+00:00:33,260 --> 00:00:34,730
+Und die Tränen?
+
 9
-00:00:33,339 --> 00:00:41,683
-Und die Tränen? Ein Philosoph sagte ihm, es gebe unendlich viele Welten... und er weinte, weil er nicht einmal eine erobert hatte.
+00:00:34,780 --> 00:00:41,390
+Der Philosoph Anaxarchos sagte ihm, das Universum enthalte nicht eine Welt... sondern unendlich viele Welten.
 
 10
-00:00:41,783 --> 00:00:48,132
-Und kein Text aus seiner Lebenszeit nennt ihn "den Großen". Der erste, den wir haben, ist eine römische Komödie.
+00:00:41,440 --> 00:00:43,210
+Welten ohne Ende.
 
 11
-00:00:48,282 --> 00:00:53,493
+00:00:43,260 --> 00:00:47,470
+Und der Mann, der alles erobert hatte, was er erreichen konnte... weinte.
+
+12
+00:00:47,520 --> 00:00:50,200
+Er war nicht Herr über eine einzige.
+
+13
+00:00:50,620 --> 00:00:56,100
 Wenn die Welten unendlich sind... kann dann überhaupt jemand groß sein?

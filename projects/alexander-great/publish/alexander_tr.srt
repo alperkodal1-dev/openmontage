@@ -19,25 +19,33 @@ Gordion'da bir kehanet, bir düğümü çözene Asya'yı vaat ediyordu. O düğ�
 Otuz iki yaşında Yunanistan'dan Hindistan'a kadar hüküm sürüyordu ve hiç savaş kaybetmemişti.
 
 6
-00:00:23,416 --> 00:00:25,517
-Ya da öyle anlatılır.
+00:00:23,460 --> 00:00:27,200
+Bu efsane. Şimdi... kaynaklara bakalım.
 
 7
-00:00:25,667 --> 00:00:27,341
-Hadi en baştan başlayalım.
-
-8
-00:00:27,391 --> 00:00:33,289
+00:00:27,390 --> 00:00:33,210
 Savaşlar gerçek: İssos, Gaugamela, Hydaspes, hepsi kazanıldı.
 
+8
+00:00:33,260 --> 00:00:34,730
+Peki ya gözyaşları?
+
 9
-00:00:33,339 --> 00:00:41,683
-Peki ya gözyaşları? Bir filozof ona sonsuz sayıda dünya olduğunu söyledi... ve o, tek birini bile fethedemediği için ağladı.
+00:00:34,780 --> 00:00:41,390
+Filozof Anaxarkhos ona evrende tek bir dünya değil... sonsuz sayıda dünya olduğunu söyledi.
 
 10
-00:00:41,783 --> 00:00:48,132
-Ve onun yaşadığı döneme ait hiçbir metin ona "Büyük" demiyor. Elimizdeki ilk örnek bir Roma komedisi.
+00:00:41,440 --> 00:00:43,210
+Sonu olmayan dünyalar.
 
 11
-00:00:48,282 --> 00:00:53,493
+00:00:43,260 --> 00:00:47,470
+Ve ulaşabildiği her şeyi fethetmiş olan adam... ağladı.
+
+12
+00:00:47,520 --> 00:00:50,200
+Tek birinin bile efendisi değildi.
+
+13
+00:00:50,620 --> 00:00:56,100
 Dünyalar sonsuzsa... kimse gerçekten büyük olabilir mi?

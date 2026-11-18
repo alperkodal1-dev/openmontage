@@ -19,25 +19,33 @@ At Gordium, an oracle promised Asia to whoever untied a knot. He cut it with his
 By thirty-two, he ruled from Greece to India, and never lost a battle.
 
 6
-00:00:23,416 --> 00:00:25,517
-Or so the story goes.
+00:00:23,460 --> 00:00:27,200
+That's the legend. Now... let's check the sources.
 
 7
-00:00:25,667 --> 00:00:27,341
-Let's start from the beginning.
-
-8
-00:00:27,391 --> 00:00:33,289
+00:00:27,390 --> 00:00:33,210
 The battles are real: Issus, Gaugamela, the Hydaspes, all won.
 
+8
+00:00:33,260 --> 00:00:34,730
+But the tears?
+
 9
-00:00:33,339 --> 00:00:41,683
-But the tears? A philosopher told him there were infinite worlds... and he wept because he hadn't conquered even one.
+00:00:34,780 --> 00:00:41,390
+The philosopher Anaxarchus told him the universe held not one world... but infinite worlds.
 
 10
-00:00:41,783 --> 00:00:48,132
-And no text from his lifetime calls him "the Great." The first one we have is a Roman comedy.
+00:00:41,440 --> 00:00:43,210
+Worlds without end.
 
 11
-00:00:48,282 --> 00:00:53,493
+00:00:43,260 --> 00:00:47,470
+And the man who had conquered everything he could reach... wept.
+
+12
+00:00:47,520 --> 00:00:50,200
+He was not lord of even one.
+
+13
+00:00:50,620 --> 00:00:56,100
 If the worlds are infinite... can anyone ever be great?

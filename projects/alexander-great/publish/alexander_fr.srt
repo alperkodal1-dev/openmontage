@@ -19,25 +19,33 @@ Sa mère disait qu'il était fils de Zeus.
 À trente-deux ans, il régnait de la Grèce à l'Inde et n'avait jamais perdu une bataille.
 
 6
-00:00:23,416 --> 00:00:25,517
-C'est du moins ce qu'on raconte.
+00:00:23,460 --> 00:00:27,200
+Voilà la légende. Maintenant... vérifions les sources.
 
 7
-00:00:25,667 --> 00:00:27,341
-Reprenons depuis le début.
-
-8
-00:00:27,391 --> 00:00:33,289
+00:00:27,390 --> 00:00:33,210
 Les batailles sont réelles : Issos, Gaugamèles, l'Hydaspe, toutes gagnées.
 
+8
+00:00:33,260 --> 00:00:34,730
+Et les larmes ?
+
 9
-00:00:33,339 --> 00:00:41,683
-Et les larmes ? Un philosophe lui dit qu'il existait une infinité de mondes... et il pleura de n'en avoir conquis aucun.
+00:00:34,780 --> 00:00:41,390
+Le philosophe Anaxarque lui dit que l'univers ne contenait pas un seul monde... mais une infinité de mondes.
 
 10
-00:00:41,783 --> 00:00:48,132
-Et aucun texte de son vivant ne l'appelle « le Grand ». Le premier que nous ayons est une comédie romaine.
+00:00:41,440 --> 00:00:43,210
+Des mondes sans fin.
 
 11
-00:00:48,282 --> 00:00:53,493
+00:00:43,260 --> 00:00:47,470
+Et l'homme qui avait conquis tout ce qu'il pouvait atteindre... pleura.
+
+12
+00:00:47,520 --> 00:00:50,200
+Il n'était le maître d'aucun.
+
+13
+00:00:50,620 --> 00:00:56,100
 Si les mondes sont infinis... quelqu'un peut-il vraiment être grand ?

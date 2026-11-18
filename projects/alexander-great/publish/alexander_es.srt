@@ -19,25 +19,33 @@ En Gordio, un oráculo prometía Asia a quien desatara un nudo. Él lo cortó co
 A los treinta y dos, gobernaba de Grecia a la India y nunca perdió una batalla.
 
 6
-00:00:23,416 --> 00:00:25,517
-O eso cuenta la historia.
+00:00:23,460 --> 00:00:27,200
+Esa es la leyenda. Ahora... revisemos las fuentes.
 
 7
-00:00:25,667 --> 00:00:27,341
-Empecemos desde el principio.
-
-8
-00:00:27,391 --> 00:00:33,289
+00:00:27,390 --> 00:00:33,210
 Las batallas son reales: Issos, Gaugamela, el Hidaspes, todas ganadas.
 
+8
+00:00:33,260 --> 00:00:34,730
+¿Y las lágrimas?
+
 9
-00:00:33,339 --> 00:00:41,683
-¿Y las lágrimas? Un filósofo le dijo que había infinitos mundos... y lloró porque no había conquistado ni uno.
+00:00:34,780 --> 00:00:41,390
+El filósofo Anaxarco le dijo que el universo no tenía un solo mundo... sino infinitos mundos.
 
 10
-00:00:41,783 --> 00:00:48,132
-Y ningún texto de su vida lo llama "el Grande". El primero que tenemos es una comedia romana.
+00:00:41,440 --> 00:00:43,210
+Mundos sin fin.
 
 11
-00:00:48,282 --> 00:00:53,493
+00:00:43,260 --> 00:00:47,470
+Y el hombre que había conquistado todo lo que podía alcanzar... lloró.
+
+12
+00:00:47,520 --> 00:00:50,200
+No era señor ni de uno.
+
+13
+00:00:50,620 --> 00:00:56,100
 Si los mundos son infinitos... ¿puede alguien ser grande de verdad?
