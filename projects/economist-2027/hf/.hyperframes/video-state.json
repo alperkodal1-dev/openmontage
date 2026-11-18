@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "27b4f41e-5386-4ec4-b56d-cc460a2e731d",
-  "currentRevision": "3d418a0e-8079-42b4-9bd4-3e83af945a12",
+  "currentRevision": "320124d6-d71d-4f1f-9d61-3dafdd0331fc",
   "pendingChanges": false,
   "files": {
     "assets/fonts/Amiri-arabic.woff2": {
@@ -61,12 +61,16 @@
       "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
     },
     "index.html": {
-      "hash": "5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1",
-      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/5e/5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1"
+      "hash": "44614e0f71cb7b03845f06e3c70fa1aacb01df38c0f3948a47c057943dd44e76",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/44/44614e0f71cb7b03845f06e3c70fa1aacb01df38c0f3948a47c057943dd44e76"
     },
     "assets/cover_circle.png": {
-      "hash": "ce4bdcfd720f7a7ce1377385a6f0d5b057f9d008ca0d7b4a20381caeb10e9e03",
-      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/ce/ce4bdcfd720f7a7ce1377385a6f0d5b057f9d008ca0d7b4a20381caeb10e9e03"
+      "hash": "b1dfdd58ce1a548b4a086d6b8c36a22de9976a1416c23c8b9862f8f8c8c076bd",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/b1/b1dfdd58ce1a548b4a086d6b8c36a22de9976a1416c23c8b9862f8f8c8c076bd"
+    },
+    "assets/taiwan.png": {
+      "hash": "2893490bb1c64a7cba41aabdc7865f5307b4771247108bc7225513b35183b7c1",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/2893490bb1c64a7cba41aabdc7865f5307b4771247108bc7225513b35183b7c1"
     }
   },
   "revisions": {
@@ -148,6 +152,44 @@
           "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/5e/5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1"
         }
       }
+    },
+    "be39681b-95e8-4b58-b783-95888d0cdcde": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794977549464,
+      "endedAt": 1794977549483,
+      "files": {
+        "assets/cover_circle.png": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/ce/ce4bdcfd720f7a7ce1377385a6f0d5b057f9d008ca0d7b4a20381caeb10e9e03",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/b1/b1dfdd58ce1a548b4a086d6b8c36a22de9976a1416c23c8b9862f8f8c8c076bd"
+        },
+        "assets/taiwan.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/2893490bb1c64a7cba41aabdc7865f5307b4771247108bc7225513b35183b7c1"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/5e/5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/88/880e0769acae866dea21e976164a31b862523dc05186b9cf2b93497b0d8024df"
+        }
+      }
+    },
+    "320124d6-d71d-4f1f-9d61-3dafdd0331fc": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794977864224,
+      "endedAt": 1794977864225,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/88/880e0769acae866dea21e976164a31b862523dc05186b9cf2b93497b0d8024df",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/44/44614e0f71cb7b03845f06e3c70fa1aacb01df38c0f3948a47c057943dd44e76"
+        }
+      }
     }
   },
   "checks": {
@@ -162,15 +204,15 @@
   },
   "renders": {
     "latest": {
-      "id": "6fd54c89-0827-4b9a-8873-d0e6e9e5ff3d",
-      "completedAt": 1794977237019,
+      "id": "bd1f4c34-a650-4c47-99f9-aa822d633f1c",
+      "completedAt": 1794978083457,
       "output": "/home/user/openmontage/projects/economist-2027/out/visual.mp4",
       "status": "completed",
-      "revision": "3d418a0e-8079-42b4-9bd4-3e83af945a12"
+      "revision": "320124d6-d71d-4f1f-9d61-3dafdd0331fc"
     },
     "retainedRevisions": [
-      "3d418a0e-8079-42b4-9bd4-3e83af945a12",
-      "0a156f09-f9b6-43a8-852e-2ba83bd5dce4"
+      "320124d6-d71d-4f1f-9d61-3dafdd0331fc",
+      "be39681b-95e8-4b58-b783-95888d0cdcde"
     ]
   },
   "pendingArtifactCleanup": []

@@ -19,3 +19,8 @@ Theory three line re-voiced: "Theory three: AI takes over. A robot... stealing s
 Ending re-voiced, slower, 2.6 s hold on the corner: "So is it a forecast... or a warning? Look at that corner one more time... What do you see?"
 
 ## v4: opening line is "The Economist dropped its 2027 cover... and it's dark." (owner), spliced from the first take; red flash + hit on "dark".
+
+## v5 (owner: if the coin means Bitcoin show Bitcoin; show whatever is being talked about; zooms not sharp)
+- 1988 phoenix coin flips to a Bitcoin coin on "world currency", tag "THE THEORY: IT MEANT BITCOIN" (the Bitcoin link is the online theory, not the 1988 article).
+- New shots: tanks / missiles / tents each on its word, surveillance camera on "cameras everywhere", China-Taiwan map card (d3 + Natural Earth) before the 2027 stamp.
+- Sharpness: rebuilt the cover from the 1920 px nmas.com.mx copy + 24horas.cl copy, 6x upscale and re-inked to the 3 cover colours (img/cover_circle_x6.png, 4020 px).
