@@ -9,7 +9,7 @@ def seven(d, stem): return {l: f'{P}{d}/{stem}_{l}.srt' for l in ALL7}
 PIRI = {'fr': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_fr.srt', 'ja': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_ja.srt', 'hi': HU + 'piri_hi.srt', 'ur': HU + 'piri_ur.srt'}
 V = {
  'economist': ('3lRSiGfhOw0', 'Economist 2027', {l: P + f'economist-2027/publish/economist_{l}.srt' for l in ALL7 + ['hi', 'ur', 'ru']}),
- 'alexander': ('1TaqKYl8Vok', 'Alexander', {**seven('alexander-great/publish', 'alexander'), 'hi': P + 'alexander-great/publish/alexander_hi.srt', 'ur': P + 'alexander-great/publish/alexander_ur.srt'}),
+ 'alexander': ('4G-MdMl5PGg', 'Alexander', {**seven('alexander-great/publish', 'alexander'), 'hi': P + 'alexander-great/publish/alexander_hi.srt', 'ur': P + 'alexander-great/publish/alexander_ur.srt'}),
  'piri': ('5SXAmr8qgFM', 'Piri Reis', PIRI),
  'noah': ('x5FLR7Iwv_A', 'Noah', {**seven('noah-ark/publish_long', 'noah'), 'hi': HU + 'noah_hi.srt', 'ur': HU + 'noah_ur.srt'}),
  'salem': ('Y_Apy6CZdHI', 'Salem', {**seven('salem-remix/publish', 'salem'), 'hi': HU + 'salem_hi.srt', 'ur': HU + 'salem_ur.srt'}),

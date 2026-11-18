@@ -46,3 +46,5 @@ Format: hook with the grey signature -> legends told vividly -> "Or so the story
 v3b: ending uses real deep-space images instead of the drawn starfield: Webb's First Deep Field (SMACS 0723, NASA/ESA/CSA/STScI, public domain) zooming out from one galaxy to thousands, then the Hubble Ultra Deep Field (NASA/ESA, public domain) under the quote and the closing question. Credit line on screen; add to description.
 
 v4 (18 Nov): hook "Alexander wept: no worlds left to conquer. That's what they told you." + stamp NOT THE REAL REASON (the old "...or did he?" did not fit: he did weep, for another reason). Uploaded as 1TaqKYl8Vok, scheduled 18 Nov 17:00 UTC (20:00 TR), cover G. Earlier upload 4G-MdMl5PGg unscheduled (private, can be deleted); old unlisted yp6RSu-8kl0 too.
+
+Owner: v3 ("...or did he?") is better. v3 = 4G-MdMl5PGg re-scheduled for 18 Nov 17:00 UTC (20:00 TR). v4 upload 1TaqKYl8Vok no longer exists on the channel. Source files reverted to the v3 hook (vo.wav from vo_v3b.wav; words.json still v4 hook timings, re-transcribe before the next render).
