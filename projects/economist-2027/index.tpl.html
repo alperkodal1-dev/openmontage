@@ -87,17 +87,17 @@
   });
   const ov = (id, a, b) => { tl.fromTo(id, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, a); tl.to(id, { opacity: 0, duration: 0.2 }, b - 0.2); };
   const pop = (sel, t) => tl.fromTo(sel, { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.25, ease: "back.out(2)", immediateRender: false }, t);
-  [[5.5, 7.3], [25.8, 27.7], [33.45, 34.9]].forEach(([a, b]) => ov("#dim", a, b));
+  [[5.5, 7.3], [25.8, 27.7], [33.3, 34.5]].forEach(([a, b]) => ov("#dim", a, b));
   tl.to("#credit", { opacity: 0, duration: 0.2 }, 10.5); tl.to("#credit", { opacity: 1, duration: 0.2 }, 17.4);
   ov("#th1", 5.5, 7.3); pop("#th1 .th", 5.5);
   ov("#coinS", 10.5, 17.5); tl.fromTo("#coin", { rotationY: 90, scale: .7 }, { rotationY: 0, scale: 1, duration: 0.7, ease: "power3.out", immediateRender: false }, 10.6);
   tl.from("#coinS .q", { opacity: 0, y: 30, duration: 0.35 }, 15.55);
   ov("#th2", 25.8, 27.7); pop("#th2 .th", 25.8);
   ov("#d27", 31.8, 33.5); pop("#d27 span", 31.8);
-  ov("#th3", 33.45, 34.9); pop("#th3 .th", 33.45);
-  ov("#quote", 45.6, 51.4); tl.from("#quote .box", { y: 80, duration: 0.4, ease: "power3.out" }, 45.6);
-  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 42.74); tl.to("#redflash", { opacity: 0, duration: 0.6 }, 42.8);
-  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 54.22); tl.to("#redflash", { opacity: 0, duration: 0.6 }, 54.28);
+  ov("#th3", 33.3, 34.5); pop("#th3 .th", 33.3);
+  ov("#quote", 48.2, 53.9); tl.from("#quote .box", { y: 80, duration: 0.4, ease: "power3.out" }, 48.2);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 45.32); tl.to("#redflash", { opacity: 0, duration: 0.6 }, 45.38);
+  tl.fromTo("#redflash", { opacity: 0 }, { opacity: 0.4, duration: 0.05, immediateRender: false }, 60.3); tl.to("#redflash", { opacity: 0, duration: 0.9 }, 60.36);
   // karaoke captions
   const caps = document.getElementById("caps");
   CAPS.forEach((c, i) => {
