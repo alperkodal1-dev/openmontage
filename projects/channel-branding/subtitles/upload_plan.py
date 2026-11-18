@@ -8,6 +8,7 @@ ALL7 = ['en', 'tr', 'es', 'pt', 'de', 'fr', 'ja']
 def seven(d, stem): return {l: f'{P}{d}/{stem}_{l}.srt' for l in ALL7}
 PIRI = {'fr': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_fr.srt', 'ja': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_ja.srt', 'hi': HU + 'piri_hi.srt', 'ur': HU + 'piri_ur.srt'}
 V = {
+ 'economist': ('3lRSiGfhOw0', 'Economist 2027', {l: P + f'economist-2027/publish/economist_{l}.srt' for l in ALL7 + ['hi', 'ur', 'ru']}),
  'piri': ('5SXAmr8qgFM', 'Piri Reis', PIRI),
  'noah': ('x5FLR7Iwv_A', 'Noah', {**seven('noah-ark/publish_long', 'noah'), 'hi': HU + 'noah_hi.srt', 'ur': HU + 'noah_ur.srt'}),
  'salem': ('Y_Apy6CZdHI', 'Salem', {**seven('salem-remix/publish', 'salem'), 'hi': HU + 'salem_hi.srt', 'ur': HU + 'salem_ur.srt'}),
@@ -15,11 +16,11 @@ V = {
  'atlantis': ('d2PR8LPYXzo', 'Atlantis', {**seven('atlantis-story/v4/publish', 'atlantis'), 'hi': HU + 'atlantis_hi.srt', 'ur': HU + 'atlantis_ur.srt'}),
 }
 # Owner (17 Nov): this week's only job is captions on every Short on the channel. ~24 tracks fit in a day's quota.
-PLAN = {'day1': [V['piri'], V['noah'], V['salem']],   # 4 + 9 + 9 = 22 tracks
-        'day2': [V['pyramid'], V['atlantis']],         # 9 + 9 = 18 tracks
-        'day3': list(V.values())}                      # retry anything that failed (skips what is already there)
+PLAN = {'day1': [V['economist'], V['piri'], V['noah']],   # 10 + 4 + 9 = 23 tracks (Economist first: it is trending)
+        'day2': [V['salem'], V['pyramid']],                  # 9 + 9 = 18 tracks
+        'day3': list(V.values())}   # Atlantis (9) + retry anything missing on every Short
 # Ankara (long video) left out at the owner's request
-NAMES = {'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
+NAMES = {'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
 b = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'], 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
 A = {'Authorization': 'Bearer ' + json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', b))['access_token']}
