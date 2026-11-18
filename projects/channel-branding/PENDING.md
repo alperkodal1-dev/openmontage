@@ -29,6 +29,7 @@ vidIQ ~11 left (voiceover 28, thumbnail 22, watch 10). ElevenLabs 6 left. YouTub
 - "Scientists said the world would end on Friday 13 Nov 2026" (von Foerster 1960, Science) — recommended next.
 - Baba Vanga 2027 predictions; Simpsons Nov 17 blackout (no Simpsons footage).
 - Assassins (script ready: assassins-alamut/script.md), Machiavelli, Mona Lisa 1911, Mary Celeste, Sphinx.
-- Cancelled: cab comedy (projects/cab-comedy).
+- Cancelled: cab comedy (projects/cab-comedy); "What Did Ancient Humans Actually Do All Day?" (projects/ancient-day, script only, 18 Nov).
+- OWNER RULE (18 Nov): spend nothing new. All remaining vidIQ / ElevenLabs / API usage is for caption uploads (or something urgent) only.
 ## Lessons (vidIQ + jury)
 Shorts that win: 20-40 s, hook in first 1-2 s, snap zooms, karaoke captions, trending topic, comment-bait ending that loops. vidIQ can only watch PUBLIC videos via vidiq_video_watch (long-form tool works on unlisted). Thumbnails with a big human face score 90+.
