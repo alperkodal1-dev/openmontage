@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "5a69dbd9-f2f4-4b64-9188-0c5dc297ac21",
-  "currentRevision": "f170211b-6699-401d-93a5-7a53cb117818",
+  "currentRevision": "9ff94848-d535-455c-bcaf-d0cb6511df63",
   "pendingChanges": false,
   "files": {
     "assets/bucephalus.jpg": {
@@ -81,8 +81,8 @@
       "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/a9/a9c6f4af4e98079be22ac0b9a6a1c07d4278cedd75a85c66772ebd64599be198"
     },
     "captions.js": {
-      "hash": "3c514564a736d65c3e5375f5e17f9b122cf8f3494d31eaac311bd5f2b62d0cc9",
-      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/3c/3c514564a736d65c3e5375f5e17f9b122cf8f3494d31eaac311bd5f2b62d0cc9"
+      "hash": "3f7ff0f4672ff35017e71b946fc899d11ac673d9b467cd16fd90bcf596893823",
+      "content": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/3f/3f7ff0f4672ff35017e71b946fc899d11ac673d9b467cd16fd90bcf596893823"
     },
     "assets/map.svg.html": {
       "hash": "4ff6518533ecc32dad4cbb5939102563701f3c42650b37a55e7095224c9c262c",
@@ -249,6 +249,21 @@
           "after": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/e1/e146b4264be94cd63bd69c6b9fc3fabddb41cfc8768d30ee2e82a9f2645df097"
         }
       }
+    },
+    "9ff94848-d535-455c-bcaf-d0cb6511df63": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794989480604,
+      "endedAt": 1794989480613,
+      "files": {
+        "captions.js": {
+          "before": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/3c/3c514564a736d65c3e5375f5e17f9b122cf8f3494d31eaac311bd5f2b62d0cc9",
+          "after": "/root/.cache/hyperframes/history/5a69dbd9-f2f4-4b64-9188-0c5dc297ac21/blobs/3f/3f7ff0f4672ff35017e71b946fc899d11ac673d9b467cd16fd90bcf596893823"
+        }
+      }
     }
   },
   "checks": {
@@ -263,15 +278,15 @@
   },
   "renders": {
     "latest": {
-      "id": "4b7a589b-c4c6-40ca-b771-1b84e34bb432",
-      "completedAt": 1794989312104,
+      "id": "ec87e980-9d02-402e-ade6-4c56e7efc43f",
+      "completedAt": 1794989733853,
       "output": "/home/user/openmontage/projects/alexander-great/out/visual.mp4",
       "status": "completed",
-      "revision": "f170211b-6699-401d-93a5-7a53cb117818"
+      "revision": "9ff94848-d535-455c-bcaf-d0cb6511df63"
     },
     "retainedRevisions": [
-      "f170211b-6699-401d-93a5-7a53cb117818",
-      "c33e9e7d-ec7b-43bd-83b4-500b029178c6"
+      "9ff94848-d535-455c-bcaf-d0cb6511df63",
+      "f170211b-6699-401d-93a5-7a53cb117818"
     ]
   },
   "pendingArtifactCleanup": []
