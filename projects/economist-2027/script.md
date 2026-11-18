@@ -32,3 +32,5 @@ Published 18 Nov 2026 as 3lRSiGfhOw0 (v6 final). The Bitcoin-photo variant in in
 ## v7 (owner: new ending, not focused on the top-right corner; vidIQ-guided)
 Ending: "Forecast... or warning? Leaders at the top. Tents at the bottom. So where are you on this cover?" (callback to the leaders/tents shown earlier; comment prompt; loops to the opening). Shots: leaders snap, tents snap, pull back to full cover. Includes the Bitcoin CC0 photo after the real 1988 cover. out/economist_2027_v7.mp4, 59.2 s. Not uploaded.
 Thumbnail AI v3 "WHO RUNS 2027?" focused on the leaders row (vidIQ 87): thumb/economist_thumb_ai3.jpg. Not set.
+
+Owner (18 Nov): keep the published v6 video; v7 (new ending) not uploaded and its mp4 deleted. Thumbnail on 3lRSiGfhOw0 = economist_thumb_warning.jpg (2027 WARNING?, ring/arrow removed).
