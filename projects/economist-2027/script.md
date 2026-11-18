@@ -28,3 +28,7 @@ Ending re-voiced, slower, 2.6 s hold on the corner: "So is it a forecast... or a
 ## v6: real 1988 cover (Economist 9 Jan 1988, "Get ready for a world currency", phoenix coin 10 / 2018) with zoom to the coin; Bitcoin coin flips in over the real coin. vidIQ review of v5: 8.5/10, publish with minor fixes (tighten middle) -> whole video sped up 6% (60.1 s): out/economist_2027_final.mp4.
 
 Published 18 Nov 2026 as 3lRSiGfhOw0 (v6 final). The Bitcoin-photo variant in index.tpl.html (CC0 photo by David McBee) was not rendered/published.
+
+## v7 (owner: new ending, not focused on the top-right corner; vidIQ-guided)
+Ending: "Forecast... or warning? Leaders at the top. Tents at the bottom. So where are you on this cover?" (callback to the leaders/tents shown earlier; comment prompt; loops to the opening). Shots: leaders snap, tents snap, pull back to full cover. Includes the Bitcoin CC0 photo after the real 1988 cover. out/economist_2027_v7.mp4, 59.2 s. Not uploaded.
+Thumbnail AI v3 "WHO RUNS 2027?" focused on the leaders row (vidIQ 87): thumb/economist_thumb_ai3.jpg. Not set.
