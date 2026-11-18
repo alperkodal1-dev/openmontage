@@ -9,7 +9,7 @@ for w in W:
     F.append(dict(w))
 for w in F:
     w['t'] = w['t'].replace('9,000', '9,000')
-END = 52.6
+END = 56.2
 LEG = {'wept', 'worlds', 'conquer', 'zeus', 'son', 'tamed', 'horse', 'oracle', 'asia', 'knot', 'cut', 'sword', 'never', 'lost'}
 FACT = {'philosopher', 'infinite', 'text', 'lifetime', 'first', 'issus', 'gaugamela', 'hydaspes', 'won', 'plutarch', 'greek', 'roman', 'comedy', 'real'}
 key = lambda t: re.sub(r"[^a-z0-9,\-]", "", t.lower()).strip(',')
@@ -31,5 +31,19 @@ for k, v in P.items():
     if k == 'route': continue
     x, y = v; html = html.replace('{{%s_X}}' % k.upper(), str(x)).replace('{{%s_Y}}' % k.upper(), str(y))
 html = html.replace('{{MAP}}', open('hf/assets/map.svg.html').read()).replace('{{ROUTE}}', P['route'])
+import random
+random.seed(7)
+cs = []
+for _ in range(1600):   # stars
+    x, y, r = random.uniform(0, 3240), random.uniform(0, 5760), random.choice([1.5, 2, 2, 3, 4])
+    cs.append(f'<i style="left:{x:.0f}px;top:{y:.0f}px;width:{r}px;height:{r}px;background:#fff;opacity:{random.uniform(.35, 1):.2f}"></i>')
+pal = [('#9fd3ff', '#1d3b6e'), ('#f1d49a', '#7a4a16'), ('#ff9a6b', '#6b1f10'), ('#7dffb0', '#0f4a3a'), ('#d9d2ff', '#3a2f7a'), ('#e8e2d0', '#3a3a3a')]
+for _ in range(170):    # worlds
+    x, y = random.uniform(0, 3240), random.uniform(0, 5760)
+    r = random.choice([8, 12, 16, 22, 30, 44, 60, 90, 130]) * random.uniform(.8, 1.2)
+    a, b = random.choice(pal)
+    glow = f'box-shadow:0 0 {r*0.6:.0f}px {a}55;' if r > 40 else ''
+    cs.append(f'<i style="left:{x-r:.0f}px;top:{y-r:.0f}px;width:{2*r:.0f}px;height:{2*r:.0f}px;background:radial-gradient(circle at 32% 30%,{a} 0,{b} 62%,#02050a 100%);{glow}"></i>')
+html = html.replace('{{COSMOS}}', ''.join(cs))
 open('hf/index.html', 'w').write(html)
 print('ok', len(C), 'caption chunks')

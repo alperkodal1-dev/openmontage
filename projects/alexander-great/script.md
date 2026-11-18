@@ -40,3 +40,5 @@ Format: hook with the grey signature -> legends told vividly -> "Or so the story
 ## v2 jury changes
 - Lines 0, 8, 9, 10 re-voiced: faster hook, clearer Plutarch line, "no surviving text" instead of "no Greek", ending no longer claims Rome invented the name.
 - Stamp "OVER A CENTURY LATER"; Plutarch bust brighter, quote larger; title "Who Really Made Alexander \"the Great\"?" (vidIQ 90), cover D (vidIQ 92).
+
+## v3 (18 Nov, owner): "Or so the story goes" turn replaced by "That's the legend. Now... let's check the sources." (LEGEND stamp, scan line, FACT CHECK card). Plutarch line made cinematic: "But the tears? The philosopher Anaxarchus told him the universe held not one world... but infinite worlds. Worlds without end. And the man who had conquered everything he could reach... wept. He was not lord of even one." Roman comedy / MAGNUS section removed; the infinite-worlds starfield runs from 39 s to the end under the closing question. out/alexander_v3.mp4, 56.2 s. TODO before upload: captions (make_srt.py still v2 lines), title/cover still about "who made him great".
