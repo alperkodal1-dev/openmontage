@@ -1,58 +1,34 @@
-# Open items (as of 2026-11-17) — read this at the start of a new chat
+# Handoff — Or So The Story Goes (state on 18 Nov 2026, ~12:20 Istanbul)
 
-Channel: renaming from "Unsealed History" to "Or So The Story Goes" (UC-56SCswc-CVcH835YjGyow). Owner renames it in Studio; then run `channel-branding/rename_channel.py` (video descriptions/tags + channel description/keywords). House style: `SIGNATURES.md` (incl. section 7, vidIQ lessons).
+Branch: claude/history-shorts-design-9f809x. Read SIGNATURES.md first. All conversation with the owner in Turkish; videos in English.
+Standing owner rules: ask before spending credits (vidIQ / ElevenLabs) and before publishing; never delete + re-upload a PUBLISHED video; one Short a day at 20:00 Istanbul (17:00 UTC); no reused third-party audio/footage (Content ID risk); only add tags, do not remove existing ones.
 
-## Waiting for the owner's channel verification (custom thumbnails)
-Thumbnail uploads are blocked ("too many thumbnails" / verification). Once https://www.youtube.com/features shows
-custom thumbnails enabled, set (owner may do it in Studio):
-| Video | ID | State | Cover (vidIQ score) |
-|---|---|---|---|
-| Great Pyramid | eb9hr58dpCI | public | `egypt-pyramids/thumb/pyramid_cover_e.jpg` (86) |
-| Noah, 59 s Shorts cut | hgJgE_9AVFo | public | `noah-ark/thumb/noah_cover_b.jpg` (91) |
-| Noah, 72 s long cut | AuveB2unXDM | private draft | `noah-ark/thumb/noah_cover_b.jpg` (owner sets it) |
+## Channel videos
+| Video | ID | State |
+|---|---|---|
+| Economist 2027 cover | 3lRSiGfhOw0 | public 18 Nov; captions 10 langs; localized titles 9 langs; thumb "2027 WARNING?" (no ring); category News & Politics (set by owner) |
+| Alexander (v3, infinite worlds) | 4G-MdMl5PGg | scheduled 18 Nov 17:00 UTC; thumb cover_g (WHY HE WEPT, vidIQ 92); title vidIQ 98; tag "ancient people" added |
+| Piri Reis | 5SXAmr8qgFM | public; captions 9 langs |
+| Noah | x5FLR7Iwv_A | public; captions 9 langs; "ancient people" tag pending (trigger 19 Nov 11:40) |
+| Salem | Y_Apy6CZdHI | public; captions pending (19 Nov 11:05) |
+| Pyramid | 5xT5DXyXcVA | public; captions pending (19 Nov 11:05); "ancient people" added, which pushed out "who built the pyramids" — owner to decide |
+| Atlantis | d2PR8LPYXzo | public; captions pending (20 Nov 11:05); "ancient people" added |
+| Ankara (long) | MP9oLB-ND9A | public; 4 caption langs; left out of caption plan by owner |
+Leftover non-public copies the owner may delete in Studio: yp6RSu-8kl0 (old Alexander, unlisted), z15OEpavQ5I (Economist review copy, unlisted).
 
-## Other open items
-- Noah long cut (AuveB2unXDM): captions tr, es, de, fr, ja hit the daily API quota; upload with
-  `noah-ark/publish_long/captions_rest.py` (a reminder was scheduled for 2026-11-18 08:20 UTC in the old session).
-  Title is the proven original "The Mistake Everyone Makes About Noah's Ark #shorts #bible".
-- When the owner publishes the long cut: post the comment (from `publish_long/metadata.json`), and ask whether to
-  take down the 59 s cut (hgJgE_9AVFo) so the same video is not up twice.
-- Pin the comments on eb9hr58dpCI and hgJgE_9AVFo in Studio (the API cannot pin).
-- Remaining caption tracks on older videos (Ankara de; fr and ja on the five older Shorts): `subtitles/yt_captions.py`.
-- Owner should rotate the OAuth client secret (it was pasted in chat). The refresh token lived only in the old session's
-  scratchpad and expires after ~7 days in Testing mode: a new chat needs a fresh OAuth code
-  (`yt_upload_video.py`, `egypt-pyramids/publish/finish.py` read YT_OAUTH_JSON / YT_CLIENT_ID / YT_CLIENT_SECRET).
+## Scheduled tasks (this old session)
+- 19 Nov 11:05 TR: captions day2 (Salem, Pyramid) — subtitles/upload_plan.py day2
+- 19 Nov 11:40 TR: add "ancient people" to Noah (add only)
+- 20 Nov 11:05 TR: captions day3 (Atlantis, Alexander 4G-MdMl5PGg, then re-check all)
+These fire into the OLD session. If the new session should run them instead, recreate them there.
 
-## Tools
-- Upload with metadata: `yt_upload_video.py <mp4> @<publish>/metadata.json [private|public]`
-- Everything after upload (metadata, captions, comment, optional thumbnail): `egypt-pyramids/publish/finish.py <id> <privacy> <publish dir>`
-- YouTube API daily quota: 10,000 units (upload 1600, caption 400).
+## Credits
+vidIQ ~11 left (voiceover 28, thumbnail 22, watch 10). ElevenLabs 6 left. YouTube API quota 10k/day, resets 11:00 TR (captions 400 each).
 
-## Parked ideas (owner: on hold until Noah and Pyramid are finished)
-- Assassins of Alamut: script v2 ready (`assassins-alamut/script.md`, 128 words, ~58 s, includes Nizam al-Mulk 1092).
-  Next step: owner approval for the voiceover (~28 vidIQ credits). Search ~45k/month, low competition.
-- Machiavelli ("The end justifies the means. He never said it."): ~476k searches/month, high competition. Not written yet.
-- Other researched topics: Sphinx's nose (sphinx +845%), Mary Celeste (178k, +152%), Mona Lisa theft 1911.
-
-## Salem re-upload (2026-11-17)
-- First re-upload F_HL18etevs (all-new music): owner to delete. FINAL Salem = Y_Apy6CZdHI (Mussorgsky legend part kept, Pixabay part replaced), public.
-- Quota ran out: tomorrow run `python3 egypt-pyramids/publish/finish.py Y_Apy6CZdHI public salem-remix/publish`
-  (sets metadata again, 7 captions, posts the comment; owner pins it). Owner deletes the old Salem (5phbMr3egWo) and F_HL18etevs in Studio.
-- Atlantis v4 script waits for the owner's OK on the voiceover (~28 credits): `atlantis-story/v4/script.md`.
-
-## State at end of 2026-11-17 (from vidIQ's channel listing)
-- Channel title is already "Or So The Story Goes".
-- On the channel: Noah x5FLR7Iwv_A (owner's own upload, public; title/description/tags fixed via vidIQ), Salem Y_Apy6CZdHI,
-  Piri Reis 5SXAmr8qgFM (976 views), Ankara MP9oLB-ND9A. Not listed any more: Pyramid eb9hr58dpCI, Atlantis _PpRv_GMMlk,
-  old Salem 5phbMr3egWo, F_HL18etevs, Noah drafts AuveB2unXDM / hgJgE_9AVFo.
-- Scheduled for 2026-11-18 08:25 UTC: captions/language/comment for x5FLR7Iwv_A and Y_Apy6CZdHI, then rename_channel.py.
-- Atlantis v4 (own music, 56 s) rendered in atlantis-story/v4/out/ for the owner's review; not uploaded.
-
-## Drafts uploaded 2026-11-17 (private, owner publishes later)
-- Pyramid 5xT5DXyXcVA, Atlantis v4 PhG3ypH77QM. Captions scheduled for 2026-11-19 08:25 UTC (quota). Covers: Pyramid E, Atlantis none yet.
-
-## 2026-11-17 evening
-- Owner published everything: Noah x5FLR7Iwv_A, Salem Y_Apy6CZdHI, Piri Reis 5SXAmr8qgFM, Pyramid 5xT5DXyXcVA, Atlantis d2PR8LPYXzo (+ Ankara).
-- From now: one Short a day at a fixed time (SIGNATURES.md section 8). Next in the queue: Assassins of Alamut (script ready,
-  voiceover needs owner OK), then Machiavelli, Mona Lisa 1911, Mary Celeste, Sphinx's nose.
-- Scheduled: 18 Nov 11:05 TR captions day1; 11:25 TR language + comments (4 videos) + rename_channel.py; 19 Nov 11:05 TR captions day2.
+## Ideas queue
+- "Scientists said the world would end on Friday 13 Nov 2026" (von Foerster 1960, Science) — recommended next.
+- Baba Vanga 2027 predictions; Simpsons Nov 17 blackout (no Simpsons footage).
+- Assassins (script ready: assassins-alamut/script.md), Machiavelli, Mona Lisa 1911, Mary Celeste, Sphinx.
+- Cancelled: cab comedy (projects/cab-comedy).
+## Lessons (vidIQ + jury)
+Shorts that win: 20-40 s, hook in first 1-2 s, snap zooms, karaoke captions, trending topic, comment-bait ending that loops. vidIQ can only watch PUBLIC videos via vidiq_video_watch (long-form tool works on unlisted). Thumbnails with a big human face score 90+.
