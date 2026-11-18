@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "27b4f41e-5386-4ec4-b56d-cc460a2e731d",
-  "currentRevision": "882aeb54-5284-4b3a-aa7c-9c347c07a9b7",
+  "currentRevision": "d1f3c7b1-99a1-402e-a053-926049dc6f71",
   "pendingChanges": false,
   "files": {
     "assets/fonts/Amiri-arabic.woff2": {
@@ -61,8 +61,8 @@
       "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
     },
     "index.html": {
-      "hash": "8c06b790006c2e956862640380fc73f04ff38a4db23abf34b515e95ac4aafd9d",
-      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/8c/8c06b790006c2e956862640380fc73f04ff38a4db23abf34b515e95ac4aafd9d"
+      "hash": "7167da3c739080d12adef6044d6c14779618ba068137677a467d9ed9082f559e",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/71/7167da3c739080d12adef6044d6c14779618ba068137677a467d9ed9082f559e"
     },
     "assets/cover_circle.png": {
       "hash": "ce4bdcfd720f7a7ce1377385a6f0d5b057f9d008ca0d7b4a20381caeb10e9e03",
@@ -88,6 +88,36 @@
           "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/8c/8c06b790006c2e956862640380fc73f04ff38a4db23abf34b515e95ac4aafd9d"
         }
       }
+    },
+    "c80fad90-4921-4a19-8e5d-3ef5834aca1f": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794975707667,
+      "endedAt": 1794975707668,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/8c/8c06b790006c2e956862640380fc73f04ff38a4db23abf34b515e95ac4aafd9d",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/fd/fd4e2b23bb9a762a695057c1151e3589de798a03f9aa2bdb5309e25fc0e945d1"
+        }
+      }
+    },
+    "d1f3c7b1-99a1-402e-a053-926049dc6f71": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794975984344,
+      "endedAt": 1794975984344,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/fd/fd4e2b23bb9a762a695057c1151e3589de798a03f9aa2bdb5309e25fc0e945d1",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/71/7167da3c739080d12adef6044d6c14779618ba068137677a467d9ed9082f559e"
+        }
+      }
     }
   },
   "checks": {
@@ -102,14 +132,15 @@
   },
   "renders": {
     "latest": {
-      "id": "6238ce5a-6508-4fcb-aa1d-639141ae42df",
-      "completedAt": 1794975375021,
+      "id": "b3e91b67-757b-4efd-a497-3b875cb6be7a",
+      "completedAt": 1794976184157,
       "output": "/home/user/openmontage/projects/economist-2027/out/visual.mp4",
       "status": "completed",
-      "revision": "882aeb54-5284-4b3a-aa7c-9c347c07a9b7"
+      "revision": "d1f3c7b1-99a1-402e-a053-926049dc6f71"
     },
     "retainedRevisions": [
-      "882aeb54-5284-4b3a-aa7c-9c347c07a9b7"
+      "d1f3c7b1-99a1-402e-a053-926049dc6f71",
+      "c80fad90-4921-4a19-8e5d-3ef5834aca1f"
     ]
   },
   "pendingArtifactCleanup": []

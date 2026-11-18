@@ -1,10 +1,12 @@
 """Economist mix: VO + own vidIQ tension score (ducked) + whoosh per snap zoom, booms on hook and reveal -> mix.m4a at -14 LUFS."""
 import subprocess
-END = 20.4
+END = 56.0
 MUS = '../../noah-ark/audio/music_tension.wav'
 S = '../../atlantis-story/sfx/'
-SFX = [('hit', 0.0, 0.9), ('rumble', 0.0, 0.7), ('hit', 3.3, 0.9)] + [('whoosh', t - 0.12, 0.45) for t in (4.38, 4.78, 5.62, 6.92, 8.22, 9.58, 10.84, 12.8, 14.7)] \
-      + [('hit', 15.86, 1.0), ('rumble', 15.86, 0.8), ('tick', 18.4, 0.7)]
+SNAP = (7.3, 19.36, 22.28, 24.36, 27.72, 28.48, 34.92, 35.98, 38.64, 42.74, 54.22)
+SFX = [('hit', 0.0, 0.9), ('rumble', 0.0, 0.7)] + [('whoosh', t - 0.12, 0.4) for t in SNAP] \
+      + [('hit', 5.5, 0.8), ('swell', 9.6, 0.5), ('hit', 10.6, 0.8), ('hit', 25.8, 0.8), ('hit', 31.8, 1.0), ('rumble', 31.8, 0.7),
+         ('hit', 33.45, 0.8), ('hit', 42.74, 1.0), ('rumble', 42.74, 0.8), ('tick', 45.6, 0.7), ('hit', 54.22, 0.9)]
 inp = ['-i', 'vo.wav', '-i', MUS] + sum([['-i', S + f'{n}.wav'] for n, _, _ in SFX], [])
 f = [f'[0:a]aresample=48000,aformat=channel_layouts=stereo,apad=whole_dur={END},asplit[vo][sc]',
      f'[1:a]aresample=48000,aformat=channel_layouts=stereo,atrim=0:{END},volume=0.16,afade=t=out:st={END-0.25}:d=0.25[m]',
