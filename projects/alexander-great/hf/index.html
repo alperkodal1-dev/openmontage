@@ -35,7 +35,7 @@
   #hk .t1{position:absolute;top:320px;left:0;right:0;font-size:92px;color:var(--bone)}
   #hk .t2{position:absolute;top:430px;left:0;right:0;font-size:96px}
   #hk .st{position:absolute;top:600px;left:0;right:0;text-align:center}
-  #hk .stamp{font-size:64px}
+  #hk .stamp{font-size:58px}
   #ring1{position:absolute;left:330px;top:640px;width:420px;height:420px;border:6px solid var(--myth);border-radius:50%;box-shadow:0 0 30px rgba(125,255,176,.6)}
   #slash{position:absolute;left:180px;top:860px;width:720px;height:14px;background:#d62b1e;box-shadow:0 0 30px rgba(214,43,30,.8);transform:rotate(-28deg);transform-origin:0 50%}
   #mapcard{left:40px;top:470px;width:1000px;height:760px}
@@ -96,7 +96,7 @@
 
  <section id="hk" class="clip scene" data-start="0" data-duration="56.2" data-track-index="10">
   <div class="cz t1">NO WORLDS LEFT</div><div class="cz gold t2">TO CONQUER</div>
-  <div class="st"><span class="stamp" id="hkS">...OR DID HE?</span></div>
+  <div class="st"><span class="stamp" id="hkS">NOT THE REAL REASON</span></div>
  </section>
  <section id="s1" class="clip scene" data-start="0" data-duration="56.2" data-track-index="11">
   <div class="tag leg">LEGEND · SON OF ZEUS<i></i></div><div id="ring1"></div>
@@ -174,7 +174,7 @@
   tl.set("#hk", { opacity: 1 }, 0);
   tl.from("#hk .t1", { opacity: 0, y: -20, duration: 0.5, ease: E }, 0.05);
   tl.from("#hk .t2", { opacity: 0, scale: 1.25, duration: 0.6, ease: E }, 1.0);
-  pop("#hkS", 4.0); grey("#bAlxi", 4.0); shake(4.0); flash(4.3);
+  pop("#hkS", 3.6); grey("#bAlxi", 3.6); shake(3.6); flash(3.9);
   tl.to("#hk", { opacity: 0, duration: 0.3 }, 4.75);
 
   // 1 LEGEND: son of Zeus (Ammon-horned coin portrait)
