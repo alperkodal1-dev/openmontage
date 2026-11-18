@@ -61,6 +61,10 @@
   #mag .src{position:absolute;top:800px;left:0;right:0;text-align:center;font-family:'Cinzel';font-weight:700;font-size:34px;letter-spacing:6px;color:var(--gold2)}
   #mag .st{position:absolute;top:960px;left:0;right:0;text-align:center} #mag .stamp{font-size:54px}
   #cos{z-index:2;opacity:0;background:radial-gradient(ellipse at 30% 35%,rgba(90,60,160,.45) 0,rgba(0,0,0,0) 45%),radial-gradient(ellipse at 75% 70%,rgba(20,120,140,.4) 0,rgba(0,0,0,0) 50%),radial-gradient(ellipse at 50% 50%,#0b1430 0,#02050a 75%);overflow:hidden}
+  .dp{position:absolute;inset:0;overflow:hidden}
+  .dp img{position:absolute;left:50%;top:50%;width:2600px;height:2653px;margin-left:-1300px;margin-top:-1326px;transform-origin:50% 50%}
+  #hub{opacity:0} #hub img{height:2600px;margin-top:-1300px}
+  #dpc{position:absolute;left:0;right:0;top:1660px;text-align:center;font-family:'Manrope';font-size:22px;color:rgba(255,255,255,.55);z-index:5}
   #cosw{position:absolute;left:-1080px;top:-1920px;width:3240px;height:5760px;transform-origin:1620px 2880px}
   #cosw i{position:absolute;border-radius:50%}
   #alxo{z-index:3;opacity:0;mix-blend-mode:screen;overflow:hidden}
@@ -83,7 +87,7 @@
   <section id="bMos" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="5"><img id="bMosi" src="assets/mosaic_alex.jpg" alt="" style="left:-500px;top:-300px;width:2100px;height:2800px;object-position:50% 70%"></section>
   <section id="bArb" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="21"><img id="bArbi" src="assets/arbela.jpg" alt="" style="object-position:40% 45%;filter:sepia(.15) contrast(1.05) brightness(.62)"></section>
   <section id="bMsk" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="22"><img id="bMski" src="assets/masks.jpg" alt="" style="object-position:42% 50%;filter:sepia(.2) contrast(1.05) brightness(.5)"></section>
-  <section id="cos" class="clip" data-start="0" data-duration="{{END}}" data-track-index="25"><div id="cosw">{{COSMOS}}</div><div id="cosl">WORLDS WITHOUT END</div></section>
+  <section id="cos" class="clip" data-start="0" data-duration="{{END}}" data-track-index="25"><div id="jwb" class="dp"><img id="jwi" src="assets/jwst.jpg" alt=""></div><div id="hub" class="dp"><img id="hui" src="assets/hubble.jpg" alt=""></div><div id="dpc">Webb Deep Field (NASA, ESA, CSA, STScI) · Hubble Ultra Deep Field (NASA, ESA)</div><div id="cosl">WORLDS WITHOUT END</div></section>
   <section id="alxo" class="clip" data-start="0" data-duration="{{END}}" data-track-index="26"><img src="assets/mosaic_alex.jpg" alt=""></section>
   <section id="bPlu" class="clip bg" data-start="0" data-duration="{{END}}" data-track-index="6"><img id="bPlui" src="assets/plutarch.jpg" alt="" style="object-position:50% 30%"></section>
  </div>
@@ -219,7 +223,10 @@
   tl.set("#plu .q", { opacity: 0 }, 0);
   tl.from("#plu .src", { opacity: 0, duration: 0.4 }, 35.4);
   tl.fromTo("#cos", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "none", immediateRender: false }, 39.3);
-  tl.fromTo("#cosw", { scale: 1.9, rotation: -6 }, { scale: 0.85, rotation: 4, duration: END - 39.3, ease: "power1.out", immediateRender: false }, 39.3);
+  // real deep-space images: zoom out of the Webb deep field (one galaxy -> thousands), then Hubble's Ultra Deep Field
+  tl.fromTo("#jwi", { scale: 3.6, x: -180, y: 120 }, { scale: 0.62, x: 0, y: 0, duration: 8.4, ease: "power2.inOut", immediateRender: false }, 39.3);
+  tl.fromTo("#hub", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "none", immediateRender: false }, 47.0);
+  tl.fromTo("#hui", { scale: 2.4, rotation: -4 }, { scale: 0.7, rotation: 3, duration: END - 47.0, ease: "power1.out", immediateRender: false }, 47.0);
   tl.fromTo("#cosl", { opacity: 0, letterSpacing: "6px" }, { opacity: 1, letterSpacing: "9px", duration: 1.2, ease: "power2.out", immediateRender: false }, 41.4);
   tl.to("#cosl", { opacity: 0, duration: 0.6 }, 43.0);
   // "the man who had conquered everything he could reach... wept"

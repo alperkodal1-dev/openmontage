@@ -45,6 +45,6 @@ for _ in range(170):    # worlds
     a, b = random.choice(pal)
     glow = f'box-shadow:0 0 {r*0.6:.0f}px {a}55;' if r > 40 else ''
     cs.append(f'<i style="left:{x-r:.0f}px;top:{y-r:.0f}px;width:{2*r:.0f}px;height:{2*r:.0f}px;background:radial-gradient(circle at 32% 30%,{a} 0,{b} 62%,#02050a 100%);{glow}"></i>')
-html = html.replace('{{COSMOS}}', ''.join(cs))
+html = html.replace('{{COSMOS}}', '')   # procedural starfield replaced by real Webb/Hubble deep fields
 open('hf/index.html', 'w').write(html)
 print('ok', len(C), 'caption chunks')
