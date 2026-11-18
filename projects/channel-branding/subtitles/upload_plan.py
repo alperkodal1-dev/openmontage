@@ -21,8 +21,11 @@ PLAN = {'day1': [V['economist'], V['piri'], V['noah']],   # 10 + 4 + 9 = 23 trac
         'day2': [V['salem'], V['pyramid']],                  # 9 + 9 = 18 tracks
         'day3': [V['atlantis'], V['alexander']] + list(V.values()),   # Atlantis 9 + Alexander 9 = 18, then re-check all
         'en_fix': [(V['economist'][0], 'Economist 2027', {'en': V['economist'][2]['en']}), (V['noah'][0], 'Noah', {'en': V['noah'][2]['en']})]}   # Atlantis (9) + retry anything missing on every Short
+# Owner (18 Nov): Arabic, Pashto, Dari/Persian on every Short (21 tracks; ~8,400 units)
+NEW3 = lambda key, stem: (V[key][0], V[key][1], {l: HU + f'{stem}_{l}.srt' for l in ('ar', 'ps', 'fa')})
+PLAN['arpsfa'] = [NEW3(k, k) for k in ('atlantis', 'salem', 'pyramid', 'noah', 'piri', 'alexander', 'economist')]
 # Ankara (long video) left out at the owner's request
-NAMES = {'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
+NAMES = {'ar': 'العربية', 'ps': 'پښتو', 'fa': 'فارسی (دری)', 'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 if os.environ.get('YT_ACCESS_TOKEN'):   # short-lived token (e.g. from OAuth Playground) instead of a refresh token
     A = {'Authorization': 'Bearer ' + os.environ['YT_ACCESS_TOKEN']}
 else:
