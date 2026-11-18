@@ -24,7 +24,7 @@ PLAN = {'day1': [V['economist'], V['piri'], V['noah']],   # 10 + 4 + 9 = 23 trac
 # Ankara (long video) left out at the owner's request
 NAMES = {'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
-b = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'], 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
+b = urllib.parse.urlencode({**({} if os.environ.get('YT_CLIENT_SECRET', '') in ('', 'proxy-injected') else {'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET']}), 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
 A = {'Authorization': 'Bearer ' + json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', b))['access_token']}
 log_p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'uploaded.json'); log = json.load(open(log_p))
 for vid, name, tracks in PLAN[sys.argv[1]]:

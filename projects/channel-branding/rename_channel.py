@@ -4,7 +4,7 @@ Auth: YT_OAUTH_JSON + YT_CLIENT_ID + YT_CLIENT_SECRET (as yt_upload_video.py).""
 import json, os, re, urllib.request, urllib.parse
 NEW = 'Or So The Story Goes'
 rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
-b = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'], 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
+b = urllib.parse.urlencode({**({} if os.environ.get('YT_CLIENT_SECRET', '') in ('', 'proxy-injected') else {'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET']}), 'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
 A = {'Authorization': 'Bearer ' + json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', b))['access_token']}
 g = lambda u: json.load(urllib.request.urlopen(urllib.request.Request(u, headers=A)))
 def put(u, body, what):

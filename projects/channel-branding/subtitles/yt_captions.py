@@ -10,7 +10,7 @@ DONE = 'uploaded.json'
 
 def token():
     if os.environ.get('YT_REFRESH_TOKEN'):
-        body = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'],
+        body = urllib.parse.urlencode({**({} if os.environ.get('YT_CLIENT_SECRET', '') in ('', 'proxy-injected') else {'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET']}),
                                        'refresh_token': os.environ['YT_REFRESH_TOKEN'], 'grant_type': 'refresh_token'}).encode()
         return json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', body))['access_token']
     return open(os.environ['YT_ACCESS_TOKEN_FILE']).read().strip()

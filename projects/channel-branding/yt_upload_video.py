@@ -8,7 +8,7 @@ import json, os, sys, urllib.parse, urllib.request
 def token():
     if os.environ.get('YT_OAUTH_JSON'):
         rt = json.load(open(os.environ['YT_OAUTH_JSON']))['refresh_token']
-        body = urllib.parse.urlencode({'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET'],
+        body = urllib.parse.urlencode({**({} if os.environ.get('YT_CLIENT_SECRET', '') in ('', 'proxy-injected') else {'client_id': os.environ['YT_CLIENT_ID'], 'client_secret': os.environ['YT_CLIENT_SECRET']}),
                                        'refresh_token': rt, 'grant_type': 'refresh_token'}).encode()
         return json.load(urllib.request.urlopen('https://oauth2.googleapis.com/token', body))['access_token']
     return open(os.environ['YT_ACCESS_TOKEN_FILE']).read().strip()
