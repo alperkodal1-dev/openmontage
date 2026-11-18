@@ -1,6 +1,6 @@
 """Alexander mix: narration + own tension score (vidIQ, from the Noah project) ducked + signature SFX -> mix.m4a, -14 LUFS."""
 import subprocess
-END = 54.0
+END = 52.6
 MUS = '../../noah-ark/audio/music_tension.wav'
 S = '../../atlantis-story/sfx/'
 SFX = [('hit', 4.0, 1.0), ('rumble', 4.0, 0.8), ('hit', 4.3, 0.7), ('whoosh', 4.78, 0.45), ('whoosh', 7.48, 0.4), ('whoosh', 11.18, 0.4),
