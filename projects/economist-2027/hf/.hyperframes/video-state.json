@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "27b4f41e-5386-4ec4-b56d-cc460a2e731d",
-  "currentRevision": "0a156f09-f9b6-43a8-852e-2ba83bd5dce4",
+  "currentRevision": "3d418a0e-8079-42b4-9bd4-3e83af945a12",
   "pendingChanges": false,
   "files": {
     "assets/fonts/Amiri-arabic.woff2": {
@@ -61,8 +61,8 @@
       "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/28/28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
     },
     "index.html": {
-      "hash": "30325a71472b56bbcb9904fea27006b1e4fb7b2fc4f4efb4176c7e18cc2b0fe3",
-      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/30/30325a71472b56bbcb9904fea27006b1e4fb7b2fc4f4efb4176c7e18cc2b0fe3"
+      "hash": "5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1",
+      "content": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/5e/5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1"
     },
     "assets/cover_circle.png": {
       "hash": "ce4bdcfd720f7a7ce1377385a6f0d5b057f9d008ca0d7b4a20381caeb10e9e03",
@@ -133,6 +133,21 @@
           "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/30/30325a71472b56bbcb9904fea27006b1e4fb7b2fc4f4efb4176c7e18cc2b0fe3"
         }
       }
+    },
+    "3d418a0e-8079-42b4-9bd4-3e83af945a12": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1794977026140,
+      "endedAt": 1794977026141,
+      "files": {
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/30/30325a71472b56bbcb9904fea27006b1e4fb7b2fc4f4efb4176c7e18cc2b0fe3",
+          "after": "/root/.cache/hyperframes/history/27b4f41e-5386-4ec4-b56d-cc460a2e731d/blobs/5e/5ed8f3eede06c8e9d067ed5353492366ae76b1a3f0562b4f2dbf41a32b7886f1"
+        }
+      }
     }
   },
   "checks": {
@@ -147,15 +162,15 @@
   },
   "renders": {
     "latest": {
-      "id": "dc0f27ab-9c6e-4e38-ac01-24574a2a0e29",
-      "completedAt": 1794976862506,
+      "id": "6fd54c89-0827-4b9a-8873-d0e6e9e5ff3d",
+      "completedAt": 1794977237019,
       "output": "/home/user/openmontage/projects/economist-2027/out/visual.mp4",
       "status": "completed",
-      "revision": "0a156f09-f9b6-43a8-852e-2ba83bd5dce4"
+      "revision": "3d418a0e-8079-42b4-9bd4-3e83af945a12"
     },
     "retainedRevisions": [
-      "0a156f09-f9b6-43a8-852e-2ba83bd5dce4",
-      "d1f3c7b1-99a1-402e-a053-926049dc6f71"
+      "3d418a0e-8079-42b4-9bd4-3e83af945a12",
+      "0a156f09-f9b6-43a8-852e-2ba83bd5dce4"
     ]
   },
   "pendingArtifactCleanup": []

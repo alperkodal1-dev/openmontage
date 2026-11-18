@@ -17,3 +17,5 @@ Sources: 1988 cover "Get ready for a world currency" / phoenix coin dated 2018 (
 ## v3 (owner: robot line with a thinking beat, longer suspense at the end) — 63.7 s
 Theory three line re-voiced: "Theory three: AI takes over. A robot... stealing something? Mhm. Cameras everywhere, and a market crashing."
 Ending re-voiced, slower, 2.6 s hold on the corner: "So is it a forecast... or a warning? Look at that corner one more time... What do you see?"
+
+## v4: opening line is "The Economist dropped its 2027 cover... and it's dark." (owner), spliced from the first take; red flash + hit on "dark".
