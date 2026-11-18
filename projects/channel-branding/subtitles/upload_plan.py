@@ -9,6 +9,7 @@ def seven(d, stem): return {l: f'{P}{d}/{stem}_{l}.srt' for l in ALL7}
 PIRI = {'fr': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_fr.srt', 'ja': P + 'channel-branding/subtitles/out/piri_5SXAmr8qgFM/piri_ja.srt', 'hi': HU + 'piri_hi.srt', 'ur': HU + 'piri_ur.srt'}
 V = {
  'economist': ('3lRSiGfhOw0', 'Economist 2027', {l: P + f'economist-2027/publish/economist_{l}.srt' for l in ALL7 + ['hi', 'ur', 'ru']}),
+ 'alexander': ('4G-MdMl5PGg', 'Alexander', {**seven('alexander-great/publish', 'alexander'), 'hi': P + 'alexander-great/publish/alexander_hi.srt', 'ur': P + 'alexander-great/publish/alexander_ur.srt'}),
  'piri': ('5SXAmr8qgFM', 'Piri Reis', PIRI),
  'noah': ('x5FLR7Iwv_A', 'Noah', {**seven('noah-ark/publish_long', 'noah'), 'hi': HU + 'noah_hi.srt', 'ur': HU + 'noah_ur.srt'}),
  'salem': ('Y_Apy6CZdHI', 'Salem', {**seven('salem-remix/publish', 'salem'), 'hi': HU + 'salem_hi.srt', 'ur': HU + 'salem_ur.srt'}),
@@ -18,7 +19,7 @@ V = {
 # Owner (17 Nov): this week's only job is captions on every Short on the channel. ~24 tracks fit in a day's quota.
 PLAN = {'day1': [V['economist'], V['piri'], V['noah']],   # 10 + 4 + 9 = 23 tracks (Economist first: it is trending)
         'day2': [V['salem'], V['pyramid']],                  # 9 + 9 = 18 tracks
-        'day3': list(V.values()),
+        'day3': [V['atlantis'], V['alexander']] + list(V.values()),   # Atlantis 9 + Alexander 9 = 18, then re-check all
         'en_fix': [(V['economist'][0], 'Economist 2027', {'en': V['economist'][2]['en']}), (V['noah'][0], 'Noah', {'en': V['noah'][2]['en']})]}   # Atlantis (9) + retry anything missing on every Short
 # Ankara (long video) left out at the owner's request
 NAMES = {'ru': 'Русский', 'en': 'English', 'tr': 'Türkçe', 'es': 'Español', 'pt': 'Português', 'de': 'Deutsch', 'fr': 'Français', 'ja': '日本語', 'hi': 'हिन्दी', 'ur': 'اردو'}
