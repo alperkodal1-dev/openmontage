@@ -2,7 +2,7 @@
 const { chromium } = require('playwright');
 const { spawn } = require('child_process');
 (async () => {
-  const FPS = 30, DUR = 9.8, N = Math.round(FPS * DUR);
+  const FPS = 30, DUR = 10.7, N = Math.round(FPS * DUR);
   const ff = spawn('ffmpeg', ['-v', 'error', '-y', '-f', 'image2pipe', '-c:v', 'png', '-r', String(FPS), '-i', '-', '-i', 'audio.wav',
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '16', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-shortest', '-movflags', '+faststart', 'noah_10s.mp4'], { stdio: ['pipe', 'inherit', 'inherit'] });
   const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: 1920 } });

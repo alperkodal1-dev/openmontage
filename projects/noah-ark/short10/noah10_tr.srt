@@ -15,5 +15,9 @@ gemi, Ararat dağlarının üzerine oturdu.
 Dağlar.
 
 5
-00:00:08,400 --> 00:00:09,800
+00:00:08,400 --> 00:00:09,250
 Çoğul.
+
+6
+00:00:09,300 --> 00:00:10,700
+Ararat bir krallıktı...

@@ -15,5 +15,9 @@ the ark rested on the mountains of Ararat.
 Mountains.
 
 5
-00:00:08,400 --> 00:00:09,800
+00:00:08,400 --> 00:00:09,250
 Plural.
+
+6
+00:00:09,300 --> 00:00:10,700
+It was a kingdom...

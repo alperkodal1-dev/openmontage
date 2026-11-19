@@ -29,17 +29,17 @@ body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);position:r
 <div class="credit" id="credit"></div>
 <div class="flash" id="flash"></div>
 <script>
-const W = [["The", 0.1, 0.28], ["Bible", 0.28, 0.56], ["never", 0.56, 0.94], ["says", 0.94, 1.28], ["Noah's", 1.28, 1.76], ["Ark", 1.76, 2.04], ["landed", 2.04, 2.42], ["on", 2.42, 2.62], ["Mount", 2.62, 2.88], ["Ararat...", 2.88, 3.46], ["Not", 4.0, 4.22], ["once.", 4.22, 4.58], ["the", 5.16, 5.28], ["ark", 5.28, 5.6], ["rested", 5.6, 6.0], ["on", 6.0, 6.2], ["the", 6.2, 6.3], ["mountains", 6.3, 6.62], ["of", 6.62, 6.84], ["Ararat.", 6.84, 7.28], ["Mountains.", 7.63, 8.28], ["Plural.", 8.46, 8.82]];
+const W = [["The", 0.1, 0.28], ["Bible", 0.28, 0.56], ["never", 0.56, 0.94], ["says", 0.94, 1.28], ["Noah's", 1.28, 1.76], ["Ark", 1.76, 2.04], ["landed", 2.04, 2.42], ["on", 2.42, 2.62], ["Mount", 2.62, 2.88], ["Ararat...", 2.88, 3.46], ["Not", 4.0, 4.22], ["once.", 4.22, 4.58], ["the", 5.16, 5.28], ["ark", 5.28, 5.6], ["rested", 5.6, 6.0], ["on", 6.0, 6.2], ["the", 6.2, 6.3], ["mountains", 6.3, 6.62], ["of", 6.62, 6.84], ["Ararat.", 6.84, 7.28], ["Mountains.", 7.63, 8.28], ["Plural.", 8.46, 8.82], ["It", 9.34, 9.46], ["was", 9.46, 9.58], ["a", 9.58, 9.7], ["kingdom...", 9.7, 10.22]];
 const SCENES = [ // [start, end, img, focusX, focusY, zoomFrom, zoomTo, credit]
   [0.00, 5.05, 'a/myle.jpg', 0.50, 0.38, 1.35, 1.10, 'Simon de Myle, Noah\'s Ark on Mount Ararat (1570) · public domain'],
   [5.05, 7.63, 'a/ararat.jpg', 0.55, 0.45, 1.05, 1.25, 'Mount Ararat · Dosseman, CC BY-SA 4.0'],
-  [7.63, 9.81, 'a/cudi.jpg', 0.50, 0.50, 1.30, 1.12, 'Mount Cudi · KediÇobanı, CC BY-SA 4.0'],
+  [7.63, 10.71, 'a/cudi.jpg', 0.50, 0.50, 1.30, 1.12, 'Mount Cudi · KediÇobanı, CC BY-SA 4.0'],
 ];
-const LEG = ['MOUNT','ARARAT...'], EVI = ['MOUNTAINS','MOUNTAINS.','PLURAL.'];
+const LEG = ['MOUNT','ARARAT...'], EVI = ['MOUNTAINS','MOUNTAINS.','PLURAL.','KINGDOM...'];
 const $ = id => document.getElementById(id);
 const cl = v => Math.max(0, Math.min(1, v)), eo = t => 1 - Math.pow(1 - t, 3);
 const imgs = {}; SCENES.forEach(s => { const i = new Image(); i.src = s[2]; imgs[s[2]] = i; });
-const CH = [[0,5],[5,10],[10,12],[12,16],[16,20],[20,21],[21,22]];
+const CH = [[0,5],[5,10],[10,12],[12,16],[16,20],[20,21],[21,22],[22,26]];
 window.render = t => {
   const s = SCENES.find(s => t >= s[0] && t < s[1]) || SCENES[SCENES.length - 1];
   const im = $('img'); if (im.getAttribute('src') !== s[2]) im.src = s[2];
@@ -48,23 +48,24 @@ window.render = t => {
   const sc = base * z, w = iw * sc, h = ih * sc;
   let x = -w * s[3], y = -h * s[4]; x = Math.min(-540, Math.max(x, 540 - w)); y = Math.min(-960, Math.max(y, 960 - h));
   let sx = 0, sy = 0; const shake = (t0, d, a) => { if (t >= t0 && t < t0 + d) { const k = 1 - (t - t0) / d; sx += a * k * Math.sin(t * 90); sy += a * k * Math.cos(t * 77); } };
-  shake(4.0, 0.55, 22); shake(8.46, 0.45, 18);
+  shake(4.0, 0.55, 22); shake(8.46, 0.45, 18); shake(9.30, 0.35, 12);
   im.style.width = w + 'px'; im.style.height = h + 'px'; im.style.left = '540px'; im.style.top = '960px';
   im.style.transform = `translate(${x + sx}px,${y + sy}px)`;
   im.style.filter = (t >= 4.0 && t < 5.05) ? 'grayscale(1) sepia(.4) contrast(1.25) brightness(.8)' : 'none';
   $('credit').textContent = s[7];
-  let fl = 0; [[4.0, .85], [5.05, .45], [7.63, .5], [8.46, .85]].forEach(([t0, a]) => { if (t >= t0 && t < t0 + 0.36) fl = Math.max(fl, t < t0 + 0.06 ? a * (t - t0) / 0.06 : a * (1 - (t - t0 - 0.06) / 0.3)); });
+  let fl = 0; [[4.0, .85], [5.05, .45], [7.63, .5], [8.46, .85], [9.30, .6]].forEach(([t0, a]) => { if (t >= t0 && t < t0 + 0.36) fl = Math.max(fl, t < t0 + 0.06 ? a * (t - t0) / 0.06 : a * (1 - (t - t0 - 0.06) / 0.3)); });
   $('flash').style.opacity = fl;
   const ti = $('title'); ti.style.opacity = t < 5.05 ? 1 : 0; ti.style.transform = `scale(${t < 0.25 ? 1.25 - 0.25 * eo(t / 0.25) : 1})`;
-  const st = $('stamp'); const on1 = t >= 4.0 && t < 5.05, on2 = t >= 8.46;
-  st.style.opacity = (on1 || on2) ? 1 : 0; st.textContent = on2 ? 'PLURAL.' : 'NOT ONCE.';
-  const sp = cl((t - (on2 ? 8.46 : 4.0)) / 0.25); st.style.top = on2 ? '700px' : '660px';
+  const st = $('stamp'); const on1 = t >= 4.0 && t < 5.05, on2 = t >= 8.46 && t < 9.30, on3 = t >= 9.30;
+  st.style.opacity = (on1 || on2 || on3) ? 1 : 0; st.textContent = on3 ? 'A KINGDOM.' : (on2 ? 'PLURAL.' : 'NOT ONCE.');
+  const sp = cl((t - (on3 ? 9.30 : (on2 ? 8.46 : 4.0))) / 0.25); st.style.top = (on2 || on3) ? '700px' : '660px';
   st.style.transform = `translateX(-50%) rotate(-5deg) scale(${2.2 - 1.2 * eo(sp)})`;
   const yb = $('y90'); yb.style.fontSize = '150px'; yb.style.top = '380px';
   yb.style.opacity = (t >= 5.05 && t < 7.63) ? 1 : 0; yb.style.transform = `scale(${1.5 - 0.5 * eo(cl((t - 5.05) / 0.3))})`;
   const tg = $('tag');
   if (t >= 5.3 && t < 7.63) { tg.textContent = '"THE MOUNTAINS OF ARARAT"'; tg.style.opacity = cl((t - 5.3) / 0.2); tg.style.top = '600px'; }
-  else if (t >= 7.63 && t < 9.81) { tg.textContent = 'MOUNTAINS. NOT A MOUNTAIN.'; tg.style.opacity = cl((t - 7.7) / 0.2); tg.style.top = '420px'; }
+  else if (t >= 9.30) { tg.textContent = 'ARARAT = URARTU, AROUND LAKE VAN'; tg.style.opacity = cl((t - 9.4) / 0.2); tg.style.top = '420px'; }
+  else if (t >= 7.63 && t < 9.30) { tg.textContent = 'MOUNTAINS. NOT A MOUNTAIN.'; tg.style.opacity = cl((t - 7.7) / 0.2); tg.style.top = '420px'; }
   else tg.style.opacity = 0;
   $('ring').style.opacity = 0;
   const ci = CH.findIndex(([a, b]) => t >= W[a][1] - 0.05 && (b >= W.length || t < W[b][1] - 0.05));
