@@ -31,3 +31,20 @@ Full story on the channel: Or So The Story Goes.
 
 #NoahsArk #Bible #Ararat #History #shorts
 Tags: noah's ark, noahs ark, noah's ark location, where did noah's ark land, mount ararat, noah's ark ararat, mountains of ararat, genesis 8:4, urartu, mount cudi, mount judi, bible history, bible mysteries, history myths, history shorts, ancient people, or so the story goes
+
+## 3. Alexander: infinite worlds (alexander_10s.mp4)
+Category: Education
+Title: Alexander the Great Wept… but Not for the Reason You Think #shorts #history
+Title (TR): Büyük İskender Ağladı… Ama Sandığınız Sebepten Değil #shorts #tarih
+Description:
+Alexander wept: no worlds left to conquer... or did he? Plutarch tells it differently: a philosopher told him the universe held not one world but infinite worlds. Worlds without end. And he wept, because he was not lord of even one.
+
+If the worlds are infinite... can anyone ever be great? 👇
+
+Source: Plutarch, On Tranquility of Mind 466D.
+Pictures: Alexander Mosaic, House of the Faun, Pompeii (photo TyB, CC BY 2.0); Webb's First Deep Field (NASA, ESA, CSA, STScI); Hubble Ultra Deep Field (NASA, ESA).
+Narration and music: original (vidIQ).
+Full story on the channel: Or So The Story Goes.
+
+#AlexanderTheGreat #History #Philosophy #Multiverse #shorts
+Tags: alexander the great, alexander the great wept, why alexander the great wept, no more worlds to conquer, infinite worlds, worlds without end, plutarch, anaxarchus, multiverse, james webb deep field, hubble ultra deep field, ancient greece, ancient history, history shorts, philosophy, or so the story goes

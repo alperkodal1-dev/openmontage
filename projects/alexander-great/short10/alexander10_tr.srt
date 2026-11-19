@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:01,400
+İskender ağladı.
+
+2
+00:00:01,600 --> 00:00:03,400
+Fethedecek dünya kalmamıştı...
+
+3
+00:00:03,450 --> 00:00:04,400
+öyle mi?
+
+4
+00:00:04,550 --> 00:00:06,200
+Sonu olmayan dünyalar.
+
+5
+00:00:06,400 --> 00:00:09,600
+Bir tanesinin bile efendisi değildi.
