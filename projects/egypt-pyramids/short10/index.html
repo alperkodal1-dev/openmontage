@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="a/fonts/fonts.css">
+<style>
+:root{--ink:#0a1417;--bone:#efe6d2;--gold:#d9b26a;--gold2:#f1d49a;--red:#9c2f1f;--green:#7dffb0;--orange:#ff9a6b}
+*{margin:0;box-sizing:border-box}
+body{width:1080px;height:1920px;overflow:hidden;background:var(--ink);position:relative;font-family:'Manrope'}
+.bg{position:absolute;inset:0;overflow:hidden}
+.bg img{position:absolute;left:50%;top:50%;transform-origin:50% 50%}
+.shade{position:absolute;inset:0;background:linear-gradient(#0a1417e6 0%,#0a141700 26%,#0a141700 58%,#0a1417f0 100%)}
+.flash{position:absolute;inset:0;background:#f4ead2;opacity:0}
+.title{position:absolute;left:50px;right:50px;top:300px;text-align:center;font-family:'Cinzel';font-weight:900;line-height:1.0;text-shadow:0 8px 34px #000}
+.t1{color:var(--bone);font-size:126px}.t2{color:var(--gold2);font-size:126px}
+.stamp{position:absolute;left:50%;top:640px;background:var(--red);color:#ffe9c4;font-family:'Cinzel';font-weight:900;font-size:84px;padding:14px 42px;border:6px solid #ffe9c4;white-space:nowrap;box-shadow:0 20px 60px #000a}
+.big{position:absolute;left:0;right:0;top:330px;text-align:center;font-family:'Cinzel';font-weight:900;font-size:230px;color:var(--gold2);text-shadow:0 10px 40px #000}
+.tag{position:absolute;left:50%;top:640px;transform:translateX(-50%);font-family:'Cinzel';font-weight:700;font-size:44px;letter-spacing:3px;color:var(--bone);background:#0a1417cc;border:3px solid var(--gold);padding:10px 26px;white-space:nowrap}
+.ring{position:absolute;border:8px solid var(--green);border-radius:50%;box-shadow:0 0 40px var(--green)}
+.cap{position:absolute;left:70px;right:150px;top:1250px;min-height:200px;display:block;background:#0a1417c8;border-radius:24px;padding:30px 36px;font-weight:800;font-size:72px;line-height:1.18;color:var(--bone);text-align:center;text-transform:uppercase}
+.cap span{display:inline-block;margin:0 .14em}.cap .on{color:var(--gold2)}.cap .ev{color:var(--orange)}.cap .lg{color:var(--green)}
+.credit{position:absolute;left:70px;bottom:250px;font-size:22px;color:#efe6d2aa}
+</style></head><body>
+<div class="bg" id="bg"><img id="img"></div>
+<div class="shade"></div>
+<div class="title" id="title"><div class="t1">BUILT BY</div><div class="t2">SLAVES?</div></div>
+<div class="stamp" id="stamp">...OR DID THEY?</div>
+<div class="big" id="y90">1990</div>
+<div class="tag" id="tag"></div>
+<div class="ring" id="ring"></div>
+<div class="cap" id="cap"></div>
+<div class="credit" id="credit"></div>
+<div class="flash" id="flash"></div>
+<script>
+const W = __WORDS__;
+const SCENES = [ // [start, end, img, imgWidthPx, focusX(0..1), focusY, zoomFrom, zoomTo, credit]
+  [0.00, 3.43, 'a/roberts.jpg', 1600, 0.45, 0.45, 1.30, 1.08, 'Painting: The Met Open Access, CC0'],
+  [3.43, 6.40, 'a/legray.jpg', 1600, 0.50, 0.62, 1.05, 1.22, 'Gustave Le Gray, Pyramides de Gizèh (1865-69) · The Met, CC0'],
+  [6.40, 9.26, 'a/desc.jpg', 1600, 0.40, 0.60, 1.25, 1.05, 'Giza excavation, 1853 · The Met, CC0'],
+  [9.26, 10.31, 'a/cartouche.jpg', 1280, 0.50, 0.40, 1.15, 1.02, 'Khufu cartouche · W. Sauber, CC BY-SA 4.0'],
+];
+const LEG = ['SLAVES','PYRAMIDS...'], EVI = ['1990,','BURIED','WALL.','BUILDERS,','HONOR,','SLAVES.'];
+const $ = id => document.getElementById(id);
+const cl = v => Math.max(0, Math.min(1, v)), eo = t => 1 - Math.pow(1 - t, 3);
+const back = t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+const imgs = {}; SCENES.forEach(s => { const i = new Image(); i.src = s[2]; imgs[s[2]] = i; });
+const CH = [[0,4],[4,7],[7,9],[9,16],[16,21],[21,24],[24,27]]; // caption chunks (word index ranges)
+window.render = t => {
+  const s = SCENES.find(s => t >= s[0] && t < s[1]) || SCENES[SCENES.length - 1];
+  const im = $('img'); if (im.getAttribute('src') !== s[2]) im.src = s[2];
+  const iw = imgs[s[2]].naturalWidth, ih = imgs[s[2]].naturalHeight;
+  const base = Math.max(1080 / iw, 1920 / ih);
+  const u = cl((t - s[0]) / (s[1] - s[0]));
+  let z = s[6] + (s[7] - s[6]) * u;
+  if (u < 0.12) z *= 1 + 0.10 * (1 - u / 0.12);                 // snap punch-in on every cut
+  const sc = base * z, w = iw * sc, h = ih * sc;
+  let x = -w * s[4], y = -h * s[5]; x = Math.min(-540, Math.max(x, 540 - w)); y = Math.min(-960, Math.max(y, 960 - h));
+  // shake: hook doubt + horse trip
+  let sx = 0, sy = 0;
+  const shake = (t0, d, a) => { if (t >= t0 && t < t0 + d) { const k = 1 - (t - t0) / d; sx += a * k * Math.sin(t * 90); sy += a * k * Math.cos(t * 77); } };
+  shake(2.03, 0.55, 22); shake(4.86, 0.45, 16); shake(9.26, 0.4, 18);
+  im.style.width = w + 'px'; im.style.height = h + 'px';
+  im.style.transform = `translate(${x + 540 - 540 + sx}px,${y + sy}px)`;
+  im.style.left = '540px'; im.style.top = '960px';
+  im.style.filter = (t >= 2.03 && t < 3.43) ? 'grayscale(1) sepia(.4) contrast(1.25) brightness(.8)' : 'none';
+  $('credit').textContent = s[8];
+  // flash (cuts + doubt + stamp)
+  let fl = 0; [[2.03, .85], [3.43, .5], [6.40, .4], [9.26, .85]].forEach(([t0, a]) => { if (t >= t0 && t < t0 + 0.36) fl = Math.max(fl, t < t0 + 0.06 ? a * (t - t0) / 0.06 : a * (1 - (t - t0 - 0.06) / 0.3)); });
+  $('flash').style.opacity = fl;
+  // hook title + stamp
+  const ti = $('title'); ti.style.opacity = t < 3.43 ? 1 : 0; ti.style.transform = `scale(${t < 0.25 ? 1.25 - 0.25 * eo(t / 0.25) : 1})`;
+  const st = $('stamp'); const sp = cl((t - 2.03) / 0.25);
+  st.style.opacity = (t >= 2.03 && t < 3.43) ? 1 : (t >= 9.26 ? 1 : 0);
+  st.textContent = t >= 9.26 ? 'NOT SLAVES' : '...OR DID THEY?';
+  const sp2 = t >= 9.26 ? cl((t - 9.26) / 0.25) : sp;
+  st.style.top = t >= 9.26 ? '560px' : '660px';
+  st.style.transform = `translateX(-50%) rotate(-5deg) scale(${2.2 - 1.2 * eo(sp2)})`;
+  // 1990 + tags
+  const yb = $('y90'); yb.style.opacity = (t >= 3.51 && t < 6.40) ? 1 : 0; yb.style.transform = `scale(${1.5 - 0.5 * eo(cl((t - 3.51) / 0.3))})`;
+  const tg = $('tag');
+  if (t >= 4.46 && t < 6.40) { tg.textContent = 'A HORSE TRIPS ON A BURIED WALL'; tg.style.opacity = cl((t - 4.46) / 0.2); tg.style.top = '640px'; }
+  else if (t >= 6.40 && t < 9.26) { tg.textContent = "THE BUILDERS' OWN TOMBS · GIZA"; tg.style.opacity = cl((t - 6.55) / 0.2); tg.style.top = '360px'; }
+  else tg.style.opacity = 0;
+  const rg = $('ring'); const rp = cl((t - 7.52) / 0.3);
+  if (t >= 7.52 && t < 9.26) { rg.style.opacity = 1; const r = 300 * (1.6 - 0.6 * eo(rp)); rg.style.width = rg.style.height = r + 'px'; rg.style.left = (430 - r / 2) + 'px'; rg.style.top = (980 - r / 2) + 'px'; }
+  else rg.style.opacity = 0;
+  // karaoke captions
+  const ci = CH.findIndex(([a, b]) => t >= W[a][1] - 0.05 && (b >= W.length || t < W[b][1] - 0.05));
+  const c = CH[ci < 0 ? 0 : ci];
+  $('cap').innerHTML = W.slice(c[0], c[1]).map(([w, s0], k) => {
+    const key = w.toUpperCase(); const on = t >= s0 - 0.03;
+    const cls = !on ? '' : (c[0] < 7 && LEG.includes(key) ? 'lg' : (c[0] >= 7 && EVI.includes(key) ? 'ev' : 'on'));
+    return `<span class="${cls}">${key.replace('PYRAMIDS...', 'PYRAMIDS…')}</span>`; }).join('');
+};
+</script></body></html>
