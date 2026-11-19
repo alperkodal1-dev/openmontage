@@ -1,0 +1,19 @@
+1
+00:00:00,000 --> 00:00:02,000
+Piramitleri köleler inşa etti...
+
+2
+00:00:02,000 --> 00:00:03,400
+öyle mi?
+
+3
+00:00:03,430 --> 00:00:06,350
+1990'da bir at, toprağa gömülü bir duvara takıldı.
+
+4
+00:00:06,400 --> 00:00:09,200
+Altında inşaatçılar yatıyordu, onurla gömülmüş,
+
+5
+00:00:09,220 --> 00:00:10,300
+köle olarak değil.
